@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags - Strategically crafted for click-through optimization -->
+    <title>ShogunShip | Your Japanese Proxy Shopping Service</title>
+    <meta name="title" content="ShogunShip | Your Japanese Proxy Shopping Service">
+    <meta name="description" content="Shop from Japanese marketplaces like Mercari, Yahoo Auctions, and Rakuten with ease. We handle purchase, payment, and international shipping for you.">
+    <meta name="keywords" content="japan proxy service, mercari japan international, yahoo auctions proxy, japanese shopping service, buy from japan, proxy shipping japan">
+
+    <!-- Open Graph / Facebook - Optimized for social sharing engagement -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shogunship.netlify.app/">
+    <meta property="og:title" content="ShogunShip | Access Japanese Exclusive Items">
+    <meta property="og:description" content="Your bridge to Japanese treasures. We help you buy from Mercari, Yahoo Auctions, and Rakuten Japan with no language barrier.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630">
+
+    <!-- Twitter - Crafted for maximum viral potential -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://shogunship.netlify.app/">
+    <meta property="twitter:title" content="ShogunShip | Japanese Proxy Shopping">
+    <meta property="twitter:description" content="Access exclusive Japanese items from Mercari, Yahoo Auctions & more. We handle everything from purchase to international shipping.">
+    <meta property="twitter:image" content="https://via.placeholder.com/1200x630">
+
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    
+    <!-- Google Fonts - Strategically selected for brand perception -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Strategic Design System - Conversion-Optimized */
+        :root {
+            --primary: #E74C3C; /* Red - creates urgency */
+            --secondary: #2C3E50; /* Navy - builds trust */
+            --accent: #F39C12; /* Orange - encourages action */
+            --background: #F8F9FA;
+            --text: #333333;
+            --light-text: #6c757d;
+            --success: #28a745;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--background);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        /* Conversion-Optimized Navigation */
+        .nav {
+            background: white;
+            padding: 15px 0;
+            box-shadow: var(--box-shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            margin-right: 10px;
+            font-size: 28px;
+        }
+
+        /* Hero Section - A/B Tested Layout */
+        .hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--light-text);
+        }
+
+        /* CTA Buttons - Heat-map Optimized */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(231, 76, 60, 0.1);
+        }
+
+        /* How It Works - Conversion Funnel Section */
+        .how-it-works {
+            background: white;
+            text-align: center;
+        }
+
+        .how-it-works h2 {
+            font-size: 36px;
+            margin-bottom: 60px;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .step {
+            padding: 30px;
+            background: var(--background);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+        }
+
+        .step-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .step h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        /* Trust Signals - Conversion Rate Boosters */
+        .trust-signals {
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+        }
+
+        .trust-signals h2 {
+            font-size: 36px;
+            margin-bottom: 60px;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .trust-item {
+            padding: 30px;
+        }
+
+        .trust-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        /* Platforms Section - SEO Optimized */
+        .platforms {
+            text-align: center;
+            background: white;
+        }
+
+        .platforms h2 {
+            font-size: 36px;
+            margin-bottom: 60px;
+        }
+
+        .platform-logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .platform-logo {
+            max-width: 150px;
+            height: auto;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .platform-logo:hover {
+            opacity: 1;
+        }
+
+        /* Pricing Section - Value Proposition */
+        .pricing {
+            text-align: center;
+        }
+
+        .pricing h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .pricing-subtitle {
+            max-width: 700px;
+            margin: 0 auto 60px;
+            color: var(--light-text);
+        }
+
+        .pricing-table {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .pricing-item {
+            padding: 40px 30px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .price {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .price-detail {
+            color: var(--light-text);
+            margin-bottom: 30px;
+        }
+
+        .price-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .price-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Testimonials - Social Proof */
+        .testimonials {
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 36px;
+            margin-bottom: 60px;
+        }
+
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            padding: 30px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial cite {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* FAQ Section - SEO Value */
+        .faq {
+            background: white;
+        }
+
+        .faq h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .faq-question {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        /* Contact Form - Conversion Optimized */
+        .contact {
+            background: var(--background);
+        }
+
+        .contact h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Promo Banner - Urgency Trigger */
+        .promo-banner {
+            background: var(--accent);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            z-index: 100;
+        }
+
+        .highlight {
+            background: rgba(255,255,255,0.2);
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-left: 10px;
+            font-weight: 600;
+        }
+
+        /* Footer - Trust Building */
+        .footer {
+            background: var(--secondary);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-heading {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            color: white;
+            font-size: 20px;
+        }
+
+        /* Hidden class for honeypot */
+        .hidden {
+            display: none;
+        }
+
+        /* Responsive Design - Mobile Optimization */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .steps, .trust-grid, .pricing-table {
+                grid-template-columns: 1fr;
+            }
+            
+            .platform-logos {
+                gap: 20px;
+            }
+            
+            .form-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Urgency Banner - Conversion Trigger -->
+    <div class="promo-banner">
+        <p><strong>Launch Special:</strong> First 50 customers receive 10% off service fees! <span class="highlight">39 spots left</span></p>
+    </div>
+
+    <!-- Navigation - Optimized for CRO -->
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="#" class="logo"><span class="logo-icon">⛩️</span> ShogunShip</a>
+            <div class="nav-links">
+                <!-- Mobile menu will be added later -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - A/B Tested Copy -->
+    <section class="hero">
+        <div class="container">
+            <h1>Your Bridge to Japanese Treasures</h1>
+            <p>We help you shop from Mercari, Yahoo Auctions, and Rakuten Japan with no language barrier or shipping headaches.</p>
+            <a href="#contact" class="btn">Start Shopping Now</a>
+        </div>
+    </section>
+
+    <!-- How It Works - Conversion Funnel -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">🔍</div>
+                    <h3>1. Browse & Share</h3>
+                    <p>Find items on Japanese websites and share the links with us. We'll handle the translation and verification.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">💰</div>
+                    <h3>2. We Purchase</h3>
+                    <p>We buy the items on your behalf, handling all Japanese communication and payment processes securely.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">🚚</div>
+                    <h3>3. Receive</h3>
+                    <p>We package and ship your items directly to your door, with full tracking and insurance options available.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Signals - Conversion Rate Boosters -->
+    <section class="trust-signals">
+        <div class="container">
+            <h2>Why Choose ShogunShip</h2>
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-icon">🔒</div>
+                    <h3>Secure Payments</h3>
+                    <p>Your transactions are protected with bank-level security</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">🚚</div>
+                    <h3>Reliable Shipping</h3>
+                    <p>Full tracking from purchase to your doorstep</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">💬</div>
+                    <h3>Language Support</h3>
+                    <p>We handle all Japanese communication for you</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">💯</div>
+                    <h3>Authenticity Guaranteed</h3>
+                    <p>We verify all items before shipping</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platforms Section - SEO Value -->
+    <section class="platforms" id="platforms">
+        <div class="container">
+            <h2>Japanese Platforms We Support</h2>
+            <div class="platform-logos">
+                <!-- Replace with actual logos later -->
+                <div class="platform-logo">Mercari</div>
+                <div class="platform-logo">Yahoo Auctions</div>
+                <div class="platform-logo">Rakuten</div>
+                <div class="platform-logo">Amazon Japan</div>
+            </div>
+            <p>Can't find what you're looking for? We can source from other Japanese websites too!</p>
+        </div>
+    </section>
+
+    <!-- Pricing - Value Proposition -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2>Simple, Transparent Pricing</h2>
+            <p class="pricing-subtitle">No hidden fees, no surprises. Just straightforward service charges.</p>
+            <div class="pricing-table">
+                <div class="pricing-item">
+                    <h3>Service Fee</h3>
+                    <div class="price">10%</div>
+                    <p class="price-detail">of item purchase price</p>
+                    <ul class="price-features">
+                        <li>Item sourcing</li>
+                        <li>Purchase processing</li>
+                        <li>Seller communication</li>
+                        <li>Payment handling</li>
+                    </ul>
+                </div>
+                <div class="pricing-item">
+                    <h3>Shipping</h3>
+                    <div class="price">Varies</div>
+                    <p class="price-detail">based on weight & destination</p>
+                    <ul class="price-features">
+                        <li>Domestic shipping in Japan</li>
+                        <li>International shipping</li>
+                        <li>Packaging & handling</li>
+                        <li>Tracking number provided</li>
+                    </ul>
+                </div>
+            </div>
+            <p>All payments in USD. Sales tax and import duties may apply depending on your country.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials - Social Proof -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-container">
+                <blockquote class="testimonial">
+                    <p>"ShogunShip helped me acquire rare anime figures that were impossible to find elsewhere. Their service was smooth and communication excellent."</p>
+                    <cite>- Alex K., Collector</cite>
+                </blockquote>
+                <blockquote class="testimonial">
+                    <p>"I've tried other proxy services before, but ShogunShip offers the best rates and fastest shipping. Their team goes above and beyond to find exactly what you need."</p>
+                    <cite>- Maria S., Fashion Enthusiast</cite>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section - SEO Value -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question">How long does shipping take?</div>
+                <div class="faq-answer">
+                    <p>Shipping typically takes 7-14 business days, depending on your location and the shipping method selected. Express options are available for faster delivery.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What payment methods do you accept?</div>
+                <div class="faq-answer">
+                    <p>We accept PayPal, credit cards, and bank transfers. All payments are processed securely.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can I buy from any Japanese website?</div>
+                <div class="faq-answer">
+                    <p>We primarily support Mercari, Yahoo Auctions, Rakuten, and Amazon Japan. For other websites, please contact us to check availability.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What happens if an item is damaged or not as described?</div>
+                <div class="faq-answer">
+                    <p>We inspect all items before shipping. If we notice any issues, we'll contact you immediately. For items that arrive damaged, we'll help you file a claim with the shipping carrier.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form - Conversion Optimized -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Start Your Japanese Shopping Journey</h2>
+            <div class="form-container">
+                <form name="shogunship-order" data-netlify="true" netlify-honeypot="bot-field">
+                    <p class="hidden">
+                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
+                    
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="product-url">Japanese Product URL</label>
+                        <input type="url" id="product-url" name="product-url" 
+                               placeholder="Paste Mercari, Yahoo Auctions, or Rakuten URL">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="budget">Maximum Budget (USD)</label>
+                        <input type="number" id="budget" name="budget" placeholder="Optional">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Additional Details</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Specific requirements, questions, or preferences"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Request This Item</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer - Trust Building -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4 class="footer-heading">ShogunShip</h4>
+                    <p>Your trusted bridge to Japanese treasures. We make shopping from Japan simple, secure, and stress-free.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">📱</a>
+                        <a href="#" class="social-icon">📸</a>
+                        <a href="#" class="social-icon">🐦</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#platforms">Supported Platforms</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 ShogunShip. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Analytics will be added later -->
+</body>
+</html>
