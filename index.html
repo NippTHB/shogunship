@@ -31,6 +31,17 @@
     <!-- Google Fonts - Strategically selected for brand perception -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
+    <!-- Google Analytics Implementation -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-07NK010QW6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-07NK010QW6');
+    </script>
+    
     <style>
         /* Strategic Design System - Conversion-Optimized */
         :root {
@@ -101,17 +112,21 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
             font-size: 24px;
             font-weight: 700;
             color: var(--primary);
             text-decoration: none;
-            display: flex;
-            align-items: center;
         }
 
         .logo-icon {
+            width: 40px;
+            height: 40px;
             margin-right: 10px;
-            font-size: 28px;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48c3R5bGU+LnN0MHtmaWxsOiNFNzRDM0M7fS5zdDF7ZmlsbDojMkMzRTUwO30uc3Qye2ZpbGw6I0YzOUMxMjt9PC9zdHlsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNNTAgOTBjLTIyLjEgMC00MC0xNy45LTQwLTQwczE3LjktNDAgNDAtNDAgNDAgMTcuOSA0MCA0MC0xNy45IDQwLTQwIDQweiIvPjxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik03MCA2NUg0MHYtNWgzMGMxLjEgMCAyLS45IDItMnMtLjktMi0yLTJINDBWNTFoMzBjMi44IDAgNSAyLjIgNSA1cy0yLjIgNS01IDV6Ii8+PHBhdGggY2xhc3M9InN0MSIgZD0iTTY1IDc1SDM1Yy0yLjggMC01LTIuMi01LTVzMi4yLTUgNS01aDMwYzEuMSAwIDItLjkgMi0ycy0uOS0yLTItMkgzNXYtNWgzMGMyLjggMCA1IDIuMiA1IDVzLTIuMiA1LTUgNXoiLz48cGF0aCBjbGFzcz0ic3QyIiBkPSJNNTAgMzBjLTUuNSAwLTEwIDQuNS0xMCAxMHM0LjUgMTAgMTAgMTAgMTAtNC41IDEwLTEwLTQuNS0xMC0xMC0xMHptMCAxNWMtMi44IDAtNS0yLjItNS01czIuMi01IDUtNSA1IDIuMiA1IDUtMi4yIDUtNSA1eiIvPjwvc3ZnPg==');
+            background-size: contain;
+            background-repeat: no-repeat;
         }
 
         /* Hero Section - A/B Tested Layout */
@@ -423,6 +438,145 @@
             resize: vertical;
         }
 
+        /* Product Preview Styling */
+        .product-preview {
+            margin-top: 10px;
+            min-height: 0;
+            transition: min-height 0.3s ease;
+        }
+
+        .preview-loading {
+            background: rgba(0,0,0,0.03);
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 8px;
+            font-size: 14px;
+            color: var(--light-text);
+            display: flex;
+            align-items: center;
+        }
+
+        .preview-content {
+            display: flex;
+            align-items: center;
+            background: rgba(0,0,0,0.03);
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 8px;
+        }
+
+        .preview-image {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 15px;
+        }
+
+        .preview-details {
+            flex: 1;
+        }
+
+        .preview-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .preview-price {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .preview-error {
+            background: rgba(0,0,0,0.03);
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 8px;
+            font-size: 14px;
+            color: var(--light-text);
+            display: flex;
+            align-items: center;
+        }
+
+        .preview-error-icon {
+            margin-right: 10px;
+            color: var(--primary);
+            font-size: 20px;
+        }
+
+        .add-more-container {
+            margin: 20px 0;
+        }
+
+        /* Confirmation Screen */
+        .confirmation-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+        }
+
+        .confirmation-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+            color: var(--success);
+        }
+
+        .confirmation-content h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .next-steps {
+            text-align: left;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(0,0,0,0.02);
+            border-radius: var(--border-radius);
+        }
+
+        .next-steps h3 {
+            margin-bottom: 15px;
+        }
+
+        .next-steps ol {
+            padding-left: 20px;
+        }
+
+        .next-steps li {
+            margin-bottom: 10px;
+        }
+
+        .social-share {
+            margin: 30px 0;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-button {
+            padding: 10px 15px;
+            background: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .social-button:hover {
+            background: #1a2530;
+            transform: translateY(-2px);
+        }
+
         /* Promo Banner - Urgency Trigger */
         .promo-banner {
             background: var(--accent);
@@ -502,30 +656,64 @@
             display: none;
         }
 
-        /* Responsive Design - Mobile Optimization */
+        /* Enhanced Responsive Design System */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 36px;
-            }
-            
-            .hero p {
-                font-size: 18px;
-            }
-            
-            section {
-                padding: 60px 0;
-            }
-            
-            .steps, .trust-grid, .pricing-table {
-                grid-template-columns: 1fr;
-            }
-            
-            .platform-logos {
-                gap: 20px;
+                font-size: 32px;
             }
             
             .form-container {
-                padding: 30px 20px;
+                padding: 25px 15px;
+            }
+            
+            .step {
+                padding: 20px 15px;
+            }
+            
+            .pricing-table {
+                gap: 20px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            
+            .nav-container {
+                padding: 0 15px;
+            }
+            
+            .hero {
+                padding: 130px 0 80px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            section {
+                padding: 70px 0;
+            }
+            
+            .container {
+                padding: 0 30px;
+            }
+            
+            .hero h1 {
+                font-size: 42px;
+            }
+        }
+
+        @media (min-width: 1600px) {
+            .container {
+                max-width: 1400px;
+            }
+            
+            .hero {
+                padding: 200px 0 140px;
+            }
+            
+            .form-container {
+                max-width: 800px;
             }
         }
     </style>
@@ -539,7 +727,10 @@
     <!-- Navigation - Optimized for CRO -->
     <nav class="nav">
         <div class="container nav-container">
-            <a href="#" class="logo"><span class="logo-icon">⛩️</span> ShogunShip</a>
+            <a href="#" class="logo">
+                <div class="logo-icon"></div>
+                <span>ShogunShip</span>
+            </a>
             <div class="nav-links">
                 <!-- Mobile menu will be added later -->
             </div>
@@ -709,7 +900,7 @@
         <div class="container">
             <h2>Start Your Japanese Shopping Journey</h2>
             <div class="form-container">
-                <form name="shogunship-order" data-netlify="true" netlify-honeypot="bot-field">
+                <form name="shogunship-order" data-netlify="true" netlify-honeypot="bot-field" method="POST">
                     <p class="hidden">
                         <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                     </p>
@@ -725,9 +916,122 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="product-url">Japanese Product URL</label>
-                        <input type="url" id="product-url" name="product-url" 
-                               placeholder="Paste Mercari, Yahoo Auctions, or Rakuten URL">
+                        <label for="referral-source">How did you hear about us?</label>
+                        <select id="referral-source" name="referral-source" required>
+                            <option value="" disabled selected>Please select...</option>
+                            <option value="google">Google Search</option>
+                            <option value="reddit">Reddit</option>
+                            <option value="instagram">Instagram</option>
+                            <option value="youtube">YouTube</option>
+                            <option value="friend">Friend Recommendation</option>
+                            <option value="discord">Discord Community</option>
+                            <option value="other">Other</option>
+                            <option value="hoping-to-find">What were you hoping to find?</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group hoping-to-find-section" style="display: none;">
+                        <label for="hoping-to-find">Tell us what you were hoping to find:</label>
+                        <textarea id="hoping-to-find" name="hoping-to-find" rows="2" placeholder="I was looking for..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="country">Your Country</label>
+                        <select id="country" name="country" required>
+                            <option value="" disabled selected>Select your country</option>
+                            <optgroup label="Popular Destinations">
+                                <option value="US">United States</option>
+                                <option value="CA">Canada</option>
+                                <option value="GB">United Kingdom</option>
+                                <option value="AU">Australia</option>
+                            </optgroup>
+                            <optgroup label="Europe">
+                                <option value="AT">Austria</option>
+                                <option value="BE">Belgium</option>
+                                <option value="DK">Denmark</option>
+                                <option value="FI">Finland</option>
+                                <option value="FR">France</option>
+                                <option value="DE">Germany</option>
+                                <option value="GR">Greece</option>
+                                <option value="IE">Ireland</option>
+                                <option value="IT">Italy</option>
+                                <option value="LU">Luxembourg</option>
+                                <option value="NL">Netherlands</option>
+                                <option value="NO">Norway</option>
+                                <option value="PT">Portugal</option>
+                                <option value="ES">Spain</option>
+                                <option value="SE">Sweden</option>
+                                <option value="CH">Switzerland</option>
+                                <!-- Added more European countries -->
+                                <option value="BG">Bulgaria</option>
+                                <option value="HR">Croatia</option>
+                                <option value="CY">Cyprus</option>
+                                <option value="CZ">Czech Republic</option>
+                                <option value="EE">Estonia</option>
+                                <option value="HU">Hungary</option>
+                                <option value="IS">Iceland</option>
+                                <option value="LV">Latvia</option>
+                                <option value="LI">Liechtenstein</option>
+                                <option value="LT">Lithuania</option>
+                                <option value="MT">Malta</option>
+                                <option value="PL">Poland</option>
+                                <option value="RO">Romania</option>
+                                <option value="SK">Slovakia</option>
+                                <option value="SI">Slovenia</option>
+                            </optgroup>
+                            <optgroup label="Asia Pacific">
+                                <option value="SG">Singapore</option>
+                                <option value="HK">Hong Kong</option>
+                                <option value="NZ">New Zealand</option>
+                                <option value="MY">Malaysia</option>
+                                <option value="TH">Thailand</option>
+                                <option value="PH">Philippines</option>
+                                <option value="TW">Taiwan</option>
+                                <option value="KR">South Korea</option>
+                            </optgroup>
+                            <optgroup label="Other Regions">
+                                <option value="MX">Mexico</option>
+                                <option value="AE">United Arab Emirates</option>
+                                <option value="SA">Saudi Arabia</option>
+                                <option value="ZA">South Africa</option>
+                                <option value="IL">Israel</option>
+                                <option value="CL">Chile</option>
+                                <option value="AR">Argentina</option>
+                                <option value="other">Other (please specify)</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group other-country-section" style="display: none;">
+                        <label for="other-country">Please specify your country:</label>
+                        <input type="text" id="other-country" name="other-country" placeholder="Enter your country">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="product-url-1">Japanese Product URL 1</label>
+                        <input type="url" id="product-url-1" name="product-url-1" 
+                               placeholder="Paste Mercari, Yahoo Auctions, or Rakuten URL" required>
+                        <div id="preview-1" class="product-preview"></div>
+                    </div>
+                    
+                    <div class="add-more-container">
+                        <button type="button" id="add-more-button" class="btn-secondary">+ Add more items (up to 3)</button>
+                    </div>
+                    
+                    <div id="additional-urls" style="display: none;">
+                        <div class="form-group">
+                            <label for="product-url-2">Japanese Product URL 2 (Optional)</label>
+                            <input type="url" id="product-url-2" name="product-url-2" 
+                                   placeholder="Add another item to your request">
+                            <div id="preview-2" class="product-preview"></div>
+                        </div>
+                        
+                        <div class="form-group" id="url-3-container">
+                            <label for="product-url-3">Japanese Product URL 3 (Optional)</label>
+                            <input type="url" id="product-url-3" name="product-url-3" 
+                                   placeholder="Add another item to your request">
+                            <div id="preview-3" class="product-preview"></div>
+                        </div>
                     </div>
                     
                     <div class="form-group">
@@ -740,8 +1044,35 @@
                         <textarea id="message" name="message" rows="4" placeholder="Specific requirements, questions, or preferences"></textarea>
                     </div>
                     
-                    <button type="submit" class="btn">Request This Item</button>
+                    <button type="submit" class="btn">Request These Items</button>
                 </form>
+                
+                <div id="confirmation-screen" style="display: none;" class="confirmation-container">
+                    <div class="confirmation-content">
+                        <div class="confirmation-icon">✅</div>
+                        <h2>Request Received!</h2>
+                        <p>We'll review your items and get back to you within 24 hours with availability and pricing.</p>
+                        
+                        <div class="next-steps">
+                            <h3>What happens next?</h3>
+                            <ol>
+                                <li>We'll check availability and condition of your requested items</li>
+                                <li>You'll receive a quote via email with payment instructions</li>
+                                <li>After payment, we'll secure your items and arrange shipping</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="social-share">
+                            <p>Know someone who might love our service?</p>
+                            <div class="social-buttons">
+                                <a href="#" class="social-button">Share on Instagram</a>
+                                <a href="#" class="social-button">Share on Twitter</a>
+                            </div>
+                        </div>
+                        
+                        <button class="btn" onclick="window.location.reload()">Request Another Item</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -784,6 +1115,194 @@
         </div>
     </footer>
 
-    <!-- Analytics will be added later -->
+    <!-- Combined Functionality Scripts -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Set form load timestamp for spam protection
+        const orderForm = document.querySelector('form[name="shogunship-order"]');
+        orderForm.dataset.loadTime = Date.now();
+        
+        // Hoping to find section toggle
+        document.getElementById('referral-source').addEventListener('change', function() {
+            const hopingSection = document.querySelector('.hoping-to-find-section');
+            if (this.value === 'hoping-to-find') {
+                hopingSection.style.display = 'block';
+            } else {
+                hopingSection.style.display = 'none';
+            }
+        });
+        
+        // Other country section toggle
+        document.getElementById('country').addEventListener('change', function() {
+            const otherCountrySection = document.querySelector('.other-country-section');
+            if (this.value === 'other') {
+                otherCountrySection.style.display = 'block';
+                
+                // Track for market expansion intelligence
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'other_country_selected', {
+                        'event_category': 'Market Intelligence',
+                        'event_label': 'Unserved Market Interest'
+                    });
+                }
+            } else {
+                otherCountrySection.style.display = 'none';
+            }
+        });
+        
+        // Enhanced add more products functionality
+        document.getElementById('add-more-button').addEventListener('click', function() {
+            // Show both additional URL fields immediately
+            document.getElementById('additional-urls').style.display = 'block';
+            this.style.display = 'none';
+            
+            // Enhanced analytics tracking
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'show_all_item_fields', {
+                    'event_category': 'Form Interaction',
+                    'event_label': 'Expanded All Item Fields',
+                    'value': 3
+                });
+            }
+        });
+        
+        // Enhanced product preview functionality with intelligent error handling
+        function enhancedPreview(urlInput, previewContainer) {
+            // Clear preview when input is emptied
+            urlInput.addEventListener('input', function() {
+                if (!this.value) {
+                    previewContainer.innerHTML = '';
+                }
+            });
+            
+            // Attempt preview on blur
+            urlInput.addEventListener('blur', function() {
+                if (!this.value) {
+                    previewContainer.innerHTML = '';
+                    return;
+                }
+                
+                const url = this.value.trim();
+                previewContainer.innerHTML = '<div class="preview-loading">Checking item...</div>';
+                
+                // Determine source platform for tailored messaging
+                const platform = getPlatformFromUrl(url);
+                
+                // In production, this would be a real API call to your backend
+                setTimeout(() => {
+                    // For demonstration, we'll show success for Mercari and tailored messaging for others
+                    if (url.includes('mercari')) {
+                        // Success case with more realistic data
+                        const itemId = extractItemId(url);
+                        previewContainer.innerHTML = `
+                            <div class="preview-content">
+                                <img src="https://via.placeholder.com/60" class="preview-image" alt="Product thumbnail">
+                                <div class="preview-details">
+                                    <div class="preview-title">Item #${itemId || '12345'}</div>
+                                    <div class="preview-price">¥${Math.floor(Math.random() * 10000) + 1000}</div>
+                                </div>
+                            </div>
+                        `;
+                        
+                        // Track successful preview
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'preview_success', {
+                                'event_category': 'Product Preview',
+                                'event_label': platform
+                            });
+                        }
+                    } else {
+                        // Enhanced error messaging with platform-specific context
+                        previewContainer.innerHTML = `
+                            <div class="preview-error">
+                                <span class="preview-error-icon">✅</span>
+                                <span>Link received! We'll check the ${platform} item, but preview couldn't be shown due to site restrictions. You can proceed with your request.</span>
+                            </div>
+                        `;
+                        
+                        // Track platform-specific preview attempts
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'preview_unavailable', {
+                                'event_category': 'Product Preview',
+                                'event_label': platform
+                            });
+                        }
+                    }
+                }, 800);
+            });
+        }
+
+        // Helper function to determine platform from URL
+        function getPlatformFromUrl(url) {
+            if (url.includes('mercari')) return 'Mercari';
+            if (url.includes('yahoo.co.jp')) return 'Yahoo Auctions';
+            if (url.includes('rakuten')) return 'Rakuten';
+            if (url.includes('amazon.co.jp')) return 'Amazon Japan';
+            return 'Japanese';
+        }
+
+        // Extract item ID from URL for more realistic preview
+        function extractItemId(url) {
+            // Basic extraction - would be more sophisticated in production
+            const matches = url.match(/m\d+/) || url.match(/\d{8,}/);
+            return matches ? matches[0] : null;
+        }
+        
+        // Initialize enhanced preview functionality
+        enhancedPreview(document.getElementById('product-url-1'), document.getElementById('preview-1'));
+        enhancedPreview(document.getElementById('product-url-2'), document.getElementById('preview-2'));
+        enhancedPreview(document.getElementById('product-url-3'), document.getElementById('preview-3'));
+        
+        // Form submission and confirmation screen
+        document.querySelector('form[name="shogunship-order"]').addEventListener('submit', function(e) {
+            // Prevent default form submission to handle with JavaScript
+            e.preventDefault();
+            
+            // Time-based submission validation (prevent bot rapid submissions)
+            const formLoadTime = this.dataset.loadTime || Date.now();
+            const timeElapsed = Date.now() - formLoadTime;
+            
+            // If form submitted in less than 2 seconds, likely a bot
+            if (timeElapsed < 2000) {
+                console.log('Potential spam submission blocked (too fast)');
+                return false;
+            }
+            
+            // Track the conversion in Google Analytics
+            if (typeof gtag !== 'undefined') {
+                // Enhanced conversion tracking with product count
+                const productCount = [
+                    document.getElementById('product-url-1').value,
+                    document.getElementById('product-url-2').value,
+                    document.getElementById('product-url-3').value
+                ].filter(Boolean).length;
+                
+                gtag('event', 'form_submission', {
+                    'event_category': 'Conversion',
+                    'event_label': 'Order Request',
+                    'value': productCount,
+                    'product_count': productCount,
+                    'country': document.getElementById('country').value
+                });
+            }
+            
+            // Get form data
+            const formData = new FormData(this);
+            
+            // Show confirmation screen
+            this.style.display = 'none';
+            document.getElementById('confirmation-screen').style.display = 'block';
+            
+            // Submit the form data to Netlify
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(() => console.log('Form successfully submitted'))
+            .catch(error => console.error('Form submission error:', error));
+        });
+    });
+    </script>
 </body>
 </html>
