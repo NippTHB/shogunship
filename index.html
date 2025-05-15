@@ -27,6 +27,7 @@
     <!-- Performance Optimization -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
     
     <!-- Google Fonts - Strategically selected for brand perception -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -900,10 +901,14 @@
         <div class="container">
             <h2>Start Your Japanese Shopping Journey</h2>
             <div class="form-container">
-                <form name="shogunship-order" data-netlify="true" netlify-honeypot="bot-field" method="POST">
+                <!-- Enhanced form with direct action and form-name field -->
+                <form name="shogunship-order" data-netlify="true" netlify-honeypot="bot-field" method="POST" action="/">
                     <p class="hidden">
                         <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                     </p>
+                    
+                    <!-- Critical form-name field for Netlify detection -->
+                    <input type="hidden" name="form-name" value="shogunship-order">
                     
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -1115,7 +1120,7 @@
         </div>
     </footer>
 
-    <!-- Combined Functionality Scripts -->
+    <!-- Combined Functionality Scripts with Enhanced Form Handling -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Set form load timestamp for spam protection
@@ -1253,11 +1258,8 @@
         enhancedPreview(document.getElementById('product-url-2'), document.getElementById('preview-2'));
         enhancedPreview(document.getElementById('product-url-3'), document.getElementById('preview-3'));
         
-        // Form submission and confirmation screen
+        // Enhanced form submission with dual-track architecture
         document.querySelector('form[name="shogunship-order"]').addEventListener('submit', function(e) {
-            // Prevent default form submission to handle with JavaScript
-            e.preventDefault();
-            
             // Time-based submission validation (prevent bot rapid submissions)
             const formLoadTime = this.dataset.loadTime || Date.now();
             const timeElapsed = Date.now() - formLoadTime;
@@ -1265,6 +1267,7 @@
             // If form submitted in less than 2 seconds, likely a bot
             if (timeElapsed < 2000) {
                 console.log('Potential spam submission blocked (too fast)');
+                e.preventDefault();
                 return false;
             }
             
@@ -1286,21 +1289,13 @@
                 });
             }
             
-            // Get form data
-            const formData = new FormData(this);
-            
             // Show confirmation screen
             this.style.display = 'none';
             document.getElementById('confirmation-screen').style.display = 'block';
             
-            // Submit the form data to Netlify
-            fetch('/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(formData).toString()
-            })
-            .then(() => console.log('Form successfully submitted'))
-            .catch(error => console.error('Form submission error:', error));
+            // NOTE: We are NOT preventing default form submission
+            // This allows the native HTML form submission to proceed to Netlify
+            // while still showing our confirmation screen
         });
     });
     </script>
