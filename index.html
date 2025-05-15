@@ -902,7 +902,7 @@
             <h2>Start Your Japanese Shopping Journey</h2>
             <div class="form-container">
                 <!-- Enhanced form with direct action and form-name field -->
-                <form name="shogunship-order" data-netlify="true" netlify-honeypot="bot-field" method="POST" action="/">
+                <form name="shogunship-order" data-netlify="true" netlify-honeypot="bot-field" method="POST">
                     <p class="hidden">
                         <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                     </p>
@@ -931,13 +931,29 @@
                             <option value="friend">Friend Recommendation</option>
                             <option value="discord">Discord Community</option>
                             <option value="other">Other</option>
-                            <option value="hoping-to-find">What were you hoping to find?</option>
                         </select>
                     </div>
                     
-                    <div class="form-group hoping-to-find-section" style="display: none;">
-                        <label for="hoping-to-find">Tell us what you were hoping to find:</label>
-                        <textarea id="hoping-to-find" name="hoping-to-find" rows="2" placeholder="I was looking for..."></textarea>
+                    <!-- New Product Interest Field for Market Intelligence -->
+                    <div class="form-group">
+                        <label for="product-interest">What type of items are you interested in?</label>
+                        <select id="product-interest" name="product-interest">
+                            <option value="" disabled selected>Select category (optional)</option>
+                            <option value="anime-figures">Anime Figures</option>
+                            <option value="video-games">Video Games & Consoles</option>
+                            <option value="trading-cards">Trading Cards</option>
+                            <option value="fashion">Fashion & Clothing</option>
+                            <option value="electronics">Electronics & Gadgets</option>
+                            <option value="toys">Toys & Collectibles</option>
+                            <option value="books-manga">Books & Manga</option>
+                            <option value="other">Other (please specify)</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Conditional field for other product interests -->
+                    <div class="form-group other-interest-section" style="display: none;">
+                        <label for="other-interest">Please specify what you're looking for:</label>
+                        <input type="text" id="other-interest" name="other-interest" placeholder="Tell us what you're hoping to find">
                     </div>
                     
                     <div class="form-group">
@@ -1127,13 +1143,34 @@
         const orderForm = document.querySelector('form[name="shogunship-order"]');
         orderForm.dataset.loadTime = Date.now();
         
-        // Hoping to find section toggle
+        // Referral source handling
         document.getElementById('referral-source').addEventListener('change', function() {
-            const hopingSection = document.querySelector('.hoping-to-find-section');
-            if (this.value === 'hoping-to-find') {
-                hopingSection.style.display = 'block';
+            // Any additional referral source handling can go here
+        });
+        
+        // Product interest toggle for "other" option
+        document.getElementById('product-interest').addEventListener('change', function() {
+            const otherInterestSection = document.querySelector('.other-interest-section');
+            if (this.value === 'other') {
+                otherInterestSection.style.display = 'block';
+                
+                // Track for market intelligence
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'other_interest_selected', {
+                        'event_category': 'Market Intelligence',
+                        'event_label': 'Unique Product Interest'
+                    });
+                }
             } else {
-                hopingSection.style.display = 'none';
+                otherInterestSection.style.display = 'none';
+                
+                // Track specific product interest categories
+                if (typeof gtag !== 'undefined' && this.value) {
+                    gtag('event', 'product_interest_selected', {
+                        'event_category': 'Market Intelligence',
+                        'event_label': this.value
+                    });
+                }
             }
         });
         
@@ -1258,8 +1295,11 @@
         enhancedPreview(document.getElementById('product-url-2'), document.getElementById('preview-2'));
         enhancedPreview(document.getElementById('product-url-3'), document.getElementById('preview-3'));
         
-        // Enhanced form submission with dual-track architecture
+        // Enhanced form submission with confirmation screen
         document.querySelector('form[name="shogunship-order"]').addEventListener('submit', function(e) {
+            // Prevent default form submission to handle with JavaScript
+            e.preventDefault();
+            
             // Time-based submission validation (prevent bot rapid submissions)
             const formLoadTime = this.dataset.loadTime || Date.now();
             const timeElapsed = Date.now() - formLoadTime;
@@ -1267,35 +1307,49 @@
             // If form submitted in less than 2 seconds, likely a bot
             if (timeElapsed < 2000) {
                 console.log('Potential spam submission blocked (too fast)');
-                e.preventDefault();
                 return false;
             }
             
             // Track the conversion in Google Analytics
             if (typeof gtag !== 'undefined') {
-                // Enhanced conversion tracking with product count
+                // Enhanced conversion tracking with product count and interest data
                 const productCount = [
                     document.getElementById('product-url-1').value,
                     document.getElementById('product-url-2').value,
                     document.getElementById('product-url-3').value
                 ].filter(Boolean).length;
                 
+                const productInterest = document.getElementById('product-interest').value || 'unspecified';
+                
                 gtag('event', 'form_submission', {
                     'event_category': 'Conversion',
                     'event_label': 'Order Request',
                     'value': productCount,
                     'product_count': productCount,
-                    'country': document.getElementById('country').value
+                    'country': document.getElementById('country').value,
+                    'product_interest': productInterest
                 });
             }
             
-            // Show confirmation screen
+            // Show confirmation screen immediately for optimal UX
             this.style.display = 'none';
             document.getElementById('confirmation-screen').style.display = 'block';
             
-            // NOTE: We are NOT preventing default form submission
-            // This allows the native HTML form submission to proceed to Netlify
-            // while still showing our confirmation screen
+            // Get form data
+            const formData = new FormData(this);
+            
+            // Submit the form data to Netlify programmatically
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(response => {
+                console.log('Form successfully submitted to Netlify');
+            })
+            .catch(error => {
+                console.error('Form submission error:', error);
+            });
         });
     });
     </script>
