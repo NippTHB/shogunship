@@ -4,36 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Primary Meta Tags - Strategically crafted for click-through optimization -->
     <title>ShogunShip | Your Japanese Proxy Shopping Service</title>
     <meta name="title" content="ShogunShip | Your Japanese Proxy Shopping Service">
     <meta name="description" content="Shop from Japanese marketplaces like Mercari, Yahoo Auctions, and Rakuten with ease. We handle purchase, payment, and international shipping for you.">
     <meta name="keywords" content="japan proxy service, mercari japan international, yahoo auctions proxy, japanese shopping service, buy from japan, proxy shipping japan">
 
-    <!-- Open Graph / Facebook - Optimized for social sharing engagement -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://shogunship.netlify.app/">
     <meta property="og:title" content="ShogunShip | Access Japanese Exclusive Items">
     <meta property="og:description" content="Your bridge to Japanese treasures. We help you buy from Mercari, Yahoo Auctions, and Rakuten Japan with no language barrier.">
-    <meta property="og:image" content="https://via.placeholder.com/1200x630">
-
-    <!-- Twitter - Crafted for maximum viral potential -->
-    <meta property="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="https://yourwebsite.com/images/og-image.jpg"> <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://shogunship.netlify.app/">
     <meta property="twitter:title" content="ShogunShip | Japanese Proxy Shopping">
     <meta property="twitter:description" content="Access exclusive Japanese items from Mercari, Yahoo Auctions & more. We handle everything from purchase to international shipping.">
-    <meta property="twitter:image" content="https://via.placeholder.com/1200x630">
-
-    <!-- Performance Optimization -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <meta property="twitter:image" content="https://yourwebsite.com/images/twitter-image.jpg"> <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://www.google-analytics.com">
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
     
-    <!-- Google Fonts - Strategically selected for brand perception -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Google Analytics Implementation -->
-    <!-- Google tag (gtag.js) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2j+PxD/WJp+m/A4+ZR2p8gS6tq/B/u0W54f4A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-07NK010QW6"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -52,10 +43,16 @@
             --background: #F8F9FA;
             --text: #333333;
             --light-text: #6c757d;
+            --border-color-light: #dee2e6; /* New: for subtle borders */
             --success: #28a745;
             --border-radius: 8px;
             --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             --transition: all 0.3s ease;
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
         }
 
         * {
@@ -79,31 +76,63 @@
         }
 
         section {
-            padding: 80px 0;
+            padding: 100px 0; /* Increased padding for more breathing room */
         }
 
         h1, h2, h3, h4 {
             margin-bottom: 20px;
             line-height: 1.2;
+            font-weight: 700; /* Ensure headings are bold */
+        }
+        
+        h1 {
+            font-size: 52px; /* Slightly larger for more impact */
+            font-weight: 800; /* Extra bold for hero */
+            color: var(--secondary);
+        }
+
+        h2 {
+            font-size: 40px; /* Slightly larger for section titles */
+            color: var(--secondary);
+            text-align: center;
         }
 
         p {
+            font-size: 18px; /* Slightly larger base font size for readability */
             margin-bottom: 20px;
+            color: var(--text);
         }
 
         img {
             max-width: 100%;
+            height: auto; /* Ensure aspect ratio is maintained */
+            display: block; /* Remove extra space below images */
         }
 
-        /* Conversion-Optimized Navigation */
+        /* Under Construction Banner */
+        .under-construction-banner {
+            background: #FFD700; /* Gold-ish color */
+            color: #333;
+            text-align: center;
+            padding: 10px 15px;
+            font-size: 16px;
+            font-weight: 600;
+            position: sticky; /* Make it sticky at the very top */
+            top: 0;
+            z-index: 1001; /* Higher than other fixed elements */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Nav adjusted for sticky header */
         .nav {
             background: white;
             padding: 15px 0;
             box-shadow: var(--box-shadow);
-            position: fixed;
+            position: sticky;
+            top: 48px; /* Position below the under construction banner (if present) */
+            z-index: 999;
             width: 100%;
-            top: 0;
-            z-index: 1000;
+            transition: top 0.3s ease;
         }
 
         .nav-container {
@@ -115,36 +144,81 @@
         .logo {
             display: flex;
             align-items: center;
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
+            font-size: 28px; /* Slightly larger logo text */
+            font-weight: 800; /* Bolder logo text */
+            color: var(--secondary); /* Changed logo text color for primary branding */
             text-decoration: none;
+            z-index: 2; /* Ensure logo is above mobile menu */
         }
 
+        /* If you use an actual SVG image file for logo-icon */
         .logo-icon {
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48c3R5bGU+LnN0MHtmaWxsOiNFNzRDM0M7fS5zdDF7ZmlsbDojMkMzRTUwO30uc3Qye2ZpbGw6I0YzOUMxMjt9PC9zdHlsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNNTAgOTBjLTIyLjEgMC00MC0xNy45LTQwLTQwczE3LjktNDAgNDAtNDAgNDAgMTcuOSA0MCA0MC0xNy45IDQwLTQwIDQweiIvPjxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik03MCA2NUg0MHYtNWgzMGMxLjEgMCAyLS45IDItMnMtLjktMi0yLTJINDBWNTFoMzBjMi44IDAgNSAyLjIgNSA1cy0yLjIgNS01IDV6Ii8+PHBhdGggY2xhc3M9InN0MSIgZD0iTTY1IDc1SDM1Yy0yLjggMC01LTIuMi01LTVzMi4yLTUgNS01aDMwYzEuMSAwIDItLjkgMi0ycy0uOS0yLTItMkgzNXYtNWgzMGMyLjggMCA1IDIuMiA1IDVzLTIuMiA1LTUgNXoiLz48cGF0aCBjbGFzcz0ic3QyIiBkPSJNNTAgMzBjLTUuNSAwLTEwIDQuNS0xMCAxMHM0LjUgMTAgMTAgMTAgMTAtNC41IDEwLTEwLTQuNS0xMC0xMC0xMHptMCAxNWMtMi44IDAtNS0yLjItNS01czIuMi01IDUtNSA1IDIuMiA1IDUtMi4yIDUtNSA1eiIvPjwvc3ZnPg==');
+            width: 45px; /* Slightly larger icon */
+            height: 45px;
+            margin-right: 12px;
+            /* Remove background-image if using <img src> */
+        }
+        /* Style for the SVG if kept as background-image */
+        .logo-icon[style*="background-image"] {
             background-size: contain;
             background-repeat: no-repeat;
         }
 
+        .nav-links {
+            display: flex; /* Default for desktop */
+            align-items: center;
+            gap: 30px; /* Spacing between desktop links */
+        }
+
+        .nav-links a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none; /* Hidden by default on desktop */
+            background: none;
+            border: none;
+            font-size: 28px; /* Larger icon */
+            color: var(--secondary);
+            cursor: pointer;
+            z-index: 2; /* Ensure toggle is above mobile menu */
+        }
+
         /* Hero Section - A/B Tested Layout */
         .hero {
-            padding: 160px 0 100px;
+            padding: 180px 0 120px; /* More vertical space */
             background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
             text-align: center;
         }
 
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: var(--secondary);
-        }
-
         .hero p {
-            font-size: 20px;
+            font-size: 22px; /* Slightly larger hero paragraph */
             max-width: 700px;
             margin: 0 auto 40px;
             color: var(--light-text);
@@ -153,21 +227,23 @@
         /* CTA Buttons - Heat-map Optimized */
         .btn {
             display: inline-block;
-            padding: 12px 30px;
+            padding: 14px 35px; /* Larger buttons */
             background: var(--primary);
             color: white;
             text-decoration: none;
             border-radius: var(--border-radius);
-            font-weight: 600;
+            font-weight: 700; /* Bolder button text */
             transition: var(--transition);
             border: none;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 18px; /* Larger button text */
+            letter-spacing: 0.5px; /* Subtle spacing */
         }
 
         .btn:hover {
             background: #c0392b;
-            transform: translateY(-2px);
+            transform: translateY(-3px); /* More pronounced lift */
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Add shadow on hover */
         }
 
         .btn-secondary {
@@ -177,7 +253,10 @@
         }
 
         .btn-secondary:hover {
-            background: rgba(231, 76, 60, 0.1);
+            background: var(--primary); /* Fill background on hover */
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
 
         /* How It Works - Conversion Funnel Section */
@@ -187,8 +266,7 @@
         }
 
         .how-it-works h2 {
-            font-size: 36px;
-            margin-bottom: 60px;
+            margin-bottom: 70px; /* More space below heading */
         }
 
         .steps {
@@ -198,27 +276,35 @@
         }
 
         .step {
-            padding: 30px;
+            padding: 35px; /* More padding inside steps */
             background: var(--background);
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             transition: var(--transition);
+            text-align: left; /* Align text left within steps */
         }
 
         .step:hover {
             transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15); /* Enhanced shadow */
         }
 
         .step-icon {
-            font-size: 48px;
+            font-size: 56px; /* Larger icons */
             margin-bottom: 20px;
             color: var(--primary);
+            text-align: center; /* Center icons */
         }
 
         .step h3 {
-            font-size: 24px;
+            font-size: 26px; /* Larger step headings */
             margin-bottom: 15px;
+            color: var(--secondary);
         }
+        .step p {
+            font-size: 16px; /* Smaller text for detail */
+        }
+
 
         /* Trust Signals - Conversion Rate Boosters */
         .trust-signals {
@@ -228,8 +314,8 @@
         }
 
         .trust-signals h2 {
-            font-size: 36px;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
+            color: white; /* Ensure heading is white */
         }
 
         .trust-grid {
@@ -240,63 +326,85 @@
 
         .trust-item {
             padding: 30px;
+            background: rgba(255,255,255,0.05); /* Subtle background for items */
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        .trust-item:hover {
+            background: rgba(255,255,255,0.1); /* Slightly more opaque on hover */
+            transform: translateY(-5px);
         }
 
         .trust-icon {
-            font-size: 40px;
+            font-size: 48px; /* Larger icons */
             margin-bottom: 20px;
+            color: var(--accent); /* Use accent color for trust icons */
         }
 
-        /* Platforms Section - SEO Optimized */
+        .trust-item h3 {
+            font-size: 24px;
+            color: white;
+        }
+        .trust-item p {
+            color: rgba(255,255,255,0.8); /* Lighter text for contrast */
+            font-size: 16px;
+        }
+
+
+        /* Platforms Section - SEO Value */
         .platforms {
             text-align: center;
             background: white;
         }
 
         .platforms h2 {
-            font-size: 36px;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
         }
 
         .platform-logos {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 40px;
+            gap: 50px; /* Increased gap for better spacing */
             margin-bottom: 40px;
+            align-items: center; /* Vertically align logos */
         }
 
         .platform-logo {
-            max-width: 150px;
+            max-width: 180px; /* Slightly larger logos */
             height: auto;
-            opacity: 0.8;
+            opacity: 0.7; /* Slightly less opaque */
             transition: var(--transition);
+            font-size: 24px; /* Placeholder text size */
+            font-weight: 700;
+            color: var(--light-text);
         }
 
         .platform-logo:hover {
             opacity: 1;
+            transform: scale(1.05); /* Subtle zoom effect */
         }
 
         /* Pricing Section - Value Proposition */
         .pricing {
             text-align: center;
+            background: var(--background); /* Ensure consistency if section above/below is white */
         }
 
         .pricing h2 {
-            font-size: 36px;
             margin-bottom: 20px;
         }
 
         .pricing-subtitle {
             max-width: 700px;
-            margin: 0 auto 60px;
-            color: var(--light-text);
+            margin: 0 auto 70px; /* More space below subtitle */
+            font-size: 18px; /* Consistent with body text */
         }
 
         .pricing-table {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 40px; /* Increased gap */
             margin-bottom: 40px;
         }
 
@@ -305,63 +413,66 @@
             background: white;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            text-align: left; /* Align text left within pricing items */
+            position: relative; /* For potential ribbons */
+        }
+
+        .pricing-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+
+        .pricing-item h3 {
+            font-size: 28px; /* Larger pricing plan titles */
+            margin-bottom: 10px;
+            color: var(--secondary);
+            text-align: center;
         }
 
         .price {
-            font-size: 48px;
-            font-weight: 700;
+            font-size: 56px; /* Larger price */
+            font-weight: 800; /* Bolder price */
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            text-align: center;
         }
 
         .price-detail {
             color: var(--light-text);
-            margin-bottom: 30px;
+            margin-bottom: 35px; /* More space below price detail */
+            font-size: 16px;
+            text-align: center;
         }
 
         .price-features {
             list-style: none;
             margin-bottom: 30px;
+            padding-left: 0; /* Remove default list padding */
         }
 
         .price-features li {
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
+            padding: 12px 0; /* More padding for list items */
+            border-bottom: 1px solid var(--border-color-light); /* Lighter border */
+            font-size: 16px;
+            display: flex;
+            align-items: center;
         }
 
-        /* Testimonials - Social Proof */
-        .testimonials {
-            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+        .price-features li:last-child {
+            border-bottom: none;
+        }
+
+        .price-features li::before {
+            content: '✓'; /* Checkmark icon */
+            color: var(--success);
+            margin-right: 10px;
+            font-weight: 700;
+        }
+        
+        .pricing-item .btn {
+            width: 100%; /* Full width button in pricing cards */
             text-align: center;
-        }
-
-        .testimonials h2 {
-            font-size: 36px;
-            margin-bottom: 60px;
-        }
-
-        .testimonial-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .testimonial {
-            padding: 30px;
-            background: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            margin-bottom: 30px;
-        }
-
-        .testimonial p {
-            font-style: italic;
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        .testimonial cite {
-            font-weight: 600;
-            color: var(--primary);
         }
 
         /* FAQ Section - SEO Value */
@@ -370,33 +481,68 @@
         }
 
         .faq h2 {
-            font-size: 36px;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
         }
 
         .faq-item {
             margin-bottom: 20px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 20px;
+            border: 1px solid var(--border-color-light); /* Added border */
+            border-radius: var(--border-radius);
+            padding: 20px 25px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .faq-item:hover {
+            box-shadow: var(--box-shadow);
+            transform: translateY(-3px);
         }
 
         .faq-question {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 15px;
+            font-size: 22px; /* Larger question text */
+            font-weight: 700;
+            margin-bottom: 0; /* Reset margin, controlled by flex */
             color: var(--secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
         }
 
-        /* Contact Form - Conversion Optimized */
-        .contact {
+        .faq-question .icon {
+            font-size: 24px;
+            margin-left: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active .icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+            opacity: 0;
+            padding-top: 0;
+            font-size: 17px;
+            color: var(--light-text);
+        }
+
+        .faq-answer.open {
+            max-height: 500px; /* Adjust as needed, large enough to contain content */
+            opacity: 1;
+            padding-top: 15px; /* Add padding when open */
+        }
+
+        /* Request Cart Section */
+        .request-cart-section {
             background: var(--background);
         }
 
-        .contact h2 {
-            font-size: 36px;
+        .request-cart-section h2 {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
         }
 
         .form-container {
@@ -408,70 +554,64 @@
             box-shadow: var(--box-shadow);
         }
 
-        .form-group {
+        .form-header {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color-light);
+        }
+
+        .form-header h3 {
+            font-size: 28px;
+            color: var(--secondary);
             margin-bottom: 20px;
         }
 
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
+        .add-item-group {
+            display: flex;
+            gap: 10px;
         }
 
-        input, textarea, select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: var(--border-radius);
-            font-family: inherit;
-            font-size: 16px;
-            transition: var(--transition);
-        }
-
-        input:focus, textarea:focus, select:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
-        }
-
-        textarea {
-            min-height: 120px;
-            resize: vertical;
+        .add-item-group input {
+            flex-grow: 1;
         }
 
         /* Product Preview Styling */
+        /* Note: This styling is primarily for the *new URL input preview* at the top,
+           not for the items once they are in the cart list. */
         .product-preview {
-            margin-top: 10px;
+            margin-top: 15px; /* More space above preview */
             min-height: 0;
             transition: min-height 0.3s ease;
+            position: relative; /* For clear button positioning */
         }
 
-        .preview-loading {
-            background: rgba(0,0,0,0.03);
-            border-radius: 8px;
-            padding: 10px;
-            margin-top: 8px;
-            font-size: 14px;
+        .preview-loading,
+        .preview-error,
+        .preview-content {
+            background: var(--border-color-light); /* Lighter background for previews */
+            border-radius: var(--border-radius);
+            padding: 12px 15px; /* More padding */
+            margin-top: 10px;
+            font-size: 15px; /* Slightly larger preview text */
             color: var(--light-text);
             display: flex;
             align-items: center;
         }
 
-        .preview-content {
-            display: flex;
-            align-items: center;
-            background: rgba(0,0,0,0.03);
-            border-radius: 8px;
-            padding: 10px;
-            margin-top: 8px;
+        .preview-loading i,
+        .preview-error i {
+            margin-right: 10px;
+            font-size: 20px;
+            color: var(--primary);
         }
 
         .preview-image {
-            width: 60px;
-            height: 60px;
+            width: 70px; /* Larger preview image */
+            height: 70px;
             object-fit: cover;
-            border-radius: 4px;
+            border-radius: 6px; /* Slightly larger border-radius */
             margin-right: 15px;
+            border: 1px solid rgba(0,0,0,0.05); /* Subtle border */
         }
 
         .preview-details {
@@ -479,34 +619,161 @@
         }
 
         .preview-title {
-            font-weight: 600;
+            font-weight: 700; /* Bolder title */
             margin-bottom: 5px;
+            color: var(--secondary);
         }
 
         .preview-price {
             color: var(--primary);
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        /* New: Clear button for the URL preview */
+        .preview-clear-button {
+            background: none;
+            border: none;
+            color: var(--light-text);
+            font-size: 18px; /* Slightly smaller for subtle look */
+            cursor: pointer;
+            padding: 5px;
+            line-height: 1;
+            margin-left: 10px;
+            transition: color 0.3s ease;
+        }
+        .preview-clear-button:hover {
+            color: var(--primary);
+        }
+        
+        /* Cart Display */
+        #cart-items-display {
+            border: 1px solid var(--border-color-light);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 30px;
+            min-height: 100px; /* Ensure it's visible even when empty */
+        }
+
+        .empty-cart-message {
+            text-align: center;
+            color: var(--light-text);
+            padding: 20px;
+            font-style: italic;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Still maintains gap for text/controls */
+            padding: 15px 0;
+            border-bottom: 1px dashed var(--border-color-light); /* Dashed border for items */
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Removed .cart-item-image style, as the img tag is removed from HTML */
+        /*
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        */
+
+        .cart-item-details {
+            flex-grow: 1;
+        }
+
+        .cart-item-title {
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 5px;
+            font-size: 17px;
+        }
+
+        .cart-item-price {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .cart-item-url {
+            font-size: 12px;
+            color: var(--light-text);
+            word-break: break-all;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cart-item-quantity input {
+            width: 60px;
+            padding: 8px 10px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .remove-item-button {
+            background: none;
+            border: none;
+            color: #dc3545; /* Bootstrap danger red */
+            font-size: 15px; /* Adjust size to fit text better */
+            cursor: pointer;
+            transition: color 0.3s ease;
+            display: flex; /* Allow icon and text to align */
+            align-items: center;
+            gap: 5px; /* Space between icon and text */
+            padding: 5px 10px; /* Make button clickable area larger */
+            border-radius: var(--border-radius);
             font-weight: 600;
         }
 
-        .preview-error {
-            background: rgba(0,0,0,0.03);
-            border-radius: 8px;
-            padding: 10px;
-            margin-top: 8px;
-            font-size: 14px;
-            color: var(--light-text);
-            display: flex;
-            align-items: center;
+        .remove-item-button:hover {
+            color: #bd2130;
+            background-color: rgba(220, 53, 69, 0.1); /* Light red background on hover */
         }
 
-        .preview-error-icon {
-            margin-right: 10px;
-            color: var(--primary);
-            font-size: 20px;
+        /* Form Group */
+        .form-group {
+            margin-bottom: 25px; /* More space between form groups */
         }
 
-        .add-more-container {
-            margin: 20px 0;
+        label {
+            display: block;
+            margin-bottom: 10px; /* More space below label */
+            font-weight: 600;
+            font-size: 17px;
+            color: var(--secondary);
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 14px 18px; /* Larger padding for inputs */
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            font-size: 17px; /* Larger font size in inputs */
+            transition: var(--transition);
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(231, 76, 60, 0.2); /* Stronger focus ring */
+        }
+
+        textarea {
+            min-height: 140px; /* Slightly taller textarea */
+            resize: vertical;
         }
 
         /* Confirmation Screen */
@@ -514,106 +781,110 @@
             max-width: 700px;
             margin: 0 auto;
             background: white;
-            padding: 40px;
+            padding: 50px; /* More padding for confirmation */
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             text-align: center;
         }
 
         .confirmation-icon {
-            font-size: 64px;
-            margin-bottom: 20px;
+            font-size: 72px; /* Larger icon */
+            margin-bottom: 25px;
             color: var(--success);
         }
 
         .confirmation-content h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
+            font-size: 36px; /* Larger heading */
+            margin-bottom: 25px;
             color: var(--secondary);
+        }
+
+        .confirmation-content p {
+            font-size: 18px;
+            color: var(--light-text);
+            margin-bottom: 30px;
         }
 
         .next-steps {
             text-align: left;
-            margin: 30px 0;
-            padding: 20px;
-            background: rgba(0,0,0,0.02);
+            margin: 40px 0; /* More spacing */
+            padding: 25px;
+            background: rgba(0,0,0,0.03);
             border-radius: var(--border-radius);
         }
 
         .next-steps h3 {
             margin-bottom: 15px;
+            font-size: 24px;
+            color: var(--secondary);
         }
 
         .next-steps ol {
-            padding-left: 20px;
+            padding-left: 25px; /* More padding for list */
         }
 
         .next-steps li {
-            margin-bottom: 10px;
+            margin-bottom: 12px; /* More space between list items */
+            font-size: 17px;
+            color: var(--text);
         }
 
         .social-share {
-            margin: 30px 0;
+            margin: 40px 0;
+        }
+        .social-share p {
+            font-size: 18px;
+            margin-bottom: 20px;
         }
 
         .social-buttons {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px; /* More space between buttons */
             margin-top: 15px;
         }
 
         .social-button {
-            padding: 10px 15px;
+            padding: 12px 20px;
             background: var(--secondary);
             color: white;
             text-decoration: none;
             border-radius: var(--border-radius);
-            font-size: 14px;
+            font-size: 15px;
             transition: var(--transition);
         }
 
         .social-button:hover {
             background: #1a2530;
             transform: translateY(-2px);
-        }
-
-        /* Promo Banner - Urgency Trigger */
-        .promo-banner {
-            background: var(--accent);
-            color: white;
-            text-align: center;
-            padding: 15px;
-            position: relative;
-            z-index: 100;
-        }
-
-        .highlight {
-            background: rgba(255,255,255,0.2);
-            padding: 3px 8px;
-            border-radius: 4px;
-            margin-left: 10px;
-            font-weight: 600;
+            box-shadow: var(--box-shadow);
         }
 
         /* Footer - Trust Building */
         .footer {
             background: var(--secondary);
             color: white;
-            padding: 60px 0 30px;
+            padding: 70px 0 40px; /* More padding */
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjusted min-width */
+            gap: 50px; /* More gap */
+            margin-bottom: 50px;
         }
 
         .footer-heading {
-            font-size: 18px;
-            margin-bottom: 20px;
+            font-size: 20px; /* Larger heading */
+            margin-bottom: 25px; /* More space below heading */
             color: #ffffff;
+            font-weight: 700;
+        }
+        
+        .footer-column p {
+            font-size: 16px; /* Consistent font size */
+            color: rgba(255,255,255,0.8);
+            line-height: 1.7;
         }
 
         .footer-links {
@@ -621,35 +892,44 @@
         }
 
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 12px; /* More space between links */
         }
 
         .footer-links a {
             color: rgba(255,255,255,0.7);
             text-decoration: none;
             transition: var(--transition);
+            font-size: 16px;
         }
 
         .footer-links a:hover {
             color: white;
+            transform: translateX(5px); /* Subtle slide effect */
         }
 
         .footer-bottom {
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: rgba(255,255,255,0.5);
+            padding-top: 40px; /* More padding */
+            border-top: 1px solid rgba(255,255,255,0.15); /* Slightly more visible border */
+            color: rgba(255,255,255,0.6);
+            font-size: 15px;
         }
 
         .social-icons {
             display: flex;
-            gap: 15px;
-            margin-top: 20px;
+            gap: 20px; /* More space between icons */
+            margin-top: 25px;
+            justify-content: flex-start; /* Align social icons to the left */
         }
 
         .social-icon {
             color: white;
-            font-size: 20px;
+            font-size: 24px; /* Larger social icons */
+            transition: var(--transition);
+        }
+        .social-icon:hover {
+            color: var(--accent); /* Change color on hover */
+            transform: translateY(-3px);
         }
 
         /* Hidden class for honeypot */
@@ -659,48 +939,114 @@
 
         /* Enhanced Responsive Design System */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 32px;
+            .under-construction-banner {
+                font-size: 14px;
+                padding: 8px 10px;
             }
-            
-            .form-container {
-                padding: 25px 15px;
+            .nav {
+                top: 40px; /* Adjusted for mobile construction banner */
+                padding: 10px 0;
             }
-            
-            .step {
-                padding: 20px 15px;
-            }
-            
-            .pricing-table {
-                gap: 20px;
-            }
-            
-            .btn {
-                padding: 10px 20px;
-                width: 100%;
-                margin-bottom: 10px;
-            }
-            
             .nav-container {
                 padding: 0 15px;
             }
-            
+            .nav-links {
+                display: none; /* Hide by default on mobile */
+                flex-direction: column;
+                position: absolute;
+                top: 100%; /* Position below the navigation bar */
+                left: 0;
+                width: 100%;
+                background: white;
+                box-shadow: var(--box-shadow);
+                padding: 20px 0;
+                border-top: 1px solid var(--border-color-light);
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s ease, transform 0.3s ease;
+                transform: translateY(-10px);
+                align-items: center; /* Center items in mobile menu */
+                gap: 15px; /* Smaller gap for mobile links */
+            }
+
+            .nav-links.active {
+                display: flex; /* Show when active */
+                opacity: 1;
+                pointer-events: all;
+                transform: translateY(0);
+            }
+
+            .nav-links a {
+                margin: 0; /* Reset margins for mobile links */
+                padding: 10px 0;
+                width: 80%; /* Make links wider for tap targets */
+                text-align: center;
+                border-bottom: 1px solid var(--border-color-light);
+            }
+            .nav-links a:last-of-type { /* Remove border for the last link in mobile menu */
+                border-bottom: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block; /* Show hamburger icon on mobile */
+            }
+
+            section {
+                padding: 60px 0; /* Adjusted for smaller screens */
+            }
             .hero {
                 padding: 130px 0 80px;
+            }
+            .hero h1 {
+                font-size: 38px;
+            }
+            .hero p {
+                font-size: 18px;
+            }
+            h2 {
+                font-size: 32px;
+            }
+            .form-container {
+                padding: 30px 20px;
+            }
+            .step {
+                padding: 25px 20px;
+            }
+            .step h3 {
+                font-size: 22px;
+            }
+            .pricing-table {
+                gap: 30px;
+            }
+            .price {
+                font-size: 48px;
+            }
+            .btn {
+                padding: 12px 25px;
+                font-size: 16px;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            .footer-grid {
+                gap: 30px;
+            }
+            .social-icons {
+                justify-content: center; /* Center social icons on mobile */
             }
         }
 
         @media (min-width: 769px) and (max-width: 1024px) {
             section {
-                padding: 70px 0;
+                padding: 80px 0;
             }
-            
             .container {
                 padding: 0 30px;
             }
-            
             .hero h1 {
-                font-size: 42px;
+                font-size: 48px;
+            }
+            h2 {
+                font-size: 36px;
             }
         }
 
@@ -708,233 +1054,218 @@
             .container {
                 max-width: 1400px;
             }
-            
             .hero {
                 padding: 200px 0 140px;
             }
-            
             .form-container {
                 max-width: 800px;
+            }
+            section {
+                padding: 120px 0;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Urgency Banner - Conversion Trigger -->
-    <div class="promo-banner">
-        <p><strong>Launch Special:</strong> First 50 customers receive 10% off service fees! <span class="highlight">39 spots left</span></p>
+    <div class="under-construction-banner">
+        <p>🚧 This site is still under construction! Please check back in a few days for our full launch. 🚧</p>
     </div>
 
-    <!-- Navigation - Optimized for CRO -->
     <nav class="nav">
         <div class="container nav-container">
-            <a href="#" class="logo">
-                <div class="logo-icon"></div>
+            <a href="index.html" class="logo">
+                <div class="logo-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48c3R5bGU+LnN0MHtmaWxsOiNFNzRDM0M7fS5zdDF7ZmlsbDojMkMzRTUwO30uc3Qye2ZpbGw6I0YzOUMxMjt9PC9zdHlsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNNTAgOTBjLTIyLjEgMC00MC0xNy45LTQwLTQwczE3LjktNDAgNDAtNDAgNDAgMTcuOSA0MCA0MC0xNy45IDQwLTQwIDQweiIvPjxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik03MCA2NUg0MHYtNWgzMGMxLjEgMCAyLS45IDItMnMtLjktMi0yLTJINDBWNTFoMzBjMi44IDAgNSAyLjIgNSA1cy0yLjIgNS01IDV6Ii8+PHBhdGggY2xhc3M9InN0MSIgZD0ibTY1IDc1SDM1Yy0yLjggMC01LTIuMi01LTVzMi4yLTUgNS01aDMwYzEuMSAwIDItLjkgMi0ycy0uOS0yLTItMkgzNXYtNWgzMGMyLjggMCA1IDIuMiA1IDVzLTIuMiA1LTUgNXoiLz48cGF0aCBjbGFzcz0ic3QyIiBkPSJNNTAgMzBjLTUuNSAwLTEwIDQuNS0xMCAxMHM0LjUgMTAgMTAgMTAgMTAtNC41IDEwLTEwLTQuNS0xMC0xMC0xMHptMCAxNWMtMi44IDAtNS0yLjItNS01czIuMi01IDUtNSA1IDIuMiA1IDUtMi4yIDUtNSA1eiIvPjwvc3ZnPg==');"></div>
                 <span>ShogunShip</span>
             </a>
             <div class="nav-links">
-                <!-- Mobile menu will be added later -->
+                <a href="#how-it-works">How It Works</a>
+                <a href="#platforms">Platforms</a>
+                <a href="#pricing">Pricing</a>
+                <a href="about.html">About Us</a> <a href="contact.html">Contact</a> <a href="#request-cart-section" class="btn">Request Item</a>
             </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section - A/B Tested Copy -->
     <section class="hero">
         <div class="container">
-            <h1>Your Bridge to Japanese Treasures</h1>
-            <p>We help you shop from Mercari, Yahoo Auctions, and Rakuten Japan with no language barrier or shipping headaches.</p>
-            <a href="#contact" class="btn">Start Shopping Now</a>
+            <h1>Unlock the World of Japanese Treasures</h1>
+            <p>We help you shop from Mercari, Yahoo Auctions, and Rakuten Japan with no language barrier or shipping headaches. Your dream items are just a click away!</p>
+            <a href="#request-cart-section" class="btn">Start Your Request Now</a>
         </div>
     </section>
 
-    <!-- How It Works - Conversion Funnel -->
     <section class="how-it-works" id="how-it-works">
         <div class="container">
-            <h2>How It Works</h2>
+            <h2>Your Path to Japanese Items, Simplified</h2>
             <div class="steps">
                 <div class="step">
-                    <div class="step-icon">🔍</div>
-                    <h3>1. Browse & Share</h3>
-                    <p>Find items on Japanese websites and share the links with us. We'll handle the translation and verification.</p>
+                    <div class="step-icon"><i class="fas fa-magnifying-glass"></i></div>
+                    <h3>1. Discover & Share</h3>
+                    <p>Browse your favorite Japanese marketplaces. Once you find something you love, simply share the product link with us.</p>
                 </div>
                 <div class="step">
-                    <div class="step-icon">💰</div>
-                    <h3>2. We Purchase</h3>
-                    <p>We buy the items on your behalf, handling all Japanese communication and payment processes securely.</p>
+                    <div class="step-icon"><i class="fas fa-hand-holding-dollar"></i></div>
+                    <h3>2. We Handle Purchase</h3>
+                    <p>Our team expertly purchases the items on your behalf, navigating all local payment and communication complexities.</p>
                 </div>
                 <div class="step">
-                    <div class="step-icon">🚚</div>
-                    <h3>3. Receive</h3>
-                    <p>We package and ship your items directly to your door, with full tracking and insurance options available.</p>
+                    <div class="step-icon"><i class="fas fa-box-open"></i></div>
+                    <h3>3. Receive Your Items</h3>
+                    <p>We consolidate, package, and ship your items directly to your global doorstep with reliable tracking and insurance.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trust Signals - Conversion Rate Boosters -->
     <section class="trust-signals">
         <div class="container">
-            <h2>Why Choose ShogunShip</h2>
+            <h2>Why ShogunShip is Your Trusted Partner</h2>
             <div class="trust-grid">
                 <div class="trust-item">
-                    <div class="trust-icon">🔒</div>
-                    <h3>Secure Payments</h3>
-                    <p>Your transactions are protected with bank-level security</p>
+                    <div class="trust-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Secure & Safe</h3>
+                    <p>Your transactions are protected with industry-leading security measures.</p>
                 </div>
                 <div class="trust-item">
-                    <div class="trust-icon">🚚</div>
-                    <h3>Reliable Shipping</h3>
-                    <p>Full tracking from purchase to your doorstep</p>
+                    <div class="trust-icon"><i class="fas fa-truck-fast"></i></div>
+                    <h3>Global Shipping</h3>
+                    <p>Reliable and tracked delivery to over 100 countries worldwide.</p>
                 </div>
                 <div class="trust-item">
-                    <div class="trust-icon">💬</div>
-                    <h3>Language Support</h3>
-                    <p>We handle all Japanese communication for you</p>
+                    <div class="trust-icon"><i class="fas fa-comments"></i></div>
+                    <h3>Seamless Communication</h3>
+                    <p>We bridge the language gap, handling all Japanese interactions for you.</p>
                 </div>
                 <div class="trust-item">
-                    <div class="trust-icon">💯</div>
-                    <h3>Authenticity Guaranteed</h3>
-                    <p>We verify all items before shipping</p>
+                    <div class="trust-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>Authenticity Verified</h3>
+                    <p>Every item is inspected to ensure it matches the description before shipping.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Platforms Section - SEO Value -->
     <section class="platforms" id="platforms">
         <div class="container">
-            <h2>Japanese Platforms We Support</h2>
+            <h2>Access the Best of Japan: Supported Platforms</h2>
             <div class="platform-logos">
-                <!-- Replace with actual logos later -->
-                <div class="platform-logo">Mercari</div>
-                <div class="platform-logo">Yahoo Auctions</div>
-                <div class="platform-logo">Rakuten</div>
-                <div class="platform-logo">Amazon Japan</div>
+                <img src="https://via.placeholder.com/150x50/cccccc/333333?text=Mercari" alt="Mercari Logo" class="platform-logo">
+                <img src="https://via.placeholder.com/150x50/cccccc/333333?text=Yahoo+Auctions" alt="Yahoo Auctions Logo" class="platform-logo">
+                <img src="https://via.placeholder.com/150x50/cccccc/333333?text=Rakuten" alt="Rakuten Logo" class="platform-logo">
+                <img src="https://via.placeholder.com/150x50/cccccc/333333?text=Amazon+Japan" alt="Amazon Japan Logo" class="platform-logo">
             </div>
-            <p>Can't find what you're looking for? We can source from other Japanese websites too!</p>
+            <p>Can't find what you're looking for? We can also source from other specialized Japanese websites!</p>
+            <a href="#request-cart-section" class="btn btn-secondary">Request Special Source</a>
         </div>
     </section>
 
-    <!-- Pricing - Value Proposition -->
     <section class="pricing" id="pricing">
         <div class="container">
-            <h2>Simple, Transparent Pricing</h2>
-            <p class="pricing-subtitle">No hidden fees, no surprises. Just straightforward service charges.</p>
+            <h2>Transparent Pricing, No Hidden Surprises</h2>
+            <p class="pricing-subtitle">Our straightforward fees ensure you always know what you're paying. Get the best value for your Japanese imports.</p>
             <div class="pricing-table">
                 <div class="pricing-item">
                     <h3>Service Fee</h3>
                     <div class="price">10%</div>
-                    <p class="price-detail">of item purchase price</p>
+                    <p class="price-detail">of item purchase price (minimum fee may apply)</p>
                     <ul class="price-features">
-                        <li>Item sourcing</li>
-                        <li>Purchase processing</li>
-                        <li>Seller communication</li>
-                        <li>Payment handling</li>
+                        <li>Item sourcing & verification</li>
+                        <li>Secure purchase processing</li>
+                        <li>Direct seller communication</li>
+                        <li>Safe payment handling</li>
+                        <li>Warehouse receiving & initial inspection</li>
                     </ul>
+                    <a href="#request-cart-section" class="btn">Get a Quote</a>
                 </div>
                 <div class="pricing-item">
-                    <h3>Shipping</h3>
+                    <h3>International Shipping</h3>
                     <div class="price">Varies</div>
-                    <p class="price-detail">based on weight & destination</p>
+                    <p class="price-detail">based on weight, dimensions & destination</p>
                     <ul class="price-features">
-                        <li>Domestic shipping in Japan</li>
-                        <li>International shipping</li>
-                        <li>Packaging & handling</li>
-                        <li>Tracking number provided</li>
+                        <li>Consolidation of multiple items</li>
+                        <li>Professional packaging</li>
+                        <li>Choice of shipping methods (EMS, Airmail, Surface)</li>
+                        <li>Full international tracking</li>
+                        <li>Optional insurance coverage</li>
                     </ul>
+                    <a href="#faq" class="btn btn-secondary">Learn More</a>
                 </div>
             </div>
-            <p>All payments in USD. Sales tax and import duties may apply depending on your country.</p>
+            <p>All prices are in USD. Please note that local sales tax, customs duties, and import fees may apply upon delivery, depending on your country's regulations.</p>
         </div>
     </section>
 
-    <!-- Testimonials - Social Proof -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <h2>What Our Customers Say</h2>
-            <div class="testimonial-container">
-                <blockquote class="testimonial">
-                    <p>"ShogunShip helped me acquire rare anime figures that were impossible to find elsewhere. Their service was smooth and communication excellent."</p>
-                    <cite>- Alex K., Collector</cite>
-                </blockquote>
-                <blockquote class="testimonial">
-                    <p>"I've tried other proxy services before, but ShogunShip offers the best rates and fastest shipping. Their team goes above and beyond to find exactly what you need."</p>
-                    <cite>- Maria S., Fashion Enthusiast</cite>
-                </blockquote>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section - SEO Value -->
     <section class="faq" id="faq">
         <div class="container">
-            <h2>Frequently Asked Questions</h2>
+            <h2>Your Questions, Answered</h2>
             <div class="faq-item">
-                <div class="faq-question">How long does shipping take?</div>
+                <div class="faq-question">How long does shipping typically take?<span class="icon">▼</span></div>
                 <div class="faq-answer">
-                    <p>Shipping typically takes 7-14 business days, depending on your location and the shipping method selected. Express options are available for faster delivery.</p>
+                    <p>Shipping times vary based on your chosen method and destination. Generally, express shipping (EMS) takes 3-7 business days, standard airmail 7-14 business days, and surface mail 1-3 months. We provide tracking for all international shipments.</p>
                 </div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">What payment methods do you accept?</div>
+                <div class="faq-question">What payment methods do you accept?<span class="icon">▼</span></div>
                 <div class="faq-answer">
-                    <p>We accept PayPal, credit cards, and bank transfers. All payments are processed securely.</p>
+                    <p>We accept a variety of secure payment methods, including major credit cards (Visa, Mastercard, American Express), PayPal, and international bank transfers. All payments are processed in USD.</p>
                 </div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Can I buy from any Japanese website?</div>
+                <div class="faq-question">Can I buy from any Japanese website?<span class="icon">▼</span></div>
                 <div class="faq-answer">
-                    <p>We primarily support Mercari, Yahoo Auctions, Rakuten, and Amazon Japan. For other websites, please contact us to check availability.</p>
+                    <p>While we primarily support top marketplaces like Mercari, Yahoo Auctions, Rakuten, and Amazon Japan, we are often able to assist with purchases from other Japanese online stores. Please submit your link, and we'll confirm feasibility.</p>
                 </div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">What happens if an item is damaged or not as described?</div>
+                <div class="faq-question">What if my item arrives damaged or is not as described?<span class="icon">▼</span></div>
                 <div class="faq-answer">
-                    <p>We inspect all items before shipping. If we notice any issues, we'll contact you immediately. For items that arrive damaged, we'll help you file a claim with the shipping carrier.</p>
+                    <p>We conduct a thorough inspection of all items upon arrival at our warehouse to ensure they match the description and are in good condition. If any issues are found, we will notify you immediately. For damage incurred during international transit, we will assist you in filing a claim with the shipping carrier, especially if insurance was opted for.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Are there any items you cannot purchase or ship?<span class="icon">▼</span></div>
+                <div class="faq-answer">
+                    <p>Yes, certain items are restricted due to international shipping regulations (e.g., aerosols, batteries, weapons, perishable goods) or platform-specific rules. We will inform you if your requested item falls under these categories. Please refer to our Terms of Service for a detailed list.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form - Conversion Optimized -->
-    <section class="contact" id="contact">
+    <section class="request-cart-section" id="request-cart-section">
         <div class="container">
-            <h2>Start Your Japanese Shopping Journey</h2>
+            <h2>Your Japanese Shopping Cart</h2>
             <div class="form-container">
-                <!-- Enhanced form with direct action and form-name field -->
+                <div class="form-header">
+                    <h3>Add items to your request list:</h3>
+                    <div class="add-item-group">
+                        <input type="url" id="new-product-url" placeholder="Paste Mercari, Yahoo Auctions, or Rakuten URL" required>
+                        <button type="button" id="add-to-cart-button" class="btn">Add to List</button>
+                    </div>
+                    <div id="new-url-preview" class="product-preview"></div>
+                </div>
+
+                <div id="cart-items-display">
+                    <p class="empty-cart-message">Your list is empty. Add a product URL above to begin, or fill out the form below for a general inquiry.</p>
+                </div>
+
                 <form name="shogunship-order" data-netlify="true" netlify-honeypot="bot-field" method="POST">
                     <p class="hidden">
                         <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                     </p>
-                    
-                    <!-- Critical form-name field for Netlify detection -->
                     <input type="hidden" name="form-name" value="shogunship-order">
-                    
-                    <div class="form-group">
-                        <label for="name">Name</label>
+                    <input type="hidden" name="cart-data" id="cart-data-input"> <div class="form-group">
+                        <label for="name">Your Full Name</label>
                         <input type="text" id="name" name="name" required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="email">Email</label>
+                        <label for="email">Your Email Address</label>
                         <input type="email" id="email" name="email" required>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="referral-source">How did you hear about us?</label>
-                        <select id="referral-source" name="referral-source" required>
-                            <option value="" disabled selected>Please select...</option>
-                            <option value="google">Google Search</option>
-                            <option value="reddit">Reddit</option>
-                            <option value="instagram">Instagram</option>
-                            <option value="youtube">YouTube</option>
-                            <option value="friend">Friend Recommendation</option>
-                            <option value="discord">Discord Community</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    
-                    <!-- New Product Interest Field for Market Intelligence -->
                     <div class="form-group">
                         <label for="product-interest">What type of items are you interested in?</label>
                         <select id="product-interest" name="product-interest">
@@ -946,18 +1277,19 @@
                             <option value="electronics">Electronics & Gadgets</option>
                             <option value="toys">Toys & Collectibles</option>
                             <option value="books-manga">Books & Manga</option>
+                            <option value="j-pop-goods">J-Pop/Idol Goods</option>
+                            <option value="traditional-crafts">Traditional Crafts</option>
                             <option value="other">Other (please specify)</option>
                         </select>
                     </div>
                     
-                    <!-- Conditional field for other product interests -->
                     <div class="form-group other-interest-section" style="display: none;">
                         <label for="other-interest">Please specify what you're looking for:</label>
-                        <input type="text" id="other-interest" name="other-interest" placeholder="Tell us what you're hoping to find">
+                        <input type="text" id="other-interest" name="other-interest" placeholder="E.g., Vintage Kimonos, Rare Vinyl Records">
                     </div>
                     
                     <div class="form-group">
-                        <label for="country">Your Country</label>
+                        <label for="country">Your Shipping Country</label>
                         <select id="country" name="country" required>
                             <option value="" disabled selected>Select your country</option>
                             <optgroup label="Popular Destinations">
@@ -983,7 +1315,6 @@
                                 <option value="ES">Spain</option>
                                 <option value="SE">Sweden</option>
                                 <option value="CH">Switzerland</option>
-                                <!-- Added more European countries -->
                                 <option value="BG">Bulgaria</option>
                                 <option value="HR">Croatia</option>
                                 <option value="CY">Cyprus</option>
@@ -1025,90 +1356,62 @@
                     
                     <div class="form-group other-country-section" style="display: none;">
                         <label for="other-country">Please specify your country:</label>
-                        <input type="text" id="other-country" name="other-country" placeholder="Enter your country">
+                        <input type="text" id="other-country" name="other-country" placeholder="Enter your country name">
                     </div>
                     
                     <div class="form-group">
-                        <label for="product-url-1">Japanese Product URL 1</label>
-                        <input type="url" id="product-url-1" name="product-url-1" 
-                               placeholder="Paste Mercari, Yahoo Auctions, or Rakuten URL" required>
-                        <div id="preview-1" class="product-preview"></div>
-                    </div>
-                    
-                    <div class="add-more-container">
-                        <button type="button" id="add-more-button" class="btn-secondary">+ Add more items (up to 3)</button>
-                    </div>
-                    
-                    <div id="additional-urls" style="display: none;">
-                        <div class="form-group">
-                            <label for="product-url-2">Japanese Product URL 2 (Optional)</label>
-                            <input type="url" id="product-url-2" name="product-url-2" 
-                                   placeholder="Add another item to your request">
-                            <div id="preview-2" class="product-preview"></div>
-                        </div>
-                        
-                        <div class="form-group" id="url-3-container">
-                            <label for="product-url-3">Japanese Product URL 3 (Optional)</label>
-                            <input type="url" id="product-url-3" name="product-url-3" 
-                                   placeholder="Add another item to your request">
-                            <div id="preview-3" class="product-preview"></div>
-                        </div>
+                        <label for="budget">Your Maximum Budget for these items (USD)</label>
+                        <input type="number" id="budget" name="budget" placeholder="E.g., 500 (optional)">
                     </div>
                     
                     <div class="form-group">
-                        <label for="budget">Maximum Budget (USD)</label>
-                        <input type="number" id="budget" name="budget" placeholder="Optional">
+                        <label for="message">Any Additional Details or Questions?</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Specific requirements, preferred condition, size, color, or questions about the item..."></textarea>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="message">Additional Details</label>
-                        <textarea id="message" name="message" rows="4" placeholder="Specific requirements, questions, or preferences"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn">Request These Items</button>
+                    <button type="submit" class="btn" id="submit-request-button">Submit My Item Request (0 items)</button>
                 </form>
                 
                 <div id="confirmation-screen" style="display: none;" class="confirmation-container">
                     <div class="confirmation-content">
                         <div class="confirmation-icon">✅</div>
-                        <h2>Request Received!</h2>
-                        <p>We'll review your items and get back to you within 24 hours with availability and pricing.</p>
+                        <h2>Your Request Has Been Received!</h2>
+                        <p>Thank you for choosing ShogunShip. We'll meticulously review your requested items and get back to you within 24 hours with availability and a comprehensive quote.</p>
                         
                         <div class="next-steps">
                             <h3>What happens next?</h3>
                             <ol>
-                                <li>We'll check availability and condition of your requested items</li>
-                                <li>You'll receive a quote via email with payment instructions</li>
-                                <li>After payment, we'll secure your items and arrange shipping</li>
+                                <li>Our team will verify the availability and condition of your items.</li>
+                                <li>You'll receive a detailed quote via email with secure payment instructions.</li>
+                                <li>Once payment is confirmed, we'll purchase your items and prepare them for international shipping.</li>
                             </ol>
                         </div>
                         
                         <div class="social-share">
                             <p>Know someone who might love our service?</p>
                             <div class="social-buttons">
-                                <a href="#" class="social-button">Share on Instagram</a>
-                                <a href="#" class="social-button">Share on Twitter</a>
+                                <a href="https://www.instagram.com/share?url=https://shogunship.netlify.app/&text=Discover exclusive Japanese items with ShogunShip! #JapanProxy #ShogunShip" target="_blank" class="social-button">Share on Instagram</a>
+                                <a href="https://twitter.com/intent/tweet?url=https://shogunship.netlify.app/&text=Access exclusive Japanese items from Mercari, Yahoo Auctions & more with ShogunShip! #JapanProxy" target="_blank" class="social-button">Share on Twitter</a>
                             </div>
                         </div>
                         
-                        <button class="btn" onclick="window.location.reload()">Request Another Item</button>
+                        <button class="btn" onclick="window.location.reload()">Submit Another Request</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer - Trust Building -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column">
                     <h4 class="footer-heading">ShogunShip</h4>
-                    <p>Your trusted bridge to Japanese treasures. We make shopping from Japan simple, secure, and stress-free.</p>
+                    <p>Your trusted bridge to Japanese treasures. We make shopping from Japan simple, secure, and stress-free, connecting you to exclusive items worldwide.</p>
                     <div class="social-icons">
-                        <a href="#" class="social-icon">📱</a>
-                        <a href="#" class="social-icon">📸</a>
-                        <a href="#" class="social-icon">🐦</a>
+                        <a href="https://instagram.com/your-shogunship-instagram" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/your-shogunship-twitter" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="mailto:shogunship.business@gmail.com" aria-label="Email Us"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -1117,16 +1420,18 @@
                         <li><a href="#how-it-works">How It Works</a></li>
                         <li><a href="#platforms">Supported Platforms</a></li>
                         <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4 class="footer-heading">Legal</h4>
+                    <h4 class="footer-heading">Legal & Support</h4>
                     <ul class="footer-links">
                         <li><a href="#">Terms of Service</a></li>
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Refund Policy</a></li>
                         <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="contact.html">Contact Support</a></li>
                     </ul>
                 </div>
             </div>
@@ -1136,40 +1441,346 @@
         </div>
     </footer>
 
-    <!-- Combined Functionality Scripts with Enhanced Form Handling -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Set form load timestamp for spam protection
         const orderForm = document.querySelector('form[name="shogunship-order"]');
         orderForm.dataset.loadTime = Date.now();
         
-        // Referral source handling
-        document.getElementById('referral-source').addEventListener('change', function() {
-            // Any additional referral source handling can go here
+        // --- Cart/Request List Functionality ---
+        let cartItems = []; // Array to hold cart items
+        const MAX_ITEMS = 3; // Define the maximum number of items
+
+        const newProductUrlInput = document.getElementById('new-product-url');
+        const addToCartButton = document.getElementById('add-to-cart-button');
+        const newUrlPreviewContainer = document.getElementById('new-url-preview');
+        const cartItemsDisplay = document.getElementById('cart-items-display');
+        const cartDataInput = document.getElementById('cart-data-input');
+        const submitRequestButton = document.getElementById('submit-request-button');
+
+        // Load cart from localStorage on page load
+        function loadCart() {
+            const savedCart = localStorage.getItem('shogunShipCart');
+            if (savedCart) {
+                try {
+                    cartItems = JSON.parse(savedCart);
+                } catch (e) {
+                    console.error("Error parsing cart from localStorage:", e);
+                    cartItems = [];
+                }
+            }
+            renderCart();
+            updateSubmitButtonState(); // Update state on load
+            updateAddItemControls(); // Ensure add controls reflect current cart state on load
+        }
+
+        // Save cart to localStorage
+        function saveCart() {
+            localStorage.setItem('shogunShipCart', JSON.stringify(cartItems));
+            updateSubmitButtonState(); // Update state when cart changes
+        }
+
+        // Render cart items to the display area
+        function renderCart() {
+            cartItemsDisplay.innerHTML = ''; // Clear current display
+
+            if (cartItems.length === 0) {
+                cartItemsDisplay.innerHTML = '<p class="empty-cart-message">Your list is empty. Add a product URL above to begin, or fill out the form below for a general inquiry.</p>';
+            } else {
+                cartItems.forEach(item => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.classList.add('cart-item');
+                    itemDiv.innerHTML = `
+                        <div class="cart-item-details">
+                            <div class="cart-item-title">${item.title}</div>
+                            <div class="cart-item-price">${item.price}</div>
+                            <div class="cart-item-url"><a href="${item.url}" target="_blank" rel="noopener noreferrer">${item.url.length > 70 ? item.url.substring(0, 70) + '...' : item.url}</a></div>
+                        </div>
+                        <div class="cart-item-actions">
+                            <div class="cart-item-quantity">
+                                <input type="number" min="1" value="${item.quantity}" data-item-id="${item.id}" aria-label="Quantity for ${item.title}">
+                            </div>
+                            <button class="remove-item-button" data-item-id="${item.id}" aria-label="Remove item ${item.title}">
+                                <i class="fas fa-trash-alt"></i> Remove
+                            </button>
+                        </div>
+                    `;
+                    cartItemsDisplay.appendChild(itemDiv);
+                });
+
+                // Add event listeners for quantity changes and remove buttons
+                cartItemsDisplay.querySelectorAll('.cart-item-quantity input').forEach(input => {
+                    input.addEventListener('change', function() {
+                        const itemId = this.dataset.itemId;
+                        const newQuantity = parseInt(this.value, 10);
+                        if (!isNaN(newQuantity) && newQuantity > 0) {
+                            updateItemQuantity(itemId, newQuantity);
+                        } else {
+                            this.value = cartItems.find(item => item.id === itemId).quantity; // Revert if invalid
+                        }
+                    });
+                });
+
+                cartItemsDisplay.querySelectorAll('.remove-item-button').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const itemId = this.dataset.itemId;
+                        removeItemFromCart(itemId);
+                    });
+                });
+            }
+            updateAddItemControls(); // Update add item button state after rendering cart
+        }
+
+        // Update submit button state and text (always enabled now)
+        function updateSubmitButtonState() {
+            const itemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+            submitRequestButton.textContent = `Submit My Item Request (${itemCount} item${itemCount !== 1 ? 's' : ''})`;
+            // submitRequestButton.disabled is always false now
+        }
+
+        // Update the state of the Add to List button and preview based on MAX_ITEMS
+        function updateAddItemControls() {
+            if (cartItems.length >= MAX_ITEMS) {
+                addToCartButton.disabled = true;
+                newProductUrlInput.disabled = true;
+                newProductUrlInput.value = ''; // Clear input if limit reached
+                newUrlPreviewContainer.innerHTML = `<div class="preview-error"><i class="fas fa-info-circle"></i> You've reached the limit of ${MAX_ITEMS} items. Please remove one to add more.</div>`;
+            } else {
+                addToCartButton.disabled = false;
+                newProductUrlInput.disabled = false;
+                // Only clear preview if not already showing an error or success message from add attempt
+                const currentPreviewContent = newUrlPreviewContainer.innerHTML;
+                if (!currentPreviewContent.includes('preview-error') && !currentPreviewContent.includes('preview-content')) {
+                     newUrlPreviewContainer.innerHTML = ''; // Clear only if empty or a generic message
+                }
+            }
+            setupClearButton(); // Ensure clear button is always set up for any message
+        }
+
+        // Add item to cart logic
+        addToCartButton.addEventListener('click', function() {
+            const url = newProductUrlInput.value.trim();
+            if (!url) {
+                newUrlPreviewContainer.innerHTML = '<div class="preview-error"><i class="fas fa-exclamation-circle"></i> Please enter a URL. <button class="preview-clear-button"><i class="fas fa-times-circle"></i></button></div>';
+                setupClearButton(); // Setup clear button for this error message
+                return;
+            }
+
+            if (cartItems.length >= MAX_ITEMS) {
+                 newUrlPreviewContainer.innerHTML = `<div class="preview-error"><i class="fas fa-info-circle"></i> You've reached the limit of ${MAX_ITEMS} items. Please remove one to add more. <button class="preview-clear-button"><i class="fas fa-times-circle"></i></button></div>`;
+                 setupClearButton(); // Setup clear button for this error message
+                 return;
+            }
+
+            // Check if item already exists in cart by URL (to prevent duplicates)
+            const existingItem = cartItems.find(item => item.url === url);
+            if (existingItem) {
+                newUrlPreviewContainer.innerHTML = '<div class="preview-error"><i class="fas fa-info-circle"></i> This item is already in your list. You can adjust its quantity. <button class="preview-clear-button"><i class="fas fa-times-circle"></i></button></div>';
+                setupClearButton(); // Setup clear button for this error message
+                return;
+            }
+
+            newUrlPreviewContainer.innerHTML = '<div class="preview-loading"><i class="fas fa-spinner fa-spin"></i> Checking item...</div>';
+            
+            // Simulate API call for product details (removed thumbnail properties)
+            setTimeout(() => {
+                let itemData = {};
+                const platform = getPlatformFromUrl(url);
+                const itemId = extractItemId(url);
+
+                if (url.includes('mercari.com') || url.includes('buyee.jp/mercari')) {
+                    itemData = {
+                        id: crypto.randomUUID(), // Unique ID for cart item
+                        url: url,
+                        title: `Mercari Item #${itemId || 'Unknown ID'}`,
+                        price: `¥${(Math.floor(Math.random() * 10000) + 1000).toLocaleString('ja-JP')}`,
+                        quantity: 1,
+                        platform: platform
+                    };
+                } else if (url.includes('yahoo.co.jp') || url.includes('buyee.jp/yahoo')) {
+                    itemData = {
+                        id: crypto.randomUUID(),
+                        url: url,
+                        title: `Yahoo Auctions Item #${itemId || 'Unknown ID'}`,
+                        price: `Bid on Going`,
+                        quantity: 1,
+                        platform: platform
+                    };
+                } else if (url.includes('rakuten.co.jp')) {
+                    itemData = {
+                        id: crypto.randomUUID(),
+                        url: url,
+                        title: `Rakuten Product #${itemId || 'Unknown ID'}`,
+                        price: `Price from Seller`,
+                        quantity: 1,
+                        platform: platform
+                    };
+                } else if (url.includes('amazon.co.jp')) {
+                    itemData = {
+                        id: crypto.randomUUID(),
+                        url: url,
+                        title: `Amazon JP Product #${itemId || 'Unknown ID'}`,
+                        price: `Check Details`,
+                        quantity: 1,
+                        platform: platform
+                    };
+                } else {
+                    itemData = {
+                        id: crypto.randomUUID(),
+                        url: url,
+                        title: `Japanese Item (Other Site)`,
+                        price: `Price to be confirmed`,
+                        quantity: 1,
+                        platform: platform
+                    };
+                }
+
+                // Add to cart logic
+                cartItems.push(itemData);
+                saveCart();
+                renderCart(); // Re-render the cart to show the new item
+                newProductUrlInput.value = ''; // Clear input
+                newUrlPreviewContainer.innerHTML = '<div class="preview-content"><i class="fas fa-check-circle"></i> Item added to your request list! <button class="preview-clear-button"><i class="fas fa-times-circle"></i></button></div>';
+                setupClearButton(); // Ensure clear button is available on success
+                updateAddItemControls(); // Re-evaluate button/input state after adding
+                
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'add_to_cart', {
+                        'event_category': 'Engagement',
+                        'event_label': `Added item from ${platform}`,
+                        'value': 1 // 1 item added
+                    });
+                }
+            }, 800);
         });
-        
+
+        // Setup the clear button for the URL preview
+        function setupClearButton() {
+            const clearButton = newUrlPreviewContainer.querySelector('.preview-clear-button');
+            if (clearButton) {
+                clearButton.addEventListener('click', function() {
+                    newProductUrlInput.value = '';
+                    newUrlPreviewContainer.innerHTML = '';
+                    updateAddItemControls(); // Re-enable if needed
+                });
+            }
+        }
+
+        // Update item quantity in cart
+        function updateItemQuantity(itemId, newQuantity) {
+            const itemIndex = cartItems.findIndex(item => item.id === itemId);
+            if (itemIndex > -1) {
+                cartItems[itemIndex].quantity = newQuantity;
+                saveCart();
+                // No need to re-render the whole cart if only quantity changed on the input itself
+                updateSubmitButtonState(); // Ensure item count is updated
+            }
+        }
+
+        // Remove item from cart
+        function removeItemFromCart(itemId) {
+            cartItems = cartItems.filter(item => item.id !== itemId);
+            saveCart();
+            renderCart(); // Re-render the cart to remove the item visually
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'remove_from_cart', {
+                    'event_category': 'Engagement',
+                    'event_label': 'Item removed from list'
+                });
+            }
+            updateAddItemControls(); // Re-evaluate button/input state after removing
+        }
+
+        // Initial preview for the new URL input field (when user types/blurs)
+        newProductUrlInput.addEventListener('blur', function() {
+            const url = this.value.trim();
+            if (!url) {
+                newUrlPreviewContainer.innerHTML = ''; // Clear preview if input is empty
+                return;
+            }
+
+            if (cartItems.length >= MAX_ITEMS) {
+                 newUrlPreviewContainer.innerHTML = `<div class="preview-error"><i class="fas fa-info-circle"></i> You've reached the limit of ${MAX_ITEMS} items. Please remove one to add more. <button class="preview-clear-button"><i class="fas fa-times-circle"></i></button></div>`;
+                 setupClearButton();
+                 return;
+            }
+            
+            // Check if item already exists in cart by URL (to prevent duplicates)
+            const existingItem = cartItems.find(item => item.url === url);
+            if (existingItem) {
+                newUrlPreviewContainer.innerHTML = '<div class="preview-error"><i class="fas fa-info-circle"></i> This item is already in your list. You can adjust its quantity. <button class="preview-clear-button"><i class="fas fa-times-circle"></i></button></div>';
+                setupClearButton();
+                return;
+            }
+
+            newUrlPreviewContainer.innerHTML = '<div class="preview-loading"><i class="fas fa-spinner fa-spin"></i> Checking URL...</div>';
+            
+            // Simulate check for platform compatibility/validity
+            setTimeout(() => {
+                const platform = getPlatformFromUrl(url);
+                newUrlPreviewContainer.innerHTML = `
+                    <div class="preview-content">
+                        <i class="fas fa-check-circle"></i> URL for ${platform} detected. Ready to add! <button class="preview-clear-button"><i class="fas fa-times-circle"></i></button>
+                    </div>
+                `;
+                setupClearButton(); // Ensure clear button is available
+            }, 500);
+        });
+        newProductUrlInput.addEventListener('input', function() {
+            // Clear preview if input changes and it's not already a success/error state
+            // OR if it's a success/error state but the user is actively typing to change the URL
+            const currentPreviewContent = newUrlPreviewContainer.innerHTML;
+            if (currentPreviewContent.includes('preview-content') || currentPreviewContent.includes('preview-error')) {
+                // If the user starts typing after a message, clear it, unless it's just a clear button click
+                // This logic ensures that if the input is empty due to a clear button click, the message stays clear.
+                // If they start typing *after* a message (not after a clear), the message should vanish.
+                if (newProductUrlInput.value.length > 0 && newProductUrlInput.value !== this.value) { // this.value is the new input, newProductUrlInput.value is old input (before keypress)
+                    newUrlPreviewContainer.innerHTML = '';
+                }
+            } else if (!this.value) { // Input is empty, no specific message
+                 newUrlPreviewContainer.innerHTML = '';
+            }
+            // If the user types when the limit message is shown, the message should persist until an item is removed.
+            // The `updateAddItemControls` takes care of showing it when the limit is met.
+        });
+
+
+        // Helper function to determine platform from URL
+        function getPlatformFromUrl(url) {
+            if (url.includes('mercari.com') || url.includes('buyee.jp/mercari')) return 'Mercari';
+            if (url.includes('yahoo.co.jp') || url.includes('buyee.jp/yahoo')) return 'Yahoo Auctions';
+            if (url.includes('rakuten.co.jp')) return 'Rakuten';
+            if (url.includes('amazon.co.jp')) return 'Amazon Japan';
+            return 'Japanese Website';
+        }
+
+        // Extract item ID from URL (simplified for demo)
+        function extractItemId(url) {
+            const mercariMatch = url.match(/item\/m(\d+)/);
+            if (mercariMatch && mercariMatch[1]) return mercariMatch[1];
+            const yahooMatch = url.match(/jp\/auction\/([a-zA-Z0-9]+)/);
+            if (yahooMatch && yahooMatch[1]) return yahooMatch[1];
+            const genericIdMatch = url.match(/\d{8,}/);
+            if (genericIdMatch && genericIdMatch[0]) return genericIdMatch[0];
+            return null;
+        }
+
+        // --- Other Form Functionality (unchanged from previous) ---
         // Product interest toggle for "other" option
         document.getElementById('product-interest').addEventListener('change', function() {
             const otherInterestSection = document.querySelector('.other-interest-section');
+            const otherInterestInput = document.getElementById('other-interest');
             if (this.value === 'other') {
                 otherInterestSection.style.display = 'block';
-                
-                // Track for market intelligence
+                otherInterestInput.setAttribute('required', 'required');
                 if (typeof gtag !== 'undefined') {
-                    gtag('event', 'other_interest_selected', {
-                        'event_category': 'Market Intelligence',
-                        'event_label': 'Unique Product Interest'
-                    });
+                    gtag('event', 'other_interest_selected', { 'event_category': 'Market Intelligence', 'event_label': 'Unique Product Interest' });
                 }
             } else {
                 otherInterestSection.style.display = 'none';
-                
-                // Track specific product interest categories
+                otherInterestInput.removeAttribute('required');
                 if (typeof gtag !== 'undefined' && this.value) {
-                    gtag('event', 'product_interest_selected', {
-                        'event_category': 'Market Intelligence',
-                        'event_label': this.value
-                    });
+                    gtag('event', 'product_interest_selected', { 'event_category': 'Market Intelligence', 'event_label': this.value });
                 }
             }
         });
@@ -1177,148 +1788,175 @@
         // Other country section toggle
         document.getElementById('country').addEventListener('change', function() {
             const otherCountrySection = document.querySelector('.other-country-section');
+            const otherCountryInput = document.getElementById('other-country');
             if (this.value === 'other') {
                 otherCountrySection.style.display = 'block';
-                
-                // Track for market expansion intelligence
+                otherCountryInput.setAttribute('required', 'required');
                 if (typeof gtag !== 'undefined') {
-                    gtag('event', 'other_country_selected', {
-                        'event_category': 'Market Intelligence',
-                        'event_label': 'Unserved Market Interest'
-                    });
+                    gtag('event', 'other_country_selected', { 'event_category': 'Market Intelligence', 'event_label': 'Unserved Market Interest' });
                 }
             } else {
                 otherCountrySection.style.display = 'none';
+                otherCountryInput.removeAttribute('required');
             }
         });
         
-        // Enhanced add more products functionality
-        document.getElementById('add-more-button').addEventListener('click', function() {
-            // Show both additional URL fields immediately
-            document.getElementById('additional-urls').style.display = 'block';
-            this.style.display = 'none';
-            
-            // Enhanced analytics tracking
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'show_all_item_fields', {
-                    'event_category': 'Form Interaction',
-                    'event_label': 'Expanded All Item Fields',
-                    'value': 3
-                });
+        // FAQ Accordion Functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            let icon = question.querySelector('.icon'); // Get existing icon
+
+            if (!icon) { // Add icon if not present
+                icon = document.createElement('i');
+                icon.classList.add('fas', 'fa-chevron-down', 'icon');
+                question.appendChild(icon);
             }
-        });
-        
-        // Enhanced product preview functionality with intelligent error handling
-        function enhancedPreview(urlInput, previewContainer) {
-            // Clear preview when input is emptied
-            urlInput.addEventListener('input', function() {
-                if (!this.value) {
-                    previewContainer.innerHTML = '';
-                }
-            });
             
-            // Attempt preview on blur
-            urlInput.addEventListener('blur', function() {
-                if (!this.value) {
-                    previewContainer.innerHTML = '';
-                    return;
-                }
-                
-                const url = this.value.trim();
-                previewContainer.innerHTML = '<div class="preview-loading">Checking item...</div>';
-                
-                // Determine source platform for tailored messaging
-                const platform = getPlatformFromUrl(url);
-                
-                // In production, this would be a real API call to your backend
-                setTimeout(() => {
-                    // For demonstration, we'll show success for Mercari and tailored messaging for others
-                    if (url.includes('mercari')) {
-                        // Success case with more realistic data
-                        const itemId = extractItemId(url);
-                        previewContainer.innerHTML = `
-                            <div class="preview-content">
-                                <img src="https://via.placeholder.com/60" class="preview-image" alt="Product thumbnail">
-                                <div class="preview-details">
-                                    <div class="preview-title">Item #${itemId || '12345'}</div>
-                                    <div class="preview-price">¥${Math.floor(Math.random() * 10000) + 1000}</div>
-                                </div>
-                            </div>
-                        `;
-                        
-                        // Track successful preview
-                        if (typeof gtag !== 'undefined') {
-                            gtag('event', 'preview_success', {
-                                'event_category': 'Product Preview',
-                                'event_label': platform
-                            });
-                        }
-                    } else {
-                        // Enhanced error messaging with platform-specific context
-                        previewContainer.innerHTML = `
-                            <div class="preview-error">
-                                <span class="preview-error-icon">✅</span>
-                                <span>Link received! We'll check the ${platform} item, but preview couldn't be shown due to site restrictions. You can proceed with your request.</span>
-                            </div>
-                        `;
-                        
-                        // Track platform-specific preview attempts
-                        if (typeof gtag !== 'undefined') {
-                            gtag('event', 'preview_unavailable', {
-                                'event_category': 'Product Preview',
-                                'event_label': platform
-                            });
+            question.addEventListener('click', () => {
+                const answer = item.querySelector('.faq-answer');
+                const isOpen = answer.classList.contains('open');
+
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        const otherAnswer = otherItem.querySelector('.faq-answer');
+                        const otherQuestion = otherItem.querySelector('.faq-question');
+                        const otherIcon = otherQuestion.querySelector('.icon');
+                        otherAnswer.classList.remove('open');
+                        otherAnswer.style.maxHeight = '0';
+                        otherQuestion.classList.remove('active');
+                        if (otherIcon) {
+                            otherIcon.classList.remove('fa-chevron-up');
+                            otherIcon.classList.add('fa-chevron-down');
                         }
                     }
-                }, 800);
+                });
+
+                if (isOpen) {
+                    answer.classList.remove('open');
+                    answer.style.maxHeight = '0';
+                    question.classList.remove('active');
+                    if (icon) {
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    }
+                } else {
+                    answer.classList.add('open');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    question.classList.add('active');
+                    if (icon) {
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    }
+                }
             });
-        }
+        });
 
-        // Helper function to determine platform from URL
-        function getPlatformFromUrl(url) {
-            if (url.includes('mercari')) return 'Mercari';
-            if (url.includes('yahoo.co.jp')) return 'Yahoo Auctions';
-            if (url.includes('rakuten')) return 'Rakuten';
-            if (url.includes('amazon.co.jp')) return 'Amazon Japan';
-            return 'Japanese';
-        }
+        // Mobile Menu Toggle Functionality
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const mobileMenuIcon = mobileMenuToggle.querySelector('i');
 
-        // Extract item ID from URL for more realistic preview
-        function extractItemId(url) {
-            // Basic extraction - would be more sophisticated in production
-            const matches = url.match(/m\d+/) || url.match(/\d{8,}/);
-            return matches ? matches[0] : null;
+        mobileMenuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                mobileMenuIcon.classList.remove('fa-bars');
+                mobileMenuIcon.classList.add('fa-times'); // 'X' icon when open
+            } else {
+                mobileMenuIcon.classList.remove('fa-times');
+                mobileMenuIcon.classList.add('fa-bars'); // Hamburger icon when closed
+            }
+        });
+
+        // Close mobile menu when a nav link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    mobileMenuIcon.classList.remove('fa-times');
+                    mobileMenuIcon.classList.add('fa-bars');
+                }
+            });
+        });
+
+        // Smooth scroll for internal links (adjusted for new sticky headers)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const constructionBannerHeight = document.querySelector('.under-construction-banner').offsetHeight;
+                    const navHeight = document.querySelector('.nav').offsetHeight;
+                    const headerOffset = constructionBannerHeight + navHeight + 20; // Only construction banner + nav now
+
+                    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = elementPosition - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+
+                // Close mobile menu if open
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    mobileMenuIcon.classList.remove('fa-times');
+                    mobileMenuIcon.classList.add('fa-bars');
+                }
+            });
+        });
+
+        // Initial check for mobile menu toggle visibility
+        function checkMobileMenuVisibility() {
+            if (window.innerWidth <= 768) {
+                mobileMenuToggle.style.display = 'block';
+                // Only hide navLinks if they are NOT active (prevent flicker if active on resize)
+                if (!navLinks.classList.contains('active')) {
+                   navLinks.style.display = 'none'; 
+                }
+            } else {
+                mobileMenuToggle.style.display = 'none';
+                navLinks.style.display = 'flex'; // Ensure nav-links are visible on desktop
+                navLinks.classList.remove('active'); // Ensure mobile menu state is off on desktop
+                mobileMenuIcon.classList.remove('fa-times');
+                mobileMenuIcon.classList.add('fa-bars');
+            }
         }
-        
-        // Initialize enhanced preview functionality
-        enhancedPreview(document.getElementById('product-url-1'), document.getElementById('preview-1'));
-        enhancedPreview(document.getElementById('product-url-2'), document.getElementById('preview-2'));
-        enhancedPreview(document.getElementById('product-url-3'), document.getElementById('preview-3'));
-        
-        // Enhanced form submission with confirmation screen
-        document.querySelector('form[name="shogunship-order"]').addEventListener('submit', function(e) {
-            // Prevent default form submission to handle with JavaScript
-            e.preventDefault();
+        checkMobileMenuVisibility();
+        window.addEventListener('resize', checkMobileMenuVisibility);
+
+        // Update fixed nav top position dynamically based on banner heights
+        function updateStickyPositions() {
+            const constructionBanner = document.querySelector('.under-construction-banner');
+            const constructionBannerHeight = constructionBanner ? constructionBanner.offsetHeight : 0;
+            // Only the construction banner affects the top position on these new pages
+            document.querySelector('.nav').style.top = `${constructionBannerHeight}px`; 
+        }
+        updateStickyPositions();
+        window.addEventListener('resize', updateStickyPositions);
+
+        // --- Final Form Submission ---
+        orderForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
             
             // Time-based submission validation (prevent bot rapid submissions)
             const formLoadTime = this.dataset.loadTime || Date.now();
             const timeElapsed = Date.now() - formLoadTime;
             
-            // If form submitted in less than 2 seconds, likely a bot
-            if (timeElapsed < 2000) {
+            if (timeElapsed < 2000) { // If form submitted in less than 2 seconds, likely a bot
                 console.log('Potential spam submission blocked (too fast)');
                 return false;
             }
+
+            // Populate the hidden cart-data input
+            cartDataInput.value = JSON.stringify(cartItems);
             
             // Track the conversion in Google Analytics
             if (typeof gtag !== 'undefined') {
-                // Enhanced conversion tracking with product count and interest data
-                const productCount = [
-                    document.getElementById('product-url-1').value,
-                    document.getElementById('product-url-2').value,
-                    document.getElementById('product-url-3').value
-                ].filter(Boolean).length;
-                
+                const productCount = cartItems.reduce((total, item) => total + item.quantity, 0);
                 const productInterest = document.getElementById('product-interest').value || 'unspecified';
                 
                 gtag('event', 'form_submission', {
@@ -1331,26 +1969,34 @@
                 });
             }
             
-            // Show confirmation screen immediately for optimal UX
-            this.style.display = 'none';
+            // Hide the form and show the confirmation screen
+            orderForm.style.display = 'none'; // Use orderForm here
             document.getElementById('confirmation-screen').style.display = 'block';
             
-            // Get form data
-            const formData = new FormData(this);
-            
             // Submit the form data to Netlify programmatically
-            fetch('/', {
+            const formData = new FormData(this);
+            fetch(this.action, { // Use form's action attribute, which Netlify auto-configures
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: new URLSearchParams(formData).toString()
             })
             .then(response => {
-                console.log('Form successfully submitted to Netlify');
+                if (response.ok) {
+                    console.log('Form successfully submitted to Netlify');
+                    localStorage.removeItem('shogunShipCart'); // Clear cart after successful submission
+                } else {
+                    console.error('Netlify form submission failed with status:', response.status);
+                    // You might want to show a fallback error message to the user here
+                }
             })
             .catch(error => {
                 console.error('Form submission error:', error);
+                // Fallback error message
             });
         });
+
+        // Initialize cart on load
+        loadCart();
     });
     </script>
 </body>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Contact Us | ShogunShip - Get in Touch</title>
+    <meta name="title" content="Contact Us | ShogunShip - Get in Touch">
+    <meta name="description" content="Reach out to ShogunShip for inquiries, support, or custom item requests. Your Japanese proxy shopping questions answered.">
+    <meta name="keywords" content="contact shogunship, japanese proxy support, email shogunship, custom item request, japan shopping help">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shogunship.netlify.app/contact.html">
+    <meta property="og:title" content="Contact ShogunShip | We're Here to Help">
+    <meta property="og:description" content="Have a question or a special request? Contact the ShogunShip team directly.">
+    <meta property="og:image" content="https://yourwebsite.com/images/og-image-contact.jpg">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://shogunship.netlify.app/contact.html">
+    <meta property="twitter:title" content="Contact ShogunShip | Japanese Proxy Shopping">
+    <meta property="twitter:description" content="Reach out to ShogunShip for all your Japanese item sourcing needs.">
+    <meta property="twitter:image" content="https://yourwebsite.com/images/twitter-image-contact.jpg">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2j+PxD/WJp+m/A4+ZR2p8gS6tq/B/u0W54f4A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-07NK010QW6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-07NK010QW6');
+    </script>
+    
+    <style>
+        :root {
+            --primary: #E74C3C;
+            --secondary: #2C3E50;
+            --accent: #F39C12;
+            --background: #F8F9FA;
+            --text: #333333;
+            --light-text: #6c757d;
+            --border-color-light: #dee2e6;
+            --success: #28a745;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', 'Noto Sans JP', sans-serif; line-height: 1.6; color: var(--text); background: var(--background); }
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 100px 0; }
+        h1, h2, h3, h4 { margin-bottom: 20px; line-height: 1.2; font-weight: 700; color: var(--secondary);}
+        h1 { font-size: 52px; font-weight: 800; text-align: center; }
+        h2 { font-size: 40px; text-align: center; }
+        p { font-size: 18px; margin-bottom: 20px; color: var(--text); }
+        img { max-width: 100%; height: auto; display: block; }
+        .btn { display: inline-block; padding: 14px 35px; background: var(--primary); color: white; text-decoration: none; border-radius: var(--border-radius); font-weight: 700; transition: var(--transition); border: none; cursor: pointer; font-size: 18px; letter-spacing: 0.5px; }
+        .btn:hover { background: #c0392b; transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .btn-secondary { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
+        .btn-secondary:hover { background: var(--primary); color: white; transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .hidden { display: none; }
+        
+        /* Fixed Headers - Adjust top values for single banner if exists, or remove if not */
+        .under-construction-banner {
+            background: #FFD700; color: #333; text-align: center; padding: 10px 15px; font-size: 16px;
+            font-weight: 600; position: sticky; top: 0; z-index: 1001; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .nav {
+            background: white; padding: 15px 0; box-shadow: var(--box-shadow); position: sticky;
+            top: 48px; /* Adjusted to only be below construction banner */
+            z-index: 999; width: 100%; transition: top 0.3s ease;
+        }
+
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; font-size: 28px; font-weight: 800; color: var(--secondary); text-decoration: none; z-index: 2; }
+        .logo-icon { width: 45px; height: 45px; margin-right: 12px; background-size: contain; background-repeat: no-repeat; }
+        .nav-links { display: flex; align-items: center; gap: 30px; }
+        .nav-links a { color: var(--secondary); text-decoration: none; font-weight: 600; transition: var(--transition); padding: 5px 0; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: var(--primary); transition: width 0.3s ease; }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-links a:hover { color: var(--primary); }
+        .mobile-menu-toggle { display: none; background: none; border: none; font-size: 28px; color: var(--secondary); cursor: pointer; z-index: 2; }
+
+        /* Contact Page Specific Styles */
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+        }
+        .contact-info {
+            margin-bottom: 40px;
+        }
+        .contact-info h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        .contact-info p {
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .contact-info a:hover {
+            color: #c0392b;
+            text-decoration: underline;
+        }
+        .contact-form {
+            text-align: left; /* Align form elements left */
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 17px;
+            color: var(--secondary);
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            font-size: 17px;
+            transition: var(--transition);
+        }
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(231, 76, 60, 0.2);
+        }
+        textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+        .contact-content .btn {
+            width: 100%; /* Make button full width in form */
+            margin-top: 10px;
+        }
+        .contact-reasons {
+            margin-top: 40px;
+            border-top: 1px solid var(--border-color-light);
+            padding-top: 30px;
+        }
+        .contact-reasons h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .contact-reasons ul {
+            list-style: none;
+            padding-left: 0;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        .contact-reasons li {
+            font-size: 17px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .contact-reasons li i {
+            color: var(--primary);
+            font-size: 20px;
+            line-height: 1.6; /* Align icon with text */
+        }
+
+
+        /* Footer */
+        .footer { background: var(--secondary); color: white; padding: 70px 0 40px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 50px; margin-bottom: 50px; }
+        .footer-heading { font-size: 20px; margin-bottom: 25px; color: #ffffff; font-weight: 700; }
+        .footer-column p { font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.7; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; transition: var(--transition); font-size: 16px; }
+        .footer-links a:hover { color: white; transform: translateX(5px); }
+        .footer-bottom { text-align: center; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.6); font-size: 15px; }
+        .social-icons { display: flex; gap: 20px; margin-top: 25px; justify-content: flex-start; }
+        .social-icon { color: white; font-size: 24px; transition: var(--transition); }
+        .social-icon:hover { color: var(--accent); transform: translateY(-3px); }
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            section { padding: 60px 0; }
+            h1 { font-size: 38px; }
+            h2 { font-size: 32px; }
+            p { font-size: 16px; } /* Smaller base font size for mobile */
+            .nav { top: 40px; padding: 10px 0; }
+            .nav-container { padding: 0 15px; }
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: white; box-shadow: var(--box-shadow); padding: 20px 0; border-top: 1px solid var(--border-color-light); opacity: 0; pointer-events: none; transition: opacity 0.3s ease, transform 0.3s ease; transform: translateY(-10px); align-items: center; gap: 15px; }
+            .nav-links.active { display: flex; opacity: 1; pointer-events: all; transform: translateY(0); }
+            .nav-links a { margin: 0; padding: 10px 0; width: 80%; text-align: center; border-bottom: 1px solid var(--border-color-light); }
+            .nav-links a:last-of-type { border-bottom: none; }
+            .mobile-menu-toggle { display: block; }
+            .contact-content { padding: 30px 20px; }
+        }
+        @media (min-width: 769px) and (max-width: 1024px) {
+            section { padding: 80px 0; }
+            .container { padding: 0 30px; }
+            h1 { font-size: 48px; }
+            h2 { font-size: 36px; }
+        }
+        @media (min-width: 1600px) {
+            .container { max-width: 1400px; }
+            section { padding: 120px 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="under-construction-banner">
+        <p>🚧 This site is still under construction! Please check back in a few days for our full launch. 🚧</p>
+    </div>
+
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48c3R5bGU+LnN0MHtmaWxsOiNFNzRDM0M7fS5zdDF7ZmlsbDojMkMzRTUwO30uc3Qye2ZpbGw6I0YzOUMxMjt9PC9zdHlsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNNTAgOTBjLTIyLjEgMC00MC0xNy45LTQwLTQwczE3LjktNDAgNDAtNDAgNDAgMTcuOSA0MCA0MC0xNy45IDQwLTQwIDQweiIvPjxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik03MCA2NUg0MHYtNWgzMGMxLjEgMCAyLS45IDItMnMtLjktMi0yLTJINDBWNTFoMzBjMi44IDAgNSAyLjIgNSA1cy0yLjIgNS01IDV6Ii8+PHBhdGggY2xhc3M9InN0MSIgZD0ibTY1IDc1SDM1Yy0yLjggMC01LTIuMi01LTVzMi4yLTUgNS01aDMwYzEuMSAwIDItLjkgMi0ycy0uOS0yLTItMkgzNXYtNWgzMGMyLjggMCA1IDIuMiA1IDVzLTIuMiA1LTUgNXoiLz48cGF0aCBjbGFzcz0ic3QyIiBkPSJNNTAgMzBjLTUuNSAwLTEwIDQuNS0xMCAxMHM0LjUgMTAgMTAgMTAgMTAtNC41IDEwLTEwLTQuNS0xMC0xMC0xMHptMCAxNWMtMi44IDAtNS0yLjItNS01czIuMi01IDUtNSA1IDIuMiA1IDUtMi4yIDUtNSA1eiIvPjwvc3ZnPg==');"></div>
+                <span>ShogunShip</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html#how-it-works">How It Works</a>
+                <a href="index.html#platforms">Platforms</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="about.html">About Us</a> <a href="contact.html">Contact</a> <a href="index.html#request-cart-section" class="btn">Request Item</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Get in Touch</h1>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>Have questions, a special request, or just want to say Konnichiwa?</p>
+                    <p>We'd love to hear from you!</p>
+                    <h3>Send us an email:</h3>
+                    <p class="email-address"><a href="mailto:shogunship.business@gmail.com"><i class="fas fa-envelope"></i> shogunship.business@gmail.com</a></p>
+                    <p class="response-time">We aim to respond to all inquiries within 24-48 business hours.</p>
+                </div>
+
+                <hr> <div class="contact-form">
+                    <h3>Or use our quick contact form:</h3>
+                    <form name="general-contact" data-netlify="true" method="POST" netlify-honeypot="bot-field">
+                        <p class="hidden">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </p>
+                        <input type="hidden" name="form-name" value="general-contact">
+
+                        <div class="form-group">
+                            <label for="contact-name">Your Name</label>
+                            <input type="text" id="contact-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Your Email</label>
+                            <input type="email" id="contact-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Subject</label>
+                            <input type="text" id="contact-subject" name="subject" placeholder="e.g., General Inquiry, Partnership, Website Feedback">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Your Message</label>
+                            <textarea id="contact-message" name="message" rows="6" placeholder="Tell us what's on your mind..."></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="contact-reasons">
+                    <h3>Looking for something specific?</h3>
+                    <p>If you're ready to request items from Japan, please use our dedicated shopping cart feature on the <a href="index.html#request-cart-section">homepage</a>.</p>
+                    <h3>Quick Answers:</h3>
+                    <p>Many common questions are answered in our <a href="index.html#faq">Frequently Asked Questions (FAQ)</a> section.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4 class="footer-heading">ShogunShip</h4>
+                    <p>Your trusted bridge to Japanese treasures. We make shopping from Japan simple, secure, and stress-free.</p>
+                    <div class="social-icons">
+                        <a href="https://instagram.com/your-shogunship-instagram" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/your-shogunship-twitter" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="mailto:shogunship.business@gmail.com" aria-label="Email Us"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#how-it-works">How It Works</a></li>
+                        <li><a href="index.html#platforms">Supported Platforms</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Legal & Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="contact.html">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 ShogunShip. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // This script will mostly handle shared functionalities like mobile menu and sticky headers.
+        // Form-specific logic is only on index.html.
+
+        // Mobile Menu Toggle Functionality
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const mobileMenuIcon = mobileMenuToggle.querySelector('i');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                mobileMenuIcon.classList.remove('fa-bars');
+                mobileMenuIcon.classList.add('fa-times'); // 'X' icon when open
+            } else {
+                mobileMenuIcon.classList.remove('fa-times');
+                mobileMenuIcon.classList.add('fa-bars'); // Hamburger icon when closed
+            }
+        });
+
+        // Close mobile menu when a nav link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    mobileMenuIcon.classList.remove('fa-times');
+                    mobileMenuIcon.classList.add('fa-bars');
+                }
+            });
+        });
+
+        // Smooth scroll for internal links (adjusted for new sticky headers)
+        document.querySelectorAll('a[href^="index.html#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                // For links targeting sections on index.html from other pages
+                // This would typically navigate first, then scroll on the target page.
+                // For simplicity here, we'll just navigate to the homepage.
+                window.location.href = this.getAttribute('href'); 
+            });
+        });
+
+        // Initial check for mobile menu toggle visibility
+        function checkMobileMenuVisibility() {
+            if (window.innerWidth <= 768) {
+                mobileMenuToggle.style.display = 'block';
+                if (!navLinks.classList.contains('active')) {
+                   navLinks.style.display = 'none'; 
+                }
+            } else {
+                mobileMenuToggle.style.display = 'none';
+                navLinks.style.display = 'flex';
+                navLinks.classList.remove('active');
+                mobileMenuIcon.classList.remove('fa-times');
+                mobileMenuIcon.classList.add('fa-bars');
+            }
+        }
+        checkMobileMenuVisibility();
+        window.addEventListener('resize', checkMobileMenuVisibility);
+
+        // Update fixed nav top position dynamically based on banner heights
+        function updateStickyPositions() {
+            const constructionBanner = document.querySelector('.under-construction-banner');
+            const constructionBannerHeight = constructionBanner ? constructionBanner.offsetHeight : 0;
+            // Only the construction banner affects the top position on these new pages
+            document.querySelector('.nav').style.top = `${constructionBannerHeight}px`; 
+        }
+        updateStickyPositions();
+        window.addEventListener('resize', updateStickyPositions);
+    });
+    </script>
+</body>
+</html>
