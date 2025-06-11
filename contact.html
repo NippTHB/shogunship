@@ -185,63 +185,32 @@
             line-height: 1.6; /* Align icon with text */
         }
 
-        /* NEW: Modal Confirmation Screen */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000; /* Ensure it's on top of everything */
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-
-        .modal-overlay.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-content {
+        /* NEW: On-Page Success Message Styling */
+        #contact-success-message {
             background: white;
-            padding: 50px;
+            padding: 40px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             text-align: center;
-            max-width: 500px;
-            width: 90%;
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
+            margin-top: 40px; /* Space from the form */
+            display: none; /* Hidden by default */
         }
-
-        .modal-overlay.show .modal-content {
-            transform: scale(1);
-        }
-
-        .modal-content .confirmation-icon {
+        #contact-success-message .confirmation-icon {
             font-size: 72px;
             color: var(--success);
             margin-bottom: 25px;
         }
-
-        .modal-content h2 {
+        #contact-success-message h2 {
             font-size: 32px;
             color: var(--secondary);
             margin-bottom: 15px;
         }
-
-        .modal-content p {
+        #contact-success-message p {
             font-size: 18px;
             color: var(--light-text);
             margin-bottom: 30px;
         }
-
-        .modal-content .btn {
+        #contact-success-message .btn {
             margin-top: 20px;
         }
 
@@ -275,7 +244,7 @@
             .nav-links a:last-of-type { border-bottom: none; }
             .mobile-menu-toggle { display: block; }
             .contact-content { padding: 30px 20px; }
-            .modal-content { padding: 30px; }
+            #contact-success-message { padding: 30px; }
         }
         @media (min-width: 769px) and (max-width: 1024px) {
             section { padding: 80px 0; }
@@ -352,6 +321,12 @@
                         </div>
                         <button type="submit" class="btn">Send Message</button>
                     </form>
+                    <div id="contact-success-message" style="display:none;">
+                        <div class="confirmation-icon">✅</div>
+                        <h2>Message Sent Successfully!</h2>
+                        <p>Thank you for reaching out. We've received your message and will get back to you as soon as possible, typically within 24-48 business hours.</p>
+                        <button class="btn" onclick="window.location.reload()">Send Another Message</button>
+                    </div>
                 </div>
 
                 <div class="contact-reasons">
@@ -363,15 +338,6 @@
             </div>
         </div>
     </section>
-
-    <div class="modal-overlay" id="contact-confirmation-modal">
-        <div class="modal-content">
-            <div class="confirmation-icon">✅</div>
-            <h2>Message Sent Successfully!</h2>
-            <p>Thank you for reaching out. We've received your message and will get back to you as soon as possible, typically within 24-48 business hours.</p>
-            <button class="btn" id="modal-close-button">Back to our site</button>
-        </div>
-    </div>
 
     <footer class="footer">
         <div class="container">
@@ -415,95 +381,88 @@
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         const contactForm = document.querySelector('form[name="general-contact"]');
-        const confirmationModal = document.getElementById('contact-confirmation-modal');
-        const modalCloseButton = document.getElementById('modal-close-button');
+        const contactSuccessMessage = document.getElementById('contact-success-message');
+
+        // CRITICAL FIX: Set loadTime for spam prevention!
+        if (contactForm) { // Check if form exists before trying to set data
+            contactForm.dataset.loadTime = Date.now();
+        }
 
         // Handle contact form submission via AJAX
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
+        if (contactForm) { // Ensure contactForm exists before adding listener
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
 
-            // Simple spam prevention: check if form submitted too fast
-            const formLoadTime = this.dataset.loadTime || Date.now();
-            const timeElapsed = Date.now() - formLoadTime;
-            if (timeElapsed < 2000) { 
-                console.log('Potential spam submission blocked (too fast)');
-                return false;
-            }
+                // Simple spam prevention: check if form submitted too fast
+                const formLoadTime = parseInt(this.dataset.loadTime, 10); // Parse as int
+                const timeElapsed = Date.now() - formLoadTime;
 
-            // Show loading or disable button if you want
-            const submitButton = this.querySelector('button[type="submit"]');
-            submitButton.disabled = true;
-            submitButton.textContent = 'Sending...';
+                if (timeElapsed < 2000) { 
+                    console.log('Potential spam submission blocked (too fast)');
+                    // Optionally, show a message to the user here instead of just blocking silently
+                    alert('Please wait a moment before submitting to prevent spam.');
+                    return false;
+                }
 
-            const formData = new FormData(this);
-            
-            try {
-                const response = await fetch(this.action, { // Use form's action, Netlify will pick it up
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: new URLSearchParams(formData).toString()
-                });
+                const submitButton = this.querySelector('button[type="submit"]');
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...';
 
-                if (response.ok) {
-                    console.log('Contact form successfully submitted to Netlify');
-                    // Hide form and show modal
-                    contactForm.style.display = 'none';
-                    confirmationModal.classList.add('show');
+                const formData = new FormData(this);
+                
+                try {
+                    const response = await fetch(this.action, { 
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: new URLSearchParams(formData).toString()
+                    });
 
-                    // Track conversion in Google Analytics
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'contact_form_submission', {
-                            'event_category': 'Conversion',
-                            'event_label': 'General Inquiry Sent'
-                        });
+                    if (response.ok) {
+                        console.log('Contact form successfully submitted to Netlify');
+                        // Hide form and show success message
+                        contactForm.style.display = 'none';
+                        contactSuccessMessage.style.display = 'block';
+
+                        // Track conversion in Google Analytics
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'contact_form_submission', {
+                                'event_category': 'Conversion',
+                                'event_label': 'General Inquiry Sent'
+                            });
+                        }
+
+                    } else {
+                        console.error('Netlify contact form submission failed with status:', response.status);
+                        alert('There was an error sending your message. Please try again later.');
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Send Message';
                     }
-
-                } else {
-                    console.error('Netlify contact form submission failed with status:', response.status);
-                    alert('There was an error sending your message. Please try again later.');
+                } catch (error) {
+                    console.error('Contact form submission error:', error);
+                    alert('There was an error sending your message. Please check your internet connection and try again.');
                     submitButton.disabled = false;
                     submitButton.textContent = 'Send Message';
                 }
-            } catch (error) {
-                console.error('Contact form submission error:', error);
-                alert('There was an error sending your message. Please check your internet connection and try again.');
-                submitButton.disabled = false;
-                submitButton.textContent = 'Send Message';
-            }
-        });
-
-        // Close modal functionality
-        modalCloseButton.addEventListener('click', () => {
-            confirmationModal.classList.remove('show');
-            contactForm.style.display = 'block'; // Show the form again if needed
-            contactForm.reset(); // Clear the form fields
-            const submitButton = contactForm.querySelector('button[type="submit"]');
-            submitButton.disabled = false;
-            submitButton.textContent = 'Send Message';
-        });
-
-        // Close modal on Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && confirmationModal.classList.contains('show')) {
-                modalCloseButton.click(); // Simulate click on close button
-            }
-        });
+            });
+        } // End if (contactForm) check
 
         // Mobile Menu Toggle Functionality (from homepage script)
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const navLinks = document.querySelector('.nav-links');
         const mobileMenuIcon = mobileMenuToggle.querySelector('i');
 
-        mobileMenuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            if (navLinks.classList.contains('active')) {
-                mobileMenuIcon.classList.remove('fa-bars');
-                mobileMenuIcon.classList.add('fa-times');
-            } else {
-                mobileMenuIcon.classList.remove('fa-times');
-                mobileMenuIcon.classList.add('fa-bars');
-            }
-        });
+        if (mobileMenuToggle) { // Ensure elements exist before adding listeners
+            mobileMenuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                if (navLinks.classList.contains('active')) {
+                    mobileMenuIcon.classList.remove('fa-bars');
+                    mobileMenuIcon.classList.add('fa-times');
+                } else {
+                    mobileMenuIcon.classList.remove('fa-times');
+                    mobileMenuIcon.classList.add('fa-bars');
+                }
+            });
+        }
 
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
@@ -550,16 +509,20 @@
 
         function checkMobileMenuVisibility() {
             if (window.innerWidth <= 768) {
-                mobileMenuToggle.style.display = 'block';
-                if (!navLinks.classList.contains('active')) {
+                if (mobileMenuToggle) mobileMenuToggle.style.display = 'block'; // Check if element exists
+                if (navLinks && !navLinks.classList.contains('active')) { // Check if element exists
                    navLinks.style.display = 'none'; 
                 }
             } else {
-                mobileMenuToggle.style.display = 'none';
-                navLinks.style.display = 'flex';
-                navLinks.classList.remove('active');
-                mobileMenuIcon.classList.remove('fa-times');
-                mobileMenuIcon.classList.add('fa-bars');
+                if (mobileMenuToggle) mobileMenuToggle.style.display = 'none'; // Check if element exists
+                if (navLinks) { // Check if element exists
+                    navLinks.style.display = 'flex';
+                    navLinks.classList.remove('active');
+                }
+                if (mobileMenuIcon) { // Check if element exists
+                    mobileMenuIcon.classList.remove('fa-times');
+                    mobileMenuIcon.classList.add('fa-bars');
+                }
             }
         }
         checkMobileMenuVisibility();
@@ -568,13 +531,16 @@
         function updateStickyPositions() {
             const constructionBanner = document.querySelector('.under-construction-banner');
             const constructionBannerHeight = constructionBanner ? constructionBanner.offsetHeight : 0;
-            document.querySelector('.nav').style.top = `${constructionBannerHeight}px`; 
+            const navElement = document.querySelector('.nav');
+            if (navElement) { // Ensure nav exists
+                navElement.style.top = `${constructionBannerHeight}px`; 
+            }
         }
         updateStickyPositions();
         window.addEventListener('resize', updateStickyPositions);
 
         // Optional: Ensure contact form is visible on load, if it's hidden by CSS
-        contactForm.style.display = 'block';
+        if (contactForm) contactForm.style.display = 'block';
     });
     </script>
 </body>

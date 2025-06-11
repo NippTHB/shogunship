@@ -123,17 +123,18 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        /* Nav adjusted for sticky header */
-        .nav {
-            background: white;
-            padding: 15px 0;
-            box-shadow: var(--box-shadow);
-            position: sticky;
-            top: 48px; /* Position below the under construction banner (if present) */
-            z-index: 999;
-            width: 100%;
-            transition: top 0.3s ease;
-        }
+        /* Nav adjusted for sticky header in index.html */
+.nav {
+    background: white;
+    padding: 15px 0;
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    /* OLD: top: calc(48px + 60px); */ /* Position below promo banner (48px for construction + 60px for promo) */
+    top: 48px; /* Now only below the under-construction banner */
+    z-index: 999;
+    width: 100%;
+    transition: top 0.3s ease;
+}
 
         .nav-container {
             display: flex;
