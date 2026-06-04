@@ -3,56 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShogunShip | Japanese Proxy Shopping for Real Collectors</title>
+    <meta name="description" content="Collectors helping collectors find rare Japanese items. Personal service from Osaka. Mercari, Yahoo Auctions, Rakuma, and more.">
+    <meta property="og:title" content="ShogunShip | Japanese Proxy Shopping for Collectors">
+    <meta property="og:description" content="A husband-and-wife team of collectors helping you discover Japan's rarest finds.">
     
-    <title>ShogunShip | Your Japanese Proxy Shopping Service</title>
-    <meta name="title" content="ShogunShip | Your Japanese Proxy Shopping Service">
-    <meta name="description" content="Shop from Japanese marketplaces like Mercari, Yahoo Auctions, and Rakuten with ease. We handle purchase, payment, and international shipping for you.">
-    <meta name="keywords" content="japan proxy service, mercari japan international, yahoo auctions proxy, japanese shopping service, buy from japan, proxy shipping japan">
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://shogunship.netlify.app/">
-    <meta property="og:title" content="ShogunShip | Access Japanese Exclusive Items">
-    <meta property="og:description" content="Your bridge to Japanese treasures. We help you buy from Mercari, Yahoo Auctions, and Rakuten Japan with no language barrier.">
-    <meta property="og:image" content="https://yourwebsite.com/images/og-image.jpg"> <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://shogunship.netlify.app/">
-    <meta property="twitter:title" content="ShogunShip | Japanese Proxy Shopping">
-    <meta property="twitter:description" content="Access exclusive Japanese items from Mercari, Yahoo Auctions & more. We handle everything from purchase to international shipping.">
-    <meta property="twitter:image" content="https://yourwebsite.com/images/twitter-image.jpg"> <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://www.google-analytics.com">
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-07NK010QW6"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-07NK010QW6');
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     
     <style>
-        /* Strategic Design System - Conversion-Optimized */
         :root {
-            --primary: #E74C3C; /* Red - creates urgency */
-            --secondary: #2C3E50; /* Navy - builds trust */
-            --accent: #F39C12; /* Orange - encourages action */
+            --primary: #E74C3C;
+            --secondary: #2C3E50;
+            --accent: #F39C12;
+            --success: #27AE60;
             --background: #F8F9FA;
-            --text: #333333;
-            --light-text: #6c757d;
-            --border-color-light: #dee2e6; /* New: for subtle borders */
-            --success: #28a745;
-            --border-radius: 8px;
-            --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            --transition: all 0.3s ease;
-        }
-
-        /* Smooth scroll behavior */
-        html {
-            scroll-behavior: smooth;
+            --text: #2C3E50;
+            --light-text: #7F8C8D;
+            --dark-bg: #34495E;
+            --border: #ECF0F1;
+            --pixel-edge: #1A1A1A;
         }
 
         * {
@@ -61,82 +31,46 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Poppins', 'Noto Sans JP', sans-serif;
-            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
             color: var(--text);
             background: var(--background);
+            line-height: 1.6;
         }
 
         .container {
-            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        section {
-            padding: 100px 0; /* Increased padding for more breathing room */
-        }
-
-        h1, h2, h3, h4 {
-            margin-bottom: 20px;
-            line-height: 1.2;
-            font-weight: 700; /* Ensure headings are bold */
-        }
-        
-        h1 {
-            font-size: 52px; /* Slightly larger for more impact */
-            font-weight: 800; /* Extra bold for hero */
-            color: var(--secondary);
-        }
-
-        h2 {
-            font-size: 40px; /* Slightly larger for section titles */
-            color: var(--secondary);
-            text-align: center;
-        }
-
-        p {
-            font-size: 18px; /* Slightly larger base font size for readability */
-            margin-bottom: 20px;
-            color: var(--text);
-        }
-
-        img {
-            max-width: 100%;
-            height: auto; /* Ensure aspect ratio is maintained */
-            display: block; /* Remove extra space below images */
-        }
-
-        /* Under Construction Banner */
-        .under-construction-banner {
-            background: #FFD700; /* Gold-ish color */
+        /* NAVIGATION */
+        .construction-banner {
+            background: #FFD700;
             color: #333;
             text-align: center;
-            padding: 10px 15px;
-            font-size: 16px;
+            padding: 12px;
+            font-size: 15px;
             font-weight: 600;
-            position: sticky; /* Make it sticky at the very top */
+            position: sticky;
             top: 0;
-            z-index: 1001; /* Higher than other fixed elements */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1001;
         }
 
-        /* Nav adjusted for sticky header in index.html */
-.nav {
-    background: white;
-    padding: 15px 0;
-    box-shadow: var(--box-shadow);
-    position: sticky;
-    /* OLD: top: calc(48px + 60px); */ /* Position below promo banner (48px for construction + 60px for promo) */
-    top: 48px; /* Now only below the under-construction banner */
-    z-index: 999;
-    width: 100%;
-    transition: top 0.3s ease;
-}
+        nav {
+            background: white;
+            border-bottom: 3px solid var(--primary);
+            padding: 16px 0;
+            position: sticky;
+            top: 39px;
+            z-index: 999;
+        }
 
-        .nav-container {
+        .nav-wrapper {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -145,39 +79,40 @@
         .logo {
             display: flex;
             align-items: center;
-            font-size: 28px; /* Slightly larger logo text */
-            font-weight: 800; /* Bolder logo text */
-            color: var(--secondary); /* Changed logo text color for primary branding */
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--secondary);
             text-decoration: none;
-            z-index: 2; /* Ensure logo is above mobile menu */
+            letter-spacing: -0.5px;
         }
 
-        /* If you use an actual SVG image file for logo-icon */
         .logo-icon {
-            width: 45px; /* Slightly larger icon */
-            height: 45px;
-            margin-right: 12px;
-            /* Remove background-image if using <img src> */
-        }
-        /* Style for the SVG if kept as background-image */
-        .logo-icon[style*="background-image"] {
-            background-size: contain;
-            background-repeat: no-repeat;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 22px;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
         }
 
         .nav-links {
-            display: flex; /* Default for desktop */
+            display: flex;
+            gap: 28px;
             align-items: center;
-            gap: 30px; /* Spacing between desktop links */
         }
 
         .nav-links a {
             color: var(--secondary);
             text-decoration: none;
             font-weight: 600;
-            transition: var(--transition);
-            padding: 5px 0;
+            font-size: 15px;
             position: relative;
+            transition: color 0.3s;
         }
 
         .nav-links a::after {
@@ -185,66 +120,39 @@
             position: absolute;
             width: 0;
             height: 2px;
-            bottom: -5px;
+            bottom: -4px;
             left: 0;
-            background-color: var(--primary);
-            transition: width 0.3s ease;
+            background: var(--primary);
+            transition: width 0.3s;
         }
 
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            width: 100%;
-        }
-        
         .nav-links a:hover {
             color: var(--primary);
         }
 
-        /* Mobile Menu Toggle */
-        .mobile-menu-toggle {
-            display: none; /* Hidden by default on desktop */
-            background: none;
-            border: none;
-            font-size: 28px; /* Larger icon */
-            color: var(--secondary);
-            cursor: pointer;
-            z-index: 2; /* Ensure toggle is above mobile menu */
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
-        /* Hero Section - A/B Tested Layout */
-        .hero {
-            padding: 180px 0 120px; /* More vertical space */
-            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
-            text-align: center;
-        }
-
-        .hero p {
-            font-size: 22px; /* Slightly larger hero paragraph */
-            max-width: 700px;
-            margin: 0 auto 40px;
-            color: var(--light-text);
-        }
-
-        /* CTA Buttons - Heat-map Optimized */
         .btn {
             display: inline-block;
-            padding: 14px 35px; /* Larger buttons */
+            padding: 12px 28px;
             background: var(--primary);
             color: white;
-            text-decoration: none;
-            border-radius: var(--border-radius);
-            font-weight: 700; /* Bolder button text */
-            transition: var(--transition);
             border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 15px;
             cursor: pointer;
-            font-size: 18px; /* Larger button text */
-            letter-spacing: 0.5px; /* Subtle spacing */
+            text-decoration: none;
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
         }
 
         .btn:hover {
             background: #c0392b;
-            transform: translateY(-3px); /* More pronounced lift */
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Add shadow on hover */
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(231, 76, 60, 0.3);
         }
 
         .btn-secondary {
@@ -254,638 +162,512 @@
         }
 
         .btn-secondary:hover {
-            background: var(--primary); /* Fill background on hover */
+            background: var(--primary);
             color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
 
-        /* How It Works - Conversion Funnel Section */
-        .how-it-works {
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--secondary);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content h1 {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--secondary);
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            color: var(--light-text);
+            margin-bottom: 24px;
+            font-weight: 400;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .pixel-accent {
+            width: 80px;
+            height: 80px;
+            background: var(--accent);
+            position: absolute;
+            top: 40px;
+            right: 60px;
+            opacity: 0.1;
+            clip-path: polygon(0 0, 75% 0, 100% 25%, 100% 100%, 25% 100%, 0 75%);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* TRUST INDICATORS */
+        .trust-band {
             background: white;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 40px 0;
+            margin: 60px 0;
+        }
+
+        .trust-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
             text-align: center;
         }
 
-        .how-it-works h2 {
-            margin-bottom: 70px; /* More space below heading */
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .trust-icon {
+            font-size: 32px;
+            color: var(--primary);
+        }
+
+        .trust-item h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin: 0;
+        }
+
+        .trust-item p {
+            font-size: 14px;
+            color: var(--light-text);
+            margin: 0;
+        }
+
+        /* SECTION STYLES */
+        section {
+            padding: 80px 0;
+        }
+
+        section h2 {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: var(--light-text);
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* WHO WE ARE */
+        .who-we-are {
+            background: #fafbfc;
+        }
+
+        .who-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .who-text h3 {
+            font-size: 28px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .who-text p {
+            font-size: 16px;
+            color: var(--text);
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .who-image {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            border: 2px dashed var(--border);
+            text-align: center;
+            color: var(--light-text);
+            font-style: italic;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* HOW IT WORKS */
+        .how-it-works {
+            background: white;
         }
 
         .steps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
         }
 
         .step {
-            padding: 35px; /* More padding inside steps */
-            background: var(--background);
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            text-align: left; /* Align text left within steps */
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            position: relative;
         }
 
-        .step:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.15); /* Enhanced shadow */
-        }
-
-        .step-icon {
-            font-size: 56px; /* Larger icons */
-            margin-bottom: 20px;
-            color: var(--primary);
-            text-align: center; /* Center icons */
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-bottom: 16px;
         }
 
         .step h3 {
-            font-size: 26px; /* Larger step headings */
-            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
             color: var(--secondary);
         }
+
         .step p {
-            font-size: 16px; /* Smaller text for detail */
+            font-size: 15px;
+            color: var(--light-text);
+            margin: 0;
         }
 
-
-        /* Trust Signals - Conversion Rate Boosters */
-        .trust-signals {
-            background: var(--secondary);
-            color: white;
-            text-align: center;
-        }
-
-        .trust-signals h2 {
-            margin-bottom: 70px;
-            color: white; /* Ensure heading is white */
-        }
-
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .trust-item {
-            padding: 30px;
-            background: rgba(255,255,255,0.05); /* Subtle background for items */
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-        }
-        .trust-item:hover {
-            background: rgba(255,255,255,0.1); /* Slightly more opaque on hover */
-            transform: translateY(-5px);
-        }
-
-        .trust-icon {
-            font-size: 48px; /* Larger icons */
-            margin-bottom: 20px;
-            color: var(--accent); /* Use accent color for trust icons */
-        }
-
-        .trust-item h3 {
-            font-size: 24px;
-            color: white;
-        }
-        .trust-item p {
-            color: rgba(255,255,255,0.8); /* Lighter text for contrast */
-            font-size: 16px;
-        }
-
-
-        /* Platforms Section - SEO Value */
+        /* PLATFORMS */
         .platforms {
-            text-align: center;
-            background: white;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
         }
 
         .platforms h2 {
-            margin-bottom: 70px;
+            color: white;
         }
 
-        .platform-logos {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 50px; /* Increased gap for better spacing */
-            margin-bottom: 40px;
-            align-items: center; /* Vertically align logos */
+        .platforms .section-subtitle {
+            color: rgba(255, 255, 255, 0.8);
         }
 
-        .platform-logo {
-            max-width: 180px; /* Slightly larger logos */
-            height: auto;
-            opacity: 0.7; /* Slightly less opaque */
-            transition: var(--transition);
-            font-size: 24px; /* Placeholder text size */
-            font-weight: 700;
-            color: var(--light-text);
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 24px;
+            margin-top: 60px;
         }
 
-        .platform-logo:hover {
-            opacity: 1;
-            transform: scale(1.05); /* Subtle zoom effect */
-        }
-
-        /* Pricing Section - Value Proposition */
-        .pricing {
+        .platform-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 32px 24px;
+            border-radius: 8px;
             text-align: center;
-            background: var(--background); /* Ensure consistency if section above/below is white */
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
         }
 
-        .pricing h2 {
+        .platform-card:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-4px);
+        }
+
+        .platform-icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .platform-name {
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        /* STRENGTHS */
+        .strengths {
+            background: white;
+        }
+
+        .strengths-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .strength-card {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            border: 2px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .strength-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 12px 24px rgba(231, 76, 60, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .strength-icon {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .strength-card h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: var(--secondary);
+        }
+
+        .strength-card p {
+            font-size: 15px;
+            color: var(--light-text);
+            margin: 0;
+        }
+
+        /* PRICING */
+        .pricing {
+            background: #fafbfc;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .price-card {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            border: 2px solid var(--border);
+            text-align: center;
+        }
+
+        .price-card.featured {
+            border-color: var(--primary);
+            box-shadow: 0 12px 24px rgba(231, 76, 60, 0.15);
+            transform: scale(1.05);
+        }
+
+        .price-label {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
             margin-bottom: 20px;
         }
 
-        .pricing-subtitle {
-            max-width: 700px;
-            margin: 0 auto 70px; /* More space below subtitle */
-            font-size: 18px; /* Consistent with body text */
+        .price-card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
         }
 
-        .pricing-table {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px; /* Increased gap */
-            margin-bottom: 40px;
-        }
-
-        .pricing-item {
-            padding: 40px 30px;
-            background: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            text-align: left; /* Align text left within pricing items */
-            position: relative; /* For potential ribbons */
-        }
-
-        .pricing-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
-        }
-
-        .pricing-item h3 {
-            font-size: 28px; /* Larger pricing plan titles */
-            margin-bottom: 10px;
-            color: var(--secondary);
-            text-align: center;
-        }
-
-        .price {
-            font-size: 56px; /* Larger price */
-            font-weight: 800; /* Bolder price */
+        .price-amount {
+            font-size: 48px;
+            font-weight: 800;
             color: var(--primary);
-            margin-bottom: 15px;
-            text-align: center;
+            margin-bottom: 20px;
         }
 
-        .price-detail {
+        .price-description {
+            font-size: 14px;
             color: var(--light-text);
-            margin-bottom: 35px; /* More space below price detail */
-            font-size: 16px;
-            text-align: center;
+            margin-bottom: 30px;
         }
 
         .price-features {
-            list-style: none;
+            text-align: left;
             margin-bottom: 30px;
-            padding-left: 0; /* Remove default list padding */
         }
 
         .price-features li {
-            padding: 12px 0; /* More padding for list items */
-            border-bottom: 1px solid var(--border-color-light); /* Lighter border */
-            font-size: 16px;
+            list-style: none;
+            padding: 10px 0;
+            font-size: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
             display: flex;
             align-items: center;
+            gap: 10px;
         }
 
-        .price-features li:last-child {
-            border-bottom: none;
-        }
-
-        .price-features li::before {
-            content: '✓'; /* Checkmark icon */
+        .price-features li:before {
+            content: '✓';
             color: var(--success);
-            margin-right: 10px;
-            font-weight: 700;
-        }
-        
-        .pricing-item .btn {
-            width: 100%; /* Full width button in pricing cards */
-            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
         }
 
-        /* FAQ Section - SEO Value */
+        .price-card .btn {
+            width: 100%;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: linear-gradient(135deg, var(--secondary) 0%, #1a2332 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-section .btn {
+            background: white;
+            color: var(--primary);
+            padding: 14px 32px;
+        }
+
+        .cta-section .btn:hover {
+            background: #f0f0f0;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        /* FAQ */
         .faq {
             background: white;
         }
 
-        .faq h2 {
-            text-align: center;
-            margin-bottom: 70px;
+        .faq-items {
+            max-width: 700px;
+            margin: 60px auto 0;
         }
 
         .faq-item {
             margin-bottom: 20px;
-            border: 1px solid var(--border-color-light); /* Added border */
-            border-radius: var(--border-radius);
-            padding: 20px 25px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        .faq-item:hover {
-            box-shadow: var(--box-shadow);
-            transform: translateY(-3px);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
         }
 
         .faq-question {
-            font-size: 22px; /* Larger question text */
-            font-weight: 700;
-            margin-bottom: 0; /* Reset margin, controlled by flex */
-            color: var(--secondary);
+            background: #f8f9fa;
+            padding: 20px;
+            cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            cursor: pointer;
+            font-weight: 600;
+            color: var(--secondary);
+            transition: background 0.3s;
+            user-select: none;
         }
 
-        .faq-question .icon {
-            font-size: 24px;
-            margin-left: 15px;
-            transition: transform 0.3s ease;
+        .faq-question:hover {
+            background: #f0f1f3;
         }
 
-        .faq-question.active .icon {
+        .faq-toggle {
+            font-size: 20px;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
             transform: rotate(180deg);
         }
 
         .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
-            opacity: 0;
-            padding-top: 0;
-            font-size: 17px;
-            color: var(--light-text);
-        }
-
-        .faq-answer.open {
-            max-height: 500px; /* Adjust as needed, large enough to contain content */
-            opacity: 1;
-            padding-top: 15px; /* Add padding when open */
-        }
-
-        /* Request Cart Section */
-        .request-cart-section {
-            background: var(--background);
-        }
-
-        .request-cart-section h2 {
-            text-align: center;
-            margin-bottom: 70px;
-        }
-
-        .form-container {
-            max-width: 700px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-        }
-
-        .form-header {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border-color-light);
-        }
-
-        .form-header h3 {
-            font-size: 28px;
-            color: var(--secondary);
-            margin-bottom: 20px;
-        }
-
-        .add-item-group {
-            display: flex;
-            gap: 10px;
-        }
-
-        .add-item-group input {
-            flex-grow: 1;
-        }
-
-        /* Product Preview Styling */
-        /* Note: This styling is primarily for the *new URL input preview* at the top,
-           not for the items once they are in the cart list. */
-        .product-preview {
-            margin-top: 15px; /* More space above preview */
-            min-height: 0;
-            transition: min-height 0.3s ease;
-            position: relative; /* For clear button positioning */
-        }
-
-        .preview-loading,
-        .preview-error,
-        .preview-content {
-            background: var(--border-color-light); /* Lighter background for previews */
-            border-radius: var(--border-radius);
-            padding: 12px 15px; /* More padding */
-            margin-top: 10px;
-            font-size: 15px; /* Slightly larger preview text */
-            color: var(--light-text);
-            display: flex;
-            align-items: center;
-        }
-
-        .preview-loading i,
-        .preview-error i {
-            margin-right: 10px;
-            font-size: 20px;
-            color: var(--primary);
-        }
-
-        .preview-image {
-            width: 70px; /* Larger preview image */
-            height: 70px;
-            object-fit: cover;
-            border-radius: 6px; /* Slightly larger border-radius */
-            margin-right: 15px;
-            border: 1px solid rgba(0,0,0,0.05); /* Subtle border */
-        }
-
-        .preview-details {
-            flex: 1;
-        }
-
-        .preview-title {
-            font-weight: 700; /* Bolder title */
-            margin-bottom: 5px;
-            color: var(--secondary);
-        }
-
-        .preview-price {
-            color: var(--primary);
-            font-weight: 700;
-            font-size: 16px;
-        }
-
-        /* New: Clear button for the URL preview */
-        .preview-clear-button {
-            background: none;
-            border: none;
-            color: var(--light-text);
-            font-size: 18px; /* Slightly smaller for subtle look */
-            cursor: pointer;
-            padding: 5px;
-            line-height: 1;
-            margin-left: 10px;
-            transition: color 0.3s ease;
-        }
-        .preview-clear-button:hover {
-            color: var(--primary);
-        }
-        
-        /* Cart Display */
-        #cart-items-display {
-            border: 1px solid var(--border-color-light);
-            border-radius: var(--border-radius);
+            display: none;
             padding: 20px;
-            margin-bottom: 30px;
-            min-height: 100px; /* Ensure it's visible even when empty */
-        }
-
-        .empty-cart-message {
-            text-align: center;
-            color: var(--light-text);
-            padding: 20px;
-            font-style: italic;
-        }
-
-        .cart-item {
-            display: flex;
-            align-items: center;
-            gap: 15px; /* Still maintains gap for text/controls */
-            padding: 15px 0;
-            border-bottom: 1px dashed var(--border-color-light); /* Dashed border for items */
-        }
-
-        .cart-item:last-child {
-            border-bottom: none;
-        }
-
-        /* Removed .cart-item-image style, as the img tag is removed from HTML */
-        /*
-        .cart-item-image {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 4px;
-        }
-        */
-
-        .cart-item-details {
-            flex-grow: 1;
-        }
-
-        .cart-item-title {
-            font-weight: 600;
-            color: var(--secondary);
-            margin-bottom: 5px;
-            font-size: 17px;
-        }
-
-        .cart-item-price {
-            color: var(--primary);
-            font-weight: 700;
-            font-size: 16px;
-            margin-bottom: 5px;
-        }
-        
-        .cart-item-url {
-            font-size: 12px;
-            color: var(--light-text);
-            word-break: break-all;
-            margin-bottom: 5px;
-        }
-
-        .cart-item-actions {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .cart-item-quantity input {
-            width: 60px;
-            padding: 8px 10px;
-            text-align: center;
-            font-size: 16px;
-        }
-
-        .remove-item-button {
-            background: none;
-            border: none;
-            color: #dc3545; /* Bootstrap danger red */
-            font-size: 15px; /* Adjust size to fit text better */
-            cursor: pointer;
-            transition: color 0.3s ease;
-            display: flex; /* Allow icon and text to align */
-            align-items: center;
-            gap: 5px; /* Space between icon and text */
-            padding: 5px 10px; /* Make button clickable area larger */
-            border-radius: var(--border-radius);
-            font-weight: 600;
-        }
-
-        .remove-item-button:hover {
-            color: #bd2130;
-            background-color: rgba(220, 53, 69, 0.1); /* Light red background on hover */
-        }
-
-        /* Form Group */
-        .form-group {
-            margin-bottom: 25px; /* More space between form groups */
-        }
-
-        label {
-            display: block;
-            margin-bottom: 10px; /* More space below label */
-            font-weight: 600;
-            font-size: 17px;
-            color: var(--secondary);
-        }
-
-        input, textarea, select {
-            width: 100%;
-            padding: 14px 18px; /* Larger padding for inputs */
-            border: 1px solid #ddd;
-            border-radius: var(--border-radius);
-            font-family: inherit;
-            font-size: 17px; /* Larger font size in inputs */
-            transition: var(--transition);
-        }
-
-        input:focus, textarea:focus, select:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(231, 76, 60, 0.2); /* Stronger focus ring */
-        }
-
-        textarea {
-            min-height: 140px; /* Slightly taller textarea */
-            resize: vertical;
-        }
-
-        /* Confirmation Screen */
-        .confirmation-container {
-            max-width: 700px;
-            margin: 0 auto;
-            background: white;
-            padding: 50px; /* More padding for confirmation */
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            text-align: center;
-        }
-
-        .confirmation-icon {
-            font-size: 72px; /* Larger icon */
-            margin-bottom: 25px;
-            color: var(--success);
-        }
-
-        .confirmation-content h2 {
-            font-size: 36px; /* Larger heading */
-            margin-bottom: 25px;
-            color: var(--secondary);
-        }
-
-        .confirmation-content p {
-            font-size: 18px;
-            color: var(--light-text);
-            margin-bottom: 30px;
-        }
-
-        .next-steps {
-            text-align: left;
-            margin: 40px 0; /* More spacing */
-            padding: 25px;
-            background: rgba(0,0,0,0.03);
-            border-radius: var(--border-radius);
-        }
-
-        .next-steps h3 {
-            margin-bottom: 15px;
-            font-size: 24px;
-            color: var(--secondary);
-        }
-
-        .next-steps ol {
-            padding-left: 25px; /* More padding for list */
-        }
-
-        .next-steps li {
-            margin-bottom: 12px; /* More space between list items */
-            font-size: 17px;
             color: var(--text);
-        }
-
-        .social-share {
-            margin: 40px 0;
-        }
-        .social-share p {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        .social-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px; /* More space between buttons */
-            margin-top: 15px;
-        }
-
-        .social-button {
-            padding: 12px 20px;
-            background: var(--secondary);
-            color: white;
-            text-decoration: none;
-            border-radius: var(--border-radius);
             font-size: 15px;
-            transition: var(--transition);
+            line-height: 1.8;
+            background: white;
         }
 
-        .social-button:hover {
-            background: #1a2530;
-            transform: translateY(-2px);
-            box-shadow: var(--box-shadow);
+        .faq-item.active .faq-answer {
+            display: block;
         }
 
-        /* Footer - Trust Building */
-        .footer {
+        /* FOOTER */
+        footer {
             background: var(--secondary);
             color: white;
-            padding: 70px 0 40px; /* More padding */
+            padding: 60px 0 40px;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjusted min-width */
-            gap: 50px; /* More gap */
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
         }
 
-        .footer-heading {
-            font-size: 20px; /* Larger heading */
-            margin-bottom: 25px; /* More space below heading */
-            color: #ffffff;
+        .footer-column h3 {
+            font-size: 16px;
             font-weight: 700;
+            margin-bottom: 20px;
         }
-        
+
         .footer-column p {
-            font-size: 16px; /* Consistent font size */
-            color: rgba(255,255,255,0.8);
-            line-height: 1.7;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 12px;
         }
 
         .footer-links {
@@ -893,257 +675,285 @@
         }
 
         .footer-links li {
-            margin-bottom: 12px; /* More space between links */
+            margin-bottom: 10px;
         }
 
         .footer-links a {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
-            transition: var(--transition);
-            font-size: 16px;
+            font-size: 14px;
+            transition: color 0.3s;
         }
 
         .footer-links a:hover {
             color: white;
-            transform: translateX(5px); /* Subtle slide effect */
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 40px; /* More padding */
-            border-top: 1px solid rgba(255,255,255,0.15); /* Slightly more visible border */
-            color: rgba(255,255,255,0.6);
-            font-size: 15px;
         }
 
         .social-icons {
             display: flex;
-            gap: 20px; /* More space between icons */
-            margin-top: 25px;
-            justify-content: flex-start; /* Align social icons to the left */
+            gap: 16px;
+            margin-top: 16px;
         }
 
         .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
-            font-size: 24px; /* Larger social icons */
-            transition: var(--transition);
+            text-decoration: none;
+            transition: all 0.3s;
         }
+
         .social-icon:hover {
-            color: var(--accent); /* Change color on hover */
+            background: var(--primary);
             transform: translateY(-3px);
         }
 
-        /* Hidden class for honeypot */
-        .hidden {
-            display: none;
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
         }
 
-        /* Enhanced Responsive Design System */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            .under-construction-banner {
-                font-size: 14px;
-                padding: 8px 10px;
-            }
-            .nav {
-                top: 40px; /* Adjusted for mobile construction banner */
-                padding: 10px 0;
-            }
-            .nav-container {
-                padding: 0 15px;
-            }
             .nav-links {
-                display: none; /* Hide by default on mobile */
-                flex-direction: column;
+                display: none;
                 position: absolute;
-                top: 100%; /* Position below the navigation bar */
+                top: 100%;
                 left: 0;
-                width: 100%;
+                right: 0;
                 background: white;
-                box-shadow: var(--box-shadow);
-                padding: 20px 0;
-                border-top: 1px solid var(--border-color-light);
-                opacity: 0;
-                pointer-events: none;
-                transition: opacity 0.3s ease, transform 0.3s ease;
-                transform: translateY(-10px);
-                align-items: center; /* Center items in mobile menu */
-                gap: 15px; /* Smaller gap for mobile links */
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                z-index: 998;
             }
 
             .nav-links.active {
-                display: flex; /* Show when active */
-                opacity: 1;
-                pointer-events: all;
-                transform: translateY(0);
+                display: flex;
             }
 
-            .nav-links a {
-                margin: 0; /* Reset margins for mobile links */
-                padding: 10px 0;
-                width: 80%; /* Make links wider for tap targets */
-                text-align: center;
-                border-bottom: 1px solid var(--border-color-light);
-            }
-            .nav-links a:last-of-type { /* Remove border for the last link in mobile menu */
-                border-bottom: none;
+            .mobile-menu-btn {
+                display: block;
             }
 
-            .mobile-menu-toggle {
-                display: block; /* Show hamburger icon on mobile */
-            }
-
-            section {
-                padding: 60px 0; /* Adjusted for smaller screens */
-            }
-            .hero {
-                padding: 130px 0 80px;
-            }
-            .hero h1 {
+            .hero-content h1 {
                 font-size: 38px;
             }
-            .hero p {
+
+            .hero-subtitle {
                 font-size: 18px;
             }
-            h2 {
-                font-size: 32px;
-            }
-            .form-container {
-                padding: 30px 20px;
-            }
-            .step {
-                padding: 25px 20px;
-            }
-            .step h3 {
-                font-size: 22px;
-            }
-            .pricing-table {
-                gap: 30px;
-            }
-            .price {
-                font-size: 48px;
-            }
-            .btn {
-                padding: 12px 25px;
-                font-size: 16px;
-                width: 100%;
-                margin-bottom: 15px;
-            }
-            .footer-grid {
-                gap: 30px;
-            }
-            .social-icons {
-                justify-content: center; /* Center social icons on mobile */
-            }
-        }
 
-        @media (min-width: 769px) and (max-width: 1024px) {
-            section {
-                padding: 80px 0;
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
             }
-            .container {
-                padding: 0 30px;
-            }
-            .hero h1 {
-                font-size: 48px;
-            }
-            h2 {
+
+            section h2 {
                 font-size: 36px;
             }
+
+            .who-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .strengths-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .price-card.featured {
+                transform: scale(1);
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-section .btn {
+                width: 100%;
+            }
+
+            .platform-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
-        @media (min-width: 1600px) {
+        @media (max-width: 480px) {
             .container {
-                max-width: 1400px;
+                padding: 0 16px;
             }
+
             .hero {
-                padding: 200px 0 140px;
+                padding: 60px 0;
             }
-            .form-container {
-                max-width: 800px;
+
+            .hero-content h1 {
+                font-size: 28px;
             }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
             section {
-                padding: 120px 0;
+                padding: 60px 0;
+            }
+
+            section h2 {
+                font-size: 28px;
+            }
+
+            .section-subtitle {
+                font-size: 16px;
+            }
+
+            .trust-items {
+                gap: 24px;
+            }
+
+            .platform-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pixel-accent {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <div class="under-construction-banner">
-        <p>🚧 This site is still under construction! Please check back in a few days for our full launch. 🚧</p>
+    <div class="construction-banner">
+        🚧 ShogunShip is launching soon! Check back for updates. 🚧
     </div>
 
-    <nav class="nav">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <div class="logo-icon" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48c3R5bGU+LnN0MHtmaWxsOiNFNzRDM0M7fS5zdDF7ZmlsbDojMkMzRTUwO30uc3Qye2ZpbGw6I0YzOUMxMjt9PC9zdHlsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNNTAgOTBjLTIyLjEgMC00MC0xNy45LTQwLTQwczE3LjktNDAgNDAtNDAgNDAgMTcuOSA0MCA0MC0xNy45IDQwLTQwIDQweiIvPjxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik03MCA2NUg0MHYtNWgzMGMxLjEgMCAyLS45IDItMnMtLjktMi0yLTJINDBWNTFoMzBjMi44IDAgNSAyLjIgNSA1cy0yLjIgNS01IDV6Ii8+PHBhdGggY2xhc3M9InN0MSIgZD0ibTY1IDc1SDM1Yy0yLjggMC01LTIuMi01LTVzMi4yLTUgNS01aDMwYzEuMSAwIDItLjkgMi0ycy0uOS0yLTItMkgzNXYtNWgzMGMyLjggMCA1IDIuMiA1IDVzLTIuMiA1LTUgNXoiLz48cGF0aCBjbGFzcz0ic3QyIiBkPSJNNTAgMzBjLTUuNSAwLTEwIDQuNS0xMCAxMHM0LjUgMTAgMTAgMTAgMTAtNC41IDEwLTEwLTQuNS0xMC0xMC0xMHptMCAxNWMtMi44IDAtNS0yLjItNS01czIuMi01IDUtNSA1IDIuMiA1IDUtMi4yIDUtNSA1eiIvPjwvc3ZnPg==');"></div>
+    <nav>
+        <div class="container nav-wrapper">
+            <a href="/" class="logo">
+                <div class="logo-icon">🧧</div>
                 <span>ShogunShip</span>
             </a>
             <div class="nav-links">
+                <a href="#who-we-are">Who We Are</a>
                 <a href="#how-it-works">How It Works</a>
                 <a href="#platforms">Platforms</a>
+                <a href="#strengths">Strengths</a>
                 <a href="#pricing">Pricing</a>
-                <a href="about.html">About Us</a> <a href="contact.html">Contact</a> <a href="#request-cart-section" class="btn">Request Item</a>
+                <a href="#faq">FAQ</a>
+                <a href="contact.html" class="btn">Get Started</a>
             </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+            <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
     </nav>
 
     <section class="hero">
+        <div class="pixel-accent"></div>
         <div class="container">
-            <h1>Unlock the World of Japanese Treasures</h1>
-            <p>We help you shop from Mercari, Yahoo Auctions, and Rakuten Japan with no language barrier or shipping headaches. Your dream items are just a click away!</p>
-            <a href="#request-cart-section" class="btn">Start Your Request Now</a>
-        </div>
-    </section>
-
-    <section class="how-it-works" id="how-it-works">
-        <div class="container">
-            <h2>Your Path to Japanese Items, Simplified</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-icon"><i class="fas fa-magnifying-glass"></i></div>
-                    <h3>1. Discover & Share</h3>
-                    <p>Browse your favorite Japanese marketplaces. Once you find something you love, simply share the product link with us.</p>
-                </div>
-                <div class="step">
-                    <div class="step-icon"><i class="fas fa-hand-holding-dollar"></i></div>
-                    <h3>2. We Handle Purchase</h3>
-                    <p>Our team expertly purchases the items on your behalf, navigating all local payment and communication complexities.</p>
-                </div>
-                <div class="step">
-                    <div class="step-icon"><i class="fas fa-box-open"></i></div>
-                    <h3>3. Receive Your Items</h3>
-                    <p>We consolidate, package, and ship your items directly to your global doorstep with reliable tracking and insurance.</p>
+            <div class="hero-content">
+                <h1>Collectors Helping Collectors</h1>
+                <p class="hero-subtitle">Find rare Japanese items through real people who love what they do.</p>
+                <div class="hero-cta">
+                    <a href="#how-it-works" class="btn">See How It Works</a>
+                    <a href="contact.html" class="btn btn-secondary">Request an Item</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="trust-signals">
+    <div class="trust-band">
         <div class="container">
-            <h2>Why ShogunShip is Your Trusted Partner</h2>
-            <div class="trust-grid">
+            <div class="trust-items">
                 <div class="trust-item">
-                    <div class="trust-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>Secure & Safe</h3>
-                    <p>Your transactions are protected with industry-leading security measures.</p>
+                    <div class="trust-icon">💎</div>
+                    <h3>Authentic</h3>
+                    <p>Real collectors, real passion</p>
                 </div>
                 <div class="trust-item">
-                    <div class="trust-icon"><i class="fas fa-truck-fast"></i></div>
-                    <h3>Global Shipping</h3>
-                    <p>Reliable and tracked delivery to over 100 countries worldwide.</p>
+                    <div class="trust-icon">🇯🇵</div>
+                    <h3>Based in Japan</h3>
+                    <p>Located in Osaka</p>
                 </div>
                 <div class="trust-item">
-                    <div class="trust-icon"><i class="fas fa-comments"></i></div>
-                    <h3>Seamless Communication</h3>
-                    <p>We bridge the language gap, handling all Japanese interactions for you.</p>
+                    <div class="trust-icon">🤝</div>
+                    <h3>Personal Service</h3>
+                    <p>Direct communication</p>
                 </div>
                 <div class="trust-item">
-                    <div class="trust-icon"><i class="fas fa-certificate"></i></div>
-                    <h3>Authenticity Verified</h3>
-                    <p>Every item is inspected to ensure it matches the description before shipping.</p>
+                    <div class="trust-icon">📸</div>
+                    <h3>Arrival Photos</h3>
+                    <p>See what you're getting</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="who-we-are" id="who-we-are">
+        <div class="container">
+            <h2>Our Story</h2>
+            <p class="section-subtitle">We're not a corporation. We're a husband-and-wife team of collectors.</p>
+            <div class="who-content">
+                <div class="who-text">
+                    <h3>Real People, Real Collections</h3>
+                    <p>Living in Osaka, we've spent years collecting rare items from Japanese marketplaces. We understand the hunt, the excitement of finding something special, and the trust you need when buying online.</p>
+                    <p>That's why we started ShogunShip—not to get rich, but to share the thrill of Japanese collecting with people like you.</p>
+                    <p>We know the platforms, we speak the language, and we care about every item we source. When you buy from us, you're dealing with actual collectors who understand what you're looking for.</p>
+                    <p style="margin-top: 24px;"><strong>We're collectors helping collectors.</strong></p>
+                </div>
+                <div class="who-image">
+                    [Pixel art of a cozy collection room would go here]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <p class="section-subtitle">Simple. Transparent. Human.</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Tell Us What You Want</h3>
+                    <p>Share item links, descriptions, or even just an idea. We'll search Japanese marketplaces for exactly what you're looking for.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>We Negotiate & Verify</h3>
+                    <p>We handle the purchase, communication with sellers, and verify quality before buying. Photos on demand.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Safe Storage</h3>
+                    <p>Items arrive at our temporary storage space in Osaka. We keep everything organized and protected until you're ready.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Arrival Photos</h3>
+                    <p>We photograph everything when it arrives. You see exactly what you're getting before final shipment.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>International Shipping</h3>
+                    <p>We consolidate, package carefully, and ship internationally with full tracking and insurance.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <h3>In Your Collection</h3>
+                    <p>Your items arrive safely. Now you own a piece of Japan's treasure.</p>
                 </div>
             </div>
         </div>
@@ -1151,854 +961,308 @@
 
     <section class="platforms" id="platforms">
         <div class="container">
-            <h2>Access the Best of Japan: Supported Platforms</h2>
-            <div class="platform-logos">
-                <img src="https://via.placeholder.com/150x50/cccccc/333333?text=Mercari" alt="Mercari Logo" class="platform-logo">
-                <img src="https://via.placeholder.com/150x50/cccccc/333333?text=Yahoo+Auctions" alt="Yahoo Auctions Logo" class="platform-logo">
-                <img src="https://via.placeholder.com/150x50/cccccc/333333?text=Rakuten" alt="Rakuten Logo" class="platform-logo">
-                <img src="https://via.placeholder.com/150x50/cccccc/333333?text=Amazon+Japan" alt="Amazon Japan Logo" class="platform-logo">
+            <h2>We Shop From</h2>
+            <p class="section-subtitle">All the best Japanese marketplaces</p>
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <span class="platform-icon">🛍️</span>
+                    <div class="platform-name">Mercari</div>
+                </div>
+                <div class="platform-card">
+                    <span class="platform-icon">🔨</span>
+                    <div class="platform-name">Yahoo Auctions</div>
+                </div>
+                <div class="platform-card">
+                    <span class="platform-icon">🏬</span>
+                    <div class="platform-name">Rakuma</div>
+                </div>
+                <div class="platform-card">
+                    <span class="platform-icon">📚</span>
+                    <div class="platform-name">Mandarake</div>
+                </div>
+                <div class="platform-card">
+                    <span class="platform-icon">🎯</span>
+                    <div class="platform-name">Surugaya</div>
+                </div>
+                <div class="platform-card">
+                    <span class="platform-icon">🏪</span>
+                    <div class="platform-name">Rakuten</div>
+                </div>
             </div>
-            <p>Can't find what you're looking for? We can also source from other specialized Japanese websites!</p>
-            <a href="#request-cart-section" class="btn btn-secondary">Request Special Source</a>
+        </div>
+    </section>
+
+    <section class="strengths" id="strengths">
+        <div class="container">
+            <h2>Why Choose ShogunShip</h2>
+            <p class="section-subtitle">We're different. Here's why.</p>
+            <div class="strengths-grid">
+                <div class="strength-card">
+                    <div class="strength-icon">🤝</div>
+                    <h3>Personal Service</h3>
+                    <p>You get actual humans. Direct communication. We'll answer your questions personally.</p>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-icon">💬</div>
+                    <h3>Collector Knowledge</h3>
+                    <p>We know value. We know quality. We understand what makes a collectible worth owning.</p>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-icon">🇯🇵</div>
+                    <h3>Located in Japan</h3>
+                    <p>We're not overseas. We're physically here, sourcing items, handling details locally.</p>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-icon">📸</div>
+                    <h3>Arrival Photos</h3>
+                    <p>Before anything ships internationally, we send detailed photos. You see what you're paying for.</p>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-icon">📦</div>
+                    <h3>Temporary Storage</h3>
+                    <p>Consolidate multiple purchases. Store safely. Ship when ready. No rush, no pressure.</p>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-icon">💰</div>
+                    <h3>Transparent Pricing</h3>
+                    <p>No hidden fees. Straightforward commission. You know exactly what you're paying.</p>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-icon">🎯</div>
+                    <h3>Attention to Detail</h3>
+                    <p>We're a small team. We care about every item. Quality over quantity.</p>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-icon">🎁</div>
+                    <h3>Discovery</h3>
+                    <p>Not finding what you want? We'll hunt for it. Part of the excitement is finding treasure together.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="pricing" id="pricing">
         <div class="container">
-            <h2>Transparent Pricing, No Hidden Surprises</h2>
-            <p class="pricing-subtitle">Our straightforward fees ensure you always know what you're paying. Get the best value for your Japanese imports.</p>
-            <div class="pricing-table">
-                <div class="pricing-item">
+            <h2>Simple Pricing</h2>
+            <p class="section-subtitle">Transparent fees with no surprises</p>
+            <div class="pricing-cards">
+                <div class="price-card">
                     <h3>Service Fee</h3>
-                    <div class="price">10%</div>
-                    <p class="price-detail">of item purchase price (minimum fee may apply)</p>
+                    <div class="price-amount">15%</div>
+                    <p class="price-description">On each item purchased from Japanese marketplaces</p>
                     <ul class="price-features">
-                        <li>Item sourcing & verification</li>
-                        <li>Secure purchase processing</li>
-                        <li>Direct seller communication</li>
-                        <li>Safe payment handling</li>
-                        <li>Warehouse receiving & initial inspection</li>
+                        <li>Finding & negotiation</li>
+                        <li>Quality verification</li>
+                        <li>Arrival photos</li>
                     </ul>
-                    <a href="#request-cart-section" class="btn">Get a Quote</a>
                 </div>
-                <div class="pricing-item">
-                    <h3>International Shipping</h3>
-                    <div class="price">Varies</div>
-                    <p class="price-detail">based on weight, dimensions & destination</p>
+                <div class="price-card featured">
+                    <div class="price-label">MOST POPULAR</div>
+                    <h3>Shipping</h3>
+                    <div class="price-amount">Actual</div>
+                    <p class="price-description">EMS, DHL, or other carrier costs</p>
                     <ul class="price-features">
-                        <li>Consolidation of multiple items</li>
-                        <li>Professional packaging</li>
-                        <li>Choice of shipping methods (EMS, Airmail, Surface)</li>
-                        <li>Full international tracking</li>
-                        <li>Optional insurance coverage</li>
+                        <li>International carriers only</li>
+                        <li>Full insurance included</li>
+                        <li>Tracking provided</li>
+                        <li>Consolidation savings</li>
                     </ul>
-                    <a href="#faq" class="btn btn-secondary">Learn More</a>
+                </div>
+                <div class="price-card">
+                    <h3>Storage</h3>
+                    <div class="price-amount">Free</div>
+                    <p class="price-description">Temporary storage in Osaka</p>
+                    <ul class="price-features">
+                        <li>Consolidate purchases</li>
+                        <li>Protected storage</li>
+                        <li>Ship on your timeline</li>
+                    </ul>
                 </div>
             </div>
-            <p>All prices are in USD. Please note that local sales tax, customs duties, and import fees may apply upon delivery, depending on your country's regulations.</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Collecting?</h2>
+            <p>Let's find your next treasure together. Contact us to discuss your wishlist.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn">Get in Touch</a>
+                <a href="#faq" class="btn btn-secondary">Learn More</a>
+            </div>
         </div>
     </section>
 
     <section class="faq" id="faq">
         <div class="container">
-            <h2>Your Questions, Answered</h2>
-            <div class="faq-item">
-                <div class="faq-question">How long does shipping typically take?<span class="icon">▼</span></div>
-                <div class="faq-answer">
-                    <p>Shipping times vary based on your chosen method and destination. Generally, express shipping (EMS) takes 3-7 business days, standard airmail 7-14 business days, and surface mail 1-3 months. We provide tracking for all international shipments.</p>
+            <h2>Questions?</h2>
+            <p class="section-subtitle">We've got answers</p>
+            <div class="faq-items">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does the whole process take?</span>
+                        <span class="faq-toggle">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        Finding an item typically takes 1-2 weeks depending on what you're looking for and current marketplace activity. Once purchased, items arrive at our storage within a few days. Storage time depends on you—consolidate as many items as you want, then ship when ready. International shipping takes 1-3 weeks depending on destination and service chosen.
+                    </div>
                 </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">What payment methods do you accept?<span class="icon">▼</span></div>
-                <div class="faq-answer">
-                    <p>We accept a variety of secure payment methods, including major credit cards (Visa, Mastercard, American Express), PayPal, and international bank transfers. All payments are processed in USD.</p>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I request custom searches?</span>
+                        <span class="faq-toggle">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely. That's what we do. Send us links, item descriptions, specific criteria—anything. We'll search Japanese marketplaces and find exactly what you're looking for. The thrill of the hunt is part of why we started ShogunShip.
+                    </div>
                 </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Can I buy from any Japanese website?<span class="icon">▼</span></div>
-                <div class="faq-answer">
-                    <p>While we primarily support top marketplaces like Mercari, Yahoo Auctions, Rakuten, and Amazon Japan, we are often able to assist with purchases from other Japanese online stores. Please submit your link, and we'll confirm feasibility.</p>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if I don't like the item when it arrives?</span>
+                        <span class="faq-toggle">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        We send arrival photos before international shipping, so you'll see exactly what you're getting. But we understand concerns about condition or quality expectations. Contact us immediately if there's an issue—we'll work with you to resolve it.
+                    </div>
                 </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">What if my item arrives damaged or is not as described?<span class="icon">▼</span></div>
-                <div class="faq-answer">
-                    <p>We conduct a thorough inspection of all items upon arrival at our warehouse to ensure they match the description and are in good condition. If any issues are found, we will notify you immediately. For damage incurred during international transit, we will assist you in filing a claim with the shipping carrier, especially if insurance was opted for.</p>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you handle rare or high-value items?</span>
+                        <span class="faq-toggle">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes. We've handled everything from vintage collectibles to limited edition figures. The rarer and more specialized your request, the more valuable our expertise becomes. We understand Japanese collector markets and can navigate authentication, condition assessment, and safe handling of high-value pieces.
+                    </div>
                 </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Are there any items you cannot purchase or ship?<span class="icon">▼</span></div>
-                <div class="faq-answer">
-                    <p>Yes, certain items are restricted due to international shipping regulations (e.g., aerosols, batteries, weapons, perishable goods) or platform-specific rules. We will inform you if your requested item falls under these categories. Please refer to our Terms of Service for a detailed list.</p>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How is international shipping handled?</span>
+                        <span class="faq-toggle">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        We partner with international carriers like EMS and DHL. All shipments include full insurance and tracking. Items are carefully packed. You can consolidate multiple purchases before shipping to save on costs. We'll handle all customs documentation.
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="request-cart-section" id="request-cart-section">
-        <div class="container">
-            <h2>Your Japanese Shopping Cart</h2>
-            <div class="form-container">
-                <div class="form-header">
-                    <h3>Add items to your request list:</h3>
-                    <div class="add-item-group">
-                        <input type="url" id="new-product-url" placeholder="Paste Mercari, Yahoo Auctions, or Rakuten URL" required>
-                        <button type="button" id="add-to-cart-button" class="btn">Add to List</button>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What about customs and import taxes?</span>
+                        <span class="faq-toggle">⌄</span>
                     </div>
-                    <div id="new-url-preview" class="product-preview"></div>
+                    <div class="faq-answer">
+                        Customs and import taxes vary by destination country. We'll provide accurate item valuations to declare. You may owe taxes on delivery depending on your country's import regulations. We'll give you realistic expectations about potential additional costs.
+                    </div>
                 </div>
-
-                <div id="cart-items-display">
-                    <p class="empty-cart-message">Your list is empty. Add a product URL above to begin, or fill out the form below for a general inquiry.</p>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can you help with items on specific platforms?</span>
+                        <span class="faq-toggle">⌄</span>
+                    </div>
+                    <div class="faq-answer">
+                        We shop from all major Japanese marketplaces—Mercari, Yahoo Auctions, Rakuma, Mandarake, Surugaya, Rakuten, and others. Have a specific platform in mind? Tell us, and we'll find what you're looking for there.
+                    </div>
                 </div>
-
-                <form name="shogunship-order" data-netlify="true" netlify-honeypot="bot-field" method="POST">
-                    <p class="hidden">
-                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                    </p>
-                    <input type="hidden" name="form-name" value="shogunship-order">
-                    <input type="hidden" name="cart-data" id="cart-data-input"> <div class="form-group">
-                        <label for="name">Your Full Name</label>
-                        <input type="text" id="name" name="name" required>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do you handle payment?</span>
+                        <span class="faq-toggle">⌄</span>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Your Email Address</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="product-interest">What type of items are you interested in?</label>
-                        <select id="product-interest" name="product-interest">
-                            <option value="" disabled selected>Select category (optional)</option>
-                            <option value="anime-figures">Anime Figures</option>
-                            <option value="video-games">Video Games & Consoles</option>
-                            <option value="trading-cards">Trading Cards</option>
-                            <option value="fashion">Fashion & Clothing</option>
-                            <option value="electronics">Electronics & Gadgets</option>
-                            <option value="toys">Toys & Collectibles</option>
-                            <option value="books-manga">Books & Manga</option>
-                            <option value="j-pop-goods">J-Pop/Idol Goods</option>
-                            <option value="traditional-crafts">Traditional Crafts</option>
-                            <option value="other">Other (please specify)</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group other-interest-section" style="display: none;">
-                        <label for="other-interest">Please specify what you're looking for:</label>
-                        <input type="text" id="other-interest" name="other-interest" placeholder="E.g., Vintage Kimonos, Rare Vinyl Records">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="country">Your Shipping Country</label>
-                        <select id="country" name="country" required>
-                            <option value="" disabled selected>Select your country</option>
-                            <optgroup label="Popular Destinations">
-                                <option value="US">United States</option>
-                                <option value="CA">Canada</option>
-                                <option value="GB">United Kingdom</option>
-                                <option value="AU">Australia</option>
-                            </optgroup>
-                            <optgroup label="Europe">
-                                <option value="AT">Austria</option>
-                                <option value="BE">Belgium</option>
-                                <option value="DK">Denmark</option>
-                                <option value="FI">Finland</option>
-                                <option value="FR">France</option>
-                                <option value="DE">Germany</option>
-                                <option value="GR">Greece</option>
-                                <option value="IE">Ireland</option>
-                                <option value="IT">Italy</option>
-                                <option value="LU">Luxembourg</option>
-                                <option value="NL">Netherlands</option>
-                                <option value="NO">Norway</option>
-                                <option value="PT">Portugal</option>
-                                <option value="ES">Spain</option>
-                                <option value="SE">Sweden</option>
-                                <option value="CH">Switzerland</option>
-                                <option value="BG">Bulgaria</option>
-                                <option value="HR">Croatia</option>
-                                <option value="CY">Cyprus</option>
-                                <option value="CZ">Czech Republic</option>
-                                <option value="EE">Estonia</option>
-                                <option value="HU">Hungary</option>
-                                <option value="IS">Iceland</option>
-                                <option value="LV">Latvia</option>
-                                <option value="LI">Liechtenstein</option>
-                                <option value="LT">Lithuania</option>
-                                <option value="MT">Malta</option>
-                                <option value="PL">Poland</option>
-                                <option value="RO">Romania</option>
-                                <option value="SK">Slovakia</option>
-                                <option value="SI">Slovenia</option>
-                            </optgroup>
-                            <optgroup label="Asia Pacific">
-                                <option value="SG">Singapore</option>
-                                <option value="HK">Hong Kong</option>
-                                <option value="NZ">New Zealand</option>
-                                <option value="MY">Malaysia</option>
-                                <option value="TH">Thailand</option>
-                                <option value="PH">Philippines</option>
-                                <option value="TW">Taiwan</option>
-                                <option value="KR">South Korea</option>
-                            </optgroup>
-                            <optgroup label="Other Regions">
-                                <option value="MX">Mexico</option>
-                                <option value="AE">United Arab Emirates</option>
-                                <option value="SA">Saudi Arabia</option>
-                                <option value="ZA">South Africa</option>
-                                <option value="IL">Israel</option>
-                                <option value="CL">Chile</option>
-                                <option value="AR">Argentina</option>
-                                <option value="other">Other (please specify)</option>
-                            </optgroup>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group other-country-section" style="display: none;">
-                        <label for="other-country">Please specify your country:</label>
-                        <input type="text" id="other-country" name="other-country" placeholder="Enter your country name">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="budget">Your Maximum Budget for these items (USD)</label>
-                        <input type="number" id="budget" name="budget" placeholder="E.g., 500 (optional)">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Any Additional Details or Questions?</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Specific requirements, preferred condition, size, color, or questions about the item..."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn" id="submit-request-button">Submit My Item Request (0 items)</button>
-                </form>
-                
-                <div id="confirmation-screen" style="display: none;" class="confirmation-container">
-                    <div class="confirmation-content">
-                        <div class="confirmation-icon">✅</div>
-                        <h2>Your Request Has Been Received!</h2>
-                        <p>Thank you for choosing ShogunShip. We'll meticulously review your requested items and get back to you within 24 hours with availability and a comprehensive quote.</p>
-                        
-                        <div class="next-steps">
-                            <h3>What happens next?</h3>
-                            <ol>
-                                <li>Our team will verify the availability and condition of your items.</li>
-                                <li>You'll receive a detailed quote via email with secure payment instructions.</li>
-                                <li>Once payment is confirmed, we'll purchase your items and prepare them for international shipping.</li>
-                            </ol>
-                        </div>
-                        
-                        <div class="social-share">
-                            <p>Know someone who might love our service?</p>
-                            <div class="social-buttons">
-                                <a href="https://www.instagram.com/share?url=https://shogunship.netlify.app/&text=Discover exclusive Japanese items with ShogunShip! #JapanProxy #ShogunShip" target="_blank" class="social-button">Share on Instagram</a>
-                                <a href="https://twitter.com/intent/tweet?url=https://shogunship.netlify.app/&text=Access exclusive Japanese items from Mercari, Yahoo Auctions & more with ShogunShip! #JapanProxy" target="_blank" class="social-button">Share on Twitter</a>
-                            </div>
-                        </div>
-                        
-                        <button class="btn" onclick="window.location.reload()">Submit Another Request</button>
+                    <div class="faq-answer">
+                        Reach out with your request. We'll provide a quote including the item price plus our 15% service fee. Payment methods and details will be discussed directly. We keep everything transparent and straightforward.
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
+    <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column">
-                    <h4 class="footer-heading">ShogunShip</h4>
-                    <p>Your trusted bridge to Japanese treasures. We make shopping from Japan simple, secure, and stress-free, connecting you to exclusive items worldwide.</p>
+                    <h3>ShogunShip</h3>
+                    <p>Collectors in Osaka, helping collectors worldwide find rare Japanese treasures.</p>
                     <div class="social-icons">
-                        <a href="https://instagram.com/your-shogunship-instagram" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://twitter.com/your-shogunship-twitter" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="mailto:shogunship.business@gmail.com" aria-label="Email Us"><i class="fas fa-envelope"></i></a>
+                        <a href="#" class="social-icon" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="mailto:hello@shogunship.jp" class="social-icon" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h4 class="footer-heading">Quick Links</h4>
+                    <h3>Navigation</h3>
                     <ul class="footer-links">
+                        <li><a href="#who-we-are">Who We Are</a></li>
                         <li><a href="#how-it-works">How It Works</a></li>
-                        <li><a href="#platforms">Supported Platforms</a></li>
+                        <li><a href="#platforms">Platforms</a></li>
                         <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4 class="footer-heading">Legal & Support</h4>
+                    <h3>Company</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Refund Policy</a></li>
-                        <li><a href="#">Shipping Policy</a></li>
-                        <li><a href="contact.html">Contact Support</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Privacy</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 ShogunShip. All rights reserved.</p>
+                <p>&copy; 2024 ShogunShip. Collectors helping collectors find treasures in Japan.</p>
             </div>
         </div>
     </footer>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Set form load timestamp for spam protection
-        const orderForm = document.querySelector('form[name="shogunship-order"]');
-        orderForm.dataset.loadTime = Date.now();
-        
-        // --- Cart/Request List Functionality ---
-        let cartItems = []; // Array to hold cart items
-        const MAX_ITEMS = 3; // Define the maximum number of items
-
-        const newProductUrlInput = document.getElementById('new-product-url');
-        const addToCartButton = document.getElementById('add-to-cart-button');
-        const newUrlPreviewContainer = document.getElementById('new-url-preview');
-        const cartItemsDisplay = document.getElementById('cart-items-display');
-        const cartDataInput = document.getElementById('cart-data-input');
-        const submitRequestButton = document.getElementById('submit-request-button');
-
-        // Load cart from localStorage on page load
-        function loadCart() {
-            const savedCart = localStorage.getItem('shogunShipCart');
-            if (savedCart) {
-                try {
-                    cartItems = JSON.parse(savedCart);
-                } catch (e) {
-                    console.error("Error parsing cart from localStorage:", e);
-                    cartItems = [];
-                }
-            }
-            renderCart();
-            updateSubmitButtonState(); // Update state on load
-            updateAddItemControls(); // Ensure add controls reflect current cart state on load
-        }
-
-        // Save cart to localStorage
-        function saveCart() {
-            localStorage.setItem('shogunShipCart', JSON.stringify(cartItems));
-            updateSubmitButtonState(); // Update state when cart changes
-        }
-
-        // Render cart items to the display area
-        function renderCart() {
-            cartItemsDisplay.innerHTML = ''; // Clear current display
-
-            if (cartItems.length === 0) {
-                cartItemsDisplay.innerHTML = '<p class="empty-cart-message">Your list is empty. Add a product URL above to begin, or fill out the form below for a general inquiry.</p>';
-            } else {
-                cartItems.forEach(item => {
-                    const itemDiv = document.createElement('div');
-                    itemDiv.classList.add('cart-item');
-                    itemDiv.innerHTML = `
-                        <div class="cart-item-details">
-                            <div class="cart-item-title">${item.title}</div>
-                            <div class="cart-item-price">${item.price}</div>
-                            <div class="cart-item-url"><a href="${item.url}" target="_blank" rel="noopener noreferrer">${item.url.length > 70 ? item.url.substring(0, 70) + '...' : item.url}</a></div>
-                        </div>
-                        <div class="cart-item-actions">
-                            <div class="cart-item-quantity">
-                                <input type="number" min="1" value="${item.quantity}" data-item-id="${item.id}" aria-label="Quantity for ${item.title}">
-                            </div>
-                            <button class="remove-item-button" data-item-id="${item.id}" aria-label="Remove item ${item.title}">
-                                <i class="fas fa-trash-alt"></i> Remove
-                            </button>
-                        </div>
-                    `;
-                    cartItemsDisplay.appendChild(itemDiv);
-                });
-
-                // Add event listeners for quantity changes and remove buttons
-                cartItemsDisplay.querySelectorAll('.cart-item-quantity input').forEach(input => {
-                    input.addEventListener('change', function() {
-                        const itemId = this.dataset.itemId;
-                        const newQuantity = parseInt(this.value, 10);
-                        if (!isNaN(newQuantity) && newQuantity > 0) {
-                            updateItemQuantity(itemId, newQuantity);
-                        } else {
-                            this.value = cartItems.find(item => item.id === itemId).quantity; // Revert if invalid
-                        }
-                    });
-                });
-
-                cartItemsDisplay.querySelectorAll('.remove-item-button').forEach(button => {
-                    button.addEventListener('click', function() {
-                        const itemId = this.dataset.itemId;
-                        removeItemFromCart(itemId);
-                    });
-                });
-            }
-            updateAddItemControls(); // Update add item button state after rendering cart
-        }
-
-        // Update submit button state and text (always enabled now)
-        function updateSubmitButtonState() {
-            const itemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
-            submitRequestButton.textContent = `Submit My Item Request (${itemCount} item${itemCount !== 1 ? 's' : ''})`;
-            // submitRequestButton.disabled is always false now
-        }
-
-        // Update the state of the Add to List button and preview based on MAX_ITEMS
-        function updateAddItemControls() {
-            if (cartItems.length >= MAX_ITEMS) {
-                addToCartButton.disabled = true;
-                newProductUrlInput.disabled = true;
-                newProductUrlInput.value = ''; // Clear input if limit reached
-                newUrlPreviewContainer.innerHTML = `<div class="preview-error"><i class="fas fa-info-circle"></i> You've reached the limit of ${MAX_ITEMS} items. Please remove one to add more.</div>`;
-            } else {
-                addToCartButton.disabled = false;
-                newProductUrlInput.disabled = false;
-                // Only clear preview if not already showing an error or success message from add attempt
-                const currentPreviewContent = newUrlPreviewContainer.innerHTML;
-                if (!currentPreviewContent.includes('preview-error') && !currentPreviewContent.includes('preview-content')) {
-                     newUrlPreviewContainer.innerHTML = ''; // Clear only if empty or a generic message
-                }
-            }
-            setupClearButton(); // Ensure clear button is always set up for any message
-        }
-
-        // Add item to cart logic
-        addToCartButton.addEventListener('click', function() {
-            const url = newProductUrlInput.value.trim();
-            if (!url) {
-                newUrlPreviewContainer.innerHTML = '<div class="preview-error"><i class="fas fa-exclamation-circle"></i> Please enter a URL. <button class="preview-clear-button"><i class="fas fa-times-circle"></i></button></div>';
-                setupClearButton(); // Setup clear button for this error message
-                return;
-            }
-
-            if (cartItems.length >= MAX_ITEMS) {
-                 newUrlPreviewContainer.innerHTML = `<div class="preview-error"><i class="fas fa-info-circle"></i> You've reached the limit of ${MAX_ITEMS} items. Please remove one to add more. <button class="preview-clear-button"><i class="fas fa-times-circle"></i></button></div>`;
-                 setupClearButton(); // Setup clear button for this error message
-                 return;
-            }
-
-            // Check if item already exists in cart by URL (to prevent duplicates)
-            const existingItem = cartItems.find(item => item.url === url);
-            if (existingItem) {
-                newUrlPreviewContainer.innerHTML = '<div class="preview-error"><i class="fas fa-info-circle"></i> This item is already in your list. You can adjust its quantity. <button class="preview-clear-button"><i class="fas fa-times-circle"></i></button></div>';
-                setupClearButton(); // Setup clear button for this error message
-                return;
-            }
-
-            newUrlPreviewContainer.innerHTML = '<div class="preview-loading"><i class="fas fa-spinner fa-spin"></i> Checking item...</div>';
-            
-            // Simulate API call for product details (removed thumbnail properties)
-            setTimeout(() => {
-                let itemData = {};
-                const platform = getPlatformFromUrl(url);
-                const itemId = extractItemId(url);
-
-                if (url.includes('mercari.com') || url.includes('buyee.jp/mercari')) {
-                    itemData = {
-                        id: crypto.randomUUID(), // Unique ID for cart item
-                        url: url,
-                        title: `Mercari Item #${itemId || 'Unknown ID'}`,
-                        price: `¥${(Math.floor(Math.random() * 10000) + 1000).toLocaleString('ja-JP')}`,
-                        quantity: 1,
-                        platform: platform
-                    };
-                } else if (url.includes('yahoo.co.jp') || url.includes('buyee.jp/yahoo')) {
-                    itemData = {
-                        id: crypto.randomUUID(),
-                        url: url,
-                        title: `Yahoo Auctions Item #${itemId || 'Unknown ID'}`,
-                        price: `Bid on Going`,
-                        quantity: 1,
-                        platform: platform
-                    };
-                } else if (url.includes('rakuten.co.jp')) {
-                    itemData = {
-                        id: crypto.randomUUID(),
-                        url: url,
-                        title: `Rakuten Product #${itemId || 'Unknown ID'}`,
-                        price: `Price from Seller`,
-                        quantity: 1,
-                        platform: platform
-                    };
-                } else if (url.includes('amazon.co.jp')) {
-                    itemData = {
-                        id: crypto.randomUUID(),
-                        url: url,
-                        title: `Amazon JP Product #${itemId || 'Unknown ID'}`,
-                        price: `Check Details`,
-                        quantity: 1,
-                        platform: platform
-                    };
-                } else {
-                    itemData = {
-                        id: crypto.randomUUID(),
-                        url: url,
-                        title: `Japanese Item (Other Site)`,
-                        price: `Price to be confirmed`,
-                        quantity: 1,
-                        platform: platform
-                    };
-                }
-
-                // Add to cart logic
-                cartItems.push(itemData);
-                saveCart();
-                renderCart(); // Re-render the cart to show the new item
-                newProductUrlInput.value = ''; // Clear input
-                newUrlPreviewContainer.innerHTML = '<div class="preview-content"><i class="fas fa-check-circle"></i> Item added to your request list! <button class="preview-clear-button"><i class="fas fa-times-circle"></i></button></div>';
-                setupClearButton(); // Ensure clear button is available on success
-                updateAddItemControls(); // Re-evaluate button/input state after adding
-                
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'add_to_cart', {
-                        'event_category': 'Engagement',
-                        'event_label': `Added item from ${platform}`,
-                        'value': 1 // 1 item added
-                    });
-                }
-            }, 800);
-        });
-
-        // Setup the clear button for the URL preview
-        function setupClearButton() {
-            const clearButton = newUrlPreviewContainer.querySelector('.preview-clear-button');
-            if (clearButton) {
-                clearButton.addEventListener('click', function() {
-                    newProductUrlInput.value = '';
-                    newUrlPreviewContainer.innerHTML = '';
-                    updateAddItemControls(); // Re-enable if needed
-                });
-            }
-        }
-
-        // Update item quantity in cart
-        function updateItemQuantity(itemId, newQuantity) {
-            const itemIndex = cartItems.findIndex(item => item.id === itemId);
-            if (itemIndex > -1) {
-                cartItems[itemIndex].quantity = newQuantity;
-                saveCart();
-                // No need to re-render the whole cart if only quantity changed on the input itself
-                updateSubmitButtonState(); // Ensure item count is updated
-            }
-        }
-
-        // Remove item from cart
-        function removeItemFromCart(itemId) {
-            cartItems = cartItems.filter(item => item.id !== itemId);
-            saveCart();
-            renderCart(); // Re-render the cart to remove the item visually
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'remove_from_cart', {
-                    'event_category': 'Engagement',
-                    'event_label': 'Item removed from list'
-                });
-            }
-            updateAddItemControls(); // Re-evaluate button/input state after removing
-        }
-
-        // Initial preview for the new URL input field (when user types/blurs)
-        newProductUrlInput.addEventListener('blur', function() {
-            const url = this.value.trim();
-            if (!url) {
-                newUrlPreviewContainer.innerHTML = ''; // Clear preview if input is empty
-                return;
-            }
-
-            if (cartItems.length >= MAX_ITEMS) {
-                 newUrlPreviewContainer.innerHTML = `<div class="preview-error"><i class="fas fa-info-circle"></i> You've reached the limit of ${MAX_ITEMS} items. Please remove one to add more. <button class="preview-clear-button"><i class="fas fa-times-circle"></i></button></div>`;
-                 setupClearButton();
-                 return;
-            }
-            
-            // Check if item already exists in cart by URL (to prevent duplicates)
-            const existingItem = cartItems.find(item => item.url === url);
-            if (existingItem) {
-                newUrlPreviewContainer.innerHTML = '<div class="preview-error"><i class="fas fa-info-circle"></i> This item is already in your list. You can adjust its quantity. <button class="preview-clear-button"><i class="fas fa-times-circle"></i></button></div>';
-                setupClearButton();
-                return;
-            }
-
-            newUrlPreviewContainer.innerHTML = '<div class="preview-loading"><i class="fas fa-spinner fa-spin"></i> Checking URL...</div>';
-            
-            // Simulate check for platform compatibility/validity
-            setTimeout(() => {
-                const platform = getPlatformFromUrl(url);
-                newUrlPreviewContainer.innerHTML = `
-                    <div class="preview-content">
-                        <i class="fas fa-check-circle"></i> URL for ${platform} detected. Ready to add! <button class="preview-clear-button"><i class="fas fa-times-circle"></i></button>
-                    </div>
-                `;
-                setupClearButton(); // Ensure clear button is available
-            }, 500);
-        });
-        newProductUrlInput.addEventListener('input', function() {
-            // Clear preview if input changes and it's not already a success/error state
-            // OR if it's a success/error state but the user is actively typing to change the URL
-            const currentPreviewContent = newUrlPreviewContainer.innerHTML;
-            if (currentPreviewContent.includes('preview-content') || currentPreviewContent.includes('preview-error')) {
-                // If the user starts typing after a message, clear it, unless it's just a clear button click
-                // This logic ensures that if the input is empty due to a clear button click, the message stays clear.
-                // If they start typing *after* a message (not after a clear), the message should vanish.
-                if (newProductUrlInput.value.length > 0 && newProductUrlInput.value !== this.value) { // this.value is the new input, newProductUrlInput.value is old input (before keypress)
-                    newUrlPreviewContainer.innerHTML = '';
-                }
-            } else if (!this.value) { // Input is empty, no specific message
-                 newUrlPreviewContainer.innerHTML = '';
-            }
-            // If the user types when the limit message is shown, the message should persist until an item is removed.
-            // The `updateAddItemControls` takes care of showing it when the limit is met.
-        });
-
-
-        // Helper function to determine platform from URL
-        function getPlatformFromUrl(url) {
-            if (url.includes('mercari.com') || url.includes('buyee.jp/mercari')) return 'Mercari';
-            if (url.includes('yahoo.co.jp') || url.includes('buyee.jp/yahoo')) return 'Yahoo Auctions';
-            if (url.includes('rakuten.co.jp')) return 'Rakuten';
-            if (url.includes('amazon.co.jp')) return 'Amazon Japan';
-            return 'Japanese Website';
-        }
-
-        // Extract item ID from URL (simplified for demo)
-        function extractItemId(url) {
-            const mercariMatch = url.match(/item\/m(\d+)/);
-            if (mercariMatch && mercariMatch[1]) return mercariMatch[1];
-            const yahooMatch = url.match(/jp\/auction\/([a-zA-Z0-9]+)/);
-            if (yahooMatch && yahooMatch[1]) return yahooMatch[1];
-            const genericIdMatch = url.match(/\d{8,}/);
-            if (genericIdMatch && genericIdMatch[0]) return genericIdMatch[0];
-            return null;
-        }
-
-        // --- Other Form Functionality (unchanged from previous) ---
-        // Product interest toggle for "other" option
-        document.getElementById('product-interest').addEventListener('change', function() {
-            const otherInterestSection = document.querySelector('.other-interest-section');
-            const otherInterestInput = document.getElementById('other-interest');
-            if (this.value === 'other') {
-                otherInterestSection.style.display = 'block';
-                otherInterestInput.setAttribute('required', 'required');
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'other_interest_selected', { 'event_category': 'Market Intelligence', 'event_label': 'Unique Product Interest' });
-                }
-            } else {
-                otherInterestSection.style.display = 'none';
-                otherInterestInput.removeAttribute('required');
-                if (typeof gtag !== 'undefined' && this.value) {
-                    gtag('event', 'product_interest_selected', { 'event_category': 'Market Intelligence', 'event_label': this.value });
-                }
-            }
-        });
-        
-        // Other country section toggle
-        document.getElementById('country').addEventListener('change', function() {
-            const otherCountrySection = document.querySelector('.other-country-section');
-            const otherCountryInput = document.getElementById('other-country');
-            if (this.value === 'other') {
-                otherCountrySection.style.display = 'block';
-                otherCountryInput.setAttribute('required', 'required');
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'other_country_selected', { 'event_category': 'Market Intelligence', 'event_label': 'Unserved Market Interest' });
-                }
-            } else {
-                otherCountrySection.style.display = 'none';
-                otherCountryInput.removeAttribute('required');
-            }
-        });
-        
-        // FAQ Accordion Functionality
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            let icon = question.querySelector('.icon'); // Get existing icon
-
-            if (!icon) { // Add icon if not present
-                icon = document.createElement('i');
-                icon.classList.add('fas', 'fa-chevron-down', 'icon');
-                question.appendChild(icon);
-            }
-            
-            question.addEventListener('click', () => {
-                const answer = item.querySelector('.faq-answer');
-                const isOpen = answer.classList.contains('open');
-
-                faqItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        const otherAnswer = otherItem.querySelector('.faq-answer');
-                        const otherQuestion = otherItem.querySelector('.faq-question');
-                        const otherIcon = otherQuestion.querySelector('.icon');
-                        otherAnswer.classList.remove('open');
-                        otherAnswer.style.maxHeight = '0';
-                        otherQuestion.classList.remove('active');
-                        if (otherIcon) {
-                            otherIcon.classList.remove('fa-chevron-up');
-                            otherIcon.classList.add('fa-chevron-down');
-                        }
-                    }
-                });
-
-                if (isOpen) {
-                    answer.classList.remove('open');
-                    answer.style.maxHeight = '0';
-                    question.classList.remove('active');
-                    if (icon) {
-                        icon.classList.remove('fa-chevron-up');
-                        icon.classList.add('fa-chevron-down');
-                    }
-                } else {
-                    answer.classList.add('open');
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                    question.classList.add('active');
-                    if (icon) {
-                        icon.classList.remove('fa-chevron-down');
-                        icon.classList.add('fa-chevron-up');
-                    }
-                }
-            });
-        });
-
-        // Mobile Menu Toggle Functionality
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
-        const mobileMenuIcon = mobileMenuToggle.querySelector('i');
 
-        mobileMenuToggle.addEventListener('click', () => {
+        mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            if (navLinks.classList.contains('active')) {
-                mobileMenuIcon.classList.remove('fa-bars');
-                mobileMenuIcon.classList.add('fa-times'); // 'X' icon when open
-            } else {
-                mobileMenuIcon.classList.remove('fa-times');
-                mobileMenuIcon.classList.add('fa-bars'); // Hamburger icon when closed
-            }
         });
 
-        // Close mobile menu when a nav link is clicked
-        document.querySelectorAll('.nav-links a').forEach(link => {
+        // Close menu when link clicked
+        navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    mobileMenuIcon.classList.remove('fa-times');
-                    mobileMenuIcon.classList.add('fa-bars');
-                }
+                navLinks.classList.remove('active');
             });
         });
 
-        // Smooth scroll for internal links (adjusted for new sticky headers)
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth scroll with offset for fixed header
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const constructionBannerHeight = document.querySelector('.under-construction-banner').offsetHeight;
-                    const navHeight = document.querySelector('.nav').offsetHeight;
-                    const headerOffset = constructionBannerHeight + navHeight + 20; // Only construction banner + nav now
-
-                    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                    const offsetPosition = elementPosition - headerOffset;
-
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    const banner = document.querySelector('.construction-banner');
+                    const nav = document.querySelector('nav');
+                    const offset = banner.offsetHeight + nav.offsetHeight + 20;
+                    const targetPosition = target.offsetTop - offset;
+                    
                     window.scrollTo({
-                        top: offsetPosition,
-                        behavior: "smooth"
+                        top: targetPosition,
+                        behavior: 'smooth'
                     });
                 }
-
-                // Close mobile menu if open
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    mobileMenuIcon.classList.remove('fa-times');
-                    mobileMenuIcon.classList.add('fa-bars');
-                }
             });
         });
-
-        // Initial check for mobile menu toggle visibility
-        function checkMobileMenuVisibility() {
-            if (window.innerWidth <= 768) {
-                mobileMenuToggle.style.display = 'block';
-                // Only hide navLinks if they are NOT active (prevent flicker if active on resize)
-                if (!navLinks.classList.contains('active')) {
-                   navLinks.style.display = 'none'; 
-                }
-            } else {
-                mobileMenuToggle.style.display = 'none';
-                navLinks.style.display = 'flex'; // Ensure nav-links are visible on desktop
-                navLinks.classList.remove('active'); // Ensure mobile menu state is off on desktop
-                mobileMenuIcon.classList.remove('fa-times');
-                mobileMenuIcon.classList.add('fa-bars');
-            }
-        }
-        checkMobileMenuVisibility();
-        window.addEventListener('resize', checkMobileMenuVisibility);
-
-        // Update fixed nav top position dynamically based on banner heights
-        function updateStickyPositions() {
-            const constructionBanner = document.querySelector('.under-construction-banner');
-            const constructionBannerHeight = constructionBanner ? constructionBanner.offsetHeight : 0;
-            // Only the construction banner affects the top position on these new pages
-            document.querySelector('.nav').style.top = `${constructionBannerHeight}px`; 
-        }
-        updateStickyPositions();
-        window.addEventListener('resize', updateStickyPositions);
-
-        // --- Final Form Submission ---
-        orderForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent default form submission
-            
-            // Time-based submission validation (prevent bot rapid submissions)
-            const formLoadTime = this.dataset.loadTime || Date.now();
-            const timeElapsed = Date.now() - formLoadTime;
-            
-            if (timeElapsed < 2000) { // If form submitted in less than 2 seconds, likely a bot
-                console.log('Potential spam submission blocked (too fast)');
-                return false;
-            }
-
-            // Populate the hidden cart-data input
-            cartDataInput.value = JSON.stringify(cartItems);
-            
-            // Track the conversion in Google Analytics
-            if (typeof gtag !== 'undefined') {
-                const productCount = cartItems.reduce((total, item) => total + item.quantity, 0);
-                const productInterest = document.getElementById('product-interest').value || 'unspecified';
-                
-                gtag('event', 'form_submission', {
-                    'event_category': 'Conversion',
-                    'event_label': 'Order Request',
-                    'value': productCount,
-                    'product_count': productCount,
-                    'country': document.getElementById('country').value,
-                    'product_interest': productInterest
-                });
-            }
-            
-            // Hide the form and show the confirmation screen
-            orderForm.style.display = 'none'; // Use orderForm here
-            document.getElementById('confirmation-screen').style.display = 'block';
-            
-            // Submit the form data to Netlify programmatically
-            const formData = new FormData(this);
-            fetch(this.action, { // Use form's action attribute, which Netlify auto-configures
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(formData).toString()
-            })
-            .then(response => {
-                if (response.ok) {
-                    console.log('Form successfully submitted to Netlify');
-                    localStorage.removeItem('shogunShipCart'); // Clear cart after successful submission
-                } else {
-                    console.error('Netlify form submission failed with status:', response.status);
-                    // You might want to show a fallback error message to the user here
-                }
-            })
-            .catch(error => {
-                console.error('Form submission error:', error);
-                // Fallback error message
-            });
-        });
-
-        // Initialize cart on load
-        loadCart();
-    });
     </script>
 </body>
 </html>
