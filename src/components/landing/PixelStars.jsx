@@ -21,7 +21,7 @@ export default function PixelStars({ count = 30 }) {
             imageRendering: 'pixelated',
             animation: `twinkle ${1.5 + star.delay}s step-end infinite`,
             opacity: 0.6,
-            backgroundColor: i % 4 === 0 ? '#ff6b2b' : '#e8c87a',
+            backgroundColor: i % 4 === 0 ? '#a94f2c' : '#c39a4a',
           }}
         />
       ))}

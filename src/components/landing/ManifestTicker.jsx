@@ -1,20 +1,17 @@
 const TICKER_ITEMS = [
-  { id: 'TK-0891', item: 'Vintage Seiko 6139', city: 'Tokyo', status: 'SECURED', statusColor: '#6abf5e' },
-  { id: 'OS-0234', item: 'Meiji-era Imari Plate', city: 'Osaka', status: 'IN TRANSIT', statusColor: '#ff6b2b' },
-  { id: 'KY-0567', item: 'Kyo-yaki Tea Bowl', city: 'Kyoto', status: 'INSPECTED', statusColor: '#6abf5e' },
-  { id: 'TK-0892', item: '1970s Takamine Guitar', city: 'Tokyo', status: 'SECURED', statusColor: '#6abf5e' },
-  { id: 'YK-0103', item: 'Edo Period Netsuke', city: 'Yokohama', status: 'PACKING', statusColor: '#e8c87a' },
-  { id: 'OS-0235', item: 'Showa Denim Jacket', city: 'Osaka', status: 'IN TRANSIT', statusColor: '#ff6b2b' },
-  { id: 'TK-0893', item: 'Vintage Canon F-1', city: 'Tokyo', status: 'SECURED', statusColor: '#6abf5e' },
-  { id: 'KY-0568', item: 'Raku Chawan Black', city: 'Kyoto', status: 'INSPECTED', statusColor: '#6abf5e' },
+  { id: 'MERCARI', item: 'Vintage Seiko 6139', city: 'Arrival photo', status: 'RECEIVED', statusColor: '#5d7042' },
+  { id: 'YAHOO AUCTIONS', item: 'Meiji-era Imari Plate', city: 'Inspection', status: 'CHECKED', statusColor: '#c39a4a' },
+  { id: 'SURUGAYA', item: 'Collector Figure Set', city: 'Temporary storage', status: 'HELD SAFELY', statusColor: '#5d7042' },
+  { id: 'RAKUMA', item: '1970s Takamine Guitar', city: 'Seller review', status: 'PURCHASED', statusColor: '#5d9290' },
+  { id: 'MANDARAKE', item: 'Vintage Manga Set', city: 'Consolidation', status: 'PACKING', statusColor: '#c39a4a' },
 ];
 
 function TickerItem({ item }) {
   return (
     <span className="inline-flex items-center gap-3 px-4 font-pixel text-[7px]" style={{ whiteSpace: 'nowrap' }}>
       <span style={{ color: '#2a3f5a' }}>█</span>
-      <span style={{ color: '#7ab8ff' }}>{item.id}</span>
-      <span style={{ color: '#e8c87a' }}>{item.item}</span>
+      <span style={{ color: '#5d9290' }}>{item.id}</span>
+      <span style={{ color: '#c39a4a' }}>{item.item}</span>
       <span style={{ color: '#a0b0c0' }}>[{item.city}]</span>
       <span style={{ color: item.statusColor }}>● {item.status}</span>
     </span>
@@ -25,9 +22,9 @@ export default function ManifestTicker() {
   const doubled = [...TICKER_ITEMS, ...TICKER_ITEMS];
   return (
     <div
-      className="border-y-4 py-3 overflow-hidden"
+      className="border-y-4 py-3 overflow-hidden material-parcel"
       style={{
-        borderColor: '#ff6b2b',
+        borderColor: '#a94f2c',
         background: '#0f1b2d',
       }}
     >

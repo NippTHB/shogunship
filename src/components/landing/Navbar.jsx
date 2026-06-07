@@ -5,14 +5,14 @@ import { AnimatePresence, motion } from 'framer-motion';
 function ShogunIcon() {
   return (
     <svg width="24" height="24" viewBox="0 0 8 8" style={{ imageRendering: 'pixelated' }}>
-      <rect x="2" y="0" width="4" height="2" fill="#e8c87a"/>
-      <rect x="1" y="2" width="6" height="3" fill="#e8c87a"/>
-      <rect x="0" y="3" width="1" height="2" fill="#e8c87a"/>
-      <rect x="7" y="3" width="1" height="2" fill="#e8c87a"/>
-      <rect x="2" y="5" width="4" height="2" fill="#e8c87a"/>
+      <rect x="2" y="0" width="4" height="2" fill="#c39a4a"/>
+      <rect x="1" y="2" width="6" height="3" fill="#c39a4a"/>
+      <rect x="0" y="3" width="1" height="2" fill="#c39a4a"/>
+      <rect x="7" y="3" width="1" height="2" fill="#c39a4a"/>
+      <rect x="2" y="5" width="4" height="2" fill="#c39a4a"/>
       <rect x="3" y="2" width="1" height="1" fill="#0f1b2d"/>
       <rect x="5" y="2" width="1" height="1" fill="#0f1b2d"/>
-      <rect x="3" y="4" width="3" height="1" fill="#ff6b2b"/>
+      <rect x="3" y="4" width="3" height="1" fill="#a94f2c"/>
     </svg>
   );
 }
@@ -20,23 +20,22 @@ function ShogunIcon() {
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const links = [
-    { label: 'PROVENANCE', href: '#provenance' },
-    { label: 'PROCESS', href: '#process' },
-    { label: 'CURATORS', href: '#curators' },
-    { label: 'MANIFEST', href: '#manifest' },
+    { label: 'HOW IT WORKS', href: '#process' },
+    { label: 'FOUNDERS', href: '#founders' },
+    { label: 'COST LEDGER', href: '#manifest' },
   ];
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-px-dark border-b-4 border-px-gold" style={{ borderBottomColor: '#e8c87a' }}>
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-px-dark border-b-4 border-px-gold material-timber" style={{ borderBottomColor: '#c39a4a' }}>
         <div className="max-w-7xl mx-auto px-4 lg:px-8 h-14 flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center gap-3">
             <ShogunIcon />
-            <span className="font-pixel text-px-gold text-[10px] tracking-wide hidden sm:block" style={{ color: '#e8c87a' }}>
+            <span className="font-pixel text-px-gold text-[10px] tracking-wide hidden sm:block" style={{ color: '#c39a4a' }}>
               SHOGUNSHIP
             </span>
-            <span className="font-pixel text-px-gold text-[8px] tracking-wide sm:hidden" style={{ color: '#e8c87a' }}>
+            <span className="font-pixel text-px-gold text-[8px] tracking-wide sm:hidden" style={{ color: '#c39a4a' }}>
               将GUN
             </span>
           </a>
@@ -48,7 +47,7 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 className="font-pixel text-[7px] tracking-wider text-muted-foreground hover:text-px-orange transition-none"
-                style={{ '--hover-color': '#ff6b2b' }}
+                style={{ '--hover-color': '#a94f2c' }}
               >
                 {link.label}
               </a>
@@ -61,12 +60,12 @@ export default function Navbar() {
               href="#manifest"
               className="hidden md:inline-flex pixel-btn pixel-btn-orange px-4 py-2 font-pixel text-[7px]"
             >
-              ► START
+              SEND ITEM LINK
             </a>
             <button
               onClick={() => setOpen(!open)}
               className="md:hidden font-pixel text-[8px] text-px-gold pixel-btn px-3 py-2 bg-px-blue"
-              style={{ color: '#e8c87a' }}
+              style={{ color: '#c39a4a' }}
             >
               {open ? '✕' : '≡'}
             </button>
@@ -82,12 +81,12 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.1 }}
-            className="fixed inset-0 z-40 bg-px-dark pt-14 px-6"
+            className="fixed inset-0 z-40 bg-px-dark pt-14 px-6 material-timber"
             style={{ background: '#080d14' }}
           >
-            <div className="border-2 border-px-gold mt-6 p-6 space-y-6" style={{ borderColor: '#e8c87a' }}>
-              <div className="font-pixel text-px-orange text-[8px] mb-4" style={{ color: '#ff6b2b' }}>
-                ▼ NAVIGATION MENU
+            <div className="border-2 border-px-gold mt-6 p-6 space-y-6" style={{ borderColor: '#c39a4a' }}>
+              <div className="font-pixel text-px-orange text-[8px] mb-4" style={{ color: '#a94f2c' }}>
+                GUILD DIRECTORY
               </div>
               {links.map((link, i) => (
                 <a
@@ -95,7 +94,7 @@ export default function Navbar() {
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className="block font-pixel text-[10px] text-px-gold hover:text-px-orange py-2 border-b border-px-blue"
-                  style={{ color: '#e8c87a', borderColor: '#1a2b3c' }}
+                  style={{ color: '#c39a4a', borderColor: '#1a2b3c' }}
                 >
                   [{String(i + 1).padStart(2, '0')}] {link.label}
                 </a>
@@ -105,7 +104,7 @@ export default function Navbar() {
                 onClick={() => setOpen(false)}
                 className="block pixel-btn pixel-btn-orange text-center py-3 font-pixel text-[8px] mt-4"
               >
-                ► START COLLECTING
+                SEND ITEM LINK
               </a>
             </div>
           </motion.div>

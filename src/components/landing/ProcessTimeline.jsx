@@ -5,44 +5,44 @@ const STEPS = [
   {
     step: '01',
     icon: '⊕',
-    title: 'SOURCE',
-    description: 'Curators personally visit shops, markets, and private collections across Japan.',
-    detail: '3-7 DAYS',
-    color: '#7ab8ff',
+    title: 'SEND ITEM LINK',
+    description: 'Share a listing from a Japanese marketplace, auction site, specialist shop, or seller.',
+    detail: 'REQUEST',
+    color: '#5d9290',
     key: 'A',
   },
   {
     step: '02',
     icon: '◈',
-    title: 'INSPECT',
-    description: 'Multi-point condition audit with high-resolution photography. Every flaw documented.',
-    detail: '24 HRS',
-    color: '#e8c87a',
+    title: 'REVIEW + QUOTE',
+    description: 'We review the listing, seller details, practical risks, domestic shipping, and expected costs.',
+    detail: 'CLEAR COSTS',
+    color: '#c39a4a',
     key: 'B',
   },
   {
     step: '03',
     icon: '⬡',
-    title: 'PACK',
-    description: 'Archival-grade materials and traditional Washi paper wrapping for safe transit.',
-    detail: '1-2 DAYS',
-    color: '#6abf5e',
+    title: 'BUY + RECEIVE',
+    description: 'We purchase the item, confirm its arrival with photos, and inspect visible condition concerns.',
+    detail: 'DOCUMENTED',
+    color: '#5d7042',
     key: 'C',
   },
   {
     step: '04',
     icon: '►',
-    title: 'SHIP',
-    description: 'Fully insured DHL Express with real-time tracking. Customs pre-filed. Door to door.',
-    detail: '3-5 DAYS',
-    color: '#ff6b2b',
+    title: 'STORE + SHIP',
+    description: 'We can hold and consolidate purchases before carefully packing and shipping them internationally.',
+    detail: 'CONSOLIDATED',
+    color: '#a94f2c',
     key: 'D',
   },
 ];
 
 export default function ProcessTimeline() {
   return (
-    <section className="py-20 lg:py-28" style={{ background: '#080d14' }}>
+    <section className="py-20 lg:py-28 material-path">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -50,10 +50,9 @@ export default function ProcessTimeline() {
           viewport={{ once: true }}
           className="mb-12 text-center"
         >
-          <div className="font-pixel text-[8px] mb-3" style={{ color: '#6abf5e' }}>▶ QUEST LOG</div>
-          <PixelDivider label="MISSION STEPS" color="orange" />
-          <h2 className="font-pixel text-xl lg:text-2xl mt-4 leading-relaxed" style={{ color: '#e8c87a' }}>
-            THE <span style={{ color: '#ff6b2b' }}>PATH</span>
+          <PixelDivider label="HOW IT WORKS" color="orange" />
+          <h2 className="font-pixel text-xl lg:text-2xl mt-4 leading-relaxed environment-heading" style={{ color: '#c39a4a' }}>
+            FROM ITEM LINK<br />TO <span style={{ color: '#a94f2c' }}>YOUR DOOR</span>
           </h2>
         </motion.div>
 
@@ -63,7 +62,7 @@ export default function ProcessTimeline() {
           <div
             className="hidden lg:block absolute top-16 left-[12.5%] right-[12.5%] h-1"
             style={{
-              background: 'repeating-linear-gradient(90deg, #ff6b2b 0, #ff6b2b 8px, transparent 8px, transparent 16px)',
+              background: 'repeating-linear-gradient(90deg, #a94f2c 0, #a94f2c 8px, transparent 8px, transparent 16px)',
             }}
           />
 
@@ -91,13 +90,13 @@ export default function ProcessTimeline() {
                 </div>
 
                 <div
-                  className="border-4 p-4"
+                  className="border-4 p-4 material-paper"
                   style={{ borderColor: '#2a3f5a', background: '#0f1b2d' }}
                 >
                   <div className="font-pixel text-[6px] mb-1" style={{ color: step.color }}>
                     STEP {step.step}
                   </div>
-                  <h3 className="font-pixel text-[9px] mb-3" style={{ color: '#e8c87a' }}>
+                  <h3 className="font-pixel text-[9px] mb-3" style={{ color: '#c39a4a' }}>
                     {step.title}
                   </h3>
                   <p className="font-vt text-base leading-snug mb-3" style={{ color: '#8090a0' }}>

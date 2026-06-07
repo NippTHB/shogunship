@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-06T00:00:00.000Z",
+  "title": "Design System: ShogunShip",
+  "extensions": {
+    "colorMeta": {
+      "night-foundation": {
+        "role": "neutral",
+        "displayName": "Night Foundation",
+        "canonical": "#080d14",
+        "tonalRamp": ["#030508", "#080d14", "#111c2a", "#253548", "#526273", "#87929d", "#c1c7cd", "#f1f3f5"]
+      },
+      "deep-ledger": {
+        "role": "neutral",
+        "displayName": "Deep Ledger",
+        "canonical": "#0a1220",
+        "tonalRamp": ["#030609", "#0a1220", "#14243e", "#2b405e", "#596d83", "#8c9ba9", "#c5cbd1", "#f2f4f5"]
+      },
+      "guild-panel": {
+        "role": "neutral",
+        "displayName": "Guild Panel",
+        "canonical": "#0f1b2d",
+        "tonalRamp": ["#05090f", "#0f1b2d", "#1d334f", "#385370", "#667d92", "#97a6b4", "#ccd2d8", "#f4f5f6"]
+      },
+      "inset-blue": {
+        "role": "neutral",
+        "displayName": "Inset Blue",
+        "canonical": "#1a2b3c",
+        "tonalRamp": ["#080d12", "#1a2b3c", "#304b64", "#52708a", "#7c96ac", "#a9bac8", "#d3dbe1", "#f5f7f8"]
+      },
+      "stone-border": {
+        "role": "neutral",
+        "displayName": "Stone Border",
+        "canonical": "#2a3f5a",
+        "tonalRamp": ["#0d141d", "#1c2b3d", "#2a3f5a", "#4c6580", "#7890a7", "#a5b5c4", "#d0d8df", "#f5f7f8"]
+      },
+      "parchment-gold": {
+        "role": "primary",
+        "displayName": "Parchment Gold",
+        "canonical": "#e8c87a",
+        "tonalRamp": ["#33270c", "#654f1d", "#987932", "#c6a34e", "#e8c87a", "#f0d99e", "#f7eac5", "#fdf8ec"]
+      },
+      "autumn-orange": {
+        "role": "primary",
+        "displayName": "Autumn Orange",
+        "canonical": "#ff6b2b",
+        "tonalRamp": ["#3b1000", "#751f00", "#ad3105", "#df4912", "#ff6b2b", "#ff9d72", "#ffc7ad", "#fff0e8"]
+      },
+      "meadow-green": {
+        "role": "secondary",
+        "displayName": "Meadow Green",
+        "canonical": "#6abf5e",
+        "tonalRamp": ["#102b0d", "#22551c", "#36802e", "#4da946", "#6abf5e", "#91d287", "#bbe5b3", "#e9f7e7"]
+      },
+      "water-blue": {
+        "role": "secondary",
+        "displayName": "Water Blue",
+        "canonical": "#7ab8ff",
+        "tonalRamp": ["#06264d", "#0d4c96", "#2575d8", "#4d9cf5", "#7ab8ff", "#a2cdff", "#c8e1ff", "#edf6ff"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Pixel Display",
+        "purpose": "Hero statements and major section messages."
+      },
+      "headline": {
+        "displayName": "Guild Headline",
+        "purpose": "Section headings and primary trust claims."
+      },
+      "title": {
+        "displayName": "Record Title",
+        "purpose": "Item, card, and compact component headings."
+      },
+      "body": {
+        "displayName": "Conversational Body",
+        "purpose": "Founder explanations, process details, and collector stories."
+      },
+      "label": {
+        "displayName": "Pixel Label",
+        "purpose": "Short metadata and status labels only."
+      }
+    },
+    "shadows": [
+      {
+        "name": "primary-pixel-lift",
+        "value": "4px 4px 0 #ff6b2b",
+        "purpose": "Primary actions and signature dialog boxes."
+      },
+      {
+        "name": "featured-pixel-lift",
+        "value": "6px 6px 0 #ff6b2b",
+        "purpose": "One featured visual moment per section."
+      },
+      {
+        "name": "quiet-colored-lift",
+        "value": "4px 4px 0 rgba(255,107,43,0.27)",
+        "purpose": "Supporting cards that need quiet separation."
+      }
+    ],
+    "motion": [
+      {
+        "name": "pixel-press",
+        "value": "transform 0.05s, box-shadow 0.05s",
+        "purpose": "Immediate tactile button feedback."
+      },
+      {
+        "name": "section-reveal",
+        "value": "opacity and 20-30px translation over 0.3-0.4s",
+        "purpose": "Quietly introduce major content groups."
+      },
+      {
+        "name": "ticker",
+        "value": "25s linear infinite",
+        "purpose": "Continuous manifest activity."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Tactile autumn-orange action for the primary next step.",
+      "html": "<button class=\"ds-btn-primary\">SUBMIT ITEM LINK</button>",
+      "css": ".ds-btn-primary{background:#ff6b2b;color:#080d14;padding:12px 24px;border:3px solid #ff9d72;border-radius:0;box-shadow:4px 4px 0 #801f00;font-family:'Press Start 2P',monospace;font-size:8px;letter-spacing:.05em;cursor:pointer;transition:transform .05s,box-shadow .05s}.ds-btn-primary:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 #801f00}.ds-btn-primary:active{transform:translate(4px,4px);box-shadow:none}.ds-btn-primary:focus-visible{outline:3px solid #ff6b2b;outline-offset:2px}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Lower-priority exploration action on an inset-blue surface.",
+      "html": "<button class=\"ds-btn-secondary\">MEET THE FOUNDERS</button>",
+      "css": ".ds-btn-secondary{background:#1a2b3c;color:#e8c87a;padding:12px 24px;border:3px solid #e8c87a;border-radius:0;box-shadow:4px 4px 0 #ff6b2b;font-family:'Press Start 2P',monospace;font-size:8px;letter-spacing:.05em;cursor:pointer;transition:transform .05s,box-shadow .05s}.ds-btn-secondary:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 #ff6b2b}.ds-btn-secondary:focus-visible{outline:3px solid #ff6b2b;outline-offset:2px}"
+    },
+    {
+      "name": "Guild Card",
+      "kind": "card",
+      "refersTo": "guild-card",
+      "description": "Quietly layered record or trust container.",
+      "html": "<article class=\"ds-guild-card\"><span class=\"ds-card-label\">ARRIVAL CHECK</span><h3>Item received in Nara</h3><p>Photos and visible-condition notes are ready for review.</p></article>",
+      "css": ".ds-guild-card{background:#0f1b2d;color:#c8d8e8;padding:16px;border:2px solid #2a3f5a;border-radius:0;font-family:'VT323',monospace;font-size:18px;line-height:1.5;box-shadow:4px 4px 0 rgba(255,107,43,.27)}.ds-guild-card h3{color:#e8c87a;font-family:'Press Start 2P',monospace;font-size:9px;line-height:1.5}.ds-card-label{color:#ff6b2b;font-family:'Press Start 2P',monospace;font-size:7px;letter-spacing:.05em}"
+    },
+    {
+      "name": "Guild Dialog",
+      "kind": "custom",
+      "description": "Signature trust message with inset title and featured pixel lift.",
+      "html": "<aside class=\"ds-dialog\"><span class=\"ds-dialog-title\">FOUNDERS' NOTE</span><p>We receive, inspect, store, consolidate, and pack every purchase here in Nara.</p></aside>",
+      "css": ".ds-dialog{position:relative;background:#080d14;color:#c8d8e8;padding:20px;border:4px solid #e8c87a;border-radius:0;box-shadow:4px 4px 0 #ff6b2b;font-family:'VT323',monospace;font-size:20px;line-height:1.45}.ds-dialog-title{position:absolute;top:-13px;left:16px;background:#080d14;color:#ff6b2b;padding:0 8px;font-family:'Press Start 2P',monospace;font-size:7px;letter-spacing:.05em}"
+    },
+    {
+      "name": "Status Chip",
+      "kind": "chip",
+      "refersTo": "status-chip",
+      "description": "Compact semantic status label that always includes text.",
+      "html": "<span class=\"ds-status-chip\">VERIFIED ARRIVAL</span>",
+      "css": ".ds-status-chip{display:inline-block;background:#080d14;color:#6abf5e;padding:4px 8px;border:1px solid #2a3f5a;border-radius:0;font-family:'Press Start 2P',monospace;font-size:7px;letter-spacing:.05em}"
+    },
+    {
+      "name": "Guild Navigation",
+      "kind": "nav",
+      "description": "Fixed dark guild signboard with a clear primary action.",
+      "html": "<nav class=\"ds-nav\"><strong>SHOGUNSHIP</strong><span>PROCESS</span><span>FOUNDERS</span><button>START</button></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:24px;background:#080d14;color:#a0b0c0;padding:12px 16px;border-bottom:4px solid #e8c87a;font-family:'Press Start 2P',monospace;font-size:7px}.ds-nav strong{color:#e8c87a;margin-right:auto;font-size:10px}.ds-nav button{background:#ff6b2b;color:#080d14;padding:8px 16px;border:3px solid #ff9d72;border-radius:0;font-family:inherit;font-size:7px;cursor:pointer}.ds-nav button:focus-visible{outline:3px solid #ff6b2b;outline-offset:2px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Autumn Collector Guild",
+    "overview": "ShogunShip should feel like entering a quiet guild hall at the edge of a Japanese countryside village: carefully catalogued objects, warm human stewardship, and a restrained sense of adventure. The visual system is crafted and welcoming, with quietly layered depth and selective pixel-art emphasis.",
+    "keyCharacteristics": [
+      "Pixel-art character with adult collector credibility",
+      "Warm, personal guild atmosphere rather than competitive game energy",
+      "Quietly layered navy surfaces with clear functional hierarchy",
+      "Square, tactile controls and structural borders",
+      "Item imagery, arrival photos, and inspection evidence as essential visual content",
+      "Selective autumn, meadow, and water accents"
+    ],
+    "rules": [
+      {
+        "name": "The Environmental Accent Rule",
+        "body": "Meadow green and water blue support the guild atmosphere; they never dominate full-page backgrounds.",
+        "section": "colors"
+      },
+      {
+        "name": "The Autumn Signal Rule",
+        "body": "Autumn orange marks action or exceptional emphasis. If orange appears everywhere, it communicates nothing.",
+        "section": "colors"
+      },
+      {
+        "name": "The Contrast Is Craft Rule",
+        "body": "Body copy must reach WCAG AA contrast. Pixel styling never excuses unreadable color combinations.",
+        "section": "colors"
+      },
+      {
+        "name": "The Signage and Conversation Rule",
+        "body": "Press Start 2P is signage; VT323 is conversation. Never set paragraphs or detailed explanations in the pixel display font.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tiny Label Limit",
+        "body": "Labels below 8px are reserved for secondary metadata. Essential instructions and actions must be larger.",
+        "section": "typography"
+      },
+      {
+        "name": "The Quiet Layer Rule",
+        "body": "Begin with tonal layering and borders. Add a hard shadow only when the element deserves physical emphasis.",
+        "section": "elevation"
+      },
+      {
+        "name": "The One Featured Lift Rule",
+        "body": "A section may contain many cards, but only one visual moment should receive the strongest shadow treatment.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do make the site feel like a lived-in collector guild, with pixel-game language supporting the atmosphere rather than controlling every interaction.",
+      "Do use arrival photos, inspection evidence, founder context, and item documentation as primary visual content.",
+      "Do reserve Parchment Gold and Autumn Orange for important UI moments.",
+      "Do maintain square geometry, crisp borders, pixel rendering, and immediate tactile feedback.",
+      "Do keep body text readable and compliant with WCAG 2.2 AA."
+    ],
+    "donts": [
+      "Don't make ShogunShip feel like a marketplace that lists or sells its own inventory.",
+      "Don't create a flat field of uninterrupted green or blue.",
+      "Don't turn the interface into a neon arcade game or competitive RPG.",
+      "Don't let every card, label, border, and shadow demand equal attention.",
+      "Don't imply third-party marketplace inventory belongs to ShogunShip.",
+      "Don't rely on soft shadows, rounded cards, glassmorphism, or gradient text."
+    ]
+  }
+}

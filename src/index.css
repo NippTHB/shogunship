@@ -6,8 +6,8 @@
 
 @layer base {
   :root {
-    --background: 220 40% 8%;
-    --foreground: 45 80% 88%;
+    --background: 46 53% 75%;
+    --foreground: 25 29% 17%;
     --card: 220 35% 12%;
     --card-foreground: 45 80% 88%;
     --popover: 220 35% 12%;
@@ -30,6 +30,34 @@
     --font-body: 'VT323', monospace;
     --font-display: 'VT323', monospace;
     --font-mono: 'Press Start 2P', monospace;
+    --meadow-foundation: #899744;
+    --harvest-meadow: #71813e;
+    --moss-green: #5d7042;
+    --sunlit-plaster: #d5c18a;
+    --aged-ivory: #ded0a2;
+    --ochre-parchment: #c9ac68;
+    --ledger-paper: var(--aged-ivory);
+    --dirt-path: #a98755;
+    --parcel-kraft: #a97945;
+    --guild-timber: #603d2b;
+    --cedar-brown: #603d2b;
+    --deep-timber: #38271f;
+    --deep-cedar: #38271f;
+    --roof-stone: #555d5c;
+    --pale-stone: #85877b;
+    --autumn-gold: #b98a36;
+    --aged-brass: #c39a4a;
+    --autumn-orange: #a94f2c;
+    --burnt-persimmon: #a94f2c;
+    --water-accent: #5d9290;
+    --oxidized-teal: #5d9290;
+    --muted-leaf: #5d7042;
+    --deep-ledger: #142331;
+    --ledger-panel: #1d3040;
+    --lacquered-indigo: #1d3040;
+    --mystery-shadow: #302a3b;
+    --clear-ledger-text: #ded0a2;
+    --ink-brown: #35271f;
   }
 
   .dark {
@@ -62,6 +90,8 @@
     @apply bg-background text-foreground;
     font-family: 'VT323', monospace;
     image-rendering: pixelated;
+    background: var(--sunlit-plaster);
+    color: var(--ink-brown);
   }
 }
 
@@ -75,20 +105,20 @@
 
 /* Pixel border (hard shadow style) */
 .pixel-border {
-  border: 3px solid hsl(45 80% 88%);
-  box-shadow: 4px 4px 0px hsl(22 100% 55%);
+  border: 3px solid var(--aged-ivory);
+  box-shadow: 4px 4px 0px var(--burnt-persimmon);
 }
 .pixel-border-sm {
-  border: 2px solid hsl(45 80% 88%);
-  box-shadow: 2px 2px 0px hsl(22 100% 55%);
+  border: 2px solid var(--aged-ivory);
+  box-shadow: 2px 2px 0px var(--burnt-persimmon);
 }
 .pixel-border-orange {
-  border: 3px solid hsl(22 100% 55%);
-  box-shadow: 4px 4px 0px hsl(220 40% 8%);
+  border: 3px solid var(--burnt-persimmon);
+  box-shadow: 4px 4px 0px var(--mystery-shadow);
 }
 .pixel-border-green {
-  border: 2px solid hsl(100 45% 55%);
-  box-shadow: 2px 2px 0px hsl(100 45% 30%);
+  border: 2px solid var(--moss-green);
+  box-shadow: 2px 2px 0px var(--deep-cedar);
 }
 
 /* Pixel button */
@@ -96,31 +126,31 @@
   font-family: 'Press Start 2P', monospace;
   font-size: 10px;
   letter-spacing: 0.05em;
-  border: 3px solid hsl(45 80% 88%);
-  box-shadow: 4px 4px 0px hsl(22 100% 55%);
+  border: 3px solid var(--aged-ivory);
+  box-shadow: 4px 4px 0px var(--burnt-persimmon);
   transition: transform 0.05s, box-shadow 0.05s;
   image-rendering: pixelated;
   cursor: pointer;
 }
 .pixel-btn:hover {
   transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0px hsl(22 100% 55%);
+  box-shadow: 2px 2px 0px var(--burnt-persimmon);
 }
 .pixel-btn:active {
   transform: translate(4px, 4px);
-  box-shadow: 0px 0px 0px hsl(22 100% 55%);
+  box-shadow: 0px 0px 0px var(--burnt-persimmon);
 }
 .pixel-btn-orange {
-  background: hsl(22 100% 55%);
-  color: hsl(220 40% 8%);
-  border-color: hsl(22 100% 75%);
-  box-shadow: 4px 4px 0px hsl(22 100% 25%);
+  background: var(--autumn-orange);
+  color: var(--ink-brown);
+  border-color: var(--autumn-gold);
+  box-shadow: 4px 4px 0px var(--deep-timber);
 }
 .pixel-btn-orange:hover {
-  box-shadow: 2px 2px 0px hsl(22 100% 25%);
+  box-shadow: 2px 2px 0px var(--deep-timber);
 }
 .pixel-btn-orange:active {
-  box-shadow: 0px 0px 0px hsl(22 100% 25%);
+  box-shadow: 0px 0px 0px var(--deep-timber);
 }
 
 /* Scanline overlay effect */
@@ -174,7 +204,7 @@
 
 /* Pixel cursor */
 @keyframes pixel-cursor {
-  0%, 49% { border-right: 3px solid hsl(22 100% 55%); }
+  0%, 49% { border-right: 3px solid var(--burnt-persimmon); }
   50%, 100% { border-right: 3px solid transparent; }
 }
 
@@ -186,7 +216,7 @@
 
 /* Focus ring */
 *:focus-visible {
-  outline: 3px solid hsl(22 100% 55%);
+  outline: 3px solid var(--aged-brass);
   outline-offset: 2px;
 }
 
@@ -218,4 +248,246 @@
 /* Pixel art images */
 img {
   image-rendering: pixelated;
+}
+
+/* Environmental material composition */
+.material-village {
+  position: relative;
+  isolation: isolate;
+  background-color: #fff7e2;
+  background-image: linear-gradient(
+    to bottom,
+    #f6c879 0%,
+    #fadfb2 26%,
+    #fff5d8 60%,
+    #fff7e2 100%
+  );
+}
+
+.material-village::before,
+.material-village::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.material-village::before {
+  top: 10%;
+  height: 48%;
+  opacity: 0.3;
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(246, 200, 121, 0.9) 1px,
+    transparent 1.25px
+  );
+  background-size: 4px 4px;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 12%,
+    transparent 28%,
+    transparent 45%,
+    rgba(0, 0, 0, 0.72) 60%,
+    transparent 78%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 12%,
+    transparent 28%,
+    transparent 45%,
+    rgba(0, 0, 0, 0.72) 60%,
+    transparent 78%,
+    transparent 100%
+  );
+}
+
+.material-village::after {
+  top: 38%;
+  height: 50%;
+  opacity: 0.22;
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(250, 223, 178, 0.92) 1px,
+    transparent 1.2px
+  );
+  background-size: 5px 5px;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.72) 16%,
+    transparent 34%,
+    transparent 54%,
+    rgba(0, 0, 0, 0.52) 68%,
+    transparent 86%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.72) 16%,
+    transparent 34%,
+    transparent 54%,
+    rgba(0, 0, 0, 0.52) 68%,
+    transparent 86%,
+    transparent 100%
+  );
+}
+
+.material-village > section,
+.material-village > .material-parcel,
+.material-village > footer {
+  position: relative;
+  z-index: 1;
+}
+
+.material-timber {
+  background: var(--guild-timber) !important;
+  border-color: var(--autumn-gold) !important;
+}
+
+.material-timber .font-vt,
+.material-timber .font-pixel,
+.material-timber .text-muted-foreground {
+  color: var(--clear-ledger-text) !important;
+}
+
+.material-timber .pixel-btn-orange {
+  color: var(--ink-brown) !important;
+}
+
+.material-hero {
+  background: transparent !important;
+}
+
+.material-hero.pixel-grid {
+  background-image: none !important;
+}
+
+.material-stone.pixel-grid,
+.material-founder.pixel-grid {
+  background-image: none !important;
+}
+
+.material-hero .environment-sign {
+  background: var(--guild-timber) !important;
+  border-color: var(--deep-timber) !important;
+}
+
+.material-hero .environment-sign .font-pixel {
+  color: var(--clear-ledger-text) !important;
+}
+
+.material-hero .environment-paper {
+  background: var(--aged-ivory) !important;
+  border-color: var(--guild-timber) !important;
+  box-shadow: 4px 4px 0 var(--deep-timber);
+}
+
+.material-hero .environment-paper .font-pixel,
+.material-hero .environment-paper .font-vt {
+  color: var(--ink-brown) !important;
+}
+
+.material-paper {
+  background: var(--aged-ivory) !important;
+  border-color: var(--guild-timber) !important;
+  box-shadow: 4px 4px 0 var(--deep-timber) !important;
+  color: var(--ink-brown);
+}
+
+.material-paper .font-vt,
+.material-paper .font-pixel {
+  color: var(--ink-brown) !important;
+}
+
+.material-plaster .material-paper:nth-of-type(even),
+.material-stone .material-paper,
+.material-path .material-paper:nth-of-type(odd),
+.material-founder .material-paper:nth-of-type(even) {
+  background: var(--ochre-parchment) !important;
+}
+
+.material-plaster .material-paper:nth-of-type(odd),
+.material-path .material-paper:nth-of-type(even),
+.material-founder .material-paper:nth-of-type(odd) {
+  background: var(--aged-ivory) !important;
+}
+
+.material-stone .material-paper .material-paper,
+.material-founder .material-paper .material-paper {
+  background: var(--parcel-kraft) !important;
+}
+
+.material-parcel {
+  background: var(--parcel-kraft) !important;
+  border-color: var(--deep-cedar) !important;
+}
+
+.material-parcel .font-pixel {
+  color: var(--ink-brown) !important;
+}
+
+.material-plaster {
+  background: transparent !important;
+}
+
+.material-stone {
+  background: transparent !important;
+}
+
+.material-path {
+  background: transparent !important;
+}
+
+.material-founder {
+  background: transparent !important;
+  border-block: 16px solid var(--cedar-brown);
+}
+
+.material-ledger-office {
+  background: var(--deep-ledger) !important;
+  border-block: 16px solid var(--deep-cedar);
+  box-shadow: inset 0 12px 0 var(--mystery-shadow), inset 0 -12px 0 var(--mystery-shadow);
+}
+
+.material-ledger-panel {
+  background: var(--lacquered-indigo) !important;
+  border-color: var(--aged-brass) !important;
+  box-shadow: 6px 6px 0 var(--mystery-shadow) !important;
+}
+
+.material-ledger-panel .font-vt {
+  color: var(--clear-ledger-text) !important;
+}
+
+.material-ledger-office .font-vt {
+  color: var(--clear-ledger-text) !important;
+}
+
+.material-ledger-footer {
+  background: var(--deep-ledger) !important;
+}
+
+.environment-heading {
+  color: var(--ink-brown) !important;
+  text-shadow: 2px 2px 0 var(--aged-ivory);
+}
+
+.environment-copy {
+  color: var(--deep-timber) !important;
+}
+
+.environment-frame {
+  border-color: var(--guild-timber) !important;
+  box-shadow: 6px 6px 0 var(--deep-timber) !important;
+}
+
+.environment-stone-frame {
+  border-color: var(--roof-stone) !important;
+  box-shadow: 4px 4px 0 var(--deep-timber) !important;
 }

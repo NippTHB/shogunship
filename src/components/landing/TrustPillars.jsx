@@ -5,34 +5,30 @@ const pillars = [
   {
     icon: '👁',
     pixelIcon: '⊙',
-    title: 'TRANSPARENT',
-    description: 'Full provenance report. See the source, inspector, route, and cost breakdown before you commit.',
-    number: '01',
-    color: '#7ab8ff',
+    title: 'ARRIVAL PHOTOS',
+    description: 'We photograph each purchase when it reaches our Nara location, so you can confirm it arrived safely.',
+    color: '#5d9290',
   },
   {
     icon: '🛡',
     pixelIcon: '◈',
-    title: 'RELIABLE',
-    description: 'Multi-point condition audit. Insured shipping with real-time tracking from workshop to your door.',
-    number: '02',
-    color: '#6abf5e',
+    title: 'ITEM INSPECTION',
+    description: 'We compare the item with its listing and document visible condition concerns before international shipping.',
+    color: '#5d7042',
   },
   {
     icon: '⚔',
     pixelIcon: '✦',
-    title: 'INDEPENDENT',
-    description: 'Collectors first, not a corporation. Curators operate independently across Japan sourcing rare items.',
-    number: '03',
-    color: '#ff6b2b',
+    title: 'SAFE STORAGE',
+    description: 'We can hold purchases temporarily while you continue buying from other Japanese sellers.',
+    color: '#a94f2c',
   },
   {
     icon: '👤',
     pixelIcon: '♟',
-    title: 'PERSONAL',
-    description: 'Every shipment handled by a named curator you can message directly. A trusted relationship.',
-    number: '04',
-    color: '#e8c87a',
+    title: 'CONSOLIDATION',
+    description: 'We combine purchases from multiple sellers into one carefully prepared international shipment.',
+    color: '#c39a4a',
   },
 ];
 
@@ -43,7 +39,7 @@ function PillarCard({ pillar, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      className="group relative border-4 p-6 cursor-default"
+      className="group relative border-4 p-6 cursor-default material-paper"
       style={{
         borderColor: '#2a3f5a',
         background: '#0f1b2d',
@@ -52,11 +48,6 @@ function PillarCard({ pillar, index }) {
       }}
       whileHover={{ x: -2, y: -2 }}
     >
-      {/* Number badge */}
-      <div className="absolute top-3 right-3 font-pixel text-[7px]" style={{ color: '#2a3f5a' }}>
-        {pillar.number}
-      </div>
-
       {/* Pixel icon */}
       <div
         className="w-12 h-12 border-4 flex items-center justify-center mb-4 font-pixel text-lg"
@@ -80,7 +71,7 @@ function PillarCard({ pillar, index }) {
 
 export default function TrustPillars() {
   return (
-    <section id="process" className="py-20 lg:py-28" style={{ background: '#080d14' }}>
+    <section id="process" className="py-20 lg:py-28 material-plaster">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -88,12 +79,9 @@ export default function TrustPillars() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <div className="font-pixel text-[8px] mb-3" style={{ color: '#ff6b2b' }}>
-            ▶ SYSTEM SPECS
-          </div>
-          <PixelDivider label="OUR FOUNDATION" />
-          <h2 className="font-pixel text-xl lg:text-2xl mt-4 leading-relaxed" style={{ color: '#e8c87a' }}>
-            4 CORE<br /><span style={{ color: '#ff6b2b' }}>ATTRIBUTES</span>
+          <PixelDivider label="GUILD CARE" />
+          <h2 className="font-pixel text-xl lg:text-2xl mt-4 leading-relaxed environment-heading" style={{ color: '#c39a4a' }}>
+            HOW WE CARE<br /><span style={{ color: '#a94f2c' }}>FOR YOUR ITEMS</span>
           </h2>
         </motion.div>
 

@@ -2,15 +2,15 @@ import { motion } from 'framer-motion';
 import PixelDivider from './PixelDivider';
 
 const COST_LINES = [
-  { label: 'Collector Payment', percent: 62, description: 'Directly to the Japanese source', color: '#6abf5e' },
-  { label: 'Insured Shipping', percent: 18, description: 'DHL Express, full coverage', color: '#7ab8ff' },
-  { label: 'Inspection & Packing', percent: 12, description: 'Condition audit + Washi wrapping', color: '#e8c87a' },
-  { label: 'ShogunShip Fee', percent: 8, description: 'Our service commission', color: '#ff6b2b' },
+  { label: 'Item Price', percent: 62, description: 'The price charged by the Japanese seller', color: '#5d7042' },
+  { label: 'Domestic Shipping', percent: 12, description: 'Delivery from the seller to our Nara location', color: '#5d9290' },
+  { label: 'ShogunShip Service', percent: 8, description: 'Personal purchasing and handling support', color: '#c39a4a' },
+  { label: 'International Shipping', percent: 18, description: 'Careful packing and tracked delivery', color: '#a94f2c' },
 ];
 
 export default function TransparencyBreakdown() {
   return (
-    <section id="manifest" className="py-20 lg:py-28" style={{ background: '#080d14' }}>
+    <section id="manifest" className="py-20 lg:py-28 material-ledger-office">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left */}
@@ -19,29 +19,29 @@ export default function TransparencyBreakdown() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="font-pixel text-[8px] mb-3" style={{ color: '#7ab8ff' }}>▶ ITEM LEDGER</div>
-            <PixelDivider label="TOTAL TRANSPARENCY" color="gold" />
-            <h2 className="font-pixel text-xl lg:text-2xl mt-4 leading-relaxed" style={{ color: '#e8c87a' }}>
-              WHERE YOUR<br />COINS<br /><span style={{ color: '#ff6b2b' }}>ACTUALLY GO</span>
+            <div className="font-pixel text-[8px] mb-3" style={{ color: '#5d9290' }}>GUILD LEDGER</div>
+            <PixelDivider label="CLEAR COST MANIFEST" color="gold" />
+            <h2 className="font-pixel text-xl lg:text-2xl mt-4 leading-relaxed" style={{ color: '#c39a4a' }}>
+              UNDERSTAND<br />EVERY <span style={{ color: '#a94f2c' }}>COST</span>
             </h2>
             <p className="font-vt text-xl mt-4 max-w-sm leading-snug" style={{ color: '#8090a0' }}>
-              No hidden fees. No inflated margins. Every transaction
-              includes a full cost manifest — every pixel accounted for.
+              Before you commit, we explain the item price, domestic shipping,
+              service fee, optional services, and international shipping.
             </p>
 
             {/* Pixel art ship route indicator */}
             <div
-              className="mt-8 border-4 p-4"
+              className="mt-8 border-4 p-4 material-ledger-panel"
               style={{ borderColor: '#2a3f5a', background: '#0f1b2d' }}
             >
-              <div className="font-pixel text-[7px] mb-3" style={{ color: '#ff6b2b' }}>SAMPLE SHIPMENT</div>
+              <div className="font-pixel text-[7px] mb-3" style={{ color: '#a94f2c' }}>SAMPLE SHIPMENT</div>
               <div className="flex items-center gap-2 font-pixel text-[6px]" style={{ color: '#a0b0c0' }}>
-                <span style={{ color: '#e8c87a' }}>TOKYO</span>
+                <span style={{ color: '#c39a4a' }}>TOKYO</span>
                 <span style={{ color: '#2a3f5a' }}>→→→→→→→→→</span>
-                <span style={{ color: '#6abf5e' }}>LONDON</span>
+                <span style={{ color: '#5d7042' }}>LONDON</span>
               </div>
               <div className="mt-2 font-vt text-lg" style={{ color: '#c8d8e8' }}>
-                Item: Seiko 6139 Pogue · ¥48,000 total
+                Example: Seiko 6139 Pogue · ¥48,000 estimated total
               </div>
             </div>
 
@@ -49,27 +49,27 @@ export default function TransparencyBreakdown() {
               href="#"
               className="inline-block mt-6 pixel-btn pixel-btn-orange px-6 py-3 font-pixel text-[7px]"
             >
-              ► VIEW FULL MANIFEST
+              REQUEST A COST BREAKDOWN
             </a>
           </motion.div>
 
-          {/* Right — RPG-style inventory breakdown */}
+          {/* Right: cost breakdown */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
             <div
-              className="border-4"
-              style={{ borderColor: '#e8c87a', background: '#0f1b2d', boxShadow: '6px 6px 0px #ff6b2b44' }}
+              className="border-4 material-ledger-panel"
+              style={{ borderColor: '#c39a4a', background: '#0f1b2d', boxShadow: '6px 6px 0px #a94f2c44' }}
             >
               {/* Header */}
               <div
                 className="px-5 py-3 border-b-4 flex items-center justify-between"
-                style={{ borderColor: '#e8c87a', background: '#080d14' }}
+                style={{ borderColor: '#c39a4a', background: '#080d14' }}
               >
-                <span className="font-pixel text-[8px]" style={{ color: '#e8c87a' }}>COST MANIFEST</span>
-                <span className="font-pixel text-[8px]" style={{ color: '#ff6b2b' }}>¥48,000</span>
+                <span className="font-pixel text-[8px]" style={{ color: '#c39a4a' }}>COST MANIFEST</span>
+                <span className="font-pixel text-[8px]" style={{ color: '#a94f2c' }}>¥48,000</span>
               </div>
 
               <div className="p-5 space-y-5">
@@ -110,12 +110,12 @@ export default function TransparencyBreakdown() {
                   className="mt-4 pt-4 border-t-2 border-dashed flex items-center justify-between"
                   style={{ borderColor: '#2a3f5a' }}
                 >
-                  <span className="font-pixel text-[6px]" style={{ color: '#6abf5e' }}>
-                    ✓ VERIFIED · NO HIDDEN COSTS
+                  <span className="font-pixel text-[6px]" style={{ color: '#5d7042' }}>
+                    CLEAR COSTS · BEFORE PURCHASE
                   </span>
                   <div
                     className="w-10 h-10 border-4 flex items-center justify-center font-pixel text-[8px]"
-                    style={{ borderColor: '#6abf5e', color: '#6abf5e', background: '#0f1b2d' }}
+                    style={{ borderColor: '#5d7042', color: '#5d7042', background: '#0f1b2d' }}
                   >
                     承
                   </div>
