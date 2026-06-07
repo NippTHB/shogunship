@@ -1,19 +1,20 @@
 const TICKER_ITEMS = [
-  { id: 'MERCARI', item: 'Vintage Seiko 6139', city: 'Arrival photo', status: 'RECEIVED', statusColor: '#5d7042' },
-  { id: 'YAHOO AUCTIONS', item: 'Meiji-era Imari Plate', city: 'Inspection', status: 'CHECKED', statusColor: '#c39a4a' },
-  { id: 'SURUGAYA', item: 'Collector Figure Set', city: 'Temporary storage', status: 'HELD SAFELY', statusColor: '#5d7042' },
-  { id: 'RAKUMA', item: '1970s Takamine Guitar', city: 'Seller review', status: 'PURCHASED', statusColor: '#5d9290' },
-  { id: 'MANDARAKE', item: 'Vintage Manga Set', city: 'Consolidation', status: 'PACKING', statusColor: '#c39a4a' },
+  'MERCARI',
+  'YAHOO AUCTIONS',
+  'SURUGAYA',
+  'RAKUMA',
+  'MANDARAKE',
+  'BOOKOFF',
+  'LASHINBANG',
+  'MERCARI SHOPS',
+  'YAHOO FLEA MARKET',
 ];
 
-function TickerItem({ item }) {
+function TickerItem({ name }) {
   return (
-    <span className="inline-flex items-center gap-3 px-4 font-pixel text-[7px]" style={{ whiteSpace: 'nowrap' }}>
-      <span style={{ color: '#2a3f5a' }}>█</span>
-      <span style={{ color: '#5d9290' }}>{item.id}</span>
-      <span style={{ color: '#c39a4a' }}>{item.item}</span>
-      <span style={{ color: '#a0b0c0' }}>[{item.city}]</span>
-      <span style={{ color: item.statusColor }}>● {item.status}</span>
+    <span className="inline-flex items-center gap-4 px-4 font-pixel text-[7px]" style={{ whiteSpace: 'nowrap' }}>
+      <span style={{ color: '#14304D' }}>{name}</span>
+      <span style={{ color: '#D8B15A' }}>■</span>
     </span>
   );
 }
@@ -29,8 +30,8 @@ export default function ManifestTicker() {
       }}
     >
       <div className="flex animate-ticker" style={{ width: 'max-content' }}>
-        {doubled.map((item, i) => (
-          <TickerItem key={`${item.id}-${i}`} item={item} />
+        {doubled.map((name, i) => (
+          <TickerItem key={`${name}-${i}`} name={name} />
         ))}
       </div>
     </div>

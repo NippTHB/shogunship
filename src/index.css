@@ -478,6 +478,10 @@ img {
   text-shadow: 2px 2px 0 var(--aged-ivory);
 }
 
+.environment-heading .hero-headline-primary {
+  color: #142331 !important;
+}
+
 .environment-copy {
   color: var(--deep-timber) !important;
 }

@@ -63,7 +63,7 @@ export default function CuratorSpotlight() {
               {/* Info overlay */}
               <div
                 className="absolute bottom-0 left-0 right-0 p-4 border-t-4"
-                style={{ borderColor: '#c39a4a', background: '#080d14ee' }}
+                style={{ borderColor: '#c39a4a', background: '#142331' }}
               >
                 <div className="font-pixel text-[7px] mb-1" style={{ color: '#a94f2c' }}>FOUNDERS + CURATORS</div>
                 <div className="font-pixel text-[10px]" style={{ color: '#c39a4a' }}>HUSBAND + WIFE TEAM</div>
@@ -90,7 +90,7 @@ export default function CuratorSpotlight() {
             {/* Dialog box quote */}
             <div
               className="mt-6 border-4 p-5"
-              style={{ borderColor: '#c39a4a', background: '#080d14', boxShadow: '4px 4px 0px #a94f2c' }}
+              style={{ borderColor: '#c39a4a', background: '#142331', boxShadow: '4px 4px 0px #a94f2c' }}
             >
               <div className="font-pixel text-[6px] mb-2" style={{ color: '#a94f2c' }}>A NOTE FROM NARA</div>
               <p className="font-vt text-xl leading-snug" style={{ color: '#c8d8e8' }}>

@@ -7,7 +7,7 @@ const SPRITE_IMG = 'https://media.db.com/images/public/6a21a3f44ff5cedb9addee5e/
 // Pixel art "dialog box" component
 function DialogBox({ children, title }) {
   return (
-    <div className="relative border-4 bg-px-dark p-4" style={{ borderColor: '#c39a4a', boxShadow: '6px 6px 0px #a94f2c' }}>
+    <div className="relative border-4 bg-px-dark p-4" style={{ borderColor: '#c39a4a', background: '#142331', boxShadow: '6px 6px 0px #a94f2c' }}>
       {title && (
         <div className="absolute -top-4 left-4 bg-px-dark px-2">
           <span className="font-pixel text-[8px]" style={{ color: '#a94f2c' }}>{title}</span>
@@ -77,8 +77,8 @@ export default function HeroSection() {
               </div>
 
               <h1 className="font-pixel leading-relaxed environment-heading" style={{ color: '#c39a4a' }}>
-                <div className="text-2xl sm:text-3xl lg:text-4xl">YOUR TRUSTED</div>
-                <div className="text-2xl sm:text-3xl lg:text-4xl">BUYING TEAM</div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl hero-headline-primary">YOUR TRUSTED</div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl hero-headline-primary">BUYING TEAM</div>
                 <div className="text-2xl sm:text-3xl lg:text-4xl" style={{ color: '#a94f2c' }}>IN JAPAN</div>
               </h1>
             </motion.div>
