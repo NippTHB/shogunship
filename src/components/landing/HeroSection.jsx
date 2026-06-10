@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import PixelStars from './PixelStars';
+import LandingAsset02 from '../../assets/images/Landing_asset02.png';
 
-const SHIP_IMG = 'https://media.db.com/images/public/6a21a3f44ff5cedb9addee5e/8e922a1eb_generated_image.png';
+const SHIP_IMG = LandingAsset02;
 const SPRITE_IMG = 'https://media.db.com/images/public/6a21a3f44ff5cedb9addee5e/265724f5a_generated_image.png';
 
 // Pixel art "dialog box" component
@@ -56,11 +57,7 @@ export default function HeroSection() {
           style={{ borderColor: '#1a2b3c', background: '#0f1b2d' }}
         >
           <div className="flex items-center gap-4">
-            <span className="font-pixel text-[7px]" style={{ color: '#5d7042' }}>JAPAN-BASED GUILD</span>
-            <span className="font-pixel text-[7px]" style={{ color: '#a0b0c0' }}>HUSBAND + WIFE TEAM</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="font-pixel text-[7px]" style={{ color: '#c39a4a' }}>NARA PREFECTURE</span>
+            <span className="font-pixel text-[9px]" style={{ color: '#5d7042' }}>JAPAN-BASED COLLECTOR SERVICE</span>
           </div>
         </motion.div>
 
@@ -89,11 +86,19 @@ export default function HeroSection() {
               transition={{ duration: 0.3, delay: 0.3 }}
               className="mt-8"
             >
-              <DialogBox title="FROM THE GUILD">
+              <DialogBox title="WHO WE ARE">
                 <p className="font-vt text-lg leading-relaxed" style={{ color: '#c8d8e8' }}>
-                  We are a husband-and-wife team in Nara helping collectors
-                  buy from Japanese marketplaces. We receive, photograph,
-                  inspect, store, consolidate, and carefully ship each purchase.
+                  We are a husband-and-wife team based in Nara, Japan, helping
+                  collectors buy from Japanese marketplaces. Whether you need us
+                  to purchase an item for you or simply receive and forward it,
+                  every package is personally photographed, stored, consolidated,
+                  and carefully shipped by us. We treat every order with the same
+                  care we would give our own collection.
+                  <br /><br />
+                  Arigatou gozaimasu!
+                  <span className="block mt-1 text-base italic" style={{ color: '#a0b0c0' }}>
+                    — The ShogunShip Family
+                  </span>
                 </p>
               </DialogBox>
             </motion.div>
@@ -103,14 +108,16 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.5 }}
-              className="mt-6 border-2 p-4 space-y-3 environment-paper"
+              className="mt-6 border-2 p-4 environment-paper"
               style={{ borderColor: '#2a3f5a', background: '#0f1b2d' }}
             >
               <div className="font-pixel text-[7px] mb-4" style={{ color: '#a94f2c' }}>PERSONAL HANDLING</div>
-              <ServiceRecord label="ARRIVAL PHOTOS" value="INCLUDED" color="#5d9290" />
-              <ServiceRecord label="INSPECTION" value="INCLUDED" color="#c39a4a" />
-              <ServiceRecord label="STORAGE" value="AVAILABLE" color="#5d7042" />
-              <ServiceRecord label="CONSOLIDATION" value="AVAILABLE" color="#a94f2c" />
+              <div className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
+                <ServiceRecord label="ARRIVAL PHOTOS" value="INCLUDED" color="#5d9290" />
+                <ServiceRecord label="CONSOLIDATION" value="INCLUDED" color="#a94f2c" />
+                <ServiceRecord label="STORAGE" value="INCLUDED" color="#5d7042" />
+                <ServiceRecord label="INSPECTION" value="AVAILABLE" color="#c39a4a" />
+              </div>
             </motion.div>
 
             {/* CTA Buttons */}
@@ -138,7 +145,7 @@ export default function HeroSection() {
           >
             {/* Main scene image */}
             <div
-              className="relative overflow-hidden border-4 environment-frame"
+              className="relative overflow-hidden border-4"
               style={{ borderColor: '#c39a4a', boxShadow: '6px 6px 0px #a94f2c', imageRendering: 'pixelated' }}
             >
               <img
@@ -148,14 +155,6 @@ export default function HeroSection() {
                 style={{ imageRendering: 'pixelated' }}
               />
               <div className="absolute inset-0 scanlines" />
-              <div
-                className="absolute bottom-0 left-0 right-0 px-3 py-2"
-                style={{ background: 'linear-gradient(transparent, rgba(8,13,20,0.95))' }}
-              >
-                <span className="font-pixel text-[7px]" style={{ color: '#c39a4a' }}>
-                  JAPAN TO YOUR COLLECTION
-                </span>
-              </div>
             </div>
 
             {/* Character sprite */}
