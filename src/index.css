@@ -6,80 +6,50 @@
 
 @layer base {
   :root {
-    --background: 41 80% 96%;
-    --foreground: 0 0% 16%;
-    --card: 41 80% 96%;
-    --card-foreground: 0 0% 16%;
-    --popover: 41 80% 96%;
-    --popover-foreground: 0 0% 16%;
-    --primary: 220 51% 21%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 220 51% 21%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 220 18% 92%;
-    --muted-foreground: 0 0% 30%;
-    --accent: 160 23% 52%;
-    --accent-foreground: 220 51% 21%;
-    --destructive: 42 40% 57%;
-    --destructive-foreground: 220 51% 21%;
-    --border: 220 51% 21%;
-    --input: 220 51% 21%;
-    --ring: 42 40% 57%;
+    --background: 42 35% 88%;
+    --foreground: 20 35% 25%;
+    --card: 42 30% 92%;
+    --card-foreground: 20 35% 25%;
+    --popover: 42 30% 92%;
+    --popover-foreground: 20 35% 25%;
+    --primary: 20 35% 25%;
+    --primary-foreground: 42 35% 88%;
+    --secondary: 42 25% 82%;
+    --secondary-foreground: 20 35% 25%;
+    --muted: 42 20% 78%;
+    --muted-foreground: 20 25% 45%;
+    --accent: 158 26% 54%;
+    --accent-foreground: 20 35% 25%;
+    --destructive: 22 100% 55%;
+    --destructive-foreground: 42 35% 88%;
+    --border: 20 25% 55%;
+    --input: 20 25% 55%;
+    --ring: 37 48% 57%;
     --radius: 0rem;
     --font-heading: 'Press Start 2P', monospace;
     --font-body: 'VT323', monospace;
     --font-display: 'VT323', monospace;
     --font-mono: 'Press Start 2P', monospace;
-    --meadow-foundation: #a2d2b1;
-    --harvest-meadow: #a2d2b1;
-    --moss-green: #a2d2b1;
-    --sunlit-plaster: #f2e1b1;
-    --aged-ivory: #f2e1b1;
-    --light-indigo-grey: #a2d2b1;
-    --ochre-parchment: var(--light-indigo-grey);
-    --ledger-paper: var(--aged-ivory);
-    --dirt-path: #f2e1b1;
-    --parcel-kraft: #f2e1b1;
-    --guild-timber: #4c9e7e;
-    --cedar-brown: #4c9e7e;
-    --deep-timber: #4c9e7e;
-    --deep-cedar: #4c9e7e;
-    --roof-stone: #4c9e7e;
-    --pale-stone: #f2e1b1;
-    --autumn-gold: #f9b76c;
-    --aged-brass: #f9b76c;
-    --autumn-orange: #f9b76c;
-    --burnt-persimmon: #f9b76c;
-    --tango: #f47b1f;
-    --water-accent: #a2d2b1;
-    --oxidized-teal: #a2d2b1;
-    --muted-leaf: #a2d2b1;
-    --deep-ledger: #4c9e7e;
-    --ledger-panel: #4c9e7e;
-    --lacquered-indigo: #4c9e7e;
-    --mystery-shadow: #4c9e7e;
-    --clear-ledger-text: #f2e1b1;
-    --ink-brown: #1E4E3A;
   }
 
   .dark {
-    --background: 220 40% 8%;
-    --foreground: 45 80% 88%;
-    --card: 220 35% 12%;
-    --card-foreground: 45 80% 88%;
-    --primary: 45 80% 88%;
-    --primary-foreground: 220 40% 8%;
-    --secondary: 220 30% 16%;
-    --secondary-foreground: 45 80% 88%;
-    --muted: 220 25% 18%;
-    --muted-foreground: 220 15% 55%;
-    --accent: 100 45% 55%;
-    --accent-foreground: 220 40% 8%;
+    --background: 42 35% 88%;
+    --foreground: 20 35% 25%;
+    --card: 42 30% 92%;
+    --card-foreground: 20 35% 25%;
+    --primary: 20 35% 25%;
+    --primary-foreground: 42 35% 88%;
+    --secondary: 42 25% 82%;
+    --secondary-foreground: 20 35% 25%;
+    --muted: 42 20% 78%;
+    --muted-foreground: 20 25% 45%;
+    --accent: 158 26% 54%;
+    --accent-foreground: 20 35% 25%;
     --destructive: 22 100% 55%;
-    --destructive-foreground: 220 40% 8%;
-    --border: 220 30% 20%;
-    --input: 220 30% 20%;
-    --ring: 22 100% 55%;
+    --destructive-foreground: 42 35% 88%;
+    --border: 20 25% 55%;
+    --input: 20 25% 55%;
+    --ring: 37 48% 57%;
   }
 }
 
@@ -92,8 +62,6 @@
     @apply bg-background text-foreground;
     font-family: 'VT323', monospace;
     image-rendering: pixelated;
-    background: var(--sunlit-plaster);
-    color: var(--ink-brown);
   }
 }
 
@@ -105,22 +73,33 @@
   font-family: 'VT323', monospace;
 }
 
-/* Pixel border (hard shadow style) */
+/* Valley color palette */
+:root {
+  --valley-sky: #1A2B50;
+  --valley-beige: #C4C1B1;
+  --valley-brass: #C1A562;
+  --valley-brown: #6A4A3A;
+  --valley-jade: #69A18E;
+  --valley-mid: #3D5A3E;
+  --valley-dark: #1A2B50;
+}
+
+/* Pixel borders - parchment style */
 .pixel-border {
-  border: 3px solid var(--aged-ivory);
-  box-shadow: 4px 4px 0px var(--burnt-persimmon);
+  border: 3px solid #6A4A3A;
+  box-shadow: 4px 4px 0px #C1A562;
 }
 .pixel-border-sm {
-  border: 2px solid var(--aged-ivory);
-  box-shadow: 2px 2px 0px var(--burnt-persimmon);
+  border: 2px solid #6A4A3A;
+  box-shadow: 2px 2px 0px #C1A562;
 }
-.pixel-border-orange {
-  border: 3px solid var(--burnt-persimmon);
-  box-shadow: 4px 4px 0px var(--mystery-shadow);
+.pixel-border-indigo {
+  border: 3px solid #1A2B50;
+  box-shadow: 4px 4px 0px #0d1828;
 }
-.pixel-border-green {
-  border: 2px solid var(--moss-green);
-  box-shadow: 2px 2px 0px var(--deep-cedar);
+.pixel-border-brass {
+  border: 3px solid #C1A562;
+  box-shadow: 4px 4px 0px #6A4A3A;
 }
 
 /* Pixel button */
@@ -128,44 +107,37 @@
   font-family: 'Press Start 2P', monospace;
   font-size: 10px;
   letter-spacing: 0.05em;
-  border: 3px solid var(--aged-ivory);
-  box-shadow: 4px 4px 0px var(--burnt-persimmon);
+  border: 3px solid #6A4A3A;
+  box-shadow: 4px 4px 0px #C1A562;
   transition: transform 0.05s, box-shadow 0.05s;
   image-rendering: pixelated;
   cursor: pointer;
-  background-color: var(--aged-brass);
-  color: var(--deep-ledger);
-  background-image:
-    linear-gradient(135deg, rgba(255,255,255,0.18) 25%, transparent 25%),
-    linear-gradient(315deg, rgba(30,78,58,0.16) 25%, transparent 25%);
-  background-size: 8px 8px;
 }
 .pixel-btn:hover {
   transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0px var(--burnt-persimmon);
+  box-shadow: 2px 2px 0px #C1A562;
 }
 .pixel-btn:active {
   transform: translate(4px, 4px);
-  box-shadow: 0px 0px 0px var(--burnt-persimmon);
+  box-shadow: 0px 0px 0px #C1A562;
 }
-.pixel-btn-orange {
-  background: var(--autumn-orange);
-  color: var(--deep-ledger);
-  border-color: var(--autumn-gold);
-  box-shadow: 4px 4px 0px var(--deep-timber);
+.pixel-btn-brass {
+  background: #C1A562;
+  color: #6A4A3A;
+  border-color: #d4bc7a;
+  box-shadow: 4px 4px 0px #6A4A3A;
 }
-.pixel-btn-orange:hover {
-  box-shadow: 2px 2px 0px var(--deep-timber);
+.pixel-btn-brass:hover {
+  box-shadow: 2px 2px 0px #6A4A3A;
 }
-.pixel-btn-orange:active {
-  box-shadow: 0px 0px 0px var(--deep-timber);
+.pixel-btn-brass:active {
+  box-shadow: 0px 0px 0px #6A4A3A;
 }
-
-.pixel-btn-secondary {
-  background-color: #1E4E3A !important;
-  color: var(--aged-ivory) !important;
-  border-color: var(--aged-brass) !important;
-  box-shadow: 4px 4px 0 var(--deep-ledger) !important;
+.pixel-btn-indigo {
+  background: #1A2B50;
+  color: #C4C1B1;
+  border-color: #2a3f6e;
+  box-shadow: 4px 4px 0px #0d1828;
 }
 
 /* Scanline overlay effect */
@@ -177,26 +149,57 @@
     0deg,
     transparent,
     transparent 2px,
-    rgba(0,0,0,0.08) 2px,
-    rgba(0,0,0,0.08) 4px
+    rgba(0,0,0,0.05) 2px,
+    rgba(0,0,0,0.05) 4px
   );
   pointer-events: none;
   z-index: 1;
 }
 
-/* Dithered background pattern */
-.dither-bg {
+/* Parchment texture pattern */
+.parchment-bg {
+  background-color: #C4C1B1;
   background-image: 
-    radial-gradient(circle, hsl(220 40% 15%) 1px, transparent 1px);
+    radial-gradient(circle, #b8b5a4 1px, transparent 1px);
   background-size: 4px 4px;
 }
 
-/* Pixel grid decoration */
-.pixel-grid {
-  background-image: 
-    linear-gradient(hsl(220 30% 16%) 1px, transparent 1px),
-    linear-gradient(90deg, hsl(220 30% 16%) 1px, transparent 1px);
-  background-size: 16px 16px;
+/* Rock path texture */
+.rock-path {
+  background-color: #C1A562;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 8px,
+      rgba(106,74,58,0.1) 8px,
+      rgba(106,74,58,0.1) 9px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 8px,
+      rgba(106,74,58,0.1) 8px,
+      rgba(106,74,58,0.1) 9px
+    );
+}
+
+/* Valley floor */
+.valley-floor {
+  background: #1A2B50;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 16px,
+      rgba(255,255,255,0.02) 16px,
+      rgba(255,255,255,0.02) 17px
+    );
+}
+
+/* Sky gradient background */
+.sky-bg {
+  background: linear-gradient(180deg, #1A2B50 0%, #2d4270 40%, #C4C1B1 100%);
 }
 
 /* Ticker animation */
@@ -217,22 +220,13 @@
   animation: pixel-blink 1s step-end infinite;
 }
 
-/* Pixel cursor */
-@keyframes pixel-cursor {
-  0%, 49% { border-right: 3px solid var(--burnt-persimmon); }
-  50%, 100% { border-right: 3px solid transparent; }
+/* Cloud drift */
+@keyframes cloud-drift {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(60px); }
 }
-
-/* Star twinkle */
-@keyframes twinkle {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.3; transform: scale(0.5); }
-}
-
-/* Focus ring */
-*:focus-visible {
-  outline: 3px solid var(--aged-brass);
-  outline-offset: 2px;
+.cloud-drift {
+  animation: cloud-drift 20s linear infinite alternate;
 }
 
 /* Pixel float animation */
@@ -244,20 +238,10 @@
   animation: pixel-float 2s ease-in-out infinite;
 }
 
-/* Health bar fill */
-@keyframes bar-fill {
-  from { width: 0%; }
-  to { width: var(--target-width); }
-}
-
-/* Screen flicker on load */
-@keyframes screen-on {
-  0% { opacity: 0; transform: scaleY(0.02); }
-  10% { opacity: 1; transform: scaleY(1); }
-  100% { opacity: 1; transform: scaleY(1); }
-}
-.screen-on {
-  animation: screen-on 0.4s ease-out forwards;
+/* Focus ring */
+*:focus-visible {
+  outline: 3px solid #C1A562;
+  outline-offset: 2px;
 }
 
 /* Pixel art images */
@@ -265,465 +249,29 @@ img {
   image-rendering: pixelated;
 }
 
-/* Environmental material composition */
-.material-village {
-  position: relative;
-  isolation: isolate;
-  background-color: #f2e1b1;
-  background-image:
-    linear-gradient(to bottom,
-      #4c9e7e 0%,
-      #4c9e7e 8%,
-      #5cab8b 8%,
-      #5cab8b 14%,
-      #70b99a 14%,
-      #70b99a 20%,
-      #86c5a7 20%,
-      #86c5a7 26%,
-      #a2d2b1 26%,
-      #a2d2b1 38%,
-      #a2d2b1 61%,
-      #f2e1b1 78%,
-      #f2e1b1 100%);
+/* Jade vial stat bar */
+.jade-vial-segment {
+  background: linear-gradient(180deg, #7ec4ae 0%, #69A18E 40%, #4d8070 100%);
+  border-right: 1px solid #4d8070;
 }
 
-.material-village::before,
-.material-village::after {
-  content: '';
-  position: absolute;
-  z-index: 0;
-  left: 0;
-  right: 0;
-  pointer-events: none;
+/* Parchment panel */
+.parchment-panel {
+  background: #C4C1B1;
+  border: 3px solid #6A4A3A;
+  box-shadow: 4px 4px 0px #6A4A3A88;
 }
 
-.material-village::before {
-  top: 0;
-  height: 38%;
-  opacity: 0.8;
-  background-image:
-    radial-gradient(ellipse at 2% 100%, #FDF8ED 0 20%, transparent 20.4%),
-    radial-gradient(ellipse at 15% 104%, #FDF8ED 0 24%, transparent 24.4%),
-    radial-gradient(ellipse at 34% 102%, #FDF8ED 0 18%, transparent 18.4%),
-    radial-gradient(ellipse at 55% 105%, #FDF8ED 0 22%, transparent 22.4%),
-    radial-gradient(ellipse at 76% 102%, #FDF8ED 0 19%, transparent 19.4%),
-    radial-gradient(ellipse at 98% 100%, #FDF8ED 0 27%, transparent 27.4%),
-    radial-gradient(circle at 1px 1px, rgba(253,248,237,0.5) 1px, transparent 1.3px);
-  background-size: 420px 190px, 520px 210px, 480px 180px, 560px 210px, 500px 190px, 600px 230px, 67px 59px;
-  background-repeat: repeat-x, repeat-x, repeat-x, repeat-x, repeat-x, repeat-x, repeat;
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.28) 0%,
-    rgba(0, 0, 0, 0.18) 48%,
-    rgba(0, 0, 0, 0.84) 72%,
-    #000 100%
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.28) 0%,
-    rgba(0, 0, 0, 0.18) 48%,
-    rgba(0, 0, 0, 0.84) 72%,
-    #000 100%
-  );
+/* Pixel grid */
+.pixel-grid {
+  background-image: 
+    linear-gradient(rgba(106,74,58,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(106,74,58,0.08) 1px, transparent 1px);
+  background-size: 16px 16px;
 }
 
-.material-village::after {
-  top: 20%;
-  height: 80%;
-  opacity: 0.32;
-  background-image:
-    linear-gradient(145deg, transparent 0 38%, rgba(76,158,126,0.46) 38.2% 43%, transparent 43.2%),
-    linear-gradient(215deg, transparent 0 39%, rgba(30,78,58,0.25) 39.2% 44%, transparent 44.2%),
-    radial-gradient(ellipse at 18% 57%, rgba(76,158,126,0.4) 0 16%, transparent 16.4%),
-    radial-gradient(ellipse at 77% 61%, rgba(76,158,126,0.34) 0 20%, transparent 20.4%),
-    radial-gradient(ellipse at 52% 92%, rgba(249,183,108,0.58) 0 13%, transparent 13.4%);
-  background-size: 680px 390px, 760px 420px, 720px 260px, 860px 300px, 680px 390px;
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(0, 0, 0, 0.72) 16%,
-    transparent 34%,
-    transparent 54%,
-    rgba(0, 0, 0, 0.52) 68%,
-    transparent 86%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(0, 0, 0, 0.72) 16%,
-    transparent 34%,
-    transparent 54%,
-    rgba(0, 0, 0, 0.52) 68%,
-    transparent 86%,
-    transparent 100%
-  );
-}
-
-.material-village > section,
-.material-village > .material-parcel,
-.material-village > footer {
-  position: relative;
-  z-index: 1;
-}
-
-.material-timber {
-  background: var(--guild-timber) !important;
-  border-color: var(--autumn-gold) !important;
-  background-image:
-    repeating-linear-gradient(0deg, transparent 0 5px, rgba(255,255,255,0.05) 5px 6px),
-    repeating-linear-gradient(90deg, transparent 0 31px, rgba(193,165,98,0.18) 31px 33px) !important;
-}
-
-.material-timber .font-vt,
-.material-timber .font-pixel,
-.material-timber .text-muted-foreground {
-  color: var(--clear-ledger-text) !important;
-}
-
-.material-timber .pixel-btn-orange {
-  color: var(--deep-ledger) !important;
-}
-
-.material-hero {
-  background: transparent !important;
-}
-
-.material-hero.pixel-grid {
-  background-image: none !important;
-}
-
-.material-stone.pixel-grid,
-.material-founder.pixel-grid {
-  background-image: none !important;
-}
-
-.material-hero .environment-sign {
-  background: var(--guild-timber) !important;
-  border-color: var(--aged-brass) !important;
-  box-shadow: 3px 3px 0 var(--deep-ledger);
-}
-
-.material-hero .environment-sign .font-pixel {
-  color: var(--clear-ledger-text) !important;
-}
-
-.material-hero .environment-paper {
-  background: var(--aged-ivory) !important;
-  border-color: var(--guild-timber) !important;
-  box-shadow: 4px 4px 0 var(--deep-timber);
-  background-image:
-    radial-gradient(circle at 1px 1px, rgba(30,78,58,0.09) 1px, transparent 1.2px) !important;
-  background-size: 6px 6px !important;
-}
-
-.material-hero .environment-paper .font-pixel,
-.material-hero .environment-paper .font-vt {
-  color: var(--ink-brown) !important;
-}
-
-.material-paper {
-  background: var(--aged-ivory) !important;
-  border-color: var(--guild-timber) !important;
-  box-shadow: 4px 4px 0 var(--deep-timber) !important;
-  color: var(--ink-brown);
-  background-image:
-    linear-gradient(135deg, rgba(30,78,58,0.06) 25%, transparent 25%),
-    linear-gradient(315deg, rgba(193,165,98,0.08) 25%, transparent 25%) !important;
-  background-size: 10px 10px !important;
-}
-
-.material-paper:nth-child(even) {
-  background-color: var(--moss-green) !important;
-}
-
-.material-paper .font-vt,
-.material-paper .font-pixel {
-  color: var(--ink-brown) !important;
-}
-
-.material-plaster .material-paper:nth-of-type(even),
-.material-stone .material-paper,
-.material-path .material-paper:nth-of-type(odd),
-.material-founder .material-paper:nth-of-type(even) {
-  background: var(--ochre-parchment) !important;
-}
-
-.material-plaster .material-paper:nth-of-type(odd),
-.material-path .material-paper:nth-of-type(even),
-.material-founder .material-paper:nth-of-type(odd) {
-  background: var(--aged-ivory) !important;
-}
-
-.material-stone .material-paper .material-paper,
-.material-founder .material-paper .material-paper {
-  background: var(--parcel-kraft) !important;
-}
-
-.material-parcel {
-  background: var(--parcel-kraft) !important;
-  border-color: var(--deep-cedar) !important;
-  background-image:
-    repeating-linear-gradient(90deg, rgba(193,165,98,0.16) 0 2px, transparent 2px 12px) !important;
-}
-
-.material-parcel .font-pixel {
-  color: var(--ink-brown) !important;
-}
-
-.material-plaster {
-  background: transparent !important;
-}
-
-.material-stone {
-  background: transparent !important;
-}
-
-.material-path {
-  background: transparent !important;
-}
-
-.material-founder {
-  background: transparent !important;
-  border-block: 16px solid var(--deep-ledger);
-}
-
-.material-ledger-office {
-  background: var(--deep-ledger) !important;
-  border-block: 16px solid var(--deep-cedar);
-  box-shadow: inset 0 12px 0 var(--mystery-shadow), inset 0 -12px 0 var(--mystery-shadow);
-  background-image:
-    repeating-linear-gradient(0deg, rgba(30,78,58,0.42) 0 5px, rgba(76,158,126,0.1) 5px 6px) !important;
-}
-
-.material-ledger-panel {
-  background: var(--lacquered-indigo) !important;
-  border-color: var(--aged-brass) !important;
-  box-shadow: 6px 6px 0 var(--mystery-shadow) !important;
-  background-image:
-    repeating-linear-gradient(0deg, rgba(30,78,58,0.44) 0 5px, rgba(76,158,126,0.12) 5px 6px) !important;
-}
-
-.material-ledger-panel .font-vt {
-  color: var(--clear-ledger-text) !important;
-}
-
-.material-ledger-panel .font-pixel,
-.material-ledger-office .font-vt {
-  color: var(--clear-ledger-text) !important;
-}
-
-.material-ledger-footer {
-  background-color: var(--deep-ledger) !important;
-  background-image:
-    linear-gradient(135deg, rgba(242,225,177,0.09) 25%, transparent 25%),
-    linear-gradient(315deg, rgba(30,78,58,0.2) 25%, transparent 25%) !important;
-  background-size: 14px 14px !important;
-  border-color: var(--deep-ledger) !important;
-}
-
-.material-ledger-footer .font-vt,
-.material-ledger-footer .font-pixel {
-  color: var(--clear-ledger-text) !important;
-}
-
-.material-ledger-footer .pixel-btn,
-.material-ledger-footer .pixel-btn .font-pixel {
-  color: var(--deep-ledger) !important;
-}
-
-.environment-heading {
-  color: var(--ink-brown) !important;
-  text-shadow: 2px 2px 0 var(--aged-ivory);
-}
-
-.environment-heading .hero-headline-primary {
-  color: var(--ink-brown) !important;
-}
-
-.material-hero .environment-heading .hero-headline-primary {
-  color: var(--ink-brown) !important;
-  text-shadow: 3px 3px 0 var(--aged-ivory);
-}
-
-.environment-copy {
-  color: var(--deep-timber) !important;
-}
-
-.environment-frame {
-  border-color: var(--guild-timber) !important;
-  box-shadow: 6px 6px 0 var(--deep-timber) !important;
-}
-
-.environment-stone-frame {
-  border-color: var(--roof-stone) !important;
-  box-shadow: 4px 4px 0 var(--deep-timber) !important;
-}
-
+/* Indigo panel for dark sections */
 .indigo-panel {
-  background: var(--deep-ledger) !important;
-  border-color: var(--aged-brass) !important;
-  box-shadow: 4px 4px 0 var(--aged-brass) !important;
-  background-image:
-    repeating-linear-gradient(0deg, rgba(30,78,58,0.46) 0 5px, rgba(242,225,177,0.06) 5px 6px) !important;
-}
-
-.indigo-panel .font-vt {
-  color: #f2e1b1 !important;
-}
-
-.marketplace-ticker .font-pixel span:first-child {
-  color: var(--deep-ledger) !important;
-}
-
-.marketplace-ticker .font-pixel span:last-child {
-  color: var(--aged-brass) !important;
-}
-
-.palette-sprite {
-  filter: hue-rotate(45deg) saturate(0.7) contrast(1.08);
-}
-
-.palette-art {
-  filter: hue-rotate(42deg) saturate(0.72) contrast(1.06);
-}
-
-.textured-ocean-panel {
-  background-image:
-    repeating-linear-gradient(0deg, rgba(30,78,58,0.48) 0 5px, rgba(242,225,177,0.055) 5px 6px) !important;
-}
-
-.service-segment {
-  box-shadow: inset 2px 0 rgba(242,225,177,0.35), inset -2px -2px rgba(30,78,58,0.28);
-  clip-path: polygon(17% 0, 83% 0, 100% 20%, 100% 100%, 0 100%, 0 20%);
-}
-
-.service-status {
-  color: var(--deep-ledger) !important;
-  background: var(--aged-brass);
-  border: 1px solid var(--deep-ledger);
-  padding: 3px 5px;
-  box-shadow: 2px 2px 0 var(--deep-ledger);
-}
-
-/* Concept-matched section composition */
-.material-village {
-  background: var(--aged-ivory);
-}
-
-.material-village::before,
-.material-village::after {
-  display: none;
-}
-
-.material-hero.pixel-grid {
-  isolation: isolate;
-  background:
-    linear-gradient(to bottom, #4c9e7e 0 8%, #76b996 8% 17%, #a2d2b1 17% 100%) !important;
-}
-
-.material-hero::before,
-.material-hero::after {
-  content: '';
-  position: absolute;
-  inset-inline: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.material-hero::before {
-  top: 4rem;
-  height: 42%;
-  opacity: 0.55;
-  background-image:
-    radial-gradient(ellipse at 4% 72%, #FDF8ED 0 11%, transparent 11.5%),
-    radial-gradient(ellipse at 20% 58%, #FDF8ED 0 8%, transparent 8.5%),
-    radial-gradient(ellipse at 38% 72%, #FDF8ED 0 13%, transparent 13.5%),
-    radial-gradient(ellipse at 62% 60%, #FDF8ED 0 9%, transparent 9.5%),
-    radial-gradient(ellipse at 83% 70%, #FDF8ED 0 14%, transparent 14.5%),
-    radial-gradient(ellipse at 98% 55%, #FDF8ED 0 11%, transparent 11.5%);
-  background-size: 520px 180px, 420px 150px, 600px 190px, 460px 160px, 620px 200px, 500px 170px;
-  background-repeat: repeat-x;
-}
-
-.material-hero::after {
-  bottom: 0;
-  height: 27%;
-  background-image:
-    radial-gradient(ellipse at 4% 100%, #4c9e7e 0 27%, transparent 27.5%),
-    radial-gradient(ellipse at 28% 104%, #76b996 0 30%, transparent 30.5%),
-    radial-gradient(ellipse at 72% 106%, #4c9e7e 0 34%, transparent 34.5%),
-    radial-gradient(ellipse at 98% 100%, #76b996 0 29%, transparent 29.5%),
-    radial-gradient(ellipse at 50% 135%, #f9b76c 0 34%, transparent 34.5%);
-  background-size: 620px 210px, 760px 230px, 820px 240px, 680px 220px, 720px 260px;
-  background-repeat: repeat-x;
-  opacity: 0.95;
-}
-
-.material-hero > * {
-  position: relative;
-  z-index: 1;
-}
-
-.textured-ocean-panel {
-  background-color: #1E4E3A !important;
-  background-image:
-    repeating-linear-gradient(0deg, rgba(76,158,126,0.16) 0 5px, rgba(242,225,177,0.045) 5px 6px) !important;
-}
-
-.material-hero .environment-sign {
-  background-color: #1E4E3A !important;
-  background-image:
-    repeating-linear-gradient(0deg, rgba(76,158,126,0.18) 0 5px, rgba(242,225,177,0.045) 5px 6px) !important;
-}
-
-.material-plaster,
-.material-path {
-  background-color: var(--aged-ivory) !important;
-  background-image:
-    radial-gradient(circle at 1px 1px, rgba(249,183,108,0.12) 1px, transparent 1.2px) !important;
-  background-size: 8px 8px !important;
-}
-
-.material-plaster {
-  border-top: 5px solid var(--deep-ledger);
-}
-
-.material-ledger-office {
-  background-color: var(--aged-ivory) !important;
-  background-image:
-    radial-gradient(circle at 1px 1px, rgba(249,183,108,0.13) 1px, transparent 1.2px),
-    radial-gradient(ellipse at 50% 112%, rgba(249,183,108,0.72) 0 19%, transparent 19.5%) !important;
-  background-size: 8px 8px, 780px 340px !important;
-  border-block: 0 !important;
-  box-shadow: none !important;
-}
-
-.material-ledger-office h2,
-.material-ledger-office > div > div > div:first-child > .font-pixel {
-  color: var(--ink-brown) !important;
-}
-
-.material-ledger-office > div > div > div:first-child > .font-vt {
-  color: var(--ink-brown) !important;
-}
-
-.material-ledger-panel {
-  background-color: #1E4E3A !important;
-  background-image:
-    repeating-linear-gradient(0deg, rgba(76,158,126,0.14) 0 5px, rgba(242,225,177,0.04) 5px 6px) !important;
-}
-
-.material-founder {
-  background:
-    linear-gradient(to bottom, var(--moss-green), #b9dcc0) !important;
-  border-block: 5px solid var(--deep-ledger) !important;
-}
-
-.material-ledger-footer {
-  background-color: #2f8268 !important;
-  background-image:
-    radial-gradient(circle at 1px 1px, rgba(242,225,177,0.09) 1px, transparent 1.2px),
-    linear-gradient(135deg, rgba(30,78,58,0.14) 25%, transparent 25%) !important;
-  background-size: 11px 11px, 18px 18px !important;
+  background: #1A2B50;
+  border: 3px solid #2a3f6e;
 }

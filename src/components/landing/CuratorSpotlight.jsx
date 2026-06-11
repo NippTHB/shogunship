@@ -1,112 +1,160 @@
 import { motion } from 'framer-motion';
-import PixelDivider from './PixelDivider';
-
-const CURATOR_IMG = 'https://media.db.com/images/public/6a21a3f44ff5cedb9addee5e/8bbc7a222_generated_image.png';
-
-const MARKETPLACES = [
-  { name: 'Mercari + Rakuma', type: 'Marketplaces', detail: 'Listing and seller review' },
-  { name: 'Yahoo Auctions', type: 'Auction platform', detail: 'Bid and listing support' },
-  { name: 'Surugaya + Mandarake', type: 'Specialist retailers', detail: 'Collector item expertise' },
-];
-
-function MarketplaceRecord({ marketplace }) {
-  return (
-    <div
-      className="border-4 p-3 material-paper"
-      style={{ borderColor: '#4c9e7e', background: '#4c9e7e', boxShadow: '3px 3px 0px #f9b76c44' }}
-    >
-      <div className="flex items-center gap-3 mb-3">
-        {/* Pixel avatar */}
-        <div
-          className="w-10 h-10 border-2 flex items-center justify-center font-pixel text-base"
-          style={{ borderColor: '#f9b76c', background: '#4c9e7e', color: '#f9b76c' }}
-        >
-          {marketplace.name[0]}
-        </div>
-        <div>
-          <div className="font-pixel text-[8px]" style={{ color: '#f9b76c' }}>{marketplace.name}</div>
-          <div className="font-pixel text-[6px] mt-0.5" style={{ color: '#a2d2b1' }}>{marketplace.type}</div>
-        </div>
-        <div className="ml-auto font-pixel text-[7px]" style={{ color: '#a2d2b1' }}>SUPPORTED</div>
-      </div>
-      <div className="font-vt text-base" style={{ color: '#f2e1b1' }}>{marketplace.detail}</div>
-      <div className="mt-2 flex items-center gap-2">
-        <span className="font-pixel text-[6px]" style={{ color: '#a2d2b1' }}>PURCHASE SUPPORT + DOMESTIC DELIVERY</span>
-      </div>
-    </div>
-  );
-}
 
 export default function CuratorSpotlight() {
   return (
-    <section id="founders" className="py-20 lg:py-28 pixel-grid material-founder">
+    <section id="founders" className="py-16 lg:py-20" style={{ background: '#F4EDDA' }}>
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-          {/* Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-10"
+        >
+          <div
+            className="mb-4"
+            style={{
+              height: '3px',
+              background: 'repeating-linear-gradient(90deg, #6A4A3A 0, #6A4A3A 8px, transparent 8px, transparent 16px)',
+            }}
+          />
+          <h2 className="font-pixel text-xl lg:text-2xl leading-snug" style={{ color: '#6A4A3A' }}>
+            WHO WE ARE
+          </h2>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-2 gap-10 items-start">
+          {/* Left — founders intro */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-5"
           >
+            {/* Character panel */}
             <div
-              className="relative border-4 overflow-hidden environment-frame"
-              style={{ borderColor: '#f9b76c', boxShadow: '8px 8px 0px #f9b76c', imageRendering: 'pixelated' }}
+              style={{
+                background: '#EDE5CC',
+                border: '3px solid #6A4A3A',
+                boxShadow: '6px 6px 0px rgba(106,74,58,0.35)',
+              }}
             >
-              <img
-                src={CURATOR_IMG}
-                alt="Pixel-art portrait representing ShogunShip's Nara founders"
-                className="w-full aspect-[3/4] object-cover palette-art"
-                style={{ imageRendering: 'pixelated' }}
-              />
-              <div className="absolute inset-0 scanlines pointer-events-none" />
-              {/* Info overlay */}
               <div
-                className="absolute bottom-0 left-0 right-0 p-4 border-t-4"
-                style={{ borderColor: '#f9b76c', background: '#4c9e7e' }}
+                className="px-5 py-3 border-b-2"
+                style={{ borderColor: '#6A4A3A', background: '#6A4A3A' }}
               >
-                <div className="font-pixel text-[7px] mb-1" style={{ color: '#f9b76c' }}>FOUNDERS + CURATORS</div>
-                <div className="font-pixel text-[10px]" style={{ color: '#f9b76c' }}>HUSBAND + WIFE TEAM</div>
-                <div className="font-vt text-lg mt-1" style={{ color: '#f2e1b1' }}>
-                  BASED IN NARA PREFECTURE, JAPAN
+                <span className="font-pixel text-[7px]" style={{ color: '#F2E1B1' }}>▶ FOUNDERS — NARA, JAPAN</span>
+              </div>
+              <div className="p-5">
+                {/* Pixel avatar row */}
+                <div className="flex items-center gap-4 mb-5">
+                  <div className="flex gap-3">
+                    {[{ label: 'HIM', icon: '♠', spec: 'Marketplaces & Buying' }, { label: 'HER', icon: '♥', spec: 'Packing & Logistics' }].map(f => (
+                      <div key={f.label} className="text-center">
+                        <div
+                          className="w-14 h-14 border-3 flex items-center justify-center font-pixel text-2xl mx-auto"
+                          style={{ border: '3px solid #6A4A3A', background: '#d4c9b0', color: '#6A4A3A' }}
+                        >
+                          {f.icon}
+                        </div>
+                        <div className="font-pixel text-[5px] mt-1" style={{ color: '#6A4A3A' }}>{f.label}</div>
+                        <div className="font-vt text-sm mt-0.5" style={{ color: '#5a4a3a' }}>{f.spec}</div>
+                      </div>
+                    ))}
+                  </div>
+                  <div>
+                    <div className="font-pixel text-[7px] mb-1" style={{ color: '#C1A562' }}>LOCATION</div>
+                    <div className="font-vt text-xl" style={{ color: '#4a3a2a' }}>Nara Prefecture</div>
+                    <div className="font-vt text-lg" style={{ color: '#6a5a4a' }}>Japan</div>
+                  </div>
+                </div>
+
+                {/* Dialog box */}
+                <div
+                  className="p-4"
+                  style={{
+                    background: '#F4EDDA',
+                    border: '3px solid #6A4A3A',
+                    boxShadow: '3px 3px 0px rgba(106,74,58,0.25)',
+                  }}
+                >
+                  <div className="font-pixel text-[5px] mb-2" style={{ color: '#C1A562' }}>▼ FOUNDERS SAY:</div>
+                  <p className="font-vt text-xl leading-snug" style={{ color: '#4a3a2a' }}>
+                    "We started ShogunShip because we are collectors ourselves. We know the
+                    frustration of finding something rare in Japan and having no safe, personal way
+                    to get it home. So we became that way for other people."
+                  </p>
+                  <div className="mt-2 font-pixel text-[6px] pixel-blink" style={{ color: '#6A4A3A' }}>▮</div>
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* Content */}
+          {/* Right — what makes them different */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-7"
+            className="space-y-4"
           >
-            <PixelDivider label="MEET THE FOUNDERS" />
-            <h2 className="font-pixel text-xl lg:text-2xl mt-4 leading-relaxed environment-heading" style={{ color: '#f9b76c' }}>
-              YOUR CURATORS<br />
-              IN <span style={{ color: '#f47b1f' }}>JAPAN</span>
-            </h2>
-
-            {/* Dialog box quote */}
             <div
-              className="mt-6 border-4 p-5"
-              style={{ borderColor: '#f9b76c', background: '#4c9e7e', boxShadow: '4px 4px 0px #f9b76c' }}
+              className="p-5"
+              style={{
+                background: '#EDE5CC',
+                border: '3px solid #6A4A3A',
+                boxShadow: '4px 4px 0px rgba(106,74,58,0.25)',
+              }}
             >
-              <div className="font-pixel text-[6px] mb-2" style={{ color: '#f9b76c' }}>A NOTE FROM NARA</div>
-              <p className="font-vt text-xl leading-snug" style={{ color: '#f2e1b1' }}>
-                "We personally receive, photograph, inspect, store, consolidate,
-                pack, and ship your purchases. You always know who is caring
-                for your collection in Japan."
+              <h3 className="font-pixel text-[8px] mb-3" style={{ color: '#6A4A3A' }}>
+                NOT AN ANONYMOUS SERVICE
+              </h3>
+              <p className="font-vt text-lg leading-snug" style={{ color: '#4a3a2a' }}>
+                You are not working with a warehouse, a fulfillment center, or a drop-shipping
+                company. You are working with two people in Nara who personally receive, check,
+                photograph, and pack every single order.
               </p>
             </div>
 
-            {/* Curator roster */}
-            <div className="mt-6 space-y-3">
-              <div className="font-pixel text-[7px] mb-4" style={{ color: '#a2d2b1' }}>MARKETPLACE EXPERTISE</div>
-              {MARKETPLACES.map((marketplace) => (
-                <MarketplaceRecord key={marketplace.name} marketplace={marketplace} />
-              ))}
+            <div
+              className="p-5"
+              style={{
+                background: '#EDE5CC',
+                border: '3px solid #6A4A3A',
+                boxShadow: '4px 4px 0px rgba(106,74,58,0.25)',
+              }}
+            >
+              <h3 className="font-pixel text-[8px] mb-3" style={{ color: '#6A4A3A' }}>
+                LOCAL EXPERTISE
+              </h3>
+              <p className="font-vt text-lg leading-snug" style={{ color: '#4a3a2a' }}>
+                Living in Japan gives us real advantages: faster response to sellers, better
+                understanding of listings in Japanese, and the ability to visit physical shops
+                when needed. We know how Japanese marketplaces actually work.
+              </p>
             </div>
+
+            <div
+              className="p-5"
+              style={{
+                background: '#EDE5CC',
+                border: '3px solid #6A4A3A',
+                boxShadow: '4px 4px 0px rgba(106,74,58,0.25)',
+              }}
+            >
+              <h3 className="font-pixel text-[8px] mb-3" style={{ color: '#6A4A3A' }}>
+                COLLECTOR MINDSET
+              </h3>
+              <p className="font-vt text-lg leading-snug" style={{ color: '#4a3a2a' }}>
+                We understand that condition, provenance, and careful handling matter. We treat
+                every item as if it were our own — because we know how much it means to the
+                person waiting for it.
+              </p>
+            </div>
+
+            <a
+              href="#contact"
+              className="block pixel-btn pixel-btn-brass text-center py-3 font-pixel text-[7px]"
+            >
+              SEND US AN ITEM LINK ►
+            </a>
           </motion.div>
         </div>
       </div>

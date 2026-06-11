@@ -1,17 +1,47 @@
 import { motion } from 'framer-motion';
-import PixelStars from './PixelStars';
-import LandingAsset02 from '../../assets/images/Landing_asset02.png';
+import PixelClouds from './PixelClouds';
 
-const SHIP_IMG = LandingAsset02;
-const SPRITE_IMG = 'https://media.db.com/images/public/6a21a3f44ff5cedb9addee5e/265724f5a_generated_image.png';
-
-// Pixel art "dialog box" component
-function DialogBox({ children, title }) {
+function VialBar({ label, value, max = 100 }) {
+  const segments = 10;
+  const filled = Math.round((value / max) * segments);
   return (
-    <div className="relative border-4 bg-px-dark p-4 textured-ocean-panel" style={{ borderColor: '#f9b76c', background: '#4c9e7e', boxShadow: '6px 6px 0px #f9b76c' }}>
+    <div className="flex items-center gap-2">
+      <span className="font-pixel text-[6px] w-28 text-right shrink-0" style={{ color: '#5a3a2a' }}>{label}</span>
+      <div className="flex gap-[2px]">
+        {Array.from({ length: segments }).map((_, i) => (
+          <div
+            key={i}
+            className="w-3 h-4"
+            style={{
+              background: i < filled
+                ? 'linear-gradient(180deg, #7ec4ae 0%, #69A18E 50%, #4d8070 100%)'
+                : '#c8c4b2',
+              border: '1px solid #6A4A3A',
+              imageRendering: 'pixelated',
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ParchmentBox({ title, children }) {
+  return (
+    <div
+      className="relative p-4"
+      style={{
+        background: 'rgba(244,237,218,0.92)',
+        border: '3px solid #6A4A3A',
+        boxShadow: '4px 4px 0px rgba(106,74,58,0.4)',
+      }}
+    >
       {title && (
-        <div className="absolute -top-4 left-4 bg-px-dark px-2">
-          <span className="font-pixel text-[8px]" style={{ color: '#f9b76c' }}>{title}</span>
+        <div
+          className="absolute -top-3 left-3 px-2 font-pixel text-[6px]"
+          style={{ background: '#F4EDDA', color: '#6A4A3A' }}
+        >
+          {title}
         </div>
       )}
       {children}
@@ -19,177 +49,216 @@ function DialogBox({ children, title }) {
   );
 }
 
-// Compact service record using the existing pixel-bar language.
-function ServiceRecord({ label, value }) {
-  const statusColor = value === 'INCLUDED' ? '#a2d2b1' : '#f9b76c';
-
-  return (
-    <div className="flex items-center gap-3">
-      <span className="font-pixel text-[6px] w-20 text-right" style={{ color: '#f2e1b1' }}>{label}</span>
-      <div className="flex gap-[2px]">
-        {Array.from({ length: 10 }).map((_, i) => (
-          <div
-            key={i}
-            className="w-3 h-3 service-segment"
-            style={{
-              background: statusColor,
-              border: '1px solid #4c9e7e',
-              imageRendering: 'pixelated',
-            }}
-          />
-        ))}
-      </div>
-      <span className="font-pixel text-[6px] service-status">{value}</span>
-    </div>
-  );
-}
-
 export default function HeroSection() {
   return (
-    <section className="relative pt-14 overflow-hidden pixel-grid material-hero">
-      <PixelStars count={40} />
+    <section className="relative min-h-screen pt-12 overflow-hidden" style={{ background: '#4C9E7E' }}>
+      {/* Sky vertical gradient */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'linear-gradient(180deg, #4C9E7E 0%, #5EAD8A 30%, #7DC09C 55%, #A2D2B1 72%, #c4dbb8 82%, #F2E1B1 100%)',
+        }}
+      />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 lg:px-8 pt-10 lg:pt-12 pb-24">
-        {/* Guild location bar */}
+      {/* Pixel dither texture overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: 'radial-gradient(circle, rgba(253,248,237,0.04) 1px, transparent 1px)',
+          backgroundSize: '4px 4px',
+        }}
+      />
+
+      {/* Pixel clouds */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <PixelClouds />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 lg:px-8 pt-8 lg:pt-14 pb-0">
+        {/* Tag line */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.2 }}
-          className="flex items-center justify-between mb-8 border-2 px-4 py-2 environment-sign"
-          style={{ borderColor: '#4c9e7e', background: '#4c9e7e' }}
+          className="flex items-center gap-4 mb-5 px-3 py-2 border-2 inline-flex"
+          style={{ background: 'rgba(244,237,218,0.18)', borderColor: '#F2E1B1', display: 'inline-flex' }}
         >
-          <div className="flex items-center gap-4">
-            <span className="font-pixel text-[9px]" style={{ color: '#a2d2b1' }}>JAPAN-BASED COLLECTOR SERVICE</span>
-          </div>
+          <span className="font-pixel text-[6px]" style={{ color: '#F4EDDA' }}>NARA, JAPAN</span>
+          <span className="font-pixel text-[6px]" style={{ color: '#C1A562' }}>•</span>
+          <span className="font-pixel text-[6px]" style={{ color: '#F4EDDA' }}>PERSONAL PROXY SERVICE</span>
+          <span className="font-pixel text-[6px]" style={{ color: '#C1A562' }}>•</span>
+          <span className="font-pixel text-[6px]" style={{ color: '#F4EDDA' }}>EST. BY COLLECTORS</span>
         </motion.div>
 
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          {/* LEFT — Main headline */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-start mt-2">
+          {/* LEFT */}
           <div className="lg:col-span-7">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3, delay: 0.1 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.35, delay: 0.1 }}
             >
-              <div className="font-pixel text-[9px] mb-4" style={{ color: '#f9b76c' }}>
-                PERSONAL PROXY SERVICE IN JAPAN
-              </div>
-
-              <h1 className="font-pixel leading-relaxed environment-heading" style={{ color: '#f9b76c' }}>
-                <div className="text-2xl sm:text-3xl lg:text-4xl hero-headline-primary">YOUR TRUSTED</div>
-                <div className="text-2xl sm:text-3xl lg:text-4xl hero-headline-primary">BUYING TEAM</div>
-                <div className="text-2xl sm:text-3xl lg:text-4xl" style={{ color: '#f47b1f' }}>IN JAPAN</div>
+              <h1 className="font-pixel leading-snug" style={{ color: '#F4EDDA' }}>
+                <div className="text-2xl sm:text-3xl lg:text-4xl" style={{ color: '#F2E1B1' }}>BUY FROM JAPAN.</div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl" style={{ color: '#F2E1B1' }}>WE HANDLE THE REST.</div>
               </h1>
+              <div className="font-pixel text-[8px] mt-2" style={{ color: '#A2D2B1' }}>
+                Mercari · Yahoo Auctions · Surugaya · Rakuma · Mandarake
+              </div>
             </motion.div>
 
+            {/* Description */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.3 }}
-              className="mt-8"
+              className="mt-5"
             >
-              <DialogBox title="WHO WE ARE">
-                <p className="font-vt text-lg leading-relaxed" style={{ color: '#f2e1b1' }}>
-                  We are a husband-and-wife team based in Nara, Japan, helping
-                  collectors buy from Japanese marketplaces. Whether you need us
-                  to purchase an item for you or simply receive and forward it,
-                  every package is personally photographed, stored, consolidated,
-                  and carefully shipped by us. We treat every order with the same
-                  care we would give our own collection.
-                  <br /><br />
-                  Arigatou gozaimasu!
-                  <span className="block mt-1 text-base italic" style={{ color: '#f2e1b1' }}>
-                    — The ShogunShip Family
-                  </span>
+              <ParchmentBox>
+                <p className="font-vt text-xl leading-snug" style={{ color: '#4a3a2a' }}>
+                  ShogunShip is a husband-and-wife proxy buying service based in Nara Prefecture, Japan.
+                  We help international collectors buy from Japanese marketplaces — then receive,
+                  photograph, inspect, store, consolidate, and ship your items to you personally.
                 </p>
-              </DialogBox>
+                <div className="mt-3 font-vt text-base" style={{ color: '#6a5a4a' }}>
+                  We are not an anonymous fulfillment company. Your items are handled by us, directly.
+                </div>
+              </ParchmentBox>
             </motion.div>
 
-            {/* Stats */}
+            {/* Service capabilities */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.5 }}
-              className="mt-6 border-2 p-4 environment-paper"
-              style={{ borderColor: '#4c9e7e', background: '#4c9e7e' }}
+              className="mt-5"
             >
-              <div className="font-pixel text-[7px] mb-4" style={{ color: '#f9b76c' }}>PERSONAL HANDLING</div>
-              <div className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
-                <ServiceRecord label="ARRIVAL PHOTOS" value="INCLUDED" color="#a2d2b1" />
-                <ServiceRecord label="CONSOLIDATION" value="INCLUDED" color="#f9b76c" />
-                <ServiceRecord label="STORAGE" value="INCLUDED" color="#a2d2b1" />
-                <ServiceRecord label="INSPECTION" value="AVAILABLE" color="#f9b76c" />
-              </div>
+              <ParchmentBox title="WHAT WE DO">
+                <div className="space-y-3">
+                  <VialBar label="BUYING" value={99} />
+                  <VialBar label="INSPECTION" value={99} />
+                  <VialBar label="STORAGE" value={95} />
+                  <VialBar label="CONSOLIDATION" value={95} />
+                  <VialBar label="SHIPPING" value={98} />
+                </div>
+              </ParchmentBox>
             </motion.div>
 
-            {/* CTA Buttons */}
+            {/* CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.7 }}
+              transition={{ duration: 0.3, delay: 0.65 }}
               className="mt-6 flex flex-wrap gap-4"
             >
-              <a href="#manifest" className="pixel-btn pixel-btn-orange px-6 py-3 font-pixel text-[8px]">
-                SEND ITEM LINK
+              <a href="#contact" className="pixel-btn pixel-btn-brass px-6 py-3 font-pixel text-[7px]">
+                SEND ITEM LINK ►
               </a>
-              <a href="#founders" className="pixel-btn pixel-btn-secondary px-6 py-3 font-pixel text-[8px]">
-                MEET THE FOUNDERS
+              <a
+                href="#founders"
+                className="pixel-btn px-6 py-3 font-pixel text-[7px]"
+                style={{ background: 'rgba(244,237,218,0.15)', color: '#F4EDDA', border: '3px solid #F2E1B1', boxShadow: '3px 3px 0px rgba(0,0,0,0.2)' }}
+              >
+                MEET US
               </a>
             </motion.div>
           </div>
 
-          {/* RIGHT — Pixel art scene */}
+          {/* RIGHT — info panels */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4, delay: 0.2 }}
-            className="lg:col-span-5 space-y-4"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4, delay: 0.25 }}
+            className="lg:col-span-5 space-y-3"
           >
-            {/* Main scene image */}
+            {/* Founders panel */}
             <div
-              className="relative overflow-hidden border-4"
-              style={{ borderColor: '#f9b76c', boxShadow: '6px 6px 0px #f9b76c', imageRendering: 'pixelated' }}
+              style={{
+                background: 'rgba(244,237,218,0.92)',
+                border: '3px solid #6A4A3A',
+                boxShadow: '5px 5px 0px rgba(106,74,58,0.35)',
+              }}
             >
-              <img
-                src={SHIP_IMG}
-                alt="Pixel art Tokyo skyline with cargo ship"
-                className="w-full aspect-video object-cover"
-                style={{ imageRendering: 'pixelated' }}
-              />
-              <div className="absolute inset-0 scanlines" />
+              <div
+                className="px-4 py-2 border-b-2"
+                style={{ borderColor: '#6A4A3A', background: '#6A4A3A' }}
+              >
+                <span className="font-pixel text-[7px]" style={{ color: '#F2E1B1' }}>ABOUT US</span>
+              </div>
+              <div className="p-4 space-y-3">
+                <div className="flex items-start gap-3">
+                  <div
+                    className="w-10 h-10 border-2 flex items-center justify-center font-pixel text-sm shrink-0"
+                    style={{ borderColor: '#6A4A3A', background: '#d4c9b0', color: '#6A4A3A' }}
+                  >
+                    ♥
+                  </div>
+                  <div>
+                    <div className="font-pixel text-[7px]" style={{ color: '#6A4A3A' }}>HUSBAND & WIFE TEAM</div>
+                    <div className="font-vt text-lg mt-1" style={{ color: '#4a3a2a' }}>
+                      Based in Nara Prefecture, Japan. We personally handle every order — no outsourcing, no warehouses.
+                    </div>
+                  </div>
+                </div>
+
+                <div className="border-t pt-3" style={{ borderColor: '#c8c0a8' }}>
+                  <div className="font-pixel text-[6px] mb-2" style={{ color: '#8a7a6a' }}>MARKETPLACES WE NAVIGATE</div>
+                  <div className="flex flex-wrap gap-1">
+                    {['Mercari', 'Yahoo Auctions', 'Surugaya', 'Rakuma', 'Mandarake'].map(m => (
+                      <span
+                        key={m}
+                        className="font-pixel text-[5px] px-2 py-1"
+                        style={{ background: '#4C9E7E', color: '#F4EDDA' }}
+                      >
+                        {m}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="border-t pt-3" style={{ borderColor: '#c8c0a8' }}>
+                  <div className="font-pixel text-[6px] mb-1" style={{ color: '#8a7a6a' }}>NARA, JAPAN</div>
+                  <div className="font-vt text-base" style={{ color: '#4a3a2a' }}>
+                    Local presence means faster buying decisions, better seller relationships, and personal accountability on every item.
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Character sprite */}
-            <div className="grid grid-cols-2 gap-4">
-              <div
-                className="border-4 overflow-hidden environment-stone-frame"
-                style={{ borderColor: '#4c9e7e', imageRendering: 'pixelated' }}
-              >
-                <img
-                  src={SPRITE_IMG}
-                  alt="Shogun character sprite"
-                  className="w-full aspect-square object-cover pixel-float palette-sprite"
-                  style={{ imageRendering: 'pixelated' }}
-                />
-              </div>
-              <div className="space-y-2">
-                <div className="border-2 p-2 material-paper" style={{ borderColor: '#4c9e7e', background: '#4c9e7e' }}>
-                  <div className="font-pixel text-[6px] mb-1" style={{ color: '#f9b76c' }}>SERVICE</div>
-                  <div className="font-vt text-lg" style={{ color: '#f9b76c' }}>PROXY BUYING</div>
+            {/* Trust signal strip */}
+            <div
+              className="grid grid-cols-3 gap-0"
+              style={{ border: '3px solid #6A4A3A', boxShadow: '3px 3px 0px rgba(106,74,58,0.3)' }}
+            >
+              {[
+                { icon: '⊙', label: 'ARRIVAL\nPHOTOS' },
+                { icon: '◈', label: 'ITEM\nINSPECTION' },
+                { icon: '⬡', label: 'SAFE\nSTORAGE' },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="p-3 text-center border-r last:border-r-0"
+                  style={{ background: 'rgba(244,237,218,0.92)', borderColor: '#6A4A3A' }}
+                >
+                  <div className="font-pixel text-base mb-1" style={{ color: '#4C9E7E' }}>{item.icon}</div>
+                  <div className="font-pixel text-[5px] leading-tight whitespace-pre-line" style={{ color: '#6A4A3A' }}>
+                    {item.label}
+                  </div>
                 </div>
-                <div className="border-2 p-2 material-paper" style={{ borderColor: '#4c9e7e', background: '#4c9e7e' }}>
-                  <div className="font-pixel text-[6px] mb-1" style={{ color: '#f9b76c' }}>BASED IN</div>
-                  <div className="font-vt text-lg" style={{ color: '#f9b76c' }}>NARA, JAPAN</div>
-                </div>
-                <div className="border-2 p-2 material-paper" style={{ borderColor: '#4c9e7e', background: '#4c9e7e' }}>
-                  <div className="font-pixel text-[6px] mb-1" style={{ color: '#a2d2b1' }}>MARKETPLACES</div>
-                  <div className="font-vt text-xl" style={{ color: '#a2d2b1' }}>JAPAN-WIDE</div>
-                </div>
-              </div>
+              ))}
             </div>
           </motion.div>
         </div>
       </div>
+
+      {/* Ground transition */}
+      <div
+        className="w-full h-16 mt-8"
+        style={{
+          background: 'linear-gradient(180deg, #F2E1B1 0%, #e8d49e 100%)',
+          borderTop: '4px solid #6A4A3A',
+        }}
+      />
     </section>
   );
 }
