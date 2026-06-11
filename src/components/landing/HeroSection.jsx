@@ -51,12 +51,12 @@ function ParchmentBox({ title, children }) {
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen pt-12 overflow-hidden" style={{ background: '#4C9E7E' }}>
+    <section className="relative min-h-screen pt-12 overflow-hidden">
       {/* Sky vertical gradient */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'linear-gradient(180deg, #4C9E7E 0%, #5EAD8A 30%, #7DC09C 55%, #A2D2B1 72%, #c4dbb8 82%, #F2E1B1 100%)',
+          background: 'linear-gradient(180deg, #4C9E7E 0%, #5EAD8A 30%, #7DC09C 55%, rgba(162,210,177,0.88) 72%, rgba(196,219,184,0.38) 86%, transparent 100%)',
         }}
       />
 
@@ -255,8 +255,7 @@ export default function HeroSection() {
       <div
         className="w-full h-16 mt-8"
         style={{
-          background: 'linear-gradient(180deg, #F2E1B1 0%, #e8d49e 100%)',
-          borderTop: '4px solid #6A4A3A',
+          background: 'linear-gradient(180deg, transparent 0%, rgba(242,225,177,0.22) 100%)',
         }}
       />
     </section>
