@@ -13,25 +13,25 @@ function MarketplaceRecord({ marketplace }) {
   return (
     <div
       className="border-4 p-3 material-paper"
-      style={{ borderColor: '#2a3f5a', background: '#0f1b2d', boxShadow: '3px 3px 0px #a94f2c44' }}
+      style={{ borderColor: '#4c9e7e', background: '#4c9e7e', boxShadow: '3px 3px 0px #f9b76c44' }}
     >
       <div className="flex items-center gap-3 mb-3">
         {/* Pixel avatar */}
         <div
           className="w-10 h-10 border-2 flex items-center justify-center font-pixel text-base"
-          style={{ borderColor: '#c39a4a', background: '#1a2b3c', color: '#c39a4a' }}
+          style={{ borderColor: '#f9b76c', background: '#4c9e7e', color: '#f9b76c' }}
         >
           {marketplace.name[0]}
         </div>
         <div>
-          <div className="font-pixel text-[8px]" style={{ color: '#c39a4a' }}>{marketplace.name}</div>
-          <div className="font-pixel text-[6px] mt-0.5" style={{ color: '#5d9290' }}>{marketplace.type}</div>
+          <div className="font-pixel text-[8px]" style={{ color: '#f9b76c' }}>{marketplace.name}</div>
+          <div className="font-pixel text-[6px] mt-0.5" style={{ color: '#a2d2b1' }}>{marketplace.type}</div>
         </div>
-        <div className="ml-auto font-pixel text-[7px]" style={{ color: '#5d7042' }}>SUPPORTED</div>
+        <div className="ml-auto font-pixel text-[7px]" style={{ color: '#a2d2b1' }}>SUPPORTED</div>
       </div>
-      <div className="font-vt text-base" style={{ color: '#8090a0' }}>{marketplace.detail}</div>
+      <div className="font-vt text-base" style={{ color: '#f2e1b1' }}>{marketplace.detail}</div>
       <div className="mt-2 flex items-center gap-2">
-        <span className="font-pixel text-[6px]" style={{ color: '#5d7042' }}>PURCHASE SUPPORT + DOMESTIC DELIVERY</span>
+        <span className="font-pixel text-[6px]" style={{ color: '#a2d2b1' }}>PURCHASE SUPPORT + DOMESTIC DELIVERY</span>
       </div>
     </div>
   );
@@ -51,23 +51,23 @@ export default function CuratorSpotlight() {
           >
             <div
               className="relative border-4 overflow-hidden environment-frame"
-              style={{ borderColor: '#c39a4a', boxShadow: '8px 8px 0px #a94f2c', imageRendering: 'pixelated' }}
+              style={{ borderColor: '#f9b76c', boxShadow: '8px 8px 0px #f9b76c', imageRendering: 'pixelated' }}
             >
               <img
                 src={CURATOR_IMG}
                 alt="Pixel-art portrait representing ShogunShip's Nara founders"
-                className="w-full aspect-[3/4] object-cover"
+                className="w-full aspect-[3/4] object-cover palette-art"
                 style={{ imageRendering: 'pixelated' }}
               />
               <div className="absolute inset-0 scanlines pointer-events-none" />
               {/* Info overlay */}
               <div
                 className="absolute bottom-0 left-0 right-0 p-4 border-t-4"
-                style={{ borderColor: '#c39a4a', background: '#142331' }}
+                style={{ borderColor: '#f9b76c', background: '#4c9e7e' }}
               >
-                <div className="font-pixel text-[7px] mb-1" style={{ color: '#a94f2c' }}>FOUNDERS + CURATORS</div>
-                <div className="font-pixel text-[10px]" style={{ color: '#c39a4a' }}>HUSBAND + WIFE TEAM</div>
-                <div className="font-vt text-lg mt-1" style={{ color: '#8090a0' }}>
+                <div className="font-pixel text-[7px] mb-1" style={{ color: '#f9b76c' }}>FOUNDERS + CURATORS</div>
+                <div className="font-pixel text-[10px]" style={{ color: '#f9b76c' }}>HUSBAND + WIFE TEAM</div>
+                <div className="font-vt text-lg mt-1" style={{ color: '#f2e1b1' }}>
                   BASED IN NARA PREFECTURE, JAPAN
                 </div>
               </div>
@@ -82,18 +82,18 @@ export default function CuratorSpotlight() {
             className="lg:col-span-7"
           >
             <PixelDivider label="MEET THE FOUNDERS" />
-            <h2 className="font-pixel text-xl lg:text-2xl mt-4 leading-relaxed environment-heading" style={{ color: '#c39a4a' }}>
+            <h2 className="font-pixel text-xl lg:text-2xl mt-4 leading-relaxed environment-heading" style={{ color: '#f9b76c' }}>
               YOUR CURATORS<br />
-              IN <span style={{ color: '#a94f2c' }}>JAPAN</span>
+              IN <span style={{ color: '#f47b1f' }}>JAPAN</span>
             </h2>
 
             {/* Dialog box quote */}
             <div
               className="mt-6 border-4 p-5"
-              style={{ borderColor: '#c39a4a', background: '#142331', boxShadow: '4px 4px 0px #a94f2c' }}
+              style={{ borderColor: '#f9b76c', background: '#4c9e7e', boxShadow: '4px 4px 0px #f9b76c' }}
             >
-              <div className="font-pixel text-[6px] mb-2" style={{ color: '#a94f2c' }}>A NOTE FROM NARA</div>
-              <p className="font-vt text-xl leading-snug" style={{ color: '#c8d8e8' }}>
+              <div className="font-pixel text-[6px] mb-2" style={{ color: '#f9b76c' }}>A NOTE FROM NARA</div>
+              <p className="font-vt text-xl leading-snug" style={{ color: '#f2e1b1' }}>
                 "We personally receive, photograph, inspect, store, consolidate,
                 pack, and ship your purchases. You always know who is caring
                 for your collection in Japan."
@@ -102,7 +102,7 @@ export default function CuratorSpotlight() {
 
             {/* Curator roster */}
             <div className="mt-6 space-y-3">
-              <div className="font-pixel text-[7px] mb-4" style={{ color: '#5d9290' }}>MARKETPLACE EXPERTISE</div>
+              <div className="font-pixel text-[7px] mb-4" style={{ color: '#a2d2b1' }}>MARKETPLACE EXPERTISE</div>
               {MARKETPLACES.map((marketplace) => (
                 <MarketplaceRecord key={marketplace.name} marketplace={marketplace} />
               ))}

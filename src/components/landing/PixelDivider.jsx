@@ -1,7 +1,7 @@
 // Reusable pixel art divider
 export default function PixelDivider({ label, color = 'orange' }) {
-  const borderColor = color === 'orange' ? '#a94f2c' : '#c39a4a';
-  const textColor = color === 'orange' ? '#a94f2c' : '#c39a4a';
+  const borderColor = color === 'orange' ? '#f9b76c' : '#f9b76c';
+  const textColor = color === 'orange' ? '#f9b76c' : '#f9b76c';
   return (
     <div className="flex items-center gap-4 my-2">
       <div className="flex-1 h-[3px]" style={{ background: `repeating-linear-gradient(90deg, ${borderColor} 0px, ${borderColor} 6px, transparent 6px, transparent 10px)` }} />

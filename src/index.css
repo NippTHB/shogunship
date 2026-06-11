@@ -6,58 +6,60 @@
 
 @layer base {
   :root {
-    --background: 46 53% 75%;
-    --foreground: 25 29% 17%;
-    --card: 220 35% 12%;
-    --card-foreground: 45 80% 88%;
-    --popover: 220 35% 12%;
-    --popover-foreground: 45 80% 88%;
-    --primary: 45 80% 88%;
-    --primary-foreground: 220 40% 8%;
-    --secondary: 220 30% 16%;
-    --secondary-foreground: 45 80% 88%;
-    --muted: 220 25% 18%;
-    --muted-foreground: 220 15% 55%;
-    --accent: 100 45% 55%;
-    --accent-foreground: 220 40% 8%;
-    --destructive: 22 100% 55%;
-    --destructive-foreground: 220 40% 8%;
-    --border: 220 30% 20%;
-    --input: 220 30% 20%;
-    --ring: 22 100% 55%;
+    --background: 41 80% 96%;
+    --foreground: 0 0% 16%;
+    --card: 41 80% 96%;
+    --card-foreground: 0 0% 16%;
+    --popover: 41 80% 96%;
+    --popover-foreground: 0 0% 16%;
+    --primary: 220 51% 21%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 51% 21%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 18% 92%;
+    --muted-foreground: 0 0% 30%;
+    --accent: 160 23% 52%;
+    --accent-foreground: 220 51% 21%;
+    --destructive: 42 40% 57%;
+    --destructive-foreground: 220 51% 21%;
+    --border: 220 51% 21%;
+    --input: 220 51% 21%;
+    --ring: 42 40% 57%;
     --radius: 0rem;
     --font-heading: 'Press Start 2P', monospace;
     --font-body: 'VT323', monospace;
     --font-display: 'VT323', monospace;
     --font-mono: 'Press Start 2P', monospace;
-    --meadow-foundation: #899744;
-    --harvest-meadow: #71813e;
-    --moss-green: #5d7042;
-    --sunlit-plaster: #d5c18a;
-    --aged-ivory: #ded0a2;
-    --ochre-parchment: #c9ac68;
+    --meadow-foundation: #a2d2b1;
+    --harvest-meadow: #a2d2b1;
+    --moss-green: #a2d2b1;
+    --sunlit-plaster: #f2e1b1;
+    --aged-ivory: #f2e1b1;
+    --light-indigo-grey: #a2d2b1;
+    --ochre-parchment: var(--light-indigo-grey);
     --ledger-paper: var(--aged-ivory);
-    --dirt-path: #a98755;
-    --parcel-kraft: #a97945;
-    --guild-timber: #603d2b;
-    --cedar-brown: #603d2b;
-    --deep-timber: #38271f;
-    --deep-cedar: #38271f;
-    --roof-stone: #555d5c;
-    --pale-stone: #85877b;
-    --autumn-gold: #b98a36;
-    --aged-brass: #c39a4a;
-    --autumn-orange: #a94f2c;
-    --burnt-persimmon: #a94f2c;
-    --water-accent: #5d9290;
-    --oxidized-teal: #5d9290;
-    --muted-leaf: #5d7042;
-    --deep-ledger: #142331;
-    --ledger-panel: #1d3040;
-    --lacquered-indigo: #1d3040;
-    --mystery-shadow: #302a3b;
-    --clear-ledger-text: #ded0a2;
-    --ink-brown: #35271f;
+    --dirt-path: #f2e1b1;
+    --parcel-kraft: #f2e1b1;
+    --guild-timber: #4c9e7e;
+    --cedar-brown: #4c9e7e;
+    --deep-timber: #4c9e7e;
+    --deep-cedar: #4c9e7e;
+    --roof-stone: #4c9e7e;
+    --pale-stone: #f2e1b1;
+    --autumn-gold: #f9b76c;
+    --aged-brass: #f9b76c;
+    --autumn-orange: #f9b76c;
+    --burnt-persimmon: #f9b76c;
+    --tango: #f47b1f;
+    --water-accent: #a2d2b1;
+    --oxidized-teal: #a2d2b1;
+    --muted-leaf: #a2d2b1;
+    --deep-ledger: #4c9e7e;
+    --ledger-panel: #4c9e7e;
+    --lacquered-indigo: #4c9e7e;
+    --mystery-shadow: #4c9e7e;
+    --clear-ledger-text: #f2e1b1;
+    --ink-brown: #1E4E3A;
   }
 
   .dark {
@@ -131,6 +133,12 @@
   transition: transform 0.05s, box-shadow 0.05s;
   image-rendering: pixelated;
   cursor: pointer;
+  background-color: var(--aged-brass);
+  color: var(--deep-ledger);
+  background-image:
+    linear-gradient(135deg, rgba(255,255,255,0.18) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(30,78,58,0.16) 25%, transparent 25%);
+  background-size: 8px 8px;
 }
 .pixel-btn:hover {
   transform: translate(2px, 2px);
@@ -142,7 +150,7 @@
 }
 .pixel-btn-orange {
   background: var(--autumn-orange);
-  color: var(--ink-brown);
+  color: var(--deep-ledger);
   border-color: var(--autumn-gold);
   box-shadow: 4px 4px 0px var(--deep-timber);
 }
@@ -151,6 +159,13 @@
 }
 .pixel-btn-orange:active {
   box-shadow: 0px 0px 0px var(--deep-timber);
+}
+
+.pixel-btn-secondary {
+  background-color: #1E4E3A !important;
+  color: var(--aged-ivory) !important;
+  border-color: var(--aged-brass) !important;
+  box-shadow: 4px 4px 0 var(--deep-ledger) !important;
 }
 
 /* Scanline overlay effect */
@@ -254,14 +269,22 @@ img {
 .material-village {
   position: relative;
   isolation: isolate;
-  background-color: #fff7e2;
-  background-image: linear-gradient(
-    to bottom,
-    #f6c879 0%,
-    #fadfb2 26%,
-    #fff5d8 60%,
-    #fff7e2 100%
-  );
+  background-color: #f2e1b1;
+  background-image:
+    linear-gradient(to bottom,
+      #4c9e7e 0%,
+      #4c9e7e 8%,
+      #5cab8b 8%,
+      #5cab8b 14%,
+      #70b99a 14%,
+      #70b99a 20%,
+      #86c5a7 20%,
+      #86c5a7 26%,
+      #a2d2b1 26%,
+      #a2d2b1 38%,
+      #a2d2b1 61%,
+      #f2e1b1 78%,
+      #f2e1b1 100%);
 }
 
 .material-village::before,
@@ -275,47 +298,46 @@ img {
 }
 
 .material-village::before {
-  top: 10%;
-  height: 48%;
-  opacity: 0.3;
-  background-image: radial-gradient(
-    circle at 1px 1px,
-    rgba(246, 200, 121, 0.9) 1px,
-    transparent 1.25px
-  );
-  background-size: 4px 4px;
+  top: 0;
+  height: 38%;
+  opacity: 0.8;
+  background-image:
+    radial-gradient(ellipse at 2% 100%, #FDF8ED 0 20%, transparent 20.4%),
+    radial-gradient(ellipse at 15% 104%, #FDF8ED 0 24%, transparent 24.4%),
+    radial-gradient(ellipse at 34% 102%, #FDF8ED 0 18%, transparent 18.4%),
+    radial-gradient(ellipse at 55% 105%, #FDF8ED 0 22%, transparent 22.4%),
+    radial-gradient(ellipse at 76% 102%, #FDF8ED 0 19%, transparent 19.4%),
+    radial-gradient(ellipse at 98% 100%, #FDF8ED 0 27%, transparent 27.4%),
+    radial-gradient(circle at 1px 1px, rgba(253,248,237,0.5) 1px, transparent 1.3px);
+  background-size: 420px 190px, 520px 210px, 480px 180px, 560px 210px, 500px 190px, 600px 230px, 67px 59px;
+  background-repeat: repeat-x, repeat-x, repeat-x, repeat-x, repeat-x, repeat-x, repeat;
   -webkit-mask-image: linear-gradient(
     to bottom,
-    transparent 0%,
-    #000 12%,
-    transparent 28%,
-    transparent 45%,
-    rgba(0, 0, 0, 0.72) 60%,
-    transparent 78%,
-    transparent 100%
+    rgba(0, 0, 0, 0.28) 0%,
+    rgba(0, 0, 0, 0.18) 48%,
+    rgba(0, 0, 0, 0.84) 72%,
+    #000 100%
   );
   mask-image: linear-gradient(
     to bottom,
-    transparent 0%,
-    #000 12%,
-    transparent 28%,
-    transparent 45%,
-    rgba(0, 0, 0, 0.72) 60%,
-    transparent 78%,
-    transparent 100%
+    rgba(0, 0, 0, 0.28) 0%,
+    rgba(0, 0, 0, 0.18) 48%,
+    rgba(0, 0, 0, 0.84) 72%,
+    #000 100%
   );
 }
 
 .material-village::after {
-  top: 38%;
-  height: 50%;
-  opacity: 0.22;
-  background-image: radial-gradient(
-    circle at 1px 1px,
-    rgba(250, 223, 178, 0.92) 1px,
-    transparent 1.2px
-  );
-  background-size: 5px 5px;
+  top: 20%;
+  height: 80%;
+  opacity: 0.32;
+  background-image:
+    linear-gradient(145deg, transparent 0 38%, rgba(76,158,126,0.46) 38.2% 43%, transparent 43.2%),
+    linear-gradient(215deg, transparent 0 39%, rgba(30,78,58,0.25) 39.2% 44%, transparent 44.2%),
+    radial-gradient(ellipse at 18% 57%, rgba(76,158,126,0.4) 0 16%, transparent 16.4%),
+    radial-gradient(ellipse at 77% 61%, rgba(76,158,126,0.34) 0 20%, transparent 20.4%),
+    radial-gradient(ellipse at 52% 92%, rgba(249,183,108,0.58) 0 13%, transparent 13.4%);
+  background-size: 680px 390px, 760px 420px, 720px 260px, 860px 300px, 680px 390px;
   -webkit-mask-image: linear-gradient(
     to bottom,
     transparent 0%,
@@ -348,6 +370,9 @@ img {
 .material-timber {
   background: var(--guild-timber) !important;
   border-color: var(--autumn-gold) !important;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 5px, rgba(255,255,255,0.05) 5px 6px),
+    repeating-linear-gradient(90deg, transparent 0 31px, rgba(193,165,98,0.18) 31px 33px) !important;
 }
 
 .material-timber .font-vt,
@@ -357,7 +382,7 @@ img {
 }
 
 .material-timber .pixel-btn-orange {
-  color: var(--ink-brown) !important;
+  color: var(--deep-ledger) !important;
 }
 
 .material-hero {
@@ -375,7 +400,8 @@ img {
 
 .material-hero .environment-sign {
   background: var(--guild-timber) !important;
-  border-color: var(--deep-timber) !important;
+  border-color: var(--aged-brass) !important;
+  box-shadow: 3px 3px 0 var(--deep-ledger);
 }
 
 .material-hero .environment-sign .font-pixel {
@@ -386,6 +412,9 @@ img {
   background: var(--aged-ivory) !important;
   border-color: var(--guild-timber) !important;
   box-shadow: 4px 4px 0 var(--deep-timber);
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(30,78,58,0.09) 1px, transparent 1.2px) !important;
+  background-size: 6px 6px !important;
 }
 
 .material-hero .environment-paper .font-pixel,
@@ -398,6 +427,14 @@ img {
   border-color: var(--guild-timber) !important;
   box-shadow: 4px 4px 0 var(--deep-timber) !important;
   color: var(--ink-brown);
+  background-image:
+    linear-gradient(135deg, rgba(30,78,58,0.06) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(193,165,98,0.08) 25%, transparent 25%) !important;
+  background-size: 10px 10px !important;
+}
+
+.material-paper:nth-child(even) {
+  background-color: var(--moss-green) !important;
 }
 
 .material-paper .font-vt,
@@ -426,6 +463,8 @@ img {
 .material-parcel {
   background: var(--parcel-kraft) !important;
   border-color: var(--deep-cedar) !important;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(193,165,98,0.16) 0 2px, transparent 2px 12px) !important;
 }
 
 .material-parcel .font-pixel {
@@ -446,31 +485,51 @@ img {
 
 .material-founder {
   background: transparent !important;
-  border-block: 16px solid var(--cedar-brown);
+  border-block: 16px solid var(--deep-ledger);
 }
 
 .material-ledger-office {
   background: var(--deep-ledger) !important;
   border-block: 16px solid var(--deep-cedar);
   box-shadow: inset 0 12px 0 var(--mystery-shadow), inset 0 -12px 0 var(--mystery-shadow);
+  background-image:
+    repeating-linear-gradient(0deg, rgba(30,78,58,0.42) 0 5px, rgba(76,158,126,0.1) 5px 6px) !important;
 }
 
 .material-ledger-panel {
   background: var(--lacquered-indigo) !important;
   border-color: var(--aged-brass) !important;
   box-shadow: 6px 6px 0 var(--mystery-shadow) !important;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(30,78,58,0.44) 0 5px, rgba(76,158,126,0.12) 5px 6px) !important;
 }
 
 .material-ledger-panel .font-vt {
   color: var(--clear-ledger-text) !important;
 }
 
+.material-ledger-panel .font-pixel,
 .material-ledger-office .font-vt {
   color: var(--clear-ledger-text) !important;
 }
 
 .material-ledger-footer {
-  background: var(--deep-ledger) !important;
+  background-color: var(--deep-ledger) !important;
+  background-image:
+    linear-gradient(135deg, rgba(242,225,177,0.09) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(30,78,58,0.2) 25%, transparent 25%) !important;
+  background-size: 14px 14px !important;
+  border-color: var(--deep-ledger) !important;
+}
+
+.material-ledger-footer .font-vt,
+.material-ledger-footer .font-pixel {
+  color: var(--clear-ledger-text) !important;
+}
+
+.material-ledger-footer .pixel-btn,
+.material-ledger-footer .pixel-btn .font-pixel {
+  color: var(--deep-ledger) !important;
 }
 
 .environment-heading {
@@ -479,7 +538,12 @@ img {
 }
 
 .environment-heading .hero-headline-primary {
-  color: #142331 !important;
+  color: var(--ink-brown) !important;
+}
+
+.material-hero .environment-heading .hero-headline-primary {
+  color: var(--ink-brown) !important;
+  text-shadow: 3px 3px 0 var(--aged-ivory);
 }
 
 .environment-copy {
@@ -494,4 +558,172 @@ img {
 .environment-stone-frame {
   border-color: var(--roof-stone) !important;
   box-shadow: 4px 4px 0 var(--deep-timber) !important;
+}
+
+.indigo-panel {
+  background: var(--deep-ledger) !important;
+  border-color: var(--aged-brass) !important;
+  box-shadow: 4px 4px 0 var(--aged-brass) !important;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(30,78,58,0.46) 0 5px, rgba(242,225,177,0.06) 5px 6px) !important;
+}
+
+.indigo-panel .font-vt {
+  color: #f2e1b1 !important;
+}
+
+.marketplace-ticker .font-pixel span:first-child {
+  color: var(--deep-ledger) !important;
+}
+
+.marketplace-ticker .font-pixel span:last-child {
+  color: var(--aged-brass) !important;
+}
+
+.palette-sprite {
+  filter: hue-rotate(45deg) saturate(0.7) contrast(1.08);
+}
+
+.palette-art {
+  filter: hue-rotate(42deg) saturate(0.72) contrast(1.06);
+}
+
+.textured-ocean-panel {
+  background-image:
+    repeating-linear-gradient(0deg, rgba(30,78,58,0.48) 0 5px, rgba(242,225,177,0.055) 5px 6px) !important;
+}
+
+.service-segment {
+  box-shadow: inset 2px 0 rgba(242,225,177,0.35), inset -2px -2px rgba(30,78,58,0.28);
+  clip-path: polygon(17% 0, 83% 0, 100% 20%, 100% 100%, 0 100%, 0 20%);
+}
+
+.service-status {
+  color: var(--deep-ledger) !important;
+  background: var(--aged-brass);
+  border: 1px solid var(--deep-ledger);
+  padding: 3px 5px;
+  box-shadow: 2px 2px 0 var(--deep-ledger);
+}
+
+/* Concept-matched section composition */
+.material-village {
+  background: var(--aged-ivory);
+}
+
+.material-village::before,
+.material-village::after {
+  display: none;
+}
+
+.material-hero.pixel-grid {
+  isolation: isolate;
+  background:
+    linear-gradient(to bottom, #4c9e7e 0 8%, #76b996 8% 17%, #a2d2b1 17% 100%) !important;
+}
+
+.material-hero::before,
+.material-hero::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.material-hero::before {
+  top: 4rem;
+  height: 42%;
+  opacity: 0.55;
+  background-image:
+    radial-gradient(ellipse at 4% 72%, #FDF8ED 0 11%, transparent 11.5%),
+    radial-gradient(ellipse at 20% 58%, #FDF8ED 0 8%, transparent 8.5%),
+    radial-gradient(ellipse at 38% 72%, #FDF8ED 0 13%, transparent 13.5%),
+    radial-gradient(ellipse at 62% 60%, #FDF8ED 0 9%, transparent 9.5%),
+    radial-gradient(ellipse at 83% 70%, #FDF8ED 0 14%, transparent 14.5%),
+    radial-gradient(ellipse at 98% 55%, #FDF8ED 0 11%, transparent 11.5%);
+  background-size: 520px 180px, 420px 150px, 600px 190px, 460px 160px, 620px 200px, 500px 170px;
+  background-repeat: repeat-x;
+}
+
+.material-hero::after {
+  bottom: 0;
+  height: 27%;
+  background-image:
+    radial-gradient(ellipse at 4% 100%, #4c9e7e 0 27%, transparent 27.5%),
+    radial-gradient(ellipse at 28% 104%, #76b996 0 30%, transparent 30.5%),
+    radial-gradient(ellipse at 72% 106%, #4c9e7e 0 34%, transparent 34.5%),
+    radial-gradient(ellipse at 98% 100%, #76b996 0 29%, transparent 29.5%),
+    radial-gradient(ellipse at 50% 135%, #f9b76c 0 34%, transparent 34.5%);
+  background-size: 620px 210px, 760px 230px, 820px 240px, 680px 220px, 720px 260px;
+  background-repeat: repeat-x;
+  opacity: 0.95;
+}
+
+.material-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.textured-ocean-panel {
+  background-color: #1E4E3A !important;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(76,158,126,0.16) 0 5px, rgba(242,225,177,0.045) 5px 6px) !important;
+}
+
+.material-hero .environment-sign {
+  background-color: #1E4E3A !important;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(76,158,126,0.18) 0 5px, rgba(242,225,177,0.045) 5px 6px) !important;
+}
+
+.material-plaster,
+.material-path {
+  background-color: var(--aged-ivory) !important;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(249,183,108,0.12) 1px, transparent 1.2px) !important;
+  background-size: 8px 8px !important;
+}
+
+.material-plaster {
+  border-top: 5px solid var(--deep-ledger);
+}
+
+.material-ledger-office {
+  background-color: var(--aged-ivory) !important;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(249,183,108,0.13) 1px, transparent 1.2px),
+    radial-gradient(ellipse at 50% 112%, rgba(249,183,108,0.72) 0 19%, transparent 19.5%) !important;
+  background-size: 8px 8px, 780px 340px !important;
+  border-block: 0 !important;
+  box-shadow: none !important;
+}
+
+.material-ledger-office h2,
+.material-ledger-office > div > div > div:first-child > .font-pixel {
+  color: var(--ink-brown) !important;
+}
+
+.material-ledger-office > div > div > div:first-child > .font-vt {
+  color: var(--ink-brown) !important;
+}
+
+.material-ledger-panel {
+  background-color: #1E4E3A !important;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(76,158,126,0.14) 0 5px, rgba(242,225,177,0.04) 5px 6px) !important;
+}
+
+.material-founder {
+  background:
+    linear-gradient(to bottom, var(--moss-green), #b9dcc0) !important;
+  border-block: 5px solid var(--deep-ledger) !important;
+}
+
+.material-ledger-footer {
+  background-color: #2f8268 !important;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(242,225,177,0.09) 1px, transparent 1.2px),
+    linear-gradient(135deg, rgba(30,78,58,0.14) 25%, transparent 25%) !important;
+  background-size: 11px 11px, 18px 18px !important;
 }

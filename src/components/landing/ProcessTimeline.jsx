@@ -8,7 +8,7 @@ const STEPS = [
     title: 'SEND ITEM LINK',
     description: 'Share a listing from a Japanese marketplace, auction site, specialist shop, or seller.',
     detail: 'REQUEST',
-    color: '#5d9290',
+    color: '#a2d2b1',
     key: 'A',
   },
   {
@@ -17,7 +17,7 @@ const STEPS = [
     title: 'REVIEW + QUOTE',
     description: 'We review the listing, seller details, practical risks, domestic shipping, and expected costs.',
     detail: 'CLEAR COSTS',
-    color: '#c39a4a',
+    color: '#f9b76c',
     key: 'B',
   },
   {
@@ -26,7 +26,7 @@ const STEPS = [
     title: 'BUY + RECEIVE',
     description: 'We purchase the item, confirm its arrival with photos, and inspect visible condition concerns.',
     detail: 'DOCUMENTED',
-    color: '#5d7042',
+    color: '#a2d2b1',
     key: 'C',
   },
   {
@@ -35,7 +35,7 @@ const STEPS = [
     title: 'STORE + SHIP',
     description: 'We can hold and consolidate purchases before carefully packing and shipping them internationally.',
     detail: 'CONSOLIDATED',
-    color: '#a94f2c',
+    color: '#f9b76c',
     key: 'D',
   },
 ];
@@ -51,8 +51,8 @@ export default function ProcessTimeline() {
           className="mb-12 text-center"
         >
           <PixelDivider label="HOW IT WORKS" color="orange" />
-          <h2 className="font-pixel text-xl lg:text-2xl mt-4 leading-relaxed environment-heading" style={{ color: '#c39a4a' }}>
-            FROM ITEM LINK<br />TO <span style={{ color: '#a94f2c' }}>YOUR DOOR</span>
+          <h2 className="font-pixel text-xl lg:text-2xl mt-4 leading-relaxed environment-heading" style={{ color: '#f9b76c' }}>
+            FROM ITEM LINK<br />TO <span style={{ color: '#f47b1f' }}>YOUR DOOR</span>
           </h2>
         </motion.div>
 
@@ -62,7 +62,7 @@ export default function ProcessTimeline() {
           <div
             className="hidden lg:block absolute top-16 left-[12.5%] right-[12.5%] h-1"
             style={{
-              background: 'repeating-linear-gradient(90deg, #a94f2c 0, #a94f2c 8px, transparent 8px, transparent 16px)',
+              background: 'repeating-linear-gradient(90deg, #f9b76c 0, #f9b76c 8px, transparent 8px, transparent 16px)',
             }}
           />
 
@@ -82,8 +82,8 @@ export default function ProcessTimeline() {
                   style={{
                     borderColor: step.color,
                     color: step.color,
-                    background: '#0f1b2d',
-                    boxShadow: `0 0 0 4px #080d14, 0 0 0 6px ${step.color}44`,
+                    background: '#4c9e7e',
+                    boxShadow: `0 0 0 4px #4c9e7e, 0 0 0 6px ${step.color}44`,
                   }}
                 >
                   {step.icon}
@@ -91,20 +91,20 @@ export default function ProcessTimeline() {
 
                 <div
                   className="border-4 p-4 material-paper"
-                  style={{ borderColor: '#2a3f5a', background: '#0f1b2d' }}
+                  style={{ borderColor: '#4c9e7e', background: '#4c9e7e' }}
                 >
                   <div className="font-pixel text-[6px] mb-1" style={{ color: step.color }}>
                     STEP {step.step}
                   </div>
-                  <h3 className="font-pixel text-[9px] mb-3" style={{ color: '#c39a4a' }}>
+                  <h3 className="font-pixel text-[9px] mb-3" style={{ color: '#f9b76c' }}>
                     {step.title}
                   </h3>
-                  <p className="font-vt text-base leading-snug mb-3" style={{ color: '#8090a0' }}>
+                  <p className="font-vt text-base leading-snug mb-3" style={{ color: '#f2e1b1' }}>
                     {step.description}
                   </p>
                   <div
                     className="font-pixel text-[7px] px-2 py-1 inline-block"
-                    style={{ background: step.color, color: '#080d14' }}
+                    style={{ background: step.color, color: '#4c9e7e' }}
                   >
                     ⏱ {step.detail}
                   </div>

@@ -13,8 +13,8 @@ const TICKER_ITEMS = [
 function TickerItem({ name }) {
   return (
     <span className="inline-flex items-center gap-4 px-4 font-pixel text-[7px]" style={{ whiteSpace: 'nowrap' }}>
-      <span style={{ color: '#14304D' }}>{name}</span>
-      <span style={{ color: '#D8B15A' }}>■</span>
+      <span style={{ color: '#4c9e7e' }}>{name}</span>
+      <span style={{ color: '#f9b76c' }}>■</span>
     </span>
   );
 }
@@ -23,10 +23,10 @@ export default function ManifestTicker() {
   const doubled = [...TICKER_ITEMS, ...TICKER_ITEMS];
   return (
     <div
-      className="border-y-4 py-3 overflow-hidden material-parcel"
+      className="border-y-4 py-3 overflow-hidden material-parcel marketplace-ticker"
       style={{
-        borderColor: '#a94f2c',
-        background: '#0f1b2d',
+        borderColor: '#f9b76c',
+        background: '#4c9e7e',
       }}
     >
       <div className="flex animate-ticker" style={{ width: 'max-content' }}>

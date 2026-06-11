@@ -7,28 +7,28 @@ const pillars = [
     pixelIcon: '⊙',
     title: 'ARRIVAL PHOTOS',
     description: 'We photograph each purchase when it reaches our Nara location, so you can confirm it arrived safely.',
-    color: '#5d9290',
+    color: '#a2d2b1',
   },
   {
     icon: '🛡',
     pixelIcon: '◈',
     title: 'ITEM INSPECTION',
     description: 'We compare the item with its listing and document visible condition concerns before international shipping.',
-    color: '#5d7042',
+    color: '#a2d2b1',
   },
   {
     icon: '⚔',
     pixelIcon: '✦',
     title: 'SAFE STORAGE',
     description: 'We can hold purchases temporarily while you continue buying from other Japanese sellers.',
-    color: '#a94f2c',
+    color: '#f9b76c',
   },
   {
     icon: '👤',
     pixelIcon: '♟',
     title: 'CONSOLIDATION',
     description: 'We combine purchases from multiple sellers into one carefully prepared international shipment.',
-    color: '#c39a4a',
+    color: '#f9b76c',
   },
 ];
 
@@ -41,8 +41,8 @@ function PillarCard({ pillar, index }) {
       transition={{ delay: index * 0.1 }}
       className="group relative border-4 p-6 cursor-default material-paper"
       style={{
-        borderColor: '#2a3f5a',
-        background: '#0f1b2d',
+        borderColor: '#4c9e7e',
+        background: '#4c9e7e',
         boxShadow: `4px 4px 0px ${pillar.color}44`,
         transition: 'box-shadow 0.1s, transform 0.1s',
       }}
@@ -59,7 +59,7 @@ function PillarCard({ pillar, index }) {
       <h3 className="font-pixel text-[9px] mb-3" style={{ color: pillar.color }}>
         {pillar.title}
       </h3>
-      <p className="font-vt text-lg leading-snug" style={{ color: '#c8d8e8' }}>
+      <p className="font-vt text-lg leading-snug">
         {pillar.description}
       </p>
 
@@ -80,8 +80,8 @@ export default function TrustPillars() {
           className="mb-12"
         >
           <PixelDivider label="GUILD CARE" />
-          <h2 className="font-pixel text-xl lg:text-2xl mt-4 leading-relaxed environment-heading" style={{ color: '#c39a4a' }}>
-            HOW WE CARE<br /><span style={{ color: '#a94f2c' }}>FOR YOUR ITEMS</span>
+          <h2 className="font-pixel text-xl lg:text-2xl mt-4 leading-relaxed environment-heading" style={{ color: '#f9b76c' }}>
+            HOW WE CARE<br /><span style={{ color: '#f47b1f' }}>FOR YOUR ITEMS</span>
           </h2>
         </motion.div>
 

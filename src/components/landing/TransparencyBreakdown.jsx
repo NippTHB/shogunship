@@ -2,10 +2,10 @@ import { motion } from 'framer-motion';
 import PixelDivider from './PixelDivider';
 
 const COST_LINES = [
-  { label: 'Item Price', percent: 62, description: 'The price charged by the Japanese seller', color: '#5d7042' },
-  { label: 'Domestic Shipping', percent: 12, description: 'Delivery from the seller to our Nara location', color: '#5d9290' },
-  { label: 'ShogunShip Service', percent: 8, description: 'Personal purchasing and handling support', color: '#c39a4a' },
-  { label: 'International Shipping', percent: 18, description: 'Careful packing and tracked delivery', color: '#a94f2c' },
+  { label: 'Item Price', percent: 62, description: 'The price charged by the Japanese seller', color: '#4c9e7e' },
+  { label: 'Domestic Shipping', percent: 12, description: 'Delivery from the seller to our Nara location', color: '#1E4E3A' },
+  { label: 'ShogunShip Service', percent: 8, description: 'Personal purchasing and handling support', color: '#4c9e7e' },
+  { label: 'International Shipping', percent: 18, description: 'Careful packing and tracked delivery', color: '#1E4E3A' },
 ];
 
 export default function TransparencyBreakdown() {
@@ -19,12 +19,12 @@ export default function TransparencyBreakdown() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="font-pixel text-[8px] mb-3" style={{ color: '#5d9290' }}>GUILD LEDGER</div>
+            <div className="font-pixel text-[8px] mb-3" style={{ color: '#a2d2b1' }}>GUILD LEDGER</div>
             <PixelDivider label="CLEAR COST MANIFEST" color="gold" />
-            <h2 className="font-pixel text-xl lg:text-2xl mt-4 leading-relaxed" style={{ color: '#c39a4a' }}>
-              UNDERSTAND<br />EVERY <span style={{ color: '#a94f2c' }}>COST</span>
+            <h2 className="font-pixel text-xl lg:text-2xl mt-4 leading-relaxed" style={{ color: '#f9b76c' }}>
+              UNDERSTAND<br />EVERY <span style={{ color: '#f47b1f' }}>COST</span>
             </h2>
-            <p className="font-vt text-xl mt-4 max-w-sm leading-snug" style={{ color: '#8090a0' }}>
+            <p className="font-vt text-xl mt-4 max-w-sm leading-snug" style={{ color: '#f2e1b1' }}>
               Before you commit, we explain the item price, domestic shipping,
               service fee, optional services, and international shipping.
             </p>
@@ -32,15 +32,15 @@ export default function TransparencyBreakdown() {
             {/* Pixel art ship route indicator */}
             <div
               className="mt-8 border-4 p-4 material-ledger-panel"
-              style={{ borderColor: '#2a3f5a', background: '#0f1b2d' }}
+              style={{ borderColor: '#4c9e7e', background: '#4c9e7e' }}
             >
-              <div className="font-pixel text-[7px] mb-3" style={{ color: '#a94f2c' }}>SAMPLE SHIPMENT</div>
-              <div className="flex items-center gap-2 font-pixel text-[6px]" style={{ color: '#a0b0c0' }}>
-                <span style={{ color: '#c39a4a' }}>TOKYO</span>
-                <span style={{ color: '#2a3f5a' }}>→→→→→→→→→</span>
-                <span style={{ color: '#5d7042' }}>LONDON</span>
+              <div className="font-pixel text-[7px] mb-3" style={{ color: '#f9b76c' }}>SAMPLE SHIPMENT</div>
+              <div className="flex items-center gap-2 font-pixel text-[6px]" style={{ color: '#f2e1b1' }}>
+                <span style={{ color: '#f9b76c' }}>TOKYO</span>
+                <span style={{ color: '#f9b76c' }}>→→→→→→→→→</span>
+                <span style={{ color: '#a2d2b1' }}>LONDON</span>
               </div>
-              <div className="mt-2 font-vt text-lg" style={{ color: '#c8d8e8' }}>
+              <div className="mt-2 font-vt text-lg" style={{ color: '#f2e1b1' }}>
                 Example: Seiko 6139 Pogue · ¥48,000 estimated total
               </div>
             </div>
@@ -61,15 +61,15 @@ export default function TransparencyBreakdown() {
           >
             <div
               className="border-4 material-ledger-panel"
-              style={{ borderColor: '#c39a4a', background: '#0f1b2d', boxShadow: '6px 6px 0px #a94f2c44' }}
+              style={{ borderColor: '#f9b76c', background: '#4c9e7e', boxShadow: '6px 6px 0px #f9b76c44' }}
             >
               {/* Header */}
               <div
                 className="px-5 py-3 border-b-4 flex items-center justify-between"
-                style={{ borderColor: '#c39a4a', background: '#080d14' }}
+                style={{ borderColor: '#f9b76c', background: '#4c9e7e' }}
               >
-                <span className="font-pixel text-[8px]" style={{ color: '#c39a4a' }}>COST MANIFEST</span>
-                <span className="font-pixel text-[8px]" style={{ color: '#a94f2c' }}>¥48,000</span>
+                <span className="font-pixel text-[8px]" style={{ color: '#f9b76c' }}>COST MANIFEST</span>
+                <span className="font-pixel text-[8px]" style={{ color: '#f9b76c' }}>¥48,000</span>
               </div>
 
               <div className="p-5 space-y-5">
@@ -82,13 +82,13 @@ export default function TransparencyBreakdown() {
                     transition={{ delay: i * 0.1 }}
                   >
                     <div className="flex items-center justify-between mb-1.5">
-                      <span className="font-pixel text-[7px]" style={{ color: '#c8d8e8' }}>{line.label}</span>
-                      <span className="font-pixel text-[8px]" style={{ color: line.color }}>{line.percent}%</span>
+                      <span className="font-pixel text-[7px]" style={{ color: '#f2e1b1' }}>{line.label}</span>
+                      <span className="font-pixel text-[8px]" style={{ color: '#f2e1b1' }}>{line.percent}%</span>
                     </div>
                     {/* Pixel progress bar */}
                     <div
                       className="h-4 border-2 relative overflow-hidden"
-                      style={{ borderColor: '#2a3f5a', background: '#080d14' }}
+                      style={{ borderColor: '#f9b76c', background: '#f2e1b1' }}
                     >
                       <motion.div
                         initial={{ width: 0 }}
@@ -99,7 +99,7 @@ export default function TransparencyBreakdown() {
                         style={{ background: `repeating-linear-gradient(90deg, ${line.color} 0, ${line.color} 6px, ${line.color}88 6px, ${line.color}88 8px)` }}
                       />
                     </div>
-                    <span className="font-vt text-base" style={{ color: '#4a5a6a' }}>
+                    <span className="font-vt text-base" style={{ color: '#f2e1b1' }}>
                       {line.description}
                     </span>
                   </motion.div>
@@ -108,14 +108,14 @@ export default function TransparencyBreakdown() {
                 {/* Footer stamp */}
                 <div
                   className="mt-4 pt-4 border-t-2 border-dashed flex items-center justify-between"
-                  style={{ borderColor: '#2a3f5a' }}
+                  style={{ borderColor: '#4c9e7e' }}
                 >
-                  <span className="font-pixel text-[6px]" style={{ color: '#5d7042' }}>
+                  <span className="font-pixel text-[6px]" style={{ color: '#a2d2b1' }}>
                     CLEAR COSTS · BEFORE PURCHASE
                   </span>
                   <div
                     className="w-10 h-10 border-4 flex items-center justify-center font-pixel text-[8px]"
-                    style={{ borderColor: '#5d7042', color: '#5d7042', background: '#0f1b2d' }}
+                    style={{ borderColor: '#a2d2b1', color: '#a2d2b1', background: '#4c9e7e' }}
                   >
                     承
                   </div>
