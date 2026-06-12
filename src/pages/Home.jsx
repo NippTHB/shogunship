@@ -15,7 +15,7 @@ export default function Home() {
     <div className="min-h-screen" style={{ background: '#EDE5CC' }}>
       <Navbar />
       <div className="relative overflow-hidden" style={{ background: '#4C9E7E' }}>
-        <div className="absolute inset-x-0 bottom-0 z-0 h-[clamp(18rem,42vw,42rem)] pointer-events-none" aria-hidden="true">
+        <div className="absolute inset-x-0 bottom-0 translate-y-[250px] z-0 h-[clamp(18rem,42vw,42rem)] pointer-events-none" aria-hidden="true">
           <img
             src={panoramaImage}
             alt=""
