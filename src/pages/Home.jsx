@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, PackageOpen, Search, ShieldCheck, Ship, Store } from 'lucide-react';
 import { PixelBox } from '@/components/ui/pixel-box';
 import { PixelButton } from '@/components/ui/pixel-button';
+import PixelClouds from '@/components/landing/PixelClouds';
 import heroBg from '../assets/images/Website_Background_Panorama01.png';
 import shogunshipSign from '../assets/images/Landing_asset_Shogunship_Sign.png';
 import postOfficeBg from '../assets/redesign/post-office.png';
@@ -13,7 +14,7 @@ export default function Home() {
     <div className="min-h-screen overflow-x-clip bg-background selection:bg-primary selection:text-white">
       <nav className="hero-nav">
         <div className="hero-nav-inner">
-          <a href="#" className="hero-nav-brand">SHOGUNSHIP</a>
+          <a href="#" className="hero-nav-brand pixel-section-heading pixel-heading-nav">SHOGUNSHIP</a>
           <div className="hero-nav-links">
             <a href="#process">How it works</a>
             <a href="#founders">Who we are</a>
@@ -28,6 +29,9 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <img src={heroBg} alt="A Shinkansen crossing rice fields beneath Mount Fuji" className="h-full w-full object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent" />
+        </div>
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-[38%] overflow-hidden opacity-70" aria-hidden="true">
+          <PixelClouds />
         </div>
         <svg className="hero-pixel-deer" viewBox="0 0 20 18" shapeRendering="crispEdges" aria-hidden="true">
           <rect x="4" y="7" width="9" height="5" />
@@ -50,9 +54,9 @@ export default function Home() {
                 <div className="hero-who-copy">
                   <div className="hero-who-label"><span>WHO WE ARE</span><i /></div>
                   <h1>
-                    <span>A small workshop.</span>
-                    <span>Two people.</span>
-                    <span>One mailbox.</span>
+                    <span>A SMALL WORKSHOP.</span>
+                    <span>TWO PEOPLE.</span>
+                    <span>ONE MAILBOX.</span>
                   </h1>
                   <p>ShogunShip is a husband-and-wife proxy buying service based in Nara Prefecture, Japan. We help international collectors buy from Japanese marketplaces: we receive, photograph, store, consolidate, and ship your items personally, with the same care as if we were sending them to our own family.</p>
                   <p className="hero-who-thanks">— Arigatou gozaimasu!</p>
@@ -68,9 +72,9 @@ export default function Home() {
       </section>
 
       <section id="process" className="border-y-[4px] border-foreground bg-background px-4 pb-20 pt-14">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-[1500px]">
           <div className="mb-8">
-            <h2 className="process-heading mb-4 text-3xl text-foreground md:text-5xl">FOUR STEPS. ZERO STRESS.</h2>
+            <h2 className="major-section-title mb-4">Four Steps. Zero Stress.</h2>
             <p className="font-sans text-lg text-foreground/70">You send the link. We do everything else from our little workshop in Nara.</p>
           </div>
           <ol className="grid grid-cols-1 gap-6 md:grid-cols-4">
@@ -86,7 +90,7 @@ export default function Home() {
                   <Icon className="lovable-step-icon" />
                 </div>
                 <h3>{title}</h3>
-                <p>{desc}</p>
+                <p className="font-sans text-foreground/70">{desc}</p>
                 {i !== 3 && <span className="lovable-step-arrow" aria-hidden="true">→</span>}
               </li>
             ))}
@@ -96,8 +100,20 @@ export default function Home() {
 
       <section id="marketplaces" className="relative bg-muted px-4 py-16">
         <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col items-center gap-12 lg:flex-row">
+            <div className="relative w-full lg:w-1/2"><div className="absolute -left-4 top-4 h-full w-full border-[4px] border-foreground bg-secondary" /><img src={retroShopBg} alt="Retro Japanese hobby shop" className="relative z-10 aspect-video h-auto w-full border-[4px] border-foreground object-cover" /></div>
+            <div className="w-full lg:w-1/2"><PixelBox doubleBorder className="bg-white">
+              <div className="mb-6 flex items-center gap-4"><div className="border-2 border-foreground bg-destructive p-2 text-destructive-foreground"><ShieldCheck className="h-6 w-6" /></div><h2 className="major-section-title">Real People, Real Care</h2></div>
+              <div className="space-y-4 font-sans text-lg text-foreground/80"><p>We aren&apos;t a massive warehouse run by robots. We&apos;re a small group of collectors living in the Japanese countryside who love sharing this culture with the world.</p><p>Every package that arrives is opened by human hands, inspected with trained eyes, and packed with the kind of care a rare item deserves. We know the anxiety of international shipping, so we pack everything like it&apos;s going into our own collections.</p></div>
+            </PixelBox></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="founders" className="overflow-hidden px-4 py-24">
+        <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl text-foreground md:text-5xl">Select Your Destination</h2>
+            <h2 className="major-section-title mb-4">Select Your Destination</h2>
             <p className="mx-auto max-w-2xl font-sans text-lg text-foreground/70">We navigate the winding roads of Japan&apos;s biggest marketplaces so you don&apos;t have to. Drop a link from any website. If it&apos;s sold in Japan, we can probably get it — just ask.</p>
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -121,20 +137,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="founders" className="overflow-hidden px-4 py-24">
-        <div className="mx-auto max-w-7xl"><div className="flex flex-col items-center gap-12 lg:flex-row">
-          <div className="relative w-full lg:w-1/2"><div className="absolute -left-4 top-4 h-full w-full border-[4px] border-foreground bg-secondary" /><img src={retroShopBg} alt="Retro Japanese hobby shop" className="relative z-10 aspect-video h-auto w-full border-[4px] border-foreground object-cover" /></div>
-          <div className="w-full lg:w-1/2"><PixelBox doubleBorder className="bg-white">
-            <div className="mb-6 flex items-center gap-4"><div className="border-2 border-foreground bg-destructive p-2 text-destructive-foreground"><ShieldCheck className="h-6 w-6" /></div><h2 className="text-3xl md:text-4xl">Real People, Real Care</h2></div>
-            <div className="space-y-4 font-sans text-lg text-foreground/80"><p>We aren&apos;t a massive warehouse run by robots. We&apos;re a small group of collectors living in the Japanese countryside who love sharing this culture with the world.</p><p>Every package that arrives is opened by human hands, inspected with trained eyes, and packed with the kind of care a rare item deserves. We know the anxiety of international shipping, so we pack everything like it&apos;s going into our own collections.</p></div>
-          </PixelBox></div>
-        </div></div>
-      </section>
-
       <section id="costs" className="relative border-y-[8px] border-foreground bg-primary px-4 py-24 text-primary-foreground">
         <div className="mx-auto max-w-7xl"><div className="flex flex-col items-center gap-12 lg:flex-row-reverse">
           <div className="relative w-full lg:w-1/2"><div className="absolute -right-4 top-4 h-full w-full border-[4px] border-foreground bg-foreground" /><img src={postOfficeBg} alt="Japanese countryside post office" className="relative z-10 aspect-video h-auto w-full border-[4px] border-foreground object-cover" /></div>
-          <div className="w-full lg:w-1/2"><h2 className="mb-6 text-4xl md:text-5xl">The Inventory System</h2><p className="mb-8 max-w-lg font-sans text-xl text-primary-foreground/90">Buy from ten different sellers, pay for shipping once.</p>
+          <div className="w-full lg:w-1/2"><h2 className="major-section-title mb-6">The Inventory System</h2><p className="mb-8 max-w-lg font-sans text-xl text-primary-foreground/90">Buy from ten different sellers, pay for shipping once.</p>
             <div className="space-y-4">{[
               ['Free Storage', 'We hold your items securely for up to 45 days at no extra cost.'],
               ['Smart Consolidation', 'We repack multiple orders into one sturdy box to save you massive amounts on international shipping.'],
@@ -146,10 +152,10 @@ export default function Home() {
 
       <section id="contact" className="relative flex h-[70vh] w-full items-center justify-center">
         <div className="absolute inset-0 z-0"><img src={landscapeFooterBg} alt="Japanese countryside landscape" className="h-full w-full object-cover" /><div className="absolute inset-0 bg-foreground/60" /></div>
-        <div className="relative z-10 px-4 text-center"><PixelBox doubleBorder className="mx-auto max-w-2xl bg-background/95 backdrop-blur"><h2 className="mb-6 text-4xl text-foreground md:text-5xl">Ready to Embark?</h2><p className="mb-8 font-sans text-xl text-foreground/80">The rarest finds in Japan are waiting for you. Let us be your guide.</p><div className="flex flex-col justify-center gap-4 sm:flex-row"><PixelButton variant="primary">Create an Account</PixelButton><PixelButton>View Pricing Guide</PixelButton></div></PixelBox></div>
+        <div className="relative z-10 px-4 text-center"><PixelBox doubleBorder className="mx-auto max-w-2xl bg-background/95 backdrop-blur"><h2 className="major-section-title mb-6">Ready To Embark?</h2><p className="mb-8 font-sans text-xl text-foreground/80">The rarest finds in Japan are waiting for you. Let us be your guide.</p><div className="flex flex-col justify-center gap-4 sm:flex-row"><PixelButton variant="primary">Create an Account</PixelButton><PixelButton>View Pricing Guide</PixelButton></div></PixelBox></div>
       </section>
 
-      <footer className="border-t-[4px] border-background bg-foreground px-4 py-6 text-background"><div className="mx-auto flex max-w-7xl flex-col items-center justify-between font-sans text-sm md:flex-row"><p>© {new Date().getFullYear()} ShogunShip. Based in Japan.</p><div className="mt-4 flex gap-4 md:mt-0"><a href="#" className="transition-colors hover:text-primary">Terms of Service</a><a href="#" className="transition-colors hover:text-primary">Privacy Policy</a><a href="#" className="transition-colors hover:text-primary">Contact</a></div></div></footer>
+      <footer className="border-t-[4px] border-background bg-foreground px-4 py-6 text-background"><div className="mx-auto flex max-w-7xl flex-col items-center justify-between font-sans text-sm md:flex-row"><p>© {new Date().getFullYear()} ShogunShip. Based in Nara, Japan.</p><div className="mt-4 flex gap-4 md:mt-0"><a href="#" className="transition-colors hover:text-primary">Terms of Service</a><a href="#" className="transition-colors hover:text-primary">Privacy Policy</a><a href="#" className="transition-colors hover:text-primary">Contact</a></div></div></footer>
     </div>
   );
 }

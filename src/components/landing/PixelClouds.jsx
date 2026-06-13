@@ -71,7 +71,7 @@ function Cloud({ top, left, scale, delay, opacity, layer }) {
         top,
         left,
         opacity,
-        animation: `cloud-drift ${84 + delay * 1.5}s linear ${delay}s infinite alternate`,
+        animation: `cloud-drift ${22 + delay * 0.8}s linear infinite alternate`,
       }}
     >
       <div style={{ transform: `scale(${scale})`, transformOrigin: 'top left' }}>
