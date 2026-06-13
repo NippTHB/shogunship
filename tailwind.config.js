@@ -55,13 +55,16 @@ module.exports = {
         'v-dark': '#0d1828',
   		},
   		fontFamily: {
-  			heading: ['Press Start 2P', 'monospace'],
-  			body: ['VT323', 'monospace'],
-  			display: ['VT323', 'monospace'],
-  			mono: ['Press Start 2P', 'monospace'],
-        pixel: ['Press Start 2P', 'monospace'],
-        vt: ['VT323', 'monospace'],
+  			heading: ['DotGothic16', 'sans-serif'],
+  			body: ['Space Mono', 'monospace'],
+  			display: ['DotGothic16', 'sans-serif'],
+  			sans: ['Space Mono', 'monospace'],
+  			mono: ['Space Mono', 'monospace'],
   		},
+      boxShadow: {
+        xs: '4px 4px 0px 0px hsl(var(--foreground))',
+        sm: '6px 6px 0px 0px hsl(var(--foreground))',
+      },
   		keyframes: {
   			'accordion-down': {
   				from: { height: '0' },

@@ -66,18 +66,17 @@ function Cloud({ top, left, scale, delay, opacity, layer }) {
 
   return (
     <div
-      className="absolute pointer-events-none"
+      className="pixel-cloud absolute pointer-events-none"
       style={{
         top,
         left,
-        transform: `scale(${scale})`,
-        transformOrigin: 'top left',
         opacity,
-        animationDelay: `${delay}s`,
-        animation: `cloud-drift ${22 + delay * 0.8}s linear infinite alternate`,
+        animation: `cloud-drift ${84 + delay * 1.5}s linear ${delay}s infinite alternate`,
       }}
     >
-      <CloudShape fill={fill} highlight={highlight} shadow={shadow} />
+      <div style={{ transform: `scale(${scale})`, transformOrigin: 'top left' }}>
+        <CloudShape fill={fill} highlight={highlight} shadow={shadow} />
+      </div>
     </div>
   );
 }
