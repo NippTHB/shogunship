@@ -5,8 +5,8 @@ import { PixelButton } from '@/components/ui/pixel-button';
 import PixelClouds from '@/components/landing/PixelClouds';
 import heroBg from '../assets/images/Website_Background_Panorama01.png';
 import shogunshipSign from '../assets/images/Landing_asset_Shogunship_Sign.png';
-import postOfficeBg from '../assets/redesign/post-office.png';
-import retroShopBg from '../assets/redesign/retro-shop.png';
+import retroStoreBg from '../assets/images/Landing_asset_retro_Store.png';
+import postOfficeBg from '../assets/images/Landing_asset_post-office.png';
 import landscapeFooterBg from '../assets/redesign/landscape-footer.png';
 
 export default function Home() {
@@ -101,16 +101,16 @@ export default function Home() {
       <section id="marketplaces" className="relative bg-muted px-4 py-16">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col items-center gap-12 lg:flex-row">
-            <div className="relative w-full lg:w-1/2"><div className="absolute -left-4 top-4 h-full w-full border-[4px] border-foreground bg-secondary" /><img src={retroShopBg} alt="Retro Japanese hobby shop" className="relative z-10 aspect-video h-auto w-full border-[4px] border-foreground object-cover" /></div>
-            <div className="w-full lg:w-1/2"><PixelBox doubleBorder className="bg-white">
+            <div className="relative w-full lg:w-1/2"><div className="absolute -left-4 top-4 h-full w-full border-[4px] border-foreground bg-secondary" /><img src={retroStoreBg} alt="Retro Japanese hobby shop" className="relative z-10 aspect-video h-auto w-full border-[4px] border-foreground object-cover" /></div>
+            <div className="w-full lg:w-1/2">
               <div className="mb-6 flex items-center gap-4"><div className="border-2 border-foreground bg-destructive p-2 text-destructive-foreground"><ShieldCheck className="h-6 w-6" /></div><h2 className="major-section-title">Real People, Real Care</h2></div>
-              <div className="space-y-4 font-sans text-lg text-foreground/80"><p>We aren&apos;t a massive warehouse run by robots. We&apos;re a small group of collectors living in the Japanese countryside who love sharing this culture with the world.</p><p>Every package that arrives is opened by human hands, inspected with trained eyes, and packed with the kind of care a rare item deserves. We know the anxiety of international shipping, so we pack everything like it&apos;s going into our own collections.</p></div>
-            </PixelBox></div>
+              <div className="space-y-4 font-sans text-lg text-foreground/80"><p>You are not working with a massive warehouse, a fulfillment center, or a drop-shipping company. You are working with a husband-and-wife team in Nara who personally receive, check, photograph, and pack every single order.</p><p>We understand that condition and careful handling matter. Every item is treated as if it were our own because we know the anxiety of international shipping and how much it means to the person waiting for it.</p></div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="founders" className="overflow-hidden px-4 py-24">
+      <section id="founders" className="overflow-hidden border-t-[4px] border-foreground px-4 pb-24 pt-14">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
             <h2 className="major-section-title mb-4">Select Your Destination</h2>
@@ -137,7 +137,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="costs" className="relative border-y-[8px] border-foreground bg-primary px-4 py-24 text-primary-foreground">
+      <section id="costs" className="relative border-t-[4px] border-b-[8px] border-foreground bg-primary px-4 pb-24 pt-14 text-primary-foreground">
         <div className="mx-auto max-w-7xl"><div className="flex flex-col items-center gap-12 lg:flex-row-reverse">
           <div className="relative w-full lg:w-1/2"><div className="absolute -right-4 top-4 h-full w-full border-[4px] border-foreground bg-foreground" /><img src={postOfficeBg} alt="Japanese countryside post office" className="relative z-10 aspect-video h-auto w-full border-[4px] border-foreground object-cover" /></div>
           <div className="w-full lg:w-1/2"><h2 className="major-section-title mb-6">The Inventory System</h2><p className="mb-8 max-w-lg font-sans text-xl text-primary-foreground/90">Buy from ten different sellers, pay for shipping once.</p>
