@@ -100,9 +100,9 @@ export default function Home() {
 
       <section id="marketplaces" className="relative bg-muted px-4 py-16">
         <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col items-center gap-12 lg:flex-row">
-            <div className="relative w-full lg:w-1/2"><div className="absolute -left-4 top-4 h-full w-full border-[4px] border-foreground bg-secondary" /><img src={retroStoreBg} alt="Retro Japanese hobby shop" className="relative z-10 aspect-video h-auto w-full border-[4px] border-foreground object-cover" /></div>
-            <div className="w-full lg:w-1/2">
+          <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-10">
+            <div className="relative w-full lg:w-[42%]"><div className="absolute -left-4 top-4 h-full w-full border-[4px] border-foreground bg-secondary" /><img src={retroStoreBg} alt="Retro Japanese hobby shop" className="relative z-10 aspect-video h-auto w-full border-[4px] border-foreground object-cover" /></div>
+            <div className="w-full lg:w-[58%]">
               <div className="mb-6 flex items-center gap-4"><div className="border-2 border-foreground bg-destructive p-2 text-destructive-foreground"><ShieldCheck className="h-6 w-6" /></div><h2 className="major-section-title">Real People, Real Care</h2></div>
               <div className="space-y-4 font-sans text-lg text-foreground/80"><p>You are not working with a massive warehouse, a fulfillment center, or a drop-shipping company. You are working with a husband-and-wife team in Nara who personally receive, check, photograph, and pack every single order.</p><p>We understand that condition and careful handling matter. Every item is treated as if it were our own because we know the anxiety of international shipping and how much it means to the person waiting for it.</p></div>
             </div>
@@ -114,13 +114,13 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
             <h2 className="major-section-title mb-4">Select Your Destination</h2>
-            <p className="mx-auto max-w-2xl font-sans text-lg text-foreground/70">We navigate the winding roads of Japan&apos;s biggest marketplaces so you don&apos;t have to. Drop a link from any website. If it&apos;s sold in Japan, we can probably get it — just ask.</p>
+            <p className="mx-auto max-w-2xl font-sans text-lg text-foreground/70">We navigate the winding roads of Japan&apos;s biggest marketplaces so you don&apos;t have to. Drop a link from any website. If it&apos;s sold in Japan, we can probably get it, just ask.</p>
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {[
               ['Mercari Japan', 'The bustling flea market filled with hidden gems and daily deals.'],
               ['Yahoo! Auctions', 'The grand auction house where the rarest artifacts surface.'],
-              ['Surugaya', 'The legendary emporium for retro games, figures, and doujinshi.'],
+              ['Surugaya', 'The legendary emporium for games, books, DVDs, figures, trading cards.'],
               ['Rakuma', 'A quiet but rewarding marketplace with unique listings.'],
               ['Mandarake', 'The deep archive of vintage anime, manga, and collector items.'],
               ['Other Shops', 'If it exists in Japan, we can venture out to find it for you.'],
@@ -138,9 +138,9 @@ export default function Home() {
       </section>
 
       <section id="costs" className="relative border-t-[4px] border-b-[8px] border-foreground bg-primary px-4 pb-24 pt-14 text-primary-foreground">
-        <div className="mx-auto max-w-7xl"><div className="flex flex-col items-center gap-12 lg:flex-row-reverse">
-          <div className="relative w-full lg:w-1/2"><div className="absolute -right-4 top-4 h-full w-full border-[4px] border-foreground bg-foreground" /><img src={postOfficeBg} alt="Japanese countryside post office" className="relative z-10 aspect-video h-auto w-full border-[4px] border-foreground object-cover" /></div>
-          <div className="w-full lg:w-1/2"><h2 className="major-section-title mb-6">The Inventory System</h2><p className="mb-8 max-w-lg font-sans text-xl text-primary-foreground/90">Buy from ten different sellers, pay for shipping once.</p>
+        <div className="mx-auto max-w-7xl"><div className="flex flex-col items-center gap-12 lg:flex-row-reverse lg:gap-10">
+          <div className="relative w-full lg:w-[42%] lg:translate-x-4 xl:translate-x-8"><div className="absolute -right-4 top-4 h-full w-full border-[4px] border-foreground bg-secondary" /><img src={postOfficeBg} alt="Japanese countryside post office" className="relative z-10 aspect-video h-auto w-full border-[4px] border-foreground object-cover" /></div>
+          <div className="w-full lg:w-[58%]"><h2 className="major-section-title care-section-title mb-6">Your Collection Is Safe With Us</h2><p className="mb-8 max-w-lg font-sans text-xl text-primary-foreground/90">The care a family member would take.</p>
             <div className="space-y-4">{[
               ['Free Storage', 'We hold your items securely for up to 45 days at no extra cost.'],
               ['Smart Consolidation', 'We repack multiple orders into one sturdy box to save you massive amounts on international shipping.'],

@@ -79,12 +79,17 @@
 }
 
 .hero-nav-links a {
+  display: inline-block;
   font-size: .78rem;
   letter-spacing: .04em;
-  transition: color .15s ease;
+  transition: color .12s ease, text-shadow .12s ease, transform .12s ease;
 }
 
-.hero-nav-links a:hover { color: #4c9e7e; }
+.hero-nav-links a:hover {
+  color: #302118;
+  text-shadow: 1px 1px 0 rgba(193, 165, 98, .58);
+  transform: translate(1px, 1px) scale(1.03);
+}
 
 .hero-nav-cta {
   padding: 9px 15px;
@@ -184,6 +189,16 @@
   line-height: 1.35;
   text-shadow: 2px 2px 0 rgba(106, 74, 58, .22);
   text-transform: none;
+}
+
+.care-section-title {
+  color: #fff;
+}
+
+@media (min-width: 1024px) {
+  .care-section-title {
+    white-space: nowrap;
+  }
 }
 
 .hero-who-card p {
