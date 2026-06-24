@@ -3,10 +3,10 @@ import { ArrowRight, PackageOpen, Search, ShieldCheck, Ship, Store } from 'lucid
 import { PixelBox } from '@/components/ui/pixel-box';
 import { PixelButton } from '@/components/ui/pixel-button';
 import PixelClouds from '@/components/landing/PixelClouds';
-import heroBg from '../assets/images/Website_Background_Panorama01.png';
-import shogunshipSign from '../assets/images/Landing_asset_Shogunship_Sign.png';
-import retroStoreBg from '../assets/images/Landing_asset_retro_Store.png';
-import postOfficeBg from '../assets/images/Landing_asset_post-office.png';
+import heroBg from '../assets/images/backgrounds/Website_Background_Panorama01.png';
+import shogunshipSign from '../assets/images/illustrations/Landing_asset_Shogunship_Sign.png';
+import retroStoreBg from '../assets/images/illustrations/Landing_asset_retro_Store.png';
+import postOfficeBg from '../assets/images/illustrations/Landing_asset_post-office.png';
 import landscapeFooterBg from '../assets/redesign/landscape-footer.png';
 
 export default function Home() {
