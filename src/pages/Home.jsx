@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight, PackageOpen, Search, ShieldCheck, Ship, Store } from 'lucide-react';
 import { PixelBox } from '@/components/ui/pixel-box';
 import { PixelButton } from '@/components/ui/pixel-button';
@@ -8,8 +8,44 @@ import shogunshipSign from '../assets/images/illustrations/Landing_asset_Shoguns
 import retroStoreBg from '../assets/images/illustrations/Landing_asset_retro_Store.png';
 import postOfficeBg from '../assets/images/illustrations/Landing_asset_post-office.png';
 import landscapeFooterBg from '../assets/redesign/landscape-footer.png';
+import animateLogo from '../assets/images/logos/marketplaces/optimized/animate_logo.svg';
+import mandarakeLogo from '../assets/images/logos/marketplaces/optimized/mandarake_logo.svg';
+import mercariLogo from '../assets/images/logos/marketplaces/optimized/mercari_logo.svg';
+import otherShopsLogo from '../assets/images/logos/marketplaces/optimized/other_shops_treasure_chest.png';
+import shiseidoLogo from '../assets/images/logos/marketplaces/source/shiseido_logo.svg';
+import surugayaLogo from '../assets/images/logos/marketplaces/optimized/surugaya_logo.svg';
+import yahooAuctionLogo from '../assets/images/logos/marketplaces/optimized/yahoo_auction_logo.svg';
 
 export default function Home() {
+  const shouldReduceMotion = useReducedMotion();
+  const marketplaceDealRotations = [-4, 3, -2, 5, -3, 2, -1];
+
+  const getMarketplaceDealInitial = (index) => shouldReduceMotion ? false : {
+    opacity: 0,
+    y: -30,
+    scale: 0.94,
+    rotate: marketplaceDealRotations[index],
+  };
+
+  const getMarketplaceDealInView = (index) => shouldReduceMotion ? {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    rotate: 0,
+  } : {
+    opacity: [0, 1, 1],
+    y: [-30, 3, 0],
+    scale: [0.94, 1.015, 1],
+    rotate: [marketplaceDealRotations[index], marketplaceDealRotations[index] * -0.18, 0],
+  };
+
+  const getMarketplaceDealTransition = (index) => shouldReduceMotion ? { duration: 0 } : {
+    delay: index * 0.09,
+    duration: 0.32,
+    ease: [0.16, 1, 0.3, 1],
+    times: [0, 0.72, 1],
+  };
+
   return (
     <div className="min-h-screen overflow-x-clip bg-background selection:bg-primary selection:text-white">
       <nav className="hero-nav">
@@ -71,27 +107,26 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="process" className="border-y-[4px] border-foreground bg-background px-4 pb-20 pt-14">
+      <section id="process" className="process-field-section border-y-[4px] border-foreground px-4 pb-20 pt-14">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8">
             <h2 className="major-section-title mb-4">Four Steps. Zero Stress.</h2>
-            <p className="font-sans text-lg text-foreground/70">You send the link. We do everything else from our little workshop in Nara.</p>
+            <p className="font-sans text-lg text-white">You send the link. We do everything else from our little workshop in Nara.</p>
           </div>
-          <ol className="grid grid-cols-1 gap-6 md:grid-cols-4">
+          <ol className="lovable-step-list grid grid-cols-1 gap-6 md:grid-cols-4">
             {[
-              ['01', Search, 'Send the link', "You send us a link to the treasure you've found on any Japanese site: we check the listing, item details, and whether it looks safe to buy. We always reply with honest advice."],
+              ['01', Search, 'Send us the link', "You send us the link to the treasure you've found on any Japanese website. We review it and take care of the rest."],
               ['02', Store, 'We buy it for you', 'We purchase it on your behalf and handle the Japanese-only logistics.'],
-              ['03', ShieldCheck, 'Arrives at our home', 'When your package arrives, we photograph the outside, check for visible issues like dents, holes, water damage, or unusual handling, and store it safely.'],
+              ['03', ShieldCheck, 'Arrives at our home', 'When your package arrives, we photograph the outer package, check for visible shipping issues, and store it safely.'],
               ['04', Ship, 'Ship when you say', 'We consolidate multiple items, pack them carefully, and ship them to your home when you are ready.'],
             ].map(([step, Icon, title, desc], i) => (
               <li key={step} className="lovable-step-card">
                 <div className="lovable-step-top">
-                  <span className="lovable-step-number">{Number(step)}</span>
-                  <Icon className="lovable-step-icon" />
+                  <span className="lovable-step-icon-badge"><Icon className="lovable-step-icon" /></span>
                 </div>
                 <h3>{title}</h3>
                 <p className="font-sans text-foreground/70">{desc}</p>
-                {i !== 3 && <span className="lovable-step-arrow" aria-hidden="true">→</span>}
+                <span className="lovable-step-number" aria-hidden="true">{step}</span>
               </li>
             ))}
           </ol>
@@ -101,7 +136,7 @@ export default function Home() {
       <section id="marketplaces" className="relative bg-muted px-4 py-16">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-10">
-            <div className="relative w-full lg:w-[42%]"><div className="absolute -left-4 top-4 h-full w-full border-[4px] border-foreground bg-secondary" /><img src={retroStoreBg} alt="Retro Japanese hobby shop" className="relative z-10 aspect-video h-auto w-full border-[4px] border-foreground object-cover" /></div>
+            <div className="relative w-full lg:w-[42%]"><div className="absolute -left-4 top-4 h-full w-full border-[4px] border-foreground bg-secondary" /><div className="illustration-zoom-frame relative z-10 aspect-video h-auto w-full border-[4px] border-foreground"><img src={retroStoreBg} alt="Retro Japanese hobby shop" className="h-full w-full object-cover" /></div></div>
             <div className="w-full lg:w-[58%]">
               <div className="mb-6 flex items-center gap-4"><div className="border-2 border-foreground bg-destructive p-2 text-destructive-foreground"><ShieldCheck className="h-6 w-6" /></div><h2 className="major-section-title">Real People, Real Care</h2></div>
               <div className="space-y-4 font-sans text-lg text-foreground/80"><p>You are not working with a massive warehouse, a fulfillment center, or a drop-shipping company. You are working with a husband-and-wife team in Nara who personally receive, check, photograph, and pack every single order.</p><p>We understand that condition and careful handling matter. Every item is treated as if it were our own because we know the anxiety of international shipping and how much it means to the person waiting for it.</p></div>
@@ -110,36 +145,56 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="founders" className="overflow-hidden border-t-[4px] border-foreground px-4 pb-24 pt-14">
+      <section id="founders" className="overflow-hidden border-t-[4px] border-foreground px-4 pb-20 pt-14">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
             <h2 className="major-section-title mb-4">Select Your Destination</h2>
-            <p className="mx-auto max-w-2xl font-sans text-lg text-foreground/70">We navigate the winding roads of Japan&apos;s biggest marketplaces so you don&apos;t have to. Drop a link from any website. If it&apos;s sold in Japan, we can probably get it, just ask.</p>
+            <p className="mx-auto max-w-5xl font-sans text-lg text-foreground/70">
+              <span className="block">We navigate the winding roads of Japan&apos;s biggest marketplaces so you don&apos;t have to.</span>
+              <span className="block">Drop us a link from any website. If it&apos;s sold in Japan, we can probably get it, just ask.</span>
+            </p>
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {[
-              ['Mercari Japan', 'The bustling flea market filled with hidden gems and daily deals.'],
-              ['Yahoo! Auctions', 'The grand auction house where the rarest artifacts surface.'],
-              ['Surugaya', 'The legendary emporium for games, books, DVDs, figures, trading cards.'],
-              ['Rakuma', 'A quiet but rewarding marketplace with unique listings.'],
-              ['Mandarake', 'The deep archive of vintage anime, manga, and collector items.'],
-              ['Other Shops', 'If it exists in Japan, we can venture out to find it for you.'],
-            ].map(([name, desc], i) => (
-              <motion.div key={name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-                <PixelBox className="group flex h-full cursor-pointer flex-col items-start transition-colors hover:bg-secondary/10">
-                  <div className="mb-4 border-2 border-foreground bg-secondary p-3 text-secondary-foreground"><Store className="h-6 w-6" /></div>
-                  <h3 className="mb-2 text-2xl transition-colors group-hover:text-primary">{name}</h3>
-                  <p className="font-sans text-foreground/70">{desc}</p>
-                </PixelBox>
+              { name: 'MERCARI JAPAN', desc: 'The bustling flea market filled with hidden gems and daily deals.', logo: mercariLogo, href: 'https://jp.mercari.com/', ariaLabel: 'Visit Mercari Japan' },
+              { name: 'YAHOO! AUCTIONS', desc: 'The grand auction house where the rarest artifacts surface.', logo: yahooAuctionLogo, href: 'https://auctions.yahoo.co.jp/', ariaLabel: 'Visit Yahoo! Auctions Japan' },
+              { name: 'SURUGAYA', desc: 'The legendary emporium for games, books, DVDs, figures, trading cards.', logo: surugayaLogo, logoClassName: 'marketplace-logo-surugaya', href: 'https://www.suruga-ya.jp/', ariaLabel: 'Visit Surugaya' },
+              { name: 'ANIMATE', desc: 'A colorful destination for anime goods, character merch, and collector finds.', logo: animateLogo, href: 'https://www.animate-onlineshop.jp/', ariaLabel: 'Visit Animate Online Shop' },
+              { name: 'MANDARAKE', desc: 'The deep archive of vintage anime, manga, and collector items.', logo: mandarakeLogo, href: 'https://www.mandarake.co.jp/', ariaLabel: 'Visit Mandarake' },
+              { name: 'SHISEIDO', desc: 'A refined destination for Japanese beauty, skincare, and gift-worthy finds.', logo: shiseidoLogo, logoClassName: 'marketplace-logo-shiseido', href: 'https://www.shiseido.co.jp/sw/onlinestore/', ariaLabel: 'Visit Shiseido Online Store' },
+            ].map(({ name, desc, logo, logoClassName, href, ariaLabel }, i) => (
+              <motion.div key={name} className="flex justify-center" initial={getMarketplaceDealInitial(i)} whileInView={getMarketplaceDealInView(i)} viewport={{ once: true }} transition={getMarketplaceDealTransition(i)}>
+                <a href={href} target="_blank" rel="noopener noreferrer" aria-label={ariaLabel} className="marketplace-card-link text-current no-underline">
+                  <PixelBox className="marketplace-card marketplace-card-standard group flex h-full cursor-pointer flex-col items-stretch overflow-hidden transition-colors hover:bg-secondary/10">
+                    <div className="marketplace-logo-stage">
+                      {logo && <img src={logo} alt={`${name} logo`} className={`marketplace-logo ${logoClassName || ''}`} />}
+                    </div>
+                    <div className="marketplace-title-bar">
+                      <h3>{name}</h3>
+                    </div>
+                    <p className="marketplace-description font-sans text-foreground/70">{desc}</p>
+                  </PixelBox>
+                </a>
               </motion.div>
             ))}
           </div>
+          <motion.div className="mt-8 flex justify-center" initial={getMarketplaceDealInitial(6)} whileInView={getMarketplaceDealInView(6)} viewport={{ once: true }} transition={getMarketplaceDealTransition(6)}>
+            <PixelBox className="marketplace-card marketplace-card-featured group flex h-full cursor-pointer flex-col items-stretch overflow-hidden transition-colors hover:bg-secondary/10">
+              <div className="marketplace-logo-stage">
+                <img src={otherShopsLogo} alt="OTHER SHOPS logo" className="marketplace-logo marketplace-logo-other-shops" />
+              </div>
+              <div className="marketplace-title-bar">
+                <h3>OTHER SHOPS</h3>
+              </div>
+              <p className="marketplace-description font-sans text-foreground/70">If it exists in Japan, we can venture out to find it for you.</p>
+            </PixelBox>
+          </motion.div>
         </div>
       </section>
 
       <section id="costs" className="relative border-t-[4px] border-b-[8px] border-foreground bg-primary px-4 pb-24 pt-14 text-primary-foreground">
         <div className="mx-auto max-w-7xl"><div className="flex flex-col items-center gap-12 lg:flex-row-reverse lg:gap-10">
-          <div className="relative w-full lg:w-[42%] lg:translate-x-4 xl:translate-x-8"><div className="absolute -right-4 top-4 h-full w-full border-[4px] border-foreground bg-secondary" /><img src={postOfficeBg} alt="Japanese countryside post office" className="relative z-10 aspect-video h-auto w-full border-[4px] border-foreground object-cover" /></div>
+          <div className="relative w-full lg:w-[42%] lg:translate-x-4 xl:translate-x-8"><div className="absolute -right-4 top-4 h-full w-full border-[4px] border-foreground bg-secondary" /><div className="illustration-zoom-frame relative z-10 aspect-video h-auto w-full border-[4px] border-foreground"><img src={postOfficeBg} alt="Japanese countryside post office" className="h-full w-full object-cover" /></div></div>
           <div className="w-full lg:w-[58%]"><h2 className="major-section-title care-section-title mb-6">Your Collection Is Safe With Us</h2><p className="mb-8 max-w-lg font-sans text-xl text-primary-foreground/90">The care a family member would take.</p>
             <div className="space-y-4">{[
               ['Free Storage', 'We hold your items securely for up to 45 days at no extra cost.'],
