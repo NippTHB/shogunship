@@ -46,6 +46,15 @@ export default function Home() {
     times: [0, 0.72, 1],
   };
 
+  const restartFeatureBar = (event) => {
+    if (shouldReduceMotion) return;
+    const statusLine = event.currentTarget;
+    const bar = statusLine.querySelector('.feature-status-bar') || statusLine;
+    bar.classList.remove('is-recharging');
+    void bar.offsetWidth;
+    bar.classList.add('is-recharging');
+  };
+
   return (
     <div className="min-h-screen overflow-x-clip bg-background selection:bg-primary selection:text-white">
       <nav className="hero-nav">
@@ -107,17 +116,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="process" className="process-field-section border-y-[4px] border-foreground px-4 pb-20 pt-14">
+      <section id="process" className="process-field-section border-y-[4px] border-foreground bg-primary px-4 pb-20 pt-14">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8">
             <h2 className="major-section-title mb-4">Four Steps. Zero Stress.</h2>
-            <p className="font-sans text-lg text-white">You send the link. We do everything else from our little workshop in Nara.</p>
+            <p className="font-sans text-lg text-foreground/80">You send the link. We do everything else from our little workshop in Nara.</p>
           </div>
           <ol className="lovable-step-list grid grid-cols-1 gap-6 md:grid-cols-4">
             {[
-              ['01', Search, 'Send us the link', "You send us the link to the treasure you've found on any Japanese website. We review it and take care of the rest."],
-              ['02', Store, 'We buy it for you', 'We purchase it on your behalf and handle the Japanese-only logistics.'],
-              ['03', ShieldCheck, 'Arrives at our home', 'When your package arrives, we photograph the outer package, check for visible shipping issues, and store it safely.'],
+              ['01', Search, 'Send us the link', "You send us the link to the treasure you've found on any Japanese website. We review the listing, confirm everything looks good, and guide you through the next step."],
+              ['02', Store, 'We buy it for you', "Once you're ready, we purchase it on your behalf and handle the Japanese-only logistics."],
+              ['03', ShieldCheck, 'Arrives at our home', 'When your package arrives, we photograph the outer package, check for visible shipping damage, and store it safely.'],
               ['04', Ship, 'Ship when you say', 'We consolidate multiple items, pack them carefully, and ship them to your home when you are ready.'],
             ].map(([step, Icon, title, desc], i) => (
               <li key={step} className="lovable-step-card">
@@ -197,10 +206,11 @@ export default function Home() {
           <div className="relative w-full lg:w-[42%] lg:translate-x-4 xl:translate-x-8"><div className="absolute -right-4 top-4 h-full w-full border-[4px] border-foreground bg-secondary" /><div className="illustration-zoom-frame relative z-10 aspect-video h-auto w-full border-[4px] border-foreground"><img src={postOfficeBg} alt="Japanese countryside post office" className="h-full w-full object-cover" /></div></div>
           <div className="w-full lg:w-[58%]"><h2 className="major-section-title care-section-title mb-6">Your Collection Is Safe With Us</h2><p className="mb-8 max-w-lg font-sans text-xl text-primary-foreground/90">The care a family member would take.</p>
             <div className="space-y-4">{[
-              ['Free Storage', 'We hold your items securely for up to 45 days at no extra cost.'],
-              ['Smart Consolidation', 'We repack multiple orders into one sturdy box to save you massive amounts on international shipping.'],
-              ['Condition Photos', "Want to be sure? We'll take detailed photos of your items upon request before shipping them out."],
-            ].map(([title, desc]) => <div key={title} className="flex items-start gap-4 border-[2px] border-primary-foreground/20 bg-primary-foreground/10 p-4"><PackageOpen className="mt-1 h-6 w-6 shrink-0" /><div><h4 className="mb-1 font-display text-xl tracking-wide">{title}</h4><p className="font-sans text-sm text-primary-foreground/80">{desc}</p></div></div>)}</div>
+              ['Free Storage', 'AVAILABLE', 'feature-status-mint', 'Up to 60 days of free storage while you search for more treasures to consolidate.'],
+              ['Smart Consolidation', 'AVAILABLE', 'feature-status-blue', 'We combine multiple orders into one well-protected shipment to save you on international shipping.'],
+              ['Condition Photos', 'PAID PERK', 'feature-status-peach', 'Want extra peace of mind? Every package is photographed on arrival. This optional service adds detailed item photos before shipping.'],
+              ['INSURED SHIPPING', 'AVAILABLE', 'feature-status-gold', 'Choose your preferred shipping method. Every shipment includes tracking and insurance.'],
+            ].map(([title, status, statusClass, desc]) => <div key={title} className="flex items-start gap-4 border-[2px] border-primary-foreground/20 bg-primary-foreground/10 p-4"><PackageOpen className="mt-1 h-6 w-6 shrink-0" /><div className="min-w-0 flex-1"><div className="feature-title-row"><h4 className={`font-display text-xl tracking-wide ${statusClass}`}>{title}</h4><div className={`feature-status-line ${statusClass}`}><span className="feature-status-text">{status}</span><span className={`feature-status-bar ${statusClass}`} aria-hidden="true" onMouseEnter={restartFeatureBar} onAnimationEnd={(event) => event.currentTarget.classList.remove('is-recharging')}>{Array.from({ length: 10 }).map((_, index) => <i key={index} />)}</span></div></div><p className="font-sans text-sm text-primary-foreground/80">{desc}</p></div></div>)}</div>
           </div>
         </div></div>
       </section>
