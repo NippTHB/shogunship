@@ -37,6 +37,18 @@
   img { image-rendering: pixelated; }
 }
 
+.shogunship-world-bg {
+  background: linear-gradient(
+    180deg,
+    #BCDA87 0%,
+    #BCDA87 8%,
+    #cadd94 22%,
+    #e0dfa9 38%,
+    #efe3bd 56%,
+    #efe3bd 100%
+  );
+}
+
 .hero-nav {
   position: sticky;
   z-index: 50;
@@ -301,7 +313,7 @@
 }
 
 .process-field-section {
-  background: #89a19c;
+  background: transparent;
 }
 
 .illustration-zoom-frame {
@@ -324,7 +336,33 @@
 }
 
 #founders {
-  background: #f4f1bb;
+  background: transparent;
+}
+
+#marketplaces {
+  position: relative;
+  background: transparent;
+}
+
+#marketplaces::before {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  top: -67px;
+  height: 152px;
+  background-image: url('./assets/images/backgrounds/pixelart_divisor.png');
+  background-repeat: repeat-x;
+  background-position: left center;
+  background-size: 443px 124px;
+  image-rendering: pixelated;
+  opacity: .11;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#marketplaces > * {
+  position: relative;
+  z-index: 1;
 }
 
 .marketplace-card-link {
@@ -469,6 +507,30 @@
   border-radius: 4px;
   box-shadow: 6px 6px 0 rgba(53, 33, 22, .72);
   transition: transform 150ms cubic-bezier(.4, 0, .2, 1), box-shadow 150ms cubic-bezier(.4, 0, .2, 1);
+}
+
+#costs {
+  background: transparent;
+}
+
+#costs .care-section-title,
+#costs .feature-status-line,
+#costs .feature-status-line .feature-status-text {
+  color: hsl(var(--foreground) / .88);
+}
+
+#costs .bg-background\/45 {
+  background: #74a288;
+  color: hsl(var(--primary-foreground));
+}
+
+#costs .bg-background\/45 p {
+  color: hsl(var(--primary-foreground) / .94);
+}
+
+#costs .bg-background\/45 .feature-status-line,
+#costs .bg-background\/45 .feature-status-line .feature-status-text {
+  color: hsl(var(--primary-foreground) / .9);
 }
 
 .lovable-step-card::before {

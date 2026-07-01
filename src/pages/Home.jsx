@@ -56,7 +56,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen overflow-x-clip bg-background selection:bg-primary selection:text-white">
+    <div className="shogunship-world-bg min-h-screen overflow-x-clip bg-background selection:bg-primary selection:text-white">
       <nav className="hero-nav">
         <div className="hero-nav-inner">
           <a href="#" className="hero-nav-brand pixel-section-heading pixel-heading-nav">SHOGUNSHIP</a>
@@ -116,7 +116,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="process" className="process-field-section border-y-[4px] border-foreground bg-primary px-4 pb-20 pt-14">
+      <section id="process" className="process-field-section px-4 pb-20 pt-14">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8">
             <h2 className="major-section-title mb-4">Four Steps. Zero Stress.</h2>
@@ -142,7 +142,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="marketplaces" className="relative bg-muted px-4 py-16">
+      <section id="marketplaces" className="relative px-4 py-16">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-10">
             <div className="relative w-full lg:w-[42%]"><div className="absolute -left-4 top-4 h-full w-full border-[4px] border-foreground bg-secondary" /><div className="illustration-zoom-frame relative z-10 aspect-video h-auto w-full border-[4px] border-foreground"><img src={retroStoreBg} alt="Retro Japanese hobby shop" className="h-full w-full object-cover" /></div></div>
@@ -154,7 +154,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="founders" className="overflow-hidden border-t-[4px] border-foreground px-4 pb-20 pt-14">
+      <section id="founders" className="overflow-hidden px-4 pb-20 pt-14">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
             <h2 className="major-section-title mb-4">Select Your Destination</h2>
@@ -201,16 +201,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="costs" className="relative border-t-[4px] border-b-[8px] border-foreground bg-primary px-4 pb-24 pt-14 text-primary-foreground">
+      <section id="costs" className="relative px-4 pb-24 pt-14 text-foreground">
         <div className="mx-auto max-w-7xl"><div className="flex flex-col items-center gap-12 lg:flex-row-reverse lg:gap-10">
           <div className="relative w-full lg:w-[42%] lg:translate-x-4 xl:translate-x-8"><div className="absolute -right-4 top-4 h-full w-full border-[4px] border-foreground bg-secondary" /><div className="illustration-zoom-frame relative z-10 aspect-video h-auto w-full border-[4px] border-foreground"><img src={postOfficeBg} alt="Japanese countryside post office" className="h-full w-full object-cover" /></div></div>
-          <div className="w-full lg:w-[58%]"><h2 className="major-section-title care-section-title mb-6">Your Collection Is Safe With Us</h2><p className="mb-8 max-w-lg font-sans text-xl text-primary-foreground/90">The care a family member would take.</p>
+          <div className="w-full lg:w-[58%]"><h2 className="major-section-title care-section-title mb-6">Your Collection Is Safe With Us</h2><p className="mb-8 max-w-lg font-sans text-xl text-foreground/80">The care a family member would take.</p>
             <div className="space-y-4">{[
               ['Free Storage', 'AVAILABLE', 'feature-status-mint', 'Up to 60 days of free storage while you search for more treasures to consolidate.'],
               ['Smart Consolidation', 'AVAILABLE', 'feature-status-blue', 'We combine multiple orders into one well-protected shipment to save you on international shipping.'],
               ['Condition Photos', 'PAID PERK', 'feature-status-peach', 'Want extra peace of mind? Every package is photographed on arrival. This optional service adds detailed item photos before shipping.'],
               ['INSURED SHIPPING', 'AVAILABLE', 'feature-status-gold', 'Choose your preferred shipping method. Every shipment includes tracking and insurance.'],
-            ].map(([title, status, statusClass, desc]) => <div key={title} className="flex items-start gap-4 border-[2px] border-primary-foreground/20 bg-primary-foreground/10 p-4"><PackageOpen className="mt-1 h-6 w-6 shrink-0" /><div className="min-w-0 flex-1"><div className="feature-title-row"><h4 className={`font-display text-xl tracking-wide ${statusClass}`}>{title}</h4><div className={`feature-status-line ${statusClass}`}><span className="feature-status-text">{status}</span><span className={`feature-status-bar ${statusClass}`} aria-hidden="true" onMouseEnter={restartFeatureBar} onAnimationEnd={(event) => event.currentTarget.classList.remove('is-recharging')}>{Array.from({ length: 10 }).map((_, index) => <i key={index} />)}</span></div></div><p className="font-sans text-sm text-primary-foreground/80">{desc}</p></div></div>)}</div>
+            ].map(([title, status, statusClass, desc]) => <div key={title} className="flex items-start gap-4 border-[2px] border-foreground/20 bg-background/45 p-4"><PackageOpen className="mt-1 h-6 w-6 shrink-0" /><div className="min-w-0 flex-1"><div className="feature-title-row"><h4 className={`font-display text-xl tracking-wide ${statusClass}`}>{title}</h4><div className={`feature-status-line ${statusClass}`}><span className="feature-status-text">{status}</span><span className={`feature-status-bar ${statusClass}`} aria-hidden="true" onMouseEnter={restartFeatureBar} onAnimationEnd={(event) => event.currentTarget.classList.remove('is-recharging')}>{Array.from({ length: 10 }).map((_, index) => <i key={index} />)}</span></div></div><p className="font-sans text-sm text-foreground/70">{desc}</p></div></div>)}</div>
           </div>
         </div></div>
       </section>
