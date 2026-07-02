@@ -1,5 +1,6 @@
+import { useEffect, useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowRight, PackageOpen, Search, ShieldCheck, Ship, Store } from 'lucide-react';
+import { ArrowRight, PackageOpen, Search, ShieldCheck, Ship, Store, X } from 'lucide-react';
 import { PixelBox } from '@/components/ui/pixel-box';
 import { PixelButton } from '@/components/ui/pixel-button';
 import PixelClouds from '@/components/landing/PixelClouds';
@@ -14,37 +15,61 @@ import mercariLogo from '../assets/images/logos/marketplaces/optimized/mercari_l
 import otherShopsLogo from '../assets/images/logos/marketplaces/optimized/other_shops_treasure_chest.png';
 import shiseidoLogo from '../assets/images/logos/marketplaces/source/shiseido_logo.svg';
 import surugayaLogo from '../assets/images/logos/marketplaces/optimized/surugaya_logo.svg';
-import yahooAuctionLogo from '../assets/images/logos/marketplaces/optimized/yahoo_auction_logo.svg';
 
 export default function Home() {
   const shouldReduceMotion = useReducedMotion();
-  const marketplaceDealRotations = [-4, 3, -2, 5, -3, 2, -1];
+  const [isRequestDrawerOpen, setIsRequestDrawerOpen] = useState(false);
+  const [hasSubmittedRequest, setHasSubmittedRequest] = useState(false);
+  const [showFloatingCta, setShowFloatingCta] = useState(false);
+  const [shouldPulseFloatingCta, setShouldPulseFloatingCta] = useState(false);
+  const hasPulsedFloatingCta = useRef(false);
+  const heroRef = useRef(null);
 
-  const getMarketplaceDealInitial = (index) => shouldReduceMotion ? false : {
-    opacity: 0,
-    y: -30,
-    scale: 0.94,
-    rotate: marketplaceDealRotations[index],
+  const openRequestDrawer = () => {
+    setHasSubmittedRequest(false);
+    setIsRequestDrawerOpen(true);
   };
 
-  const getMarketplaceDealInView = (index) => shouldReduceMotion ? {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    rotate: 0,
-  } : {
-    opacity: [0, 1, 1],
-    y: [-30, 3, 0],
-    scale: [0.94, 1.015, 1],
-    rotate: [marketplaceDealRotations[index], marketplaceDealRotations[index] * -0.18, 0],
+  const closeRequestDrawer = () => {
+    setIsRequestDrawerOpen(false);
   };
 
-  const getMarketplaceDealTransition = (index) => shouldReduceMotion ? { duration: 0 } : {
-    delay: index * 0.09,
-    duration: 0.32,
-    ease: [0.16, 1, 0.3, 1],
-    times: [0, 0.72, 1],
+  const handleRequestSubmit = (event) => {
+    event.preventDefault();
+    setHasSubmittedRequest(true);
   };
+
+  useEffect(() => {
+    const updateFloatingCta = () => {
+      if (!heroRef.current) return;
+      setShowFloatingCta(heroRef.current.getBoundingClientRect().bottom <= 80);
+
+      const footerApproach = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 260;
+      if (!footerApproach || hasPulsedFloatingCta.current) return;
+      hasPulsedFloatingCta.current = true;
+      setShouldPulseFloatingCta(true);
+    };
+
+    updateFloatingCta();
+    window.addEventListener('scroll', updateFloatingCta, { passive: true });
+    window.addEventListener('resize', updateFloatingCta);
+
+    return () => {
+      window.removeEventListener('scroll', updateFloatingCta);
+      window.removeEventListener('resize', updateFloatingCta);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isRequestDrawerOpen) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') closeRequestDrawer();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isRequestDrawerOpen]);
 
   const restartFeatureBar = (event) => {
     if (shouldReduceMotion) return;
@@ -66,11 +91,11 @@ export default function Home() {
             <a href="#costs">Costs</a>
             <a href="#marketplaces">Marketplaces</a>
           </div>
-          <a href="#contact" className="hero-nav-cta">Send your link</a>
+          <button type="button" className="hero-nav-cta" onClick={openRequestDrawer}>Send your link</button>
         </div>
       </nav>
 
-      <section className="relative flex min-h-[680px] w-full items-center justify-center overflow-hidden border-b-[8px] border-foreground px-0 pb-10 pt-28 md:min-h-[720px]">
+      <section ref={heroRef} className="relative flex min-h-[680px] w-full items-center justify-center overflow-hidden border-b-[8px] border-foreground px-0 pb-10 pt-28 md:min-h-[720px]">
         <div className="absolute inset-0 z-0">
           <img src={heroBg} alt="A Shinkansen crossing rice fields beneath Mount Fuji" className="h-full w-full object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent" />
@@ -110,12 +135,24 @@ export default function Home() {
                   <img src={shogunshipSign} alt="ShogunShip Family" />
                 </div>
               </div>
-              <PixelButton variant="primary" className="mt-5 w-full sm:w-auto">Start Your Adventure <ArrowRight className="ml-2 h-5 w-5" /></PixelButton>
+              <PixelButton type="button" variant="primary" className="mt-5 w-full sm:w-auto" onClick={openRequestDrawer}>Start Your Adventure <ArrowRight className="ml-2 h-5 w-5" /></PixelButton>
             </div>
           </motion.div>
         </div>
       </section>
 
+      <button
+        type="button"
+        className={`floating-adventure-cta ${showFloatingCta ? 'is-visible' : ''} ${shouldPulseFloatingCta ? 'is-pulsing' : ''}`}
+        onClick={openRequestDrawer}
+        onAnimationEnd={() => setShouldPulseFloatingCta(false)}
+        aria-hidden={!showFloatingCta}
+        tabIndex={showFloatingCta ? 0 : -1}
+      >
+        Start Your Adventure
+      </button>
+
+      <div className="below-hero-world">
       <section id="process" className="process-field-section px-4 pb-20 pt-14">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8">
@@ -156,48 +193,32 @@ export default function Home() {
 
       <section id="founders" className="overflow-hidden px-4 pb-20 pt-14">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 text-center">
+          <div className="mb-8 text-center">
             <h2 className="major-section-title mb-4">Select Your Destination</h2>
             <p className="mx-auto max-w-5xl font-sans text-lg text-foreground/70">
               <span className="block">We navigate the winding roads of Japan&apos;s biggest marketplaces so you don&apos;t have to.</span>
               <span className="block">Drop us a link from any website. If it&apos;s sold in Japan, we can probably get it, just ask.</span>
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="marketplace-button-row">
             {[
-              { name: 'MERCARI JAPAN', desc: 'The bustling flea market filled with hidden gems and daily deals.', logo: mercariLogo, href: 'https://jp.mercari.com/', ariaLabel: 'Visit Mercari Japan' },
-              { name: 'YAHOO! AUCTIONS', desc: 'The grand auction house where the rarest artifacts surface.', logo: yahooAuctionLogo, href: 'https://auctions.yahoo.co.jp/', ariaLabel: 'Visit Yahoo! Auctions Japan' },
-              { name: 'SURUGAYA', desc: 'The legendary emporium for games, books, DVDs, figures, trading cards.', logo: surugayaLogo, logoClassName: 'marketplace-logo-surugaya', href: 'https://www.suruga-ya.jp/', ariaLabel: 'Visit Surugaya' },
-              { name: 'ANIMATE', desc: 'A colorful destination for anime goods, character merch, and collector finds.', logo: animateLogo, href: 'https://www.animate-onlineshop.jp/', ariaLabel: 'Visit Animate Online Shop' },
-              { name: 'MANDARAKE', desc: 'The deep archive of vintage anime, manga, and collector items.', logo: mandarakeLogo, href: 'https://www.mandarake.co.jp/', ariaLabel: 'Visit Mandarake' },
-              { name: 'SHISEIDO', desc: 'A refined destination for Japanese beauty, skincare, and gift-worthy finds.', logo: shiseidoLogo, logoClassName: 'marketplace-logo-shiseido', href: 'https://www.shiseido.co.jp/sw/onlinestore/', ariaLabel: 'Visit Shiseido Online Store' },
-            ].map(({ name, desc, logo, logoClassName, href, ariaLabel }, i) => (
-              <motion.div key={name} className="flex justify-center" initial={getMarketplaceDealInitial(i)} whileInView={getMarketplaceDealInView(i)} viewport={{ once: true }} transition={getMarketplaceDealTransition(i)}>
-                <a href={href} target="_blank" rel="noopener noreferrer" aria-label={ariaLabel} className="marketplace-card-link text-current no-underline">
-                  <PixelBox className="marketplace-card marketplace-card-standard group flex h-full cursor-pointer flex-col items-stretch overflow-hidden transition-colors hover:bg-secondary/10">
-                    <div className="marketplace-logo-stage">
-                      {logo && <img src={logo} alt={`${name} logo`} className={`marketplace-logo ${logoClassName || ''}`} />}
-                    </div>
-                    <div className="marketplace-title-bar">
-                      <h3>{name}</h3>
-                    </div>
-                    <p className="marketplace-description font-sans text-foreground/70">{desc}</p>
-                  </PixelBox>
+              { name: 'Mercari Japan', logo: mercariLogo, href: 'https://jp.mercari.com/', ariaLabel: 'Visit Mercari Japan' },
+              { name: 'Surugaya', logo: surugayaLogo, logoClassName: 'marketplace-button-logo-surugaya', href: 'https://www.suruga-ya.jp/', ariaLabel: 'Visit Surugaya' },
+              { name: 'Animate', logo: animateLogo, href: 'https://www.animate-onlineshop.jp/', ariaLabel: 'Visit Animate Online Shop' },
+              { name: 'Mandarake', logo: mandarakeLogo, href: 'https://www.mandarake.co.jp/', ariaLabel: 'Visit Mandarake' },
+              { name: 'Shiseido', logo: shiseidoLogo, logoClassName: 'marketplace-button-logo-shiseido', href: 'https://www.shiseido.co.jp/', ariaLabel: 'Visit Shiseido' },
+              { name: 'Other Shops', logo: otherShopsLogo, logoClassName: 'marketplace-button-logo-other-shops', href: '#contact', ariaLabel: 'Ask about other Japanese shops' },
+            ].map(({ name, logo, logoClassName, href, ariaLabel }) => (
+              <div key={name} className="marketplace-button-wrap">
+                <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined} aria-label={ariaLabel} className="marketplace-menu-button">
+                  <span className="marketplace-button-logo-stage">
+                    <img src={logo} alt="" className={`marketplace-button-logo ${logoClassName || ''}`} />
+                  </span>
+                  <span className="marketplace-button-name">{name}</span>
                 </a>
-              </motion.div>
+              </div>
             ))}
           </div>
-          <motion.div className="mt-8 flex justify-center" initial={getMarketplaceDealInitial(6)} whileInView={getMarketplaceDealInView(6)} viewport={{ once: true }} transition={getMarketplaceDealTransition(6)}>
-            <PixelBox className="marketplace-card marketplace-card-featured group flex h-full cursor-pointer flex-col items-stretch overflow-hidden transition-colors hover:bg-secondary/10">
-              <div className="marketplace-logo-stage">
-                <img src={otherShopsLogo} alt="OTHER SHOPS logo" className="marketplace-logo marketplace-logo-other-shops" />
-              </div>
-              <div className="marketplace-title-bar">
-                <h3>OTHER SHOPS</h3>
-              </div>
-              <p className="marketplace-description font-sans text-foreground/70">If it exists in Japan, we can venture out to find it for you.</p>
-            </PixelBox>
-          </motion.div>
         </div>
       </section>
 
@@ -221,6 +242,43 @@ export default function Home() {
       </section>
 
       <footer className="border-t-[4px] border-background bg-foreground px-4 py-6 text-background"><div className="mx-auto flex max-w-7xl flex-col items-center justify-between font-sans text-sm md:flex-row"><p>© {new Date().getFullYear()} ShogunShip. Based in Nara, Japan.</p><div className="mt-4 flex gap-4 md:mt-0"><a href="#" className="transition-colors hover:text-primary">Terms of Service</a><a href="#" className="transition-colors hover:text-primary">Privacy Policy</a><a href="#" className="transition-colors hover:text-primary">Contact</a></div></div></footer>
+      </div>
+
+      {isRequestDrawerOpen && (
+        <div className="request-drawer-shell" role="presentation" onMouseDown={closeRequestDrawer}>
+          <aside className="request-drawer" role="dialog" aria-modal="true" aria-labelledby="request-drawer-title" onMouseDown={(event) => event.stopPropagation()}>
+            <button type="button" className="request-drawer-close" onClick={closeRequestDrawer} aria-label="Close request form">
+              <X className="h-5 w-5" />
+            </button>
+            <div className="request-drawer-header">
+              <span className="request-drawer-kicker">Quest Request</span>
+              <h2 id="request-drawer-title">Send Your Link</h2>
+              <p>Drop the treasure map here. We will check it personally and write back.</p>
+            </div>
+            {hasSubmittedRequest ? (
+              <div className="request-drawer-success" role="status">
+                Thank you! We'll get back to you personally.
+              </div>
+            ) : (
+              <form className="request-drawer-form" onSubmit={handleRequestSubmit}>
+                <label>
+                  <span>Marketplace link</span>
+                  <input type="url" name="marketplaceLink" placeholder="https://..." required />
+                </label>
+                <label>
+                  <span>Your email</span>
+                  <input type="email" name="email" placeholder="you@example.com" required />
+                </label>
+                <label>
+                  <span>Note optional</span>
+                  <textarea name="note" rows="4" placeholder="Condition questions, size, color, or anything we should know." />
+                </label>
+                <PixelButton type="submit" variant="primary" className="request-drawer-submit">Send it our way</PixelButton>
+              </form>
+            )}
+          </aside>
+        </div>
+      )}
     </div>
   );
 }
