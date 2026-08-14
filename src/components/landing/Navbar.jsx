@@ -19,10 +19,10 @@ function ShogunIcon() {
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const links = [
-    { label: 'HOW IT WORKS', href: '#process' },
     { label: 'WHO WE ARE', href: '#founders' },
-    { label: 'COSTS', href: '#costs' },
+    { label: 'HOW IT WORKS', href: '#process' },
     { label: 'MARKETPLACES', href: '#marketplaces' },
+    { label: 'COSTS', href: '#costs' },
   ];
 
   return (

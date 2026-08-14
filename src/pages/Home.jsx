@@ -9,6 +9,7 @@ import shogunshipSign from '../assets/images/illustrations/Landing_asset_Shoguns
 import retroStoreBg from '../assets/images/illustrations/Landing_asset_retro_Store.png';
 import postOfficeBg from '../assets/images/illustrations/Landing_asset_post-office.png';
 import landscapeFooterBg from '../assets/redesign/landscape-footer.png';
+import costsBackground from '../assets/redesign/box2.png';
 import animateLogo from '../assets/images/logos/marketplaces/optimized/animate_logo.svg';
 import mandarakeLogo from '../assets/images/logos/marketplaces/optimized/mandarake_logo.svg';
 import mercariLogo from '../assets/images/logos/marketplaces/optimized/mercari_logo.svg';
@@ -86,12 +87,11 @@ export default function Home() {
         <div className="hero-nav-inner">
           <a href="#" className="hero-nav-brand pixel-section-heading pixel-heading-nav">SHOGUNSHIP</a>
           <div className="hero-nav-links">
+            <a href="#hero-intro">Who we are</a>
             <a href="#process">How it works</a>
-            <a href="#founders">Who we are</a>
-            <a href="#costs">Costs</a>
             <a href="#marketplaces">Marketplaces</a>
+            <a href="#costs">Costs</a>
           </div>
-          <button type="button" className="hero-nav-cta" onClick={openRequestDrawer}>Send your link</button>
         </div>
       </nav>
 
@@ -120,7 +120,7 @@ export default function Home() {
         <div className="relative z-10 flex w-full max-w-4xl flex-col items-center px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
             <div className="flex flex-col items-center">
-              <div className="hero-who-card">
+              <div id="hero-intro" className="hero-who-card">
                 <div className="hero-who-copy">
                   <div className="hero-who-label"><span>WHO WE ARE</span><i /></div>
                   <h1>
@@ -179,7 +179,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="marketplaces" className="relative px-4 py-16">
+      <section id="workshop" className="relative px-4 py-16">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-10">
             <div className="relative w-full lg:w-[42%]"><div className="absolute -left-4 top-4 h-full w-full border-[4px] border-foreground bg-secondary" /><div className="illustration-zoom-frame relative z-10 aspect-video h-auto w-full border-[4px] border-foreground"><img src={retroStoreBg} alt="Retro Japanese hobby shop" className="h-full w-full object-cover" /></div></div>
@@ -191,7 +191,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="founders" className="overflow-hidden px-4 pb-20 pt-14">
+      <section id="marketplaces" className="overflow-hidden px-4 pb-20 pt-14">
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 text-center">
             <h2 className="major-section-title mb-4">Select Your Destination</h2>
@@ -207,22 +207,34 @@ export default function Home() {
               { name: 'Animate', logo: animateLogo, href: 'https://www.animate-onlineshop.jp/', ariaLabel: 'Visit Animate Online Shop' },
               { name: 'Mandarake', logo: mandarakeLogo, href: 'https://www.mandarake.co.jp/', ariaLabel: 'Visit Mandarake' },
               { name: 'Shiseido', logo: shiseidoLogo, logoClassName: 'marketplace-button-logo-shiseido', href: 'https://www.shiseido.co.jp/', ariaLabel: 'Visit Shiseido' },
-              { name: 'Other Shops', logo: otherShopsLogo, logoClassName: 'marketplace-button-logo-other-shops', href: '#contact', ariaLabel: 'Ask about other Japanese shops' },
-            ].map(({ name, logo, logoClassName, href, ariaLabel }) => (
-              <div key={name} className="marketplace-button-wrap">
-                <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined} aria-label={ariaLabel} className="marketplace-menu-button">
-                  <span className="marketplace-button-logo-stage">
-                    <img src={logo} alt="" className={`marketplace-button-logo ${logoClassName || ''}`} />
-                  </span>
-                  <span className="marketplace-button-name">{name}</span>
-                </a>
-              </div>
-            ))}
+              { name: 'Other Shops', logo: otherShopsLogo, logoClassName: 'marketplace-button-logo-other-shops', onClick: openRequestDrawer, ariaLabel: 'Ask about other Japanese shops' },
+            ].map(({ name, logo, logoClassName, href, onClick, ariaLabel }) => {
+              const MarketplaceControl = onClick ? 'button' : 'a';
+
+              return (
+                <div key={name} className="marketplace-button-wrap">
+                  <MarketplaceControl
+                    type={onClick ? 'button' : undefined}
+                    href={href}
+                    target={href?.startsWith('http') ? '_blank' : undefined}
+                    rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    onClick={onClick}
+                    aria-label={ariaLabel}
+                    className="marketplace-menu-button"
+                  >
+                    <span className="marketplace-button-logo-stage">
+                      <img src={logo} alt="" className={`marketplace-button-logo ${logoClassName || ''}`} />
+                    </span>
+                    <span className="marketplace-button-name">{name}</span>
+                  </MarketplaceControl>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      <section id="costs" className="relative px-4 pb-24 pt-14 text-foreground">
+      <section id="collection" className="relative px-4 pb-24 pt-14 text-foreground">
         <div className="mx-auto max-w-7xl"><div className="flex flex-col items-center gap-12 lg:flex-row-reverse lg:gap-10">
           <div className="relative w-full lg:w-[42%] lg:translate-x-4 xl:translate-x-8"><div className="absolute -right-4 top-4 h-full w-full border-[4px] border-foreground bg-secondary" /><div className="illustration-zoom-frame relative z-10 aspect-video h-auto w-full border-[4px] border-foreground"><img src={postOfficeBg} alt="Japanese countryside post office" className="h-full w-full object-cover" /></div></div>
           <div className="w-full lg:w-[58%]"><h2 className="major-section-title care-section-title mb-6">Your Collection Is Safe With Us</h2><p className="mb-8 max-w-lg font-sans text-xl text-foreground/80">The care a family member would take.</p>
@@ -234,6 +246,82 @@ export default function Home() {
             ].map(([title, status, statusClass, desc]) => <div key={title} className="flex items-start gap-4 border-[2px] border-foreground/20 bg-background/45 p-4"><PackageOpen className="mt-1 h-6 w-6 shrink-0" /><div className="min-w-0 flex-1"><div className="feature-title-row"><h4 className={`font-display text-xl tracking-wide ${statusClass}`}>{title}</h4><div className={`feature-status-line ${statusClass}`}><span className="feature-status-text">{status}</span><span className={`feature-status-bar ${statusClass}`} aria-hidden="true" onMouseEnter={restartFeatureBar} onAnimationEnd={(event) => event.currentTarget.classList.remove('is-recharging')}>{Array.from({ length: 10 }).map((_, index) => <i key={index} />)}</span></div></div><p className="font-sans text-sm text-foreground/70">{desc}</p></div></div>)}</div>
           </div>
         </div></div>
+      </section>
+
+      <section id="costs" className="costs-estimate-section px-4 pb-24 pt-12 text-foreground">
+        <div className="costs-transparent-artwork" aria-hidden="true">
+          <img src={costsBackground} alt="" />
+        </div>
+        <div className="mx-auto max-w-7xl">
+          <div className="costs-estimate-copy">
+            <div className="mb-7">
+              <h2 className="major-section-title mb-4">Transparent Costs</h2>
+              <p className="max-w-2xl font-sans text-lg text-foreground/75">
+                We always send a full quote before you pay anything, with no hidden markups.
+              </p>
+            </div>
+
+            <div className="estimate-sheet" aria-label="Cost estimate breakdown">
+              <span className="estimate-paperclip" aria-hidden="true" />
+              <span className="estimate-handling-marks" aria-hidden="true" />
+              <span className="estimate-thank-you">Thank you!</span>
+
+              <div className="estimate-title-plate">
+                <span>Estimate</span>
+                <small>Personal Estimate</small>
+              </div>
+
+              <div className="estimate-sheet-body">
+                <div className="estimate-breakdown">
+                  {[
+                    { label: 'Item price', marker: 'To be quoted' },
+                    { label: 'Domestic shipping inside Japan (if charged)', marker: 'To be quoted' },
+                    { label: 'Service fee', marker: 'To be quoted', badge: ['INCLUDED', 'Launch Gift'] },
+                    { label: 'International shipping', marker: 'To be quoted' },
+                  ].map(({ label, marker, badge }) => (
+                    <div key={label} className={`estimate-line${badge ? ' estimate-line-service' : ''}`}>
+                      <span className="estimate-line-label">{label}</span>
+                      {badge && (
+                        <span className="estimate-launch-badge">
+                          <strong>{badge[0]}</strong>
+                          <small>{badge[1]}</small>
+                        </span>
+                      )}
+                      <span className="estimate-line-marker" aria-hidden="true">{marker}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="estimate-extra-panel">
+                  <div>
+                    <h3>Optional Perks</h3>
+                    <p>Only when you ask for them. Never hidden inside the quote.</p>
+                  </div>
+                  <ul>
+                    {[
+                      'Detailed unboxing photos',
+                      'Protective packing requests',
+                      'Longer storage when possible',
+                    ].map((extra) => (
+                      <li key={extra}>{extra}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="estimate-promise-row" aria-label="Cost promises">
+                  <span>No hidden markups</span>
+                  <span>No surprise fees</span>
+                  <span>No obligation</span>
+                </div>
+
+                <p className="estimate-signature">
+                  <span>Prepared personally.</span>
+                  <span>ShogunShip</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section id="contact" className="relative flex h-[70vh] w-full items-center justify-center">
