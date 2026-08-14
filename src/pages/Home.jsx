@@ -1,19 +1,20 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowRight, PackageOpen, Search, ShieldCheck, Ship, Store, X } from 'lucide-react';
+import { ArrowRight, Menu, PackageOpen, Search, ShieldCheck, Ship, Store, X } from 'lucide-react';
 import { PixelBox } from '@/components/ui/pixel-box';
 import { PixelButton } from '@/components/ui/pixel-button';
 import PixelClouds from '@/components/landing/PixelClouds';
 import heroBg from '../assets/images/backgrounds/Website_Background_Panorama01.png';
 import shogunshipSign from '../assets/images/illustrations/Landing_asset_Shogunship_Sign.png';
 import retroStoreBg from '../assets/images/illustrations/Landing_asset_retro_Store.png';
+import retroStoreMobileBg from '../assets/images/illustrations/Landing_asset_retro_Store-mobile.png';
 import postOfficeBg from '../assets/images/illustrations/Landing_asset_post-office.png';
 import landscapeFooterBg from '../assets/redesign/landscape-footer.png';
 import costsBackground from '../assets/redesign/box2.png';
 import animateLogo from '../assets/images/logos/marketplaces/optimized/animate_logo.svg';
 import mandarakeLogo from '../assets/images/logos/marketplaces/optimized/mandarake_logo.svg';
 import mercariLogo from '../assets/images/logos/marketplaces/optimized/mercari_logo.svg';
-import otherShopsLogo from '../assets/images/logos/marketplaces/optimized/other_shops_treasure_chest.png';
+import otherShopsLogo from '../assets/images/logos/marketplaces/optimized/other_shops_treasure_chest-small.png';
 import shiseidoLogo from '../assets/images/logos/marketplaces/source/shiseido_logo.svg';
 import surugayaLogo from '../assets/images/logos/marketplaces/optimized/surugaya_logo.svg';
 
@@ -23,15 +24,27 @@ export default function Home() {
   const [hasSubmittedRequest, setHasSubmittedRequest] = useState(false);
   const [showFloatingCta, setShowFloatingCta] = useState(false);
   const [shouldPulseFloatingCta, setShouldPulseFloatingCta] = useState(false);
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const [requestFormData, setRequestFormData] = useState({ marketplaceLink: '', email: '', note: '' });
   const hasPulsedFloatingCta = useRef(false);
   const heroRef = useRef(null);
+  const isRequestDrawerOpenRef = useRef(false);
 
   const openRequestDrawer = () => {
+    if (isRequestDrawerOpenRef.current) return;
     setHasSubmittedRequest(false);
+    window.history.pushState({ ...window.history.state, shogunRequestDrawer: true }, '', window.location.href);
+    isRequestDrawerOpenRef.current = true;
     setIsRequestDrawerOpen(true);
   };
 
   const closeRequestDrawer = () => {
+    if (!isRequestDrawerOpenRef.current) return;
+    if (window.history.state?.shogunRequestDrawer) {
+      window.history.back();
+      return;
+    }
+    isRequestDrawerOpenRef.current = false;
     setIsRequestDrawerOpen(false);
   };
 
@@ -41,14 +54,25 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const updateFloatingCta = () => {
-      if (!heroRef.current) return;
-      setShowFloatingCta(heroRef.current.getBoundingClientRect().bottom <= 80);
+    const desktopCtaQuery = window.matchMedia('(min-width: 768px)');
+    if (!desktopCtaQuery.matches) {
+      setShowFloatingCta(false);
+      return undefined;
+    }
 
-      const footerApproach = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 260;
-      if (!footerApproach || hasPulsedFloatingCta.current) return;
-      hasPulsedFloatingCta.current = true;
-      setShouldPulseFloatingCta(true);
+    let frameId = 0;
+    const updateFloatingCta = () => {
+      if (frameId) return;
+      frameId = window.requestAnimationFrame(() => {
+        frameId = 0;
+        if (!heroRef.current) return;
+        setShowFloatingCta(heroRef.current.getBoundingClientRect().bottom <= 80);
+
+        const footerApproach = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 260;
+        if (!footerApproach || hasPulsedFloatingCta.current) return;
+        hasPulsedFloatingCta.current = true;
+        setShouldPulseFloatingCta(true);
+      });
     };
 
     updateFloatingCta();
@@ -56,9 +80,20 @@ export default function Home() {
     window.addEventListener('resize', updateFloatingCta);
 
     return () => {
+      if (frameId) window.cancelAnimationFrame(frameId);
       window.removeEventListener('scroll', updateFloatingCta);
       window.removeEventListener('resize', updateFloatingCta);
     };
+  }, []);
+
+  useEffect(() => {
+    const handlePopState = () => {
+      if (!isRequestDrawerOpenRef.current) return;
+      isRequestDrawerOpenRef.current = false;
+      setIsRequestDrawerOpen(false);
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
   useEffect(() => {
@@ -71,6 +106,15 @@ export default function Home() {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isRequestDrawerOpen]);
+
+  useEffect(() => {
+    if (!isMobileNavOpen) return undefined;
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') setIsMobileNavOpen(false);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isMobileNavOpen]);
 
   const restartFeatureBar = (event) => {
     if (shouldReduceMotion) return;
@@ -92,12 +136,57 @@ export default function Home() {
             <a href="#marketplaces">Marketplaces</a>
             <a href="#costs">Costs</a>
           </div>
+          <button
+            type="button"
+            className="hero-nav-menu-button"
+            aria-label="Open navigation menu"
+            aria-expanded={isMobileNavOpen}
+            aria-controls="mobile-navigation"
+            onClick={() => setIsMobileNavOpen(true)}
+          >
+              <Menu aria-hidden="true" />
+              <span>Menu</span>
+          </button>
         </div>
       </nav>
 
+      {isMobileNavOpen && (
+        <div className="mobile-nav-shell" role="presentation">
+          <div className="mobile-nav-backdrop" aria-hidden="true" />
+          <div id="mobile-navigation" className="mobile-nav-panel" role="dialog" aria-modal="true" aria-label="Site navigation">
+            <div className="mobile-nav-heading">
+              <span>ShogunShip Route</span>
+              <button type="button" onClick={() => setIsMobileNavOpen(false)} aria-label="Close navigation menu"><X aria-hidden="true" /></button>
+            </div>
+            <nav aria-label="Mobile navigation">
+              {[
+                ['01', 'Who we are', '#hero-intro'],
+                ['02', 'How it works', '#process'],
+                ['03', 'Marketplaces', '#marketplaces'],
+                ['04', 'Costs', '#costs'],
+              ].map(([number, label, href]) => (
+                <a key={href} href={href} onClick={() => setIsMobileNavOpen(false)}>
+                  <span>{number}</span>{label}<ArrowRight aria-hidden="true" />
+                </a>
+              ))}
+              <button
+                type="button"
+                className="mobile-nav-adventure-cta"
+                onClick={() => {
+                  setIsMobileNavOpen(false);
+                  openRequestDrawer();
+                }}
+              >
+                Start Your Adventure <ArrowRight aria-hidden="true" />
+              </button>
+            </nav>
+          </div>
+        </div>
+      )}
+
       <section ref={heroRef} className="relative flex min-h-[680px] w-full items-center justify-center overflow-hidden border-b-[8px] border-foreground px-0 pb-10 pt-28 md:min-h-[720px]">
         <div className="absolute inset-0 z-0">
-          <img src={heroBg} alt="A Shinkansen crossing rice fields beneath Mount Fuji" className="h-full w-full object-cover object-center" />
+          <img src={heroBg} alt="A Shinkansen crossing rice fields beneath Mount Fuji" className="h-full w-full object-cover object-center" fetchPriority="high" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent" />
         </div>
         <div className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-[38%] overflow-hidden opacity-70" aria-hidden="true">
@@ -159,7 +248,8 @@ export default function Home() {
             <h2 className="major-section-title mb-4">Four Steps. Zero Stress.</h2>
             <p className="font-sans text-lg text-foreground/80">You send the link. We do everything else from our little workshop in Nara.</p>
           </div>
-          <ol className="lovable-step-list grid grid-cols-1 gap-6 md:grid-cols-4">
+          <p className="mobile-swipe-cue" aria-hidden="true">Swipe to explore <ArrowRight /></p>
+          <ol className="lovable-step-list grid grid-cols-1 gap-6 md:grid-cols-4" aria-label="How ShogunShip works" tabIndex="0">
             {[
               ['01', Search, 'Send us the link', "You send us the link to the treasure you've found on any Japanese website. We review the listing, confirm everything looks good, and guide you through the next step."],
               ['02', Store, 'We buy it for you', "Once you're ready, we purchase it on your behalf and handle the Japanese-only logistics."],
@@ -182,7 +272,7 @@ export default function Home() {
       <section id="workshop" className="relative px-4 py-16">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-10">
-            <div className="relative w-full lg:w-[42%]"><div className="absolute -left-4 top-4 h-full w-full border-[4px] border-foreground bg-secondary" /><div className="illustration-zoom-frame relative z-10 aspect-video h-auto w-full border-[4px] border-foreground"><img src={retroStoreBg} alt="Retro Japanese hobby shop" className="h-full w-full object-cover" /></div></div>
+            <div className="relative w-full lg:w-[42%]"><div className="absolute -left-4 top-4 h-full w-full border-[4px] border-foreground bg-secondary" /><div className="illustration-zoom-frame relative z-10 aspect-video h-auto w-full border-[4px] border-foreground"><picture><source media="(max-width: 767px)" srcSet={retroStoreMobileBg} /><img src={retroStoreBg} alt="Retro Japanese hobby shop" className="h-full w-full object-cover" loading="lazy" decoding="async" /></picture></div></div>
             <div className="w-full lg:w-[58%]">
               <div className="mb-6 flex items-center gap-4"><div className="border-2 border-foreground bg-destructive p-2 text-destructive-foreground"><ShieldCheck className="h-6 w-6" /></div><h2 className="major-section-title">Real People, Real Care</h2></div>
               <div className="space-y-4 font-sans text-lg text-foreground/80"><p>You are not working with a massive warehouse, a fulfillment center, or a drop-shipping company. You are working with a husband-and-wife team in Nara who personally receive, check, photograph, and pack every single order.</p><p>We understand that condition and careful handling matter. Every item is treated as if it were our own because we know the anxiety of international shipping and how much it means to the person waiting for it.</p></div>
@@ -223,9 +313,10 @@ export default function Home() {
                     className="marketplace-menu-button"
                   >
                     <span className="marketplace-button-logo-stage">
-                      <img src={logo} alt="" className={`marketplace-button-logo ${logoClassName || ''}`} />
+                      <img src={logo} alt="" className={`marketplace-button-logo ${logoClassName || ''}`} loading="lazy" decoding="async" />
                     </span>
                     <span className="marketplace-button-name">{name}</span>
+                    <span className="marketplace-button-affordance" aria-hidden="true">{onClick ? 'Ask' : 'Visit'} <ArrowRight /></span>
                   </MarketplaceControl>
                 </div>
               );
@@ -236,21 +327,22 @@ export default function Home() {
 
       <section id="collection" className="relative px-4 pb-24 pt-14 text-foreground">
         <div className="mx-auto max-w-7xl"><div className="flex flex-col items-center gap-12 lg:flex-row-reverse lg:gap-10">
-          <div className="relative w-full lg:w-[42%] lg:translate-x-4 xl:translate-x-8"><div className="absolute -right-4 top-4 h-full w-full border-[4px] border-foreground bg-secondary" /><div className="illustration-zoom-frame relative z-10 aspect-video h-auto w-full border-[4px] border-foreground"><img src={postOfficeBg} alt="Japanese countryside post office" className="h-full w-full object-cover" /></div></div>
+          <div className="relative w-full lg:w-[42%] lg:translate-x-4 xl:translate-x-8"><div className="absolute -right-4 top-4 h-full w-full border-[4px] border-foreground bg-secondary" /><div className="illustration-zoom-frame relative z-10 aspect-video h-auto w-full border-[4px] border-foreground"><img src={postOfficeBg} alt="Japanese countryside post office" className="h-full w-full object-cover" loading="lazy" decoding="async" /></div></div>
           <div className="w-full lg:w-[58%]"><h2 className="major-section-title care-section-title mb-6">Your Collection Is Safe With Us</h2><p className="mb-8 max-w-lg font-sans text-xl text-foreground/80">The care a family member would take.</p>
-            <div className="space-y-4">{[
+            <p className="mobile-swipe-cue" aria-hidden="true">Swipe to explore <ArrowRight /></p>
+            <div className="collection-service-list space-y-4" role="list" aria-label="Collection care services" tabIndex="0">{[
               ['Free Storage', 'AVAILABLE', 'feature-status-mint', 'Up to 60 days of free storage while you search for more treasures to consolidate.'],
               ['Smart Consolidation', 'AVAILABLE', 'feature-status-blue', 'We combine multiple orders into one well-protected shipment to save you on international shipping.'],
               ['Condition Photos', 'PAID PERK', 'feature-status-peach', 'Want extra peace of mind? Every package is photographed on arrival. This optional service adds detailed item photos before shipping.'],
               ['INSURED SHIPPING', 'AVAILABLE', 'feature-status-gold', 'Choose your preferred shipping method. Every shipment includes tracking and insurance.'],
-            ].map(([title, status, statusClass, desc]) => <div key={title} className="flex items-start gap-4 border-[2px] border-foreground/20 bg-background/45 p-4"><PackageOpen className="mt-1 h-6 w-6 shrink-0" /><div className="min-w-0 flex-1"><div className="feature-title-row"><h4 className={`font-display text-xl tracking-wide ${statusClass}`}>{title}</h4><div className={`feature-status-line ${statusClass}`}><span className="feature-status-text">{status}</span><span className={`feature-status-bar ${statusClass}`} aria-hidden="true" onMouseEnter={restartFeatureBar} onAnimationEnd={(event) => event.currentTarget.classList.remove('is-recharging')}>{Array.from({ length: 10 }).map((_, index) => <i key={index} />)}</span></div></div><p className="font-sans text-sm text-foreground/70">{desc}</p></div></div>)}</div>
+            ].map(([title, status, statusClass, desc]) => <div key={title} role="listitem" className="flex items-start gap-4 border-[2px] border-foreground/20 bg-background/45 p-4"><PackageOpen className="mt-1 h-6 w-6 shrink-0" /><div className="min-w-0 flex-1"><div className="feature-title-row"><h4 className={`font-display text-xl tracking-wide ${statusClass}`}>{title}</h4><div className={`feature-status-line ${statusClass}`}><span className="feature-status-text">{status}</span><span className={`feature-status-bar ${statusClass}`} aria-hidden="true" onMouseEnter={restartFeatureBar} onAnimationEnd={(event) => event.currentTarget.classList.remove('is-recharging')}>{Array.from({ length: 10 }).map((_, index) => <i key={index} />)}</span></div></div><p className="font-sans text-sm text-foreground/70">{desc}</p></div></div>)}</div>
           </div>
         </div></div>
       </section>
 
       <section id="costs" className="costs-estimate-section px-4 pb-24 pt-12 text-foreground">
         <div className="costs-transparent-artwork" aria-hidden="true">
-          <img src={costsBackground} alt="" />
+          <img src={costsBackground} alt="" loading="lazy" decoding="async" />
         </div>
         <div className="mx-auto max-w-7xl">
           <div className="costs-estimate-copy">
@@ -325,16 +417,16 @@ export default function Home() {
       </section>
 
       <section id="contact" className="relative flex h-[70vh] w-full items-center justify-center">
-        <div className="absolute inset-0 z-0"><img src={landscapeFooterBg} alt="Japanese countryside landscape" className="h-full w-full object-cover" /><div className="absolute inset-0 bg-foreground/60" /></div>
-        <div className="relative z-10 px-4 text-center"><PixelBox doubleBorder className="mx-auto max-w-2xl bg-background/95 backdrop-blur"><h2 className="major-section-title mb-6">Ready To Embark?</h2><p className="mb-8 font-sans text-xl text-foreground/80">The rarest finds in Japan are waiting for you. Let us be your guide.</p><div className="flex flex-col justify-center gap-4 sm:flex-row"><PixelButton variant="primary">Create an Account</PixelButton><PixelButton>View Pricing Guide</PixelButton></div></PixelBox></div>
+        <div className="absolute inset-0 z-0"><img src={landscapeFooterBg} alt="Japanese countryside landscape" className="h-full w-full object-cover" loading="lazy" decoding="async" /><div className="absolute inset-0 bg-foreground/60" /></div>
+        <div className="relative z-10 px-4 text-center"><PixelBox doubleBorder className="contact-cta-panel mx-auto max-w-2xl bg-background/95 backdrop-blur"><h2 className="major-section-title mb-6">Ready To Embark?</h2><p className="mb-8 font-sans text-xl text-foreground/80">The rarest finds in Japan are waiting for you. Let us be your guide.</p><div className="contact-cta-actions flex flex-col justify-center gap-4 sm:flex-row"><PixelButton variant="primary">Create an Account</PixelButton><PixelButton>View Pricing Guide</PixelButton></div></PixelBox></div>
       </section>
 
-      <footer className="border-t-[4px] border-background bg-foreground px-4 py-6 text-background"><div className="mx-auto flex max-w-7xl flex-col items-center justify-between font-sans text-sm md:flex-row"><p>© {new Date().getFullYear()} ShogunShip. Based in Nara, Japan.</p><div className="mt-4 flex gap-4 md:mt-0"><a href="#" className="transition-colors hover:text-primary">Terms of Service</a><a href="#" className="transition-colors hover:text-primary">Privacy Policy</a><a href="#" className="transition-colors hover:text-primary">Contact</a></div></div></footer>
+      <footer className="border-t-[4px] border-background bg-foreground px-4 py-6 text-background"><div className="mx-auto flex max-w-7xl flex-col items-center justify-between font-sans text-sm md:flex-row"><p><span className="desktop-footer-summary">© {new Date().getFullYear()} ShogunShip. Based in Nara, Japan.</span><span className="mobile-footer-summary">© {new Date().getFullYear()} ShogunShip · Nara, Japan</span></p><div className="footer-link-row mt-4 flex gap-4 md:mt-0"><a href="#" className="transition-colors hover:text-primary">Terms of Service</a><a href="#" className="transition-colors hover:text-primary">Privacy Policy</a><a href="#" className="transition-colors hover:text-primary">Contact</a></div></div></footer>
       </div>
 
       {isRequestDrawerOpen && (
-        <div className="request-drawer-shell" role="presentation" onMouseDown={closeRequestDrawer}>
-          <aside className="request-drawer" role="dialog" aria-modal="true" aria-labelledby="request-drawer-title" onMouseDown={(event) => event.stopPropagation()}>
+        <div className="request-drawer-shell" role="presentation" onPointerDown={closeRequestDrawer}>
+          <aside className="request-drawer" role="dialog" aria-modal="true" aria-labelledby="request-drawer-title" onPointerDown={(event) => event.stopPropagation()}>
             <button type="button" className="request-drawer-close" onClick={closeRequestDrawer} aria-label="Close request form">
               <X className="h-5 w-5" />
             </button>
@@ -351,15 +443,15 @@ export default function Home() {
               <form className="request-drawer-form" onSubmit={handleRequestSubmit}>
                 <label>
                   <span>Marketplace link</span>
-                  <input type="url" name="marketplaceLink" placeholder="https://..." required />
+                  <input type="url" name="marketplaceLink" placeholder="https://..." value={requestFormData.marketplaceLink} onChange={(event) => setRequestFormData((current) => ({ ...current, marketplaceLink: event.target.value }))} required />
                 </label>
                 <label>
                   <span>Your email</span>
-                  <input type="email" name="email" placeholder="you@example.com" required />
+                  <input type="email" name="email" placeholder="you@example.com" value={requestFormData.email} onChange={(event) => setRequestFormData((current) => ({ ...current, email: event.target.value }))} required />
                 </label>
                 <label>
                   <span>Note optional</span>
-                  <textarea name="note" rows="4" placeholder="Condition questions, size, color, or anything we should know." />
+                  <textarea name="note" rows="4" placeholder="Condition questions, size, color, or anything we should know." value={requestFormData.note} onChange={(event) => setRequestFormData((current) => ({ ...current, note: event.target.value }))} />
                 </label>
                 <PixelButton type="submit" variant="primary" className="request-drawer-submit">Send it our way</PixelButton>
               </form>
