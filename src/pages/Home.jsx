@@ -5,7 +5,7 @@ import { PixelBox } from '@/components/ui/pixel-box';
 import { PixelButton } from '@/components/ui/pixel-button';
 import PixelClouds from '@/components/landing/PixelClouds';
 import heroBg from '../assets/images/backgrounds/Website_Background_Panorama01.png';
-import shogunshipSign from '../assets/images/illustrations/Landing_asset_Shogunship_Sign.png';
+import heroMobileBg from '../assets/images/backgrounds/Website_Background_Panorama01-mobile.webp';
 import retroStoreBg from '../assets/images/illustrations/Landing_asset_retro_Store.png';
 import retroStoreMobileBg from '../assets/images/illustrations/Landing_asset_retro_Store-mobile.png';
 import postOfficeBg from '../assets/images/illustrations/Landing_asset_post-office.png';
@@ -186,7 +186,10 @@ export default function Home() {
 
       <section ref={heroRef} className="relative flex min-h-[680px] w-full items-center justify-center overflow-hidden border-b-[8px] border-foreground px-0 pb-10 pt-28 md:min-h-[720px]">
         <div className="absolute inset-0 z-0">
-          <img src={heroBg} alt="A Shinkansen crossing rice fields beneath Mount Fuji" className="h-full w-full object-cover object-center" fetchPriority="high" decoding="async" />
+          <picture className="block h-full w-full">
+            <source media="(max-width: 767px)" srcSet={heroMobileBg} type="image/webp" />
+            <img src={heroBg} alt="" aria-hidden="true" width="1584" height="672" className="h-full w-full object-cover object-center" fetchPriority="high" decoding="async" />
+          </picture>
           <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent" />
         </div>
         <div className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-[38%] overflow-hidden opacity-70" aria-hidden="true">
@@ -221,7 +224,7 @@ export default function Home() {
                   <p className="hero-who-thanks">— Arigatou gozaimasu!</p>
                 </div>
                 <div className="hero-who-sign">
-                  <img src={shogunshipSign} alt="ShogunShip Family" />
+                  <div className="hero-who-sign-image" role="img" aria-label="ShogunShip Family" />
                 </div>
               </div>
               <PixelButton type="button" variant="primary" className="mt-5 w-full sm:w-auto" onClick={openRequestDrawer}>Start Your Adventure <ArrowRight className="ml-2 h-5 w-5" /></PixelButton>

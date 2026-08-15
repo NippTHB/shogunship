@@ -1471,11 +1471,15 @@
   font-weight: 700;
 }
 
-.hero-who-sign img {
-  width: 100%;
-  transform-origin: top center;
-  animation: hero-sign-sway 4.6s ease-in-out infinite;
-  filter: drop-shadow(0 8px 8px rgba(40, 30, 20, .2));
+@media (min-width: 641px) {
+  .hero-who-sign-image {
+    width: 100%;
+    aspect-ratio: 1264 / 842;
+    background: url('./assets/images/illustrations/Landing_asset_Shogunship_Sign.png') center / contain no-repeat;
+    transform-origin: top center;
+    animation: hero-sign-sway 4.6s ease-in-out infinite;
+    filter: drop-shadow(0 8px 8px rgba(40, 30, 20, .2));
+  }
 }
 
 @keyframes hero-sign-sway {
@@ -2346,7 +2350,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-who-sign img,
+  .hero-who-sign-image,
   .marketplace-menu-button,
   .illustration-zoom-frame img,
   .floating-adventure-cta,

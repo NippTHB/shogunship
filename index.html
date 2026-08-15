@@ -3,6 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <link data-hero-preload="mobile" href="/src/assets/images/backgrounds/Website_Background_Panorama01-mobile.webp" type="image/webp" />
+    <link data-hero-preload="desktop" href="/src/assets/images/backgrounds/Website_Background_Panorama01.png" type="image/png" />
+    <script>
+      const heroPreload = document.querySelector(
+        window.matchMedia('(max-width: 767px)').matches
+          ? '[data-hero-preload="mobile"]'
+          : '[data-hero-preload="desktop"]'
+      );
+      heroPreload.rel = 'preload';
+      heroPreload.as = 'image';
+      heroPreload.fetchPriority = 'high';
+    </script>
     <title>ShogunShip</title>
   </head>
   <body>
