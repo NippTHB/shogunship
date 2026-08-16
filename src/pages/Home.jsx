@@ -41,6 +41,8 @@ export default function Home() {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const [selectedProcessStep, setSelectedProcessStep] = useState(null);
   const [selectedCollectionService, setSelectedCollectionService] = useState(null);
+  const [isCareDetailOpen, setIsCareDetailOpen] = useState(false);
+  const [isMarketplaceDetailOpen, setIsMarketplaceDetailOpen] = useState(false);
   const [requestFormData, setRequestFormData] = useState({ marketplaceLink: '', email: '', note: '' });
   const hasPulsedFloatingCta = useRef(false);
   const heroRef = useRef(null);
@@ -326,7 +328,18 @@ export default function Home() {
             <div className="relative w-full lg:w-[42%]"><div className="absolute -left-4 top-4 h-full w-full border-[4px] border-foreground bg-secondary" /><div className="illustration-zoom-frame relative z-10 aspect-video h-auto w-full border-[4px] border-foreground"><picture><source media="(max-width: 767px)" srcSet={retroStoreMobileBg} /><img src={retroStoreBg} alt="Retro Japanese hobby shop" className="h-full w-full object-cover" loading="lazy" decoding="async" /></picture></div></div>
             <div className="w-full lg:w-[58%]">
               <div className="mb-6 flex items-center gap-4"><div className="border-2 border-foreground bg-destructive p-2 text-destructive-foreground"><ShieldCheck className="h-6 w-6" /></div><h2 className="major-section-title">Real People, Real Care</h2></div>
-              <div className="space-y-4 font-sans text-lg text-foreground/80"><p>You are not working with a massive warehouse, a fulfillment center, or a drop-shipping company. You are working with a husband-and-wife team in Nara who personally receive, check, photograph, and pack every single order.</p><p>We understand that condition and careful handling matter. Every item is treated as if it were our own because we know the anxiety of international shipping and how much it means to the person waiting for it.</p></div>
+              <div className="space-y-4 font-sans text-lg text-foreground/80"><p>You are not working with a massive warehouse, a fulfillment center, or a drop-shipping company. You are working with a husband-and-wife team in Nara who personally receive, check, photograph, and pack every single order.</p><p className="workshop-desktop-secondary-copy">We understand that condition and careful handling matter. Every item is treated as if it were our own because we know the anxiety of international shipping and how much it means to the person waiting for it.</p></div>
+              <div className="mobile-copy-disclosure">
+                <button type="button" className="mobile-disclosure-toggle" aria-expanded={isCareDetailOpen} aria-controls="mobile-care-detail" onClick={() => setIsCareDetailOpen((current) => !current)}>
+                  {isCareDetailOpen ? 'Show less ↑' : 'More about our care ↓'}
+                </button>
+                {isCareDetailOpen && (
+                  <div id="mobile-care-detail" className="mobile-copy-detail" aria-live="polite">
+                    <div className="mobile-copy-detail-heading"><ShieldCheck /><span>Our Care</span></div>
+                    <p>We understand that condition and careful handling matter. Every item is treated as if it were our own because we know the anxiety of international shipping and how much it means to the person waiting for it.</p>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -336,10 +349,21 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 text-center">
             <h2 className="major-section-title mb-4">Select Your Destination</h2>
-            <p className="mobile-section-intro mx-auto max-w-5xl font-sans text-lg text-foreground/70">
+            <p className="marketplace-desktop-intro mobile-section-intro mx-auto max-w-5xl font-sans text-lg text-foreground/70">
               <span className="block">We navigate the winding roads of Japan&apos;s biggest marketplaces so you don&apos;t have to.</span>
               <span className="block">Drop us a link from any website. If it&apos;s sold in Japan, we can probably get it, just ask.</span>
             </p>
+            <div className="mobile-copy-disclosure">
+              <button type="button" className="mobile-disclosure-toggle" aria-expanded={isMarketplaceDetailOpen} aria-controls="mobile-marketplace-detail" onClick={() => setIsMarketplaceDetailOpen((current) => !current)}>
+                {isMarketplaceDetailOpen ? 'Show less ↑' : 'More about marketplaces ↓'}
+              </button>
+              {isMarketplaceDetailOpen && (
+                <div id="mobile-marketplace-detail" className="mobile-copy-detail" aria-live="polite">
+                  <div className="mobile-copy-detail-heading"><Store /><span>Marketplaces</span></div>
+                  <p>We navigate the winding roads of Japan&apos;s biggest marketplaces so you don&apos;t have to. Drop us a link from any website. If it&apos;s sold in Japan, we can probably get it, just ask.</p>
+                </div>
+              )}
+            </div>
           </div>
           <div className="marketplace-button-row">
             {[
