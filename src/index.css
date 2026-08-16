@@ -891,6 +891,11 @@
   grid-auto-rows: 1fr;
 }
 
+.mobile-step-explorer,
+.mobile-service-explorer {
+  display: none;
+}
+
 .lovable-step-card {
   position: relative;
   display: flex;
@@ -1492,10 +1497,6 @@
   to { transform: translateX(60px); }
 }
 
-.mobile-swipe-cue {
-  display: none;
-}
-
 @media (max-width: 640px) {
   .hero-nav-inner {
     grid-template-columns: 1fr auto;
@@ -1812,15 +1813,6 @@
     width: 100%;
   }
 
-  .lovable-step-list {
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
-  }
-
-  .lovable-step-card {
-    padding: 18px;
-  }
-
   .estimate-sheet {
     padding-inline: 20px;
   }
@@ -1860,7 +1852,7 @@
 
   .hero-who-label {
     margin-bottom: 9px;
-    font-size: .58rem;
+    font-size: .667rem;
   }
 
   .hero-who-card h1 {
@@ -1870,8 +1862,8 @@
   }
 
   .hero-who-card p {
-    font-size: .8rem;
-    line-height: 1.42;
+    font-size: 1.125rem;
+    line-height: 1.48;
   }
 
   .shogunship-world-bg > section:first-of-type .group {
@@ -1892,7 +1884,6 @@
 
   .mobile-nav-panel nav a {
     min-height: 49px;
-    font-size: .9rem;
   }
 
   .mobile-nav-adventure-cta {
@@ -1909,7 +1900,6 @@
     border: 3px solid #352116;
     box-shadow: 3px 3px 0 rgba(53, 33, 22, .45);
     font-family: 'DotGothic16', sans-serif;
-    font-size: .88rem;
     line-height: 1.15;
     text-transform: uppercase;
     touch-action: manipulation;
@@ -1929,92 +1919,196 @@
     margin-bottom: 16px;
   }
 
+  #process > div > .mb-8,
+  #workshop > div > div > div:last-child,
+  #collection > div > div > div:last-child,
+  #costs .costs-estimate-copy {
+    width: 100%;
+    margin-inline: 0;
+    text-align: left;
+  }
+
   #process .major-section-title,
   #marketplaces .major-section-title {
     margin-bottom: 8px;
   }
 
-  #process > div > div > p,
-  #marketplaces > div > div > p {
-    font-size: .88rem;
-    line-height: 1.42;
+  #process .mobile-section-intro,
+  #marketplaces .mobile-section-intro {
+    font-size: 1.125rem;
+    line-height: 1.48;
   }
 
-  .lovable-step-list {
+  #marketplaces .major-section-title {
+    white-space: nowrap;
+    letter-spacing: .02em;
+  }
+
+  .process-desktop-steps {
+    display: none !important;
+  }
+
+  .mobile-step-explorer {
+    display: block;
+  }
+
+  .mobile-step-cue {
     display: flex;
-    grid-template-columns: none !important;
-    gap: 12px !important;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 2px 34px 10px 0;
-    scroll-padding-inline: 0 34px;
-    scroll-snap-type: x proximity;
-    overscroll-behavior-x: contain;
-    touch-action: pan-x pan-y;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+    max-width: 100%;
+    margin: 0 2px 8px 0;
+    color: hsl(var(--foreground) / .62);
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(.68rem, 2.8vw, .8rem);
+    line-height: 1.4;
+    text-align: right;
+    text-transform: uppercase;
   }
 
-  .lovable-step-list::-webkit-scrollbar,
-  .collection-service-list::-webkit-scrollbar {
-    display: none;
+  .mobile-step-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 116px;
+    gap: 10px;
   }
 
-  .lovable-step-card {
-    flex: 0 0 calc(100% - 38px);
-    height: auto;
-    align-self: stretch;
-    padding: 13px 14px 14px;
-    border-radius: 18px;
-    scroll-snap-align: start;
-    scroll-snap-stop: normal;
+  .mobile-step-card {
+    position: relative;
+    display: grid;
+    min-width: 0;
+    min-height: 116px;
+    align-content: start;
+    justify-items: start;
+    gap: 9px;
+    overflow: hidden;
+    padding: 12px 12px 11px;
+    color: #352116;
+    background: #f4edcf;
+    border: 2px solid #6a4a3a;
+    border-radius: 14px;
+    text-align: left;
+    touch-action: manipulation;
   }
 
-  .lovable-step-card::before {
-    top: -50px;
-    right: -50px;
-    width: 112px;
-    height: 112px;
+  .mobile-step-card::before {
+    content: '';
+    position: absolute;
+    top: -36px;
+    right: -36px;
+    width: 88px;
+    height: 88px;
+    border: 1px solid hsl(10 70% 66% / .18);
+    border-radius: 999px;
+    background: hsl(10 82% 78% / .42);
+    pointer-events: none;
   }
 
-  .lovable-step-top {
-    margin-bottom: 8px;
+  .mobile-step-card:nth-child(2)::before {
+    border-color: hsl(171 45% 58% / .18);
+    background: hsl(171 62% 78% / .42);
   }
 
-  .lovable-step-icon-badge {
-    width: 38px;
-    height: 38px;
-    border-radius: 11px;
+  .mobile-step-card:nth-child(3)::before {
+    border-color: hsl(110 42% 56% / .18);
+    background: hsl(110 54% 76% / .42);
+  }
+
+  .mobile-step-card:nth-child(4)::before {
+    border-color: hsl(38 70% 58% / .18);
+    background: hsl(38 90% 74% / .42);
+  }
+
+  .mobile-step-card.is-selected {
+    border-color: #352116;
+    box-shadow: inset 0 0 0 2px rgba(106, 74, 58, .18), 3px 3px 0 rgba(76, 53, 39, .22);
+  }
+
+  .mobile-step-card:focus-visible {
+    outline: 3px solid hsl(var(--primary));
+    outline-offset: 2px;
+  }
+
+  .mobile-step-icon-badge,
+  .mobile-step-detail-icon {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    color: hsl(var(--primary));
+    background: hsl(var(--background));
+    border: 2px solid hsl(var(--foreground) / .24);
+    border-radius: 10px;
     box-shadow: 2px 2px 0 hsl(var(--foreground) / .12);
   }
 
-  .lovable-step-icon {
-    width: 19px;
-    height: 19px;
+  .mobile-step-icon-badge svg,
+  .mobile-step-detail-icon svg {
+    width: 18px;
+    height: 18px;
   }
 
-  .lovable-step-card h3 {
-    margin-bottom: 7px;
-    font-size: 1.05rem;
-    line-height: 1.15;
-    transform: none;
+  .mobile-step-number {
+    position: absolute;
+    z-index: 1;
+    top: 13px;
+    right: 10px;
+    color: rgba(106, 74, 58, .55);
+    font-family: 'Press Start 2P', monospace;
+    font-size: .68rem;
+    line-height: 1;
   }
 
-  .lovable-step-card h3::after {
-    margin-top: 6px;
+  .mobile-step-title {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+    font-family: 'DotGothic16', sans-serif;
+    font-size: clamp(.86rem, 3.9vw, 1rem);
+    line-height: 1.12;
+    text-shadow: 1px 1px 0 rgba(76, 53, 39, .2);
   }
 
-  .lovable-step-card p {
-    padding-right: 18px;
-    font-size: .82rem;
-    line-height: 1.36;
-    transform: none;
+  .mobile-step-detail {
+    margin-top: 12px;
+    padding: 13px 14px 14px;
+    color: #352116;
+    background: #f4edcf;
+    border: 2px solid #6a4a3a;
+    border-radius: 14px;
+    box-shadow: 3px 3px 0 rgba(76, 53, 39, .18);
   }
 
-  .lovable-step-number {
-    right: 11px;
-    bottom: 8px;
+  .mobile-step-detail-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 9px;
+  }
+
+  .mobile-step-detail-heading h3 {
+    min-width: 0;
+    color: #352116;
+    font-family: 'DotGothic16', sans-serif;
     font-size: 1rem;
+    line-height: 1.15;
+  }
+
+  .mobile-step-detail-heading h3 span {
+    display: block;
+    margin-bottom: 2px;
+    color: rgba(106, 74, 58, .62);
+    font-family: 'Press Start 2P', monospace;
+    font-size: .55rem;
+  }
+
+  .mobile-step-detail > p {
+    margin: 0;
+    color: hsl(var(--foreground) / .76);
+    font-family: 'Zen Maru Gothic', sans-serif;
   }
 
   #workshop {
@@ -2033,12 +2127,21 @@
   }
 
   #workshop .mb-6 {
+    position: relative;
+    display: block;
     margin-bottom: 12px;
+    padding-right: 52px;
+  }
+
+  #workshop .mb-6 > div:first-child {
+    position: absolute;
+    top: -4px;
+    right: 0;
   }
 
   #workshop .space-y-4 {
-    font-size: .88rem;
-    line-height: 1.45;
+    font-size: 1.125rem;
+    line-height: 1.5;
   }
 
   #workshop .space-y-4 > :not([hidden]) ~ :not([hidden]) {
@@ -2052,6 +2155,12 @@
 
   #marketplaces > div > .mb-8 {
     margin-bottom: 16px;
+    text-align: center;
+  }
+
+  #marketplaces .mobile-section-intro {
+    margin-inline: 0;
+    text-align: left;
   }
 
   .marketplace-button-row {
@@ -2074,7 +2183,7 @@
   }
 
   .marketplace-button-name {
-    font-size: clamp(.53rem, 2.35vw, .62rem);
+    font-size: clamp(.66rem, 2.92vw, .77rem);
   }
 
   .marketplace-button-affordance {
@@ -2083,7 +2192,7 @@
     gap: 3px;
     color: #8b513b;
     font-family: 'DotGothic16', sans-serif;
-    font-size: .64rem;
+    font-size: .768rem;
     font-weight: 700;
     line-height: 1;
     text-transform: uppercase;
@@ -2105,88 +2214,137 @@
 
   #collection .care-section-title + p {
     margin-bottom: 14px;
-    font-size: .92rem;
-    line-height: 1.35;
+    font-size: 1.125rem;
+    line-height: 1.42;
   }
 
   #collection .space-y-4 > :not([hidden]) ~ :not([hidden]) {
     margin-top: 0;
   }
 
-  .mobile-swipe-cue {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 5px;
-    margin: 0 2px 7px 0;
-    color: hsl(var(--foreground) / .58);
-    font-family: 'Press Start 2P', monospace;
-    font-size: .48rem;
-    line-height: 1.3;
-    text-transform: uppercase;
+  .collection-desktop-services {
+    display: none;
   }
 
-  .mobile-swipe-cue svg {
-    width: 12px;
-    height: 12px;
+  .mobile-service-explorer {
+    display: block;
   }
 
-  .collection-service-list {
-    display: flex;
-    align-items: stretch;
+  .mobile-service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 126px;
     gap: 10px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 2px 34px 10px 0;
-    scroll-padding-inline: 0 34px;
-    scroll-snap-type: x proximity;
-    overscroll-behavior-x: contain;
-    touch-action: pan-x pan-y;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
   }
 
-  #collection .collection-service-list > div {
-    flex: 0 0 calc(100% - 38px);
-    height: auto;
-    align-self: stretch;
-    scroll-snap-align: start;
-    scroll-snap-stop: normal;
+  .mobile-service-card {
+    position: relative;
+    display: grid;
+    min-width: 0;
+    min-height: 126px;
+    align-content: start;
+    justify-items: start;
+    gap: 7px;
+    padding: 11px 10px 10px;
+    color: #eff9df;
+    background: rgba(54, 118, 89, .92);
+    border: 2px solid #352116;
+    border-radius: 12px;
+    box-shadow: 2px 2px 0 rgba(53, 33, 22, .24);
+    text-align: left;
+    touch-action: manipulation;
   }
 
-  #collection .space-y-4 > div {
-    gap: 9px;
-    padding: 11px;
+  .mobile-service-card.is-selected {
+    background: rgba(47, 105, 79, .98);
+    box-shadow: inset 0 0 0 2px rgba(244, 237, 207, .22), 3px 3px 0 rgba(53, 33, 22, .38);
   }
 
-  #collection .space-y-4 > div > svg {
-    width: 19px;
-    height: 19px;
+  .mobile-service-card:focus-visible {
+    outline: 3px solid #f4d77b;
+    outline-offset: 2px;
   }
 
-  #collection .feature-title-row {
-    gap: 4px;
-    margin-bottom: 3px;
+  .mobile-service-icon {
+    width: 21px;
+    height: 21px;
+    color: currentColor;
   }
 
-  #collection .feature-title-row h4 {
-    font-size: .98rem;
+  .mobile-service-title {
+    max-width: 100%;
+    font-family: 'DotGothic16', sans-serif;
+    font-size: clamp(.96rem, 4.38vw, 1.128rem);
+    line-height: 1.12;
+    text-transform: none;
+  }
+
+  .mobile-service-status,
+  .mobile-service-detail-status {
+    font-family: 'Press Start 2P', monospace;
+    font-size: .504rem;
     line-height: 1.2;
+    letter-spacing: .02em;
   }
 
-  #collection .feature-status-line {
-    gap: 6px;
-    font-size: .43rem;
+  .mobile-service-card .feature-status-bar {
+    margin-top: auto;
   }
 
-  #collection .feature-status-bar i {
+  .mobile-service-card .feature-status-bar i,
+  .mobile-service-detail .feature-status-bar i {
     width: 4px;
     height: 7px;
   }
 
-  #collection .space-y-4 > div p {
-    font-size: .8rem;
-    line-height: 1.35;
+  .mobile-service-detail {
+    margin-top: 12px;
+    padding: 13px 14px 14px;
+    color: #eff9df;
+    background: rgba(47, 105, 79, .96);
+    border: 2px solid #352116;
+    border-radius: 12px;
+    box-shadow: 3px 3px 0 rgba(53, 33, 22, .3);
+  }
+
+  .mobile-service-detail-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 9px;
+  }
+
+  .mobile-service-detail-icon {
+    width: 24px;
+    height: 24px;
+    flex: 0 0 auto;
+  }
+
+  .mobile-service-detail-heading h3 {
+    margin: 0 0 4px;
+    color: #eff9df;
+    font-family: 'DotGothic16', sans-serif;
+    font-size: 1rem;
+    line-height: 1.15;
+  }
+
+  .mobile-service-detail-status {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .mobile-service-detail > p {
+    margin: 0;
+    color: rgba(239, 249, 223, .88);
+    font-family: 'Zen Maru Gothic', sans-serif;
+  }
+
+  .mobile-step-detail > p,
+  .mobile-service-detail > p {
+    font-size: 1.2075rem;
+    line-height: 1.5;
   }
 
   #costs {
@@ -2209,8 +2367,8 @@
 
   .contact-cta-panel p {
     margin-bottom: 13px;
-    font-size: .88rem;
-    line-height: 1.38;
+    font-size: 1.125rem;
+    line-height: 1.45;
   }
 
   .contact-cta-actions {
@@ -2287,12 +2445,11 @@
 
   .request-drawer-header h2 {
     margin-bottom: 7px;
-    font-size: 1.42rem;
   }
 
   .request-drawer-header p {
-    font-size: .84rem;
-    line-height: 1.42;
+    font-size: 1.128rem;
+    line-height: 1.46;
   }
 
   .request-drawer-form {
@@ -2301,7 +2458,6 @@
 
   .request-drawer-form label {
     gap: 5px;
-    font-size: .8rem;
   }
 
   .request-drawer-form input,
@@ -2310,6 +2466,11 @@
     padding: 9px 10px;
     font-size: 1rem;
     line-height: 1.3;
+  }
+
+  .request-drawer-form input::placeholder,
+  .request-drawer-form textarea::placeholder {
+    font-size: 18.048px;
   }
 
   .request-drawer-form textarea {
@@ -2321,7 +2482,28 @@
     margin-top: 2px;
     padding: 8px 12px;
     border-width: 3px;
-    font-size: 1rem;
+  }
+
+  .request-drawer-header h2,
+  .request-drawer-submit,
+  .shogunship-world-bg > section:first-of-type .group,
+  .mobile-nav-adventure-cta {
+    font-size: 22px;
+  }
+
+  .mobile-nav-heading {
+    font-size: 15.4px;
+  }
+
+  .mobile-nav-panel nav a,
+  .request-drawer-form label {
+    font-size: 16.8px;
+  }
+
+  .request-drawer-submit,
+  .shogunship-world-bg > section:first-of-type .group,
+  .mobile-nav-adventure-cta {
+    white-space: nowrap;
   }
 }
 

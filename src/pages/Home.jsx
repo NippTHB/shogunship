@@ -18,6 +18,20 @@ import otherShopsLogo from '../assets/images/logos/marketplaces/optimized/other_
 import shiseidoLogo from '../assets/images/logos/marketplaces/source/shiseido_logo.svg';
 import surugayaLogo from '../assets/images/logos/marketplaces/optimized/surugaya_logo.svg';
 
+const processSteps = [
+  { step: '01', Icon: Search, title: 'Send us the link', description: "You send us the link to the treasure you've found on any Japanese website. We review the listing, confirm everything looks good, and guide you through the next step." },
+  { step: '02', Icon: Store, title: 'We buy it for you', description: "Once you're ready, we purchase it on your behalf and handle the Japanese-only logistics." },
+  { step: '03', Icon: ShieldCheck, title: 'Arrives at our home', description: 'When your package arrives, we photograph the outer package, check for visible shipping damage, and store it safely.' },
+  { step: '04', Icon: Ship, title: 'Ship when you say', description: 'We consolidate multiple items, pack them carefully, and ship them to your home when you are ready.' },
+];
+
+const collectionServices = [
+  { title: 'Free Storage', status: 'AVAILABLE', statusClass: 'feature-status-mint', description: 'Up to 60 days of free storage while you search for more treasures to consolidate.' },
+  { title: 'Smart Consolidation', status: 'AVAILABLE', statusClass: 'feature-status-blue', description: 'We combine multiple orders into one well-protected shipment to save you on international shipping.' },
+  { title: 'Condition Photos', status: 'PAID PERK', statusClass: 'feature-status-peach', description: 'Want extra peace of mind? Every package is photographed on arrival. This optional service adds detailed item photos before shipping.' },
+  { title: 'INSURED SHIPPING', mobileTitle: 'Insured Shipping', mobileDetailTitle: 'INSURED SHIPPING', status: 'AVAILABLE', statusClass: 'feature-status-gold', description: 'Choose your preferred shipping method. Every shipment includes tracking and insurance.' },
+];
+
 export default function Home() {
   const shouldReduceMotion = useReducedMotion();
   const [isRequestDrawerOpen, setIsRequestDrawerOpen] = useState(false);
@@ -25,6 +39,8 @@ export default function Home() {
   const [showFloatingCta, setShowFloatingCta] = useState(false);
   const [shouldPulseFloatingCta, setShouldPulseFloatingCta] = useState(false);
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const [selectedProcessStep, setSelectedProcessStep] = useState(null);
+  const [selectedCollectionService, setSelectedCollectionService] = useState(null);
   const [requestFormData, setRequestFormData] = useState({ marketplaceLink: '', email: '', note: '' });
   const hasPulsedFloatingCta = useRef(false);
   const heroRef = useRef(null);
@@ -249,26 +265,58 @@ export default function Home() {
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8">
             <h2 className="major-section-title mb-4">Four Steps. Zero Stress.</h2>
-            <p className="font-sans text-lg text-foreground/80">You send the link. We do everything else from our little workshop in Nara.</p>
+            <p className="mobile-section-intro font-sans text-lg text-foreground/80">You send the link. We do everything else from our little workshop in Nara.</p>
           </div>
-          <p className="mobile-swipe-cue" aria-hidden="true">Swipe to explore <ArrowRight /></p>
-          <ol className="lovable-step-list grid grid-cols-1 gap-6 md:grid-cols-4" aria-label="How ShogunShip works" tabIndex="0">
-            {[
-              ['01', Search, 'Send us the link', "You send us the link to the treasure you've found on any Japanese website. We review the listing, confirm everything looks good, and guide you through the next step."],
-              ['02', Store, 'We buy it for you', "Once you're ready, we purchase it on your behalf and handle the Japanese-only logistics."],
-              ['03', ShieldCheck, 'Arrives at our home', 'When your package arrives, we photograph the outer package, check for visible shipping damage, and store it safely.'],
-              ['04', Ship, 'Ship when you say', 'We consolidate multiple items, pack them carefully, and ship them to your home when you are ready.'],
-            ].map(([step, Icon, title, desc], i) => (
+          <ol className="process-desktop-steps lovable-step-list grid grid-cols-1 gap-6 md:grid-cols-4" aria-label="How ShogunShip works" tabIndex="0">
+            {processSteps.map(({ step, Icon, title, description }) => (
               <li key={step} className="lovable-step-card">
                 <div className="lovable-step-top">
                   <span className="lovable-step-icon-badge"><Icon className="lovable-step-icon" /></span>
                 </div>
                 <h3>{title}</h3>
-                <p className="font-sans text-foreground/70">{desc}</p>
+                <p className="font-sans text-foreground/70">{description}</p>
                 <span className="lovable-step-number" aria-hidden="true">{step}</span>
               </li>
             ))}
           </ol>
+
+          <div className="mobile-step-explorer">
+            <p className="mobile-step-cue">Tap a step for details <span aria-hidden="true">↓</span></p>
+            <div className="mobile-step-grid" role="group" aria-label="How ShogunShip works">
+              {processSteps.map(({ step, Icon, title }, index) => (
+                <button
+                  key={step}
+                  type="button"
+                  className={`mobile-step-card${selectedProcessStep === index ? ' is-selected' : ''}`}
+                  aria-pressed={selectedProcessStep === index}
+                  aria-expanded={selectedProcessStep === index}
+                  aria-controls="mobile-step-detail"
+                  onClick={() => setSelectedProcessStep((current) => current === index ? null : index)}
+                >
+                  <span className="mobile-step-number">{step}</span>
+                  <span className="mobile-step-icon-badge"><Icon /></span>
+                  <span className="mobile-step-title">{title}</span>
+                </button>
+              ))}
+            </div>
+
+            {selectedProcessStep !== null && (
+              <div id="mobile-step-detail" className="mobile-step-detail" aria-live="polite">
+                {(() => {
+                const { step, Icon, title, description } = processSteps[selectedProcessStep];
+                return (
+                  <>
+                    <div className="mobile-step-detail-heading">
+                      <span className="mobile-step-detail-icon"><Icon /></span>
+                      <h3><span>{step}</span>{title}</h3>
+                    </div>
+                    <p>{description}</p>
+                  </>
+                );
+                })()}
+              </div>
+            )}
+          </div>
         </div>
       </section>
 
@@ -288,7 +336,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 text-center">
             <h2 className="major-section-title mb-4">Select Your Destination</h2>
-            <p className="mx-auto max-w-5xl font-sans text-lg text-foreground/70">
+            <p className="mobile-section-intro mx-auto max-w-5xl font-sans text-lg text-foreground/70">
               <span className="block">We navigate the winding roads of Japan&apos;s biggest marketplaces so you don&apos;t have to.</span>
               <span className="block">Drop us a link from any website. If it&apos;s sold in Japan, we can probably get it, just ask.</span>
             </p>
@@ -332,13 +380,48 @@ export default function Home() {
         <div className="mx-auto max-w-7xl"><div className="flex flex-col items-center gap-12 lg:flex-row-reverse lg:gap-10">
           <div className="relative w-full lg:w-[42%] lg:translate-x-4 xl:translate-x-8"><div className="absolute -right-4 top-4 h-full w-full border-[4px] border-foreground bg-secondary" /><div className="illustration-zoom-frame relative z-10 aspect-video h-auto w-full border-[4px] border-foreground"><img src={postOfficeBg} alt="Japanese countryside post office" className="h-full w-full object-cover" loading="lazy" decoding="async" /></div></div>
           <div className="w-full lg:w-[58%]"><h2 className="major-section-title care-section-title mb-6">Your Collection Is Safe With Us</h2><p className="mb-8 max-w-lg font-sans text-xl text-foreground/80">The care a family member would take.</p>
-            <p className="mobile-swipe-cue" aria-hidden="true">Swipe to explore <ArrowRight /></p>
-            <div className="collection-service-list space-y-4" role="list" aria-label="Collection care services" tabIndex="0">{[
-              ['Free Storage', 'AVAILABLE', 'feature-status-mint', 'Up to 60 days of free storage while you search for more treasures to consolidate.'],
-              ['Smart Consolidation', 'AVAILABLE', 'feature-status-blue', 'We combine multiple orders into one well-protected shipment to save you on international shipping.'],
-              ['Condition Photos', 'PAID PERK', 'feature-status-peach', 'Want extra peace of mind? Every package is photographed on arrival. This optional service adds detailed item photos before shipping.'],
-              ['INSURED SHIPPING', 'AVAILABLE', 'feature-status-gold', 'Choose your preferred shipping method. Every shipment includes tracking and insurance.'],
-            ].map(([title, status, statusClass, desc]) => <div key={title} role="listitem" className="flex items-start gap-4 border-[2px] border-foreground/20 bg-background/45 p-4"><PackageOpen className="mt-1 h-6 w-6 shrink-0" /><div className="min-w-0 flex-1"><div className="feature-title-row"><h4 className={`font-display text-xl tracking-wide ${statusClass}`}>{title}</h4><div className={`feature-status-line ${statusClass}`}><span className="feature-status-text">{status}</span><span className={`feature-status-bar ${statusClass}`} aria-hidden="true" onMouseEnter={restartFeatureBar} onAnimationEnd={(event) => event.currentTarget.classList.remove('is-recharging')}>{Array.from({ length: 10 }).map((_, index) => <i key={index} />)}</span></div></div><p className="font-sans text-sm text-foreground/70">{desc}</p></div></div>)}</div>
+            <div className="collection-desktop-services collection-service-list space-y-4" role="list" aria-label="Collection care services" tabIndex="0">{collectionServices.map(({ title, status, statusClass, description }) => <div key={title} role="listitem" className="flex items-start gap-4 border-[2px] border-foreground/20 bg-background/45 p-4"><PackageOpen className="mt-1 h-6 w-6 shrink-0" /><div className="min-w-0 flex-1"><div className="feature-title-row"><h4 className={`font-display text-xl tracking-wide ${statusClass}`}>{title}</h4><div className={`feature-status-line ${statusClass}`}><span className="feature-status-text">{status}</span><span className={`feature-status-bar ${statusClass}`} aria-hidden="true" onMouseEnter={restartFeatureBar} onAnimationEnd={(event) => event.currentTarget.classList.remove('is-recharging')}>{Array.from({ length: 10 }).map((_, index) => <i key={index} />)}</span></div></div><p className="font-sans text-sm text-foreground/70">{description}</p></div></div>)}</div>
+
+            <div className="mobile-service-explorer">
+              <p className="mobile-step-cue">Tap a service for details <span aria-hidden="true">↓</span></p>
+              <div className="mobile-service-grid" role="group" aria-label="Collection care services">
+                {collectionServices.map(({ title, mobileTitle, status, statusClass }, index) => (
+                  <button
+                    key={title}
+                    type="button"
+                    className={`mobile-service-card ${statusClass}${selectedCollectionService === index ? ' is-selected' : ''}`}
+                    aria-pressed={selectedCollectionService === index}
+                    aria-expanded={selectedCollectionService === index}
+                    aria-controls="mobile-service-detail"
+                    onClick={() => setSelectedCollectionService((current) => current === index ? null : index)}
+                  >
+                    <PackageOpen className="mobile-service-icon" />
+                    <span className="mobile-service-title">{mobileTitle || title}</span>
+                    <span className={`mobile-service-status ${statusClass}`}>{status}</span>
+                    <span className={`feature-status-bar ${statusClass}`} aria-hidden="true">{Array.from({ length: 10 }).map((_, barIndex) => <i key={barIndex} />)}</span>
+                  </button>
+                ))}
+              </div>
+
+              {selectedCollectionService !== null && (() => {
+                const { title, mobileTitle, mobileDetailTitle, status, statusClass, description } = collectionServices[selectedCollectionService];
+                return (
+                  <div id="mobile-service-detail" className={`mobile-service-detail ${statusClass}`} aria-live="polite">
+                    <div className="mobile-service-detail-heading">
+                      <PackageOpen className="mobile-service-detail-icon" />
+                      <div>
+                        <h3>{mobileDetailTitle || mobileTitle || title}</h3>
+                        <div className={`mobile-service-detail-status ${statusClass}`}>
+                          <span>{status}</span>
+                          <span className={`feature-status-bar ${statusClass}`} aria-hidden="true">{Array.from({ length: 10 }).map((_, barIndex) => <i key={barIndex} />)}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p>{description}</p>
+                  </div>
+                );
+              })()}
+            </div>
           </div>
         </div></div>
       </section>
@@ -436,7 +519,7 @@ export default function Home() {
             <div className="request-drawer-header">
               <span className="request-drawer-kicker">Quest Request</span>
               <h2 id="request-drawer-title">Send Your Link</h2>
-              <p>Drop the treasure map here. We will check it personally and write back.</p>
+              <p>Paste the link to the item you want. We’ll check it personally and write back.</p>
             </div>
             {hasSubmittedRequest ? (
               <div className="request-drawer-success" role="status">
@@ -453,8 +536,8 @@ export default function Home() {
                   <input type="email" name="email" placeholder="you@example.com" value={requestFormData.email} onChange={(event) => setRequestFormData((current) => ({ ...current, email: event.target.value }))} required />
                 </label>
                 <label>
-                  <span>Note optional</span>
-                  <textarea name="note" rows="4" placeholder="Condition questions, size, color, or anything we should know." value={requestFormData.note} onChange={(event) => setRequestFormData((current) => ({ ...current, note: event.target.value }))} />
+                  <span>Note (optional)</span>
+                  <textarea name="note" rows="4" placeholder="Condition questions, size, color, or anything you'd like to ask." value={requestFormData.note} onChange={(event) => setRequestFormData((current) => ({ ...current, note: event.target.value }))} />
                 </label>
                 <PixelButton type="submit" variant="primary" className="request-drawer-submit">Send it our way</PixelButton>
               </form>
