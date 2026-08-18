@@ -7,6 +7,10 @@ This document is the canonical business and operating-model reference for Shogun
 - Product summary and positioning: [PRODUCT.md](../PRODUCT.md)
 - Domain terminology: [DOMAIN_VOCABULARY.md](./DOMAIN_VOCABULARY.md)
 - Business lifecycle requirements: [LIFECYCLES.md](./LIFECYCLES.md)
+- Provider-neutral technical architecture: [ARCHITECTURE.md](./ARCHITECTURE.md)
+- Conceptual domain relationships: [DOMAIN_MODEL.md](./DOMAIN_MODEL.md)
+- Transition and authorization contracts: [TRANSITION_CONTRACTS.md](./TRANSITION_CONTRACTS.md) and [AUTHORIZATION_CONTRACTS.md](./AUTHORIZATION_CONTRACTS.md)
+- Identity, access, and data protection: [SECURITY_MODEL.md](./SECURITY_MODEL.md)
 - Unresolved research and decisions: [RESEARCH_TBD.md](./RESEARCH_TBD.md)
 
 Where this document marks a matter **TBD**, no implementation or customer promise should assume an answer.

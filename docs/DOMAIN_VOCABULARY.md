@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This glossary defines business terms used throughout the [V1 Operating Model](./OPERATING_MODEL.md) and [Lifecycle Requirements](./LIFECYCLES.md). It is not a database schema.
+This glossary defines business terms used throughout the [V1 Operating Model](./OPERATING_MODEL.md), [Lifecycle Requirements](./LIFECYCLES.md), and provider-neutral [Architecture](./ARCHITECTURE.md). It is not a database schema; conceptual objects and relationships are documented separately in [DOMAIN_MODEL.md](./DOMAIN_MODEL.md).
 
 ## People and access
 
@@ -163,4 +163,3 @@ A long, unguessable, scoped, read-only, revocable/expirable link allowing a Gues
 ### Audit Event
 
 An attributable record of a material staff, customer, security, financial, property, or state-changing action. It records the actor, time, affected subject, action, and relevant before/after values or reason without pretending every UI click is an audit event.
-

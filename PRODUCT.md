@@ -14,7 +14,7 @@ After a successful acquisition, the item is allocated exclusively to that custom
 
 ShogunShip is not a marketplace and does not ordinarily acquire inventory for resale. It is the trusted local team acting on a customer's instructions for a specific third-party item.
 
-Detailed business rules are defined in [docs/OPERATING_MODEL.md](./docs/OPERATING_MODEL.md). Unresolved research and pricing decisions are tracked in [docs/RESEARCH_TBD.md](./docs/RESEARCH_TBD.md).
+Detailed business rules are defined in [docs/OPERATING_MODEL.md](./docs/OPERATING_MODEL.md). The provider-neutral system architecture is defined in [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md), with its conceptual objects in [docs/DOMAIN_MODEL.md](./docs/DOMAIN_MODEL.md). Unresolved research and pricing decisions are tracked in [docs/RESEARCH_TBD.md](./docs/RESEARCH_TBD.md).
 
 ## Founders
 

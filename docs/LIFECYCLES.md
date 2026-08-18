@@ -4,7 +4,7 @@
 
 This document describes business-level states and transitions that later technical architecture must support. It deliberately does not prescribe database enums, tables, APIs, or providers.
 
-Detailed rules live in the [V1 Operating Model](./OPERATING_MODEL.md). Terms are defined in [Domain Vocabulary](./DOMAIN_VOCABULARY.md). Unresolved transitions are listed in [Research and TBD](./RESEARCH_TBD.md).
+Detailed rules live in the [V1 Operating Model](./OPERATING_MODEL.md). Terms are defined in [Domain Vocabulary](./DOMAIN_VOCABULARY.md). Enforceable transition requirements are formalized in [Transition Contracts](./TRANSITION_CONTRACTS.md), and binding consent requirements in [Authorization Contracts](./AUTHORIZATION_CONTRACTS.md). Unresolved transitions are listed in [Research and TBD](./RESEARCH_TBD.md).
 
 Different lifecycles overlap but must not be collapsed. A Purchase can remain allocated to a Customer while its Payment is disputed, its Physical Parcel is in custody, and its Shipment is blocked.
 
@@ -382,4 +382,3 @@ Requirements:
 - Corrections preserve material history.
 - Every binding Customer action and material Staff action is auditable.
 - Unresolved policy or provider behavior remains TBD rather than encoded as an assumption.
-

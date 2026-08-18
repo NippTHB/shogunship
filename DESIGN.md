@@ -85,6 +85,8 @@ components:
 
 ## Overview
 
+Product and service truth comes from [PRODUCT.md](./PRODUCT.md) and the canonical [V1 Operating Model](./docs/OPERATING_MODEL.md). Future application interfaces should apply this visual system to the provider-neutral boundaries in [ARCHITECTURE.md](./docs/ARCHITECTURE.md) without weakening the authorization and security requirements documented there.
+
 **Creative North Star: "The Autumn Collector Guild"**
 
 ShogunShip should feel like entering a quiet guild hall at the edge of a Japanese countryside village: carefully catalogued objects, warm human stewardship, and a restrained sense of adventure. The current pixel-art vocabulary is the foundation, but future work must favor warmth, trust, and tangible craft over arcade intensity.

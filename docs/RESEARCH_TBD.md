@@ -1,5 +1,7 @@
 # ShogunShip V1 Research and TBD Register
 
+Provider-neutral architecture is documented in [ARCHITECTURE.md](./ARCHITECTURE.md). This register remains authoritative for matters that architecture intentionally supports without resolving.
+
 ## Purpose
 
 This register collects decisions intentionally left unresolved by the [V1 Operating Model](./OPERATING_MODEL.md). It prevents assumptions from becoming implementation or customer promises without evidence.
@@ -144,4 +146,3 @@ These decisions should be made only after the operating model and lifecycle requ
 - snapshot-capture implementation;
 - backup and disaster-recovery implementation;
 - automated retention/anonymization implementation.
-
