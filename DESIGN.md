@@ -99,7 +99,7 @@ The system is quietly layered. Depth comes from tonal surfaces, purposeful borde
 - Warm, personal guild atmosphere rather than competitive game energy
 - Quietly layered navy surfaces with clear functional hierarchy
 - Square, tactile controls and structural borders
-- Item imagery, arrival photos, and inspection evidence as essential visual content
+- Item imagery, unopened-parcel arrival evidence, and separately authorized Condition Photos as essential visual content
 - Selective autumn, meadow, and water accents
 
 ## Colors
@@ -214,24 +214,46 @@ Navigation uses a fixed Night Foundation bar with a strong Parchment Gold lower 
 
 ### Guild Dialog
 
-Guild dialogs are signature trust containers: Night Foundation surface, Parchment Gold `4px` border, optional Autumn Orange pixel lift, and a small title inset into the upper border. Use them for founder messages, inspection notes, and high-value reassurance, not generic content.
+Guild dialogs are signature trust containers: Night Foundation surface, Parchment Gold `4px` border, optional Autumn Orange pixel lift, and a small title inset into the upper border. Use them for founder messages, evidence notes, and high-value reassurance, not generic content. Dialog styling must never make a non-binding guest response look like purchase authorization.
 
 ### Provenance Card
 
-Provenance cards pair decisive item imagery with a Guild Panel record. Rarity or status colors may frame the item, but factual information, marketplace source, arrival evidence, inspection details, and customer ownership must remain more prominent than game mechanics.
+Provenance cards pair decisive item imagery with a Guild Panel record. Rarity or status colors may frame the item, but factual information, marketplace source, arrival evidence, paid-service evidence where applicable, and customer allocation must remain more prominent than game mechanics.
+
+## Service Language and Interaction Truth
+
+The detailed service rules live in [docs/OPERATING_MODEL.md](./docs/OPERATING_MODEL.md). Design and UX copy must preserve these distinctions:
+
+- A guest Request and Quote are non-binding; authenticated confirmation creates Authorization.
+- Guests may submit a Request and read ShogunShip's response without creating an account.
+- Email and a Guest Link may communicate information but cannot authorize a purchase or another binding action.
+- The first-stage Quote covers acquisition-related amounts; actual international shipping is presented and paid later after final packing.
+- Default receiving photographs and verifies the unopened outer parcel. It does not imply free item-level inspection.
+- Condition Photos is a separate paid visual-photography service, not authentication, grading, functional testing, or a hidden-defect guarantee.
+- Included seller-side domestic combination and paid post-arrival Consolidation are different services.
+- Single-parcel package reduction/repacking is another distinct paid service.
+- Every physical parcel has its own 60-day free-storage clock before Consolidation; later parcels and Consolidation do not reset it.
+- Every international Shipment is tracked, while compensation remains carrier-backed and subject to method-specific limits and exclusions.
+- JPY is the authoritative V1 amount. Any local-currency display is an estimate.
+
+Use plain, literal labels for binding actions and irreversible instructions. Pixel-game terminology may frame exploration and atmosphere, but it must not obscure amounts, deadlines, packaging disposal, auction maximums, coverage limits, customs responsibility, or the consequences of approval.
+
+Interfaces should make non-binding, awaiting-authentication, authorized, paid, purchased, stored, restricted, and shipped states visibly distinct without implying technical state names or relying on color alone.
 
 ## Do's and Don'ts
 
 ### Do:
 
 - **Do** make the site feel like a lived-in collector guild, with pixel-game language supporting the atmosphere rather than controlling every interaction.
-- **Do** use arrival photos, inspection evidence, founder context, and item documentation as primary visual content.
+- **Do** distinguish unopened-parcel Arrival Photos from paid Condition Photos in imagery, labels, and supporting copy.
 - **Do** use Night Foundation, Deep Ledger, Guild Panel, and Inset Blue as a quiet tonal depth system.
 - **Do** reserve Parchment Gold and Autumn Orange for important UI moments.
 - **Do** use Meadow Green and Water Blue as selective environmental and semantic accents.
 - **Do** maintain square geometry, crisp borders, pixel rendering, and immediate tactile feedback.
 - **Do** keep body text readable and compliant with WCAG 2.2 AA.
 - **Do** present ShogunShip as a service helping customers buy from third-party Japanese sellers and marketplaces.
+- **Do** let guests ask and read an answer before account creation, then use explicit authenticated approval for binding actions.
+- **Do** present acquisition and later international shipping as separate cost stages.
 
 ### Don't:
 
@@ -246,5 +268,8 @@ Provenance cards pair decisive item imagery with a Guild Panel record. Rarity or
 - **Don't** use culturally stereotyped or novelty interpretations of Japan.
 - **Don't** make the service resemble an anonymous dropshipping or proxy-buying company.
 - **Don't** imply third-party marketplace inventory belongs to ShogunShip.
+- **Don't** imply that default receiving opens or inspects every actual item.
+- **Don't** imply that post-arrival Consolidation is free, that email authorizes action, or that the initial Quote contains final international shipping.
+- **Don't** describe carrier-backed coverage as unlimited ShogunShip insurance.
 - **Don't** use excessive game terminology, constant rarity mechanics, or arcade status language.
 - **Don't** rely on soft shadows, rounded cards, glassmorphism, or gradient text.

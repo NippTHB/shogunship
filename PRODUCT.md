@@ -6,19 +6,23 @@ brand
 
 ## Product Overview
 
-ShogunShip is a collector-focused proxy sourcing and shipping service connecting international buyers with trusted sellers, specialist shops, and marketplaces in Japan.
+ShogunShip is a collector-focused proxy purchasing and forwarding service connecting international customers with third-party sellers, specialist shops, and marketplaces in Japan.
 
-ShogunShip helps customers source, inspect, purchase, temporarily store, consolidate, and ship rare Japanese goods with clear documentation and personal support. The service emphasizes trust, transparency, and the relationship between collectors, curators, and the objects they value.
+Customers send ShogunShip one exact marketplace listing for review. ShogunShip explains whether it can help, prepares a non-binding JPY quote, and purchases only after the customer creates or verifies an account, accepts the current terms, authorizes the exact action, and pays the required first-stage amount.
 
-ShogunShip is not a marketplace. It is a Japan-based service that helps customers confidently buy from third-party Japanese marketplaces and sellers.
+After a successful acquisition, the item is allocated exclusively to that customer. ShogunShip receives and stores the resulting parcel in Nara, performs any separately authorized services, prepares the eventual international shipment, and presents the actual tracked international-shipping options as a later second-stage amount.
+
+ShogunShip is not a marketplace and does not ordinarily acquire inventory for resale. It is the trusted local team acting on a customer's instructions for a specific third-party item.
+
+Detailed business rules are defined in [docs/OPERATING_MODEL.md](./docs/OPERATING_MODEL.md). Unresolved research and pricing decisions are tracked in [docs/RESEARCH_TBD.md](./docs/RESEARCH_TBD.md).
 
 ## Founders
 
 ShogunShip is run by a husband-and-wife team based in Nara Prefecture, Japan.
 
-Their local presence and personal involvement are central to the service. Customers are not working with an anonymous fulfillment company. They are working with a small, accountable team that receives, checks, documents, stores, consolidates, packs, and ships their purchases.
+Their local presence and personal involvement are central to the service. Customers work with a small, accountable team that reviews requests, purchases through Japanese sellers/platforms, receives parcels, documents arrival, stores customer-allocated property, performs authorized optional services, prepares packages, and ships internationally.
 
-The founders should be presented as approachable local experts and careful stewards of customers' items. Their story should build trust without becoming overly sentimental or distracting from the practical value of the service.
+The founders should be presented as approachable local experts and careful custodians. Their story should build trust without overstating inspection, authentication, shipping coverage, or legal guarantees.
 
 ## Target Audience
 
@@ -26,263 +30,240 @@ ShogunShip primarily serves international collectors seeking rare, vintage, arti
 
 Key audiences include:
 
-- Experienced collectors who value provenance, condition, and authenticity
-- Enthusiasts searching for items unavailable outside Japan
-- Buyers cautious about language barriers, unclear listings, and international shipping
-- Customers who prefer personal support over anonymous proxy services
-- Buyers purchasing from multiple Japanese sellers who need temporary storage and shipment consolidation
+- Experienced collectors who care about listing detail, condition, provenance, and packaging
+- Enthusiasts seeking items that are difficult to buy outside Japan
+- Buyers cautious about language barriers, seller practices, and Japanese-only purchasing processes
+- Customers who prefer personal support over an anonymous proxy service
+- Buyers purchasing from multiple Japanese sellers who need temporary storage and optional consolidation
+- Customers participating in supported Japanese auctions or qualifying short-term preorders
 
-Visitors may arrive excited about a specific item but uncertain whether they can trust the seller, understand the condition, or safely complete the purchase.
+Visitors may arrive excited about a particular listing but uncertain whether ShogunShip can purchase it, whether it is eligible for their destination, what the first-stage cost will be, or how it will eventually be shipped.
 
 ## Core Customer Problem
 
-Buying rare items from Japan can feel inaccessible and risky.
+Buying a specific item from Japan can feel inaccessible and risky.
 
 Customers face:
 
 - Language and cultural barriers
-- Uncertainty about authenticity and condition
-- Limited access to Japanese marketplaces, local sellers, and specialist shops
-- Unclear fees and shipping costs
-- Anxiety about packing, insurance, and international delivery
-- Difficulty combining purchases from multiple sellers
-- Impersonal proxy-buying services with little accountability
+- Uncertainty about listing details, seller terms, and item eligibility
+- Limited access to Japanese marketplaces, auctions, and specialist sellers
+- Unclear item, domestic-shipping, service, storage, and international-shipping costs
+- Anxiety about receiving, packaging, carrier coverage, customs, and delivery
+- Difficulty coordinating several independent purchases and parcels
+- Impersonal proxy services with little accountability
 
-ShogunShip solves this by providing Japan-based marketplace expertise, documented arrival photos, item inspection, temporary storage, consolidation, transparent costs, careful packing, and insured shipping.
+ShogunShip addresses this with Japan-based listing review, transparent staged costs, authenticated purchase authorization, unopened-parcel arrival documentation, parcel-level storage, optional paid Condition Photos, optional paid consolidation/repacking, tracked international shipping, carrier-backed coverage options, and personal operational support.
 
-## Marketplace Expertise
+ShogunShip does not promise authentication, professional grading, functional testing, guaranteed item condition, guaranteed auction wins, guaranteed customs admission, or compensation beyond applicable carrier coverage and legal responsibility.
 
-ShogunShip helps customers navigate Japanese marketplaces, auction platforms, specialist retailers, and secondhand shops.
+## V1 Customer Journey
 
-Core marketplace expertise includes:
+### 1. Ask without an account
 
-- Mercari
-- Yahoo Auctions Japan
-- Surugaya
-- Rakuma
-- Mandarake
-- Similar Japanese marketplaces, auction sites, and specialist sellers
+A visitor submits one exact listing URL, destination country, email, requested quantity for that listing, and an optional note. This is a non-binding review request. It does not authorize purchase, reserve a listing or auction, create a payment obligation, or guarantee eligibility or availability.
 
-ShogunShip understands how these platforms differ in listing quality, seller practices, purchasing processes, payment requirements, and domestic shipping. The service helps customers interpret listings, evaluate practical risks, complete purchases, and coordinate delivery to ShogunShip's location in Japan.
+### 2. Read the response without an account
 
-Marketplace names should be used to demonstrate expertise and access. Content must never imply that ShogunShip owns, operates, or directly controls these third-party marketplaces.
+ShogunShip reviews the request and provides its response and current quote by email and/or a secure read-only guest link. The visitor can decide not to proceed without creating an account.
+
+### 3. Authenticate to proceed
+
+An account is required before any binding action. The existing guest request transfers into the verified account without re-entry. Email may discuss an action, but only an authenticated dashboard confirmation authorizes it.
+
+### 4. Approve and pay the acquisition stage
+
+The customer reviews the current listing evidence, quote version, warnings, terms, and exact JPY amount. The first-stage amount covers the item, known Japanese domestic shipping, service fee, and applicable selected services. International shipping is not guaranteed at this stage; any early estimate is non-binding.
+
+### 5. ShogunShip acquires the item
+
+ShogunShip purchases the fixed-price item, places the qualifying preorder, or bids within the authenticated auction maximum. A successful purchase becomes non-cancellable for buyer's remorse, subject to applicable law and seller-originated remedies.
+
+### 6. Parcel arrives and is stored
+
+ShogunShip photographs and verifies the unopened outer parcel using externally available information. Default receiving does not normally open or inspect the actual item. Every physical parcel receives its own 60-day free-storage period beginning at arrival.
+
+### 7. Optional services
+
+The customer may request paid Condition Photos, paid multi-parcel consolidation, paid single-parcel package reduction/repacking, or separately quoted complex packing. Same-customer, same-seller domestic combination before arrival is an included best-effort benefit where the seller/platform allows it.
+
+### 8. Approve and pay international shipping
+
+After final packing, ShogunShip records weight and dimensions and presents actual tracked shipping options and their JPY prices. The customer approves the destination, carrier/service, declared value, tracking, available carrier coverage, limits, customs model, and other material conditions before paying the second-stage amount.
+
+### 9. Delivery and claims
+
+ShogunShip dispatches only through an end-to-end tracked service. Coverage is supplied by the selected carrier/insurer under its limits, not by ShogunShip as self-insurance. ShogunShip assists with legitimate claims and available evidence.
+
+## Marketplace Expertise and V1 Request Types
+
+ShogunShip helps customers navigate supported Japanese marketplaces, auction platforms, specialist retailers, and secondhand shops. Examples may include Mercari, Yahoo Auctions Japan, Surugaya, Rakuma, Mandarake, and other eligible sellers.
+
+Marketplace references demonstrate expertise and access. They must never imply that ShogunShip owns, controls, endorses, or guarantees a third-party platform, seller, or listing.
+
+V1 supports:
+
+- **Fixed-price listings:** one exact listing per request, with quantity allowed for that same listing
+- **Auctions:** prepaid maximum authorization, marketplace proxy bidding where available, no sniping guarantee, one ShogunShip customer per exact auction, and a separately disclosed handling fee earned when a valid bid is submitted
+- **Qualifying preorders:** expected merchant fulfilment no more than 30 calendar days away when accepted
+
+"Send a link from any website" must always be qualified by ShogunShip's supported marketplace, item, seller, destination, carrier, legal, size, and operational eligibility policies.
 
 ## Core Trust-Building Features
 
-Trust should be demonstrated through concrete service actions:
+- **Non-binding guest review:** Visitors can ask and read ShogunShip's answer before creating an account.
+- **Authenticated authorization:** Every purchase, bid, paid service, packaging instruction, customs instruction, and shipment approval is explicitly confirmed through the customer's account.
+- **Transparent staged costs:** The acquisition amount is known before purchase; actual international shipping is approved and paid later after packing.
+- **Unopened arrival documentation:** The included service photographs the outer parcel, checks for obvious external damage, and verifies it against externally available order information.
+- **Paid Condition Photos:** Customers may pay for the parcel to be opened and the item visually photographed. This is not authentication, grading, functional testing, or a hidden-defect guarantee.
+- **Independent free storage:** Every physical parcel receives its own 60-day free-storage period from arrival. Later parcels and consolidation do not reset it.
+- **Included same-seller domestic combination:** ShogunShip may request eligible same-customer purchases from one seller be combined before arrival, with no extra ShogunShip fee.
+- **Paid consolidation and repacking:** Post-arrival multi-parcel consolidation and single-parcel package reduction are distinct paid optional services.
+- **Tracked international shipping:** Every international shipment uses an end-to-end tracked service.
+- **Carrier-backed coverage:** Available compensation depends on the selected carrier/service, declared value, limits, and exclusions. ShogunShip does not self-insure uncovered value.
+- **Personal accountability:** Individual Staff accounts, authenticated Customer actions, evidence records, and auditable material changes support accountability.
 
-- **Arrival photos:** Customers receive photos confirming that purchases have arrived at ShogunShip.
-- **Item inspection:** Items are checked against the listing and inspected for visible condition concerns before international shipment.
-- **Temporary storage:** Purchases can be held safely while customers continue buying from other Japanese sellers.
-- **Consolidation:** Multiple purchases can be combined into a carefully packed international shipment.
-- **Transparent costs:** Customers can understand item costs, domestic shipping, service fees, and international shipping.
-- **Careful packing and insured shipping:** Items are prepared for international transit with appropriate protection and coverage options.
-- **Personal accountability:** The Japan-based founders directly oversee the handling and documentation process.
+## Proxy, Allocation, and Custody
 
-These features should be prominent throughout the website because they provide stronger reassurance than broad claims about trust or reliability.
+ShogunShip buys a specific third-party item pursuant to a customer's prior authorization and allocates the resulting Purchase exclusively to that Customer. It does not ordinarily treat the item as ShogunShip inventory.
+
+The product must distinguish customer allocation, merchant/platform-facing purchaser, physical custody and location, payment and dispute status, storage and service status, shipment eligibility, and legal title once validated.
+
+Customer-directed domestic forwarding, local pickup, transfer to another proxy, and resale assistance are not promised V1 services. Exact title, lien, abandonment, and disposal rules remain subject to Japanese legal research.
+
+## Item Eligibility
+
+V1 uses three policy categories: Generally Accepted, Manual Review, and Not Accepted.
+
+Perfume, alcohol, food, weapons, realistic replica weapons, and similarly regulated/high-compliance categories are not accepted under the foreseeable operating model unless ShogunShip deliberately changes policy after appropriate research.
+
+Adult-oriented status alone does not prohibit an otherwise lawful and eligible item. Every request remains subject to Japanese export rules, carrier acceptance, destination import rules, safety, size, value, seller/platform terms, and ShogunShip's operational judgment.
+
+ShogunShip may refuse a purchase or shipment whenever eligibility, legality, documentation, safety, or carrier acceptance is uncertain.
+
+## Customs and Customer Responsibility
+
+The customer/recipient is normally the importer of record and is responsible for destination eligibility, duties, taxes, permits, importer identifiers, and similar requirements.
+
+ShogunShip provides truthful customs information based on available records. It does not intentionally underdeclare merchandise, falsely mark customer purchases as gifts, guarantee tariff classification, or provide definitive customs/legal advice.
+
+Recipient-paid duties/taxes are the default. A supported prepaid-duty option may be offered later only when clearly identified and operationally reliable.
 
 ## Product Purpose
 
-ShogunShip exists to make collecting from Japan feel personal, trustworthy, and accessible.
+ShogunShip exists to make collecting from Japan feel personal, trustworthy, and accessible without hiding the operational boundaries of proxy purchasing.
 
-The website should help visitors:
+The product should help visitors and customers:
 
-1. Understand how ShogunShip works
+1. Understand what ShogunShip can and cannot do
 2. Trust the founders and handling process
-3. Understand which Japanese marketplaces and sellers ShogunShip can help them buy from
-4. See how arrival photos, inspection, storage, and consolidation protect their purchases
-5. Understand costs before committing
-6. Begin a purchase or custom sourcing request confidently
+3. Request review of a specific eligible listing without account friction
+4. Understand the exact action and current JPY cost before authorizing it
+5. Track purchases, parcels, deadlines, services, payments, and shipping through a verified account
+6. Make informed choices about Condition Photos, storage, consolidation, packing, shipping, carrier coverage, and customs responsibility
+7. Preserve a clear record of customer and staff decisions
 
-Success means visitors feel they are working with knowledgeable, accountable people in Japan, not an anonymous shipping intermediary or marketplace.
+Success means customers understand both the care ShogunShip provides and the limits of that service.
 
 ## Brand Identity
 
 ShogunShip is a peaceful collector guild rooted in Japanese craftsmanship, countryside warmth, and thoughtful stewardship.
 
-The brand should feel:
+The brand should feel cozy, trustworthy, personal, knowledgeable, curious, crafted, and quietly adventurous.
 
-- Cozy
-- Trustworthy
-- Personal
-- Knowledgeable
-- Curious
-- Crafted
-- Quietly adventurous
-
-The pixel-art influence should give the brand character and warmth without making the service feel unserious or overly game-like.
+The pixel-art influence should give the brand character and warmth without making financial, legal, shipping, or property actions feel unserious or ambiguous.
 
 ## Visual Design Goals
 
-The visual world should evoke a cozy Japanese countryside village during autumn.
+The visual world should evoke a cozy Japanese countryside village during autumn through environmental scenery, crafted surfaces, maps, ledgers, parcels, and item records.
 
-Relevant environmental references include:
+Pixel-art styling should support world-building while allowing quotes, deadlines, fees, warnings, approvals, coverage limits, and operational states to remain immediately understandable.
 
-- Grass and cultivated fields
-- Dirt paths and warm earth
-- Timber guild halls and workshops
-- Stone roofs and village structures
-- Autumn foliage and golden sunlight
-- Streams, ponds, and soft sky reflections
-- Handmade signs, ledgers, maps, and item records
-
-The interface should use these references to create atmosphere while maintaining clear hierarchy and strong readability.
-
-Color should be varied and environmental rather than applied as large, uninterrupted flat fields. Warm earth, wood, stone, muted vegetation, soft water tones, and autumn gold should each have deliberate roles.
-
-Pixel-art styling should support the world-building while allowing service information, marketplace expertise, costs, and calls to action to remain easy to understand.
+Game-inspired language may decorate the experience, but plain operational language must control binding actions.
 
 ## Desired Product Feeling
 
-Using ShogunShip should feel like entering a trusted countryside guild where knowledgeable people carefully receive, document, inspect, and care for every object.
+Using ShogunShip should feel like entering a trusted countryside guild where knowledgeable people carefully coordinate and document a collector's specific purchases.
 
-The experience should communicate:
-
-- Calm confidence rather than urgency
-- Human relationships rather than anonymous transactions
-- Discovery rather than consumption
-- Craftsmanship rather than mass commerce
-- Transparency rather than mystery
-- Warmth rather than corporate polish
-
-Visitors should feel welcomed, reassured, and curious to explore.
+The experience should communicate calm confidence, human relationships, discovery, craftsmanship, transparency, and warmth rather than urgency, anonymity, mass commerce, mystery, or corporate polish.
 
 ## What ShogunShip Should Avoid
 
 ShogunShip should not feel like:
 
-- A marketplace that lists or sells its own inventory
-- A brown workshop dominated by soil and timber tones
-- A flat field of uninterrupted green or blue
-- A neon arcade game or competitive RPG
-- A generic gaming-themed landing page
-- A corporate logistics dashboard
-- A luxury marketplace that feels distant or exclusive
-- A cluttered interface where every element demands attention
+- A marketplace selling its own inventory
+- An anonymous dropshipping or forwarding warehouse
+- A service that hides fees, deadlines, limitations, or responsibility
+- A guarantee of authenticity, condition, auction success, customs admission, or full-value insurance
+- A corporate logistics dashboard with no human character
+- A neon arcade or competitive RPG
 - A culturally stereotyped or novelty interpretation of Japan
-- An anonymous dropshipping or proxy-buying service
-
-Game-inspired terminology and interface elements should be used selectively. They must not overpower trust, clarity, craftsmanship, or the peaceful village atmosphere.
+- A cluttered interface where decoration competes with binding information
 
 ## Website Goals
 
-The homepage should:
+The public site should:
 
-- Explain ShogunShip's proxy sourcing and shipping service within the first screen
-- Introduce the Japan-based husband-and-wife founders
-- Establish trust through arrival photos, inspection, temporary storage, consolidation, and transparent costs
-- Demonstrate expertise across Japanese marketplaces and specialist sellers
-- Make rare items feel meaningful and carefully handled
-- Show how the purchasing, receiving, and shipping process works
-- Clearly communicate costs and service fees
-- Encourage visitors to submit an item link or sourcing request
-- Differentiate ShogunShip from anonymous proxy-buying services
-- Create a memorable and emotionally inviting brand experience
-
-The primary visitor journey is:
-
-1. Understand the service
-2. Trust the founders and handling process
-3. Confirm that ShogunShip can help with the relevant marketplace or seller
-4. Understand arrival photos, inspection, storage, consolidation, and shipping
-5. Review transparent costs
-6. Submit an item link or sourcing request
+- Explain the proxy purchasing and forwarding model within the first screen
+- Introduce the Nara-based founders
+- Let a visitor submit one eligible listing without creating an account
+- Explain that the first response and quote are non-binding
+- Explain the account boundary before binding action
+- Distinguish acquisition cost from later international shipping
+- Distinguish Arrival Photos from paid Condition Photos
+- Explain independent 60-day parcel storage
+- Distinguish included seller-side combination from paid consolidation/repacking
+- Explain fixed-price, auction, and qualifying preorder support
+- Explain tracked shipping and carrier-backed coverage accurately
+- Explain customer customs/import responsibility
+- Connect visitors to Pricing, FAQ, Contact, Terms, Privacy, and the Request flow
 
 ## Content Guidelines
 
-Content should be specific, useful, and grounded in the real proxy-buying and collecting process.
-
-Prefer:
-
-- Clear descriptions of what the founders personally handle
-- Named third-party marketplaces and specialist sellers
-- Concrete item and listing details
-- Arrival photos and inspection examples
-- Clear temporary storage and consolidation explanations
-- Transparent cost explanations
-- Plain-language explanations of purchasing and shipping
+Prefer specific descriptions of what ShogunShip includes, charges separately, or does not provide. Clearly separate non-binding information from authenticated Authorization, and use plain language for staged costs, deadlines, coverage limits, customs responsibility, and irreversible actions.
 
 Avoid:
 
-- Language suggesting ShogunShip owns or operates a marketplace
-- Language implying third-party marketplace inventory belongs to ShogunShip
-- Vague marketing claims
-- Excessive game terminology
-- Artificial urgency
-- Unsupported claims about rarity or authenticity
-- Repetitive slogans
-- Overly romanticized descriptions of Japan
-- Technical logistics language without explanation
-
-Every item should feel like a customer's carefully handled purchase, not ShogunShip inventory.
+- "Full quote" when final international shipping is not yet known
+- "Fully insured" or "insurance included" without method-specific limits
+- Language implying every parcel is opened and every item inspected for free
+- Language implying consolidation is automatically included
+- "No obligation" after a binding purchase, bid, or preorder
+- "Any website" without eligibility qualification
+- "Ship whenever you want" without storage, payment, legal, and carrier conditions
+- Language suggesting ShogunShip owns marketplace inventory
+- Vague promises, unsupported guarantees, artificial urgency, and excessive game terminology
 
 ## Tone Guidelines
 
-The ShogunShip voice should be warm, knowledgeable, direct, and quietly enthusiastic.
+The ShogunShip voice is warm, knowledgeable, direct, and quietly enthusiastic. It resembles a trusted local expert helping a collector make an informed decision.
 
-The tone should resemble a trusted local expert helping a collector safely purchase something meaningful from Japan.
-
-Use:
-
-- Clear and concise explanations
-- Calm reassurance
-- Specific details
-- Respectful enthusiasm
-- Human, personal language
-- Occasional playful pixel-game references when appropriate
-
-Avoid:
-
-- Aggressive sales language
-- Corporate jargon
-- Exaggerated promises
-- Constant jokes or game references
-- Artificially mysterious language
-- Overly formal or ceremonial language
-- Marketplace language such as "our inventory," "our listings," or "shop our items"
+Binding actions must use literal language such as "Approve and pay," "Authorize maximum bid," or "Keep seller shipping packaging," not playful labels that obscure consequences.
 
 ## Design Principles
 
 ### Village First, Game Second
 
-The website should primarily feel like a lived-in collector guild. Pixel-game elements should enrich the atmosphere without controlling every interaction.
+Pixel-game elements enrich the atmosphere without controlling financial, contractual, shipping, or property decisions.
 
 ### Service, Not Marketplace
 
-ShogunShip should always be presented as the trusted team helping customers buy from Japanese sellers and marketplaces. The website must not imply that ShogunShip owns the listed items or operates a marketplace.
+ShogunShip helps a Customer acquire a specific third-party Listing. It does not present customer-allocated items as ShogunShip inventory.
 
 ### Trust Through Specificity
 
-Use the founders' local presence, documented arrival photos, inspections, storage, consolidation, handling details, and transparent costs to earn confidence.
+Trust comes from clear inclusions, optional services, deadlines, evidence, authorizations, and limitations rather than broad claims.
 
-### Every Object Has a Story
+### Calm Exploration, Explicit Commitment
 
-Present items as carefully purchased, received, and documented objects rather than ShogunShip products or generic inventory.
-
-### Calm Exploration
-
-Encourage visitors to learn about the service and buying process without urgency, pressure, or visual overload.
-
-### Environmental Color
-
-Use color to evoke grass, paths, wood, stone, water, and autumn sunlight. Avoid relying on one dominant flat background color.
+Guests can explore and receive a response without account pressure. When they choose to proceed, the product shifts to exact, authenticated, auditable confirmation.
 
 ### Clarity Is Part of Craftsmanship
 
-Information about marketplaces, fees, inspection, storage, consolidation, and shipping must remain readable and understandable regardless of the decorative style.
+Quotes, JPY amounts, coverage limits, storage deadlines, customs responsibility, and irreversible packaging instructions must remain readable regardless of decorative style.
 
 ## Accessibility and Inclusion
 
-The website should target WCAG 2.2 AA accessibility.
+The product targets WCAG 2.2 AA. Requirements include readable type, sufficient contrast, keyboard access, visible focus, reduced-motion support, meaningful image treatment, explicit non-color status labels, accessible dialogs, and clear language for international and non-native English-speaking customers.
 
-Requirements include:
-
-- Body text contrast of at least 4.5:1
-- Large text contrast of at least 3:1
-- Readable text sizes despite the pixel-art styling
-- Visible keyboard focus states
-- Keyboard-accessible navigation and actions
-- Meaningful image alternative text
-- Reduced-motion support
-- No essential meaning communicated through color alone
-- Clear language for international visitors and non-native English speakers
+Sensitive or binding confirmation must never rely on color, iconography, hover, or game terminology alone.
