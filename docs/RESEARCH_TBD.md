@@ -1,6 +1,6 @@
 # ShogunShip V1 Research and TBD Register
 
-Provider-neutral architecture is documented in [ARCHITECTURE.md](./ARCHITECTURE.md). This register remains authoritative for matters that architecture intentionally supports without resolving.
+Provider-neutral architecture is documented in [ARCHITECTURE.md](./ARCHITECTURE.md), and selected V1 hosting, database, authentication, and execution providers are recorded in [INFRASTRUCTURE_DECISIONS.md](./INFRASTRUCTURE_DECISIONS.md). This register remains authoritative for matters that architecture and the infrastructure decision intentionally support without resolving.
 
 ## Purpose
 
@@ -133,11 +133,11 @@ No entry below should be treated as answered merely because an implementation li
 
 ## F. Technical architecture choices intentionally not made
 
-These decisions should be made only after the operating model and lifecycle requirements are translated into a technical design:
+Netlify Free and Supabase Free have been selected for the V1 infrastructure profile as documented in [INFRASTRUCTURE_DECISIONS.md](./INFRASTRUCTURE_DECISIONS.md). The following implementation and provider decisions remain intentionally unresolved:
 
-- database technology and hosting;
-- backend/API framework;
-- authentication provider;
+- database schema, migration, connection, and operational tooling within PostgreSQL;
+- backend/API implementation framework and function organization within Supabase Edge Functions;
+- authentication flows, recovery, sensitive-action reauthentication, and Staff MFA implementation within Supabase Auth;
 - payment provider and integration design;
 - object-storage provider;
 - CDN and image-transformation strategy;

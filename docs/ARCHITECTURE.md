@@ -12,6 +12,7 @@ This document is the canonical high-level, provider-neutral technical architectu
 - Enforceable transition requirements: [TRANSITION_CONTRACTS.md](./TRANSITION_CONTRACTS.md)
 - Binding customer consent: [AUTHORIZATION_CONTRACTS.md](./AUTHORIZATION_CONTRACTS.md)
 - Identity, access, and data protection: [SECURITY_MODEL.md](./SECURITY_MODEL.md)
+- Selected V1 infrastructure profile: [INFRASTRUCTURE_DECISIONS.md](./INFRASTRUCTURE_DECISIONS.md)
 - Intentionally unresolved matters: [RESEARCH_TBD.md](./RESEARCH_TBD.md)
 
 If this document conflicts with the Operating Model, the Operating Model controls. Architecture must support unresolved policy rather than silently decide it.
@@ -192,7 +193,7 @@ Every provider boundary needs retries appropriate to the operation, deduplicatio
 
 ## Provider capability requirements
 
-Provider selection is outside this document. Future choices must satisfy these capabilities:
+Provider selection is recorded separately in [INFRASTRUCTURE_DECISIONS.md](./INFRASTRUCTURE_DECISIONS.md). Selected and future providers must satisfy these capabilities:
 
 - relational transactions, constraints, querying, migrations, and reliable backup;
 - verified Customer identity, Staff MFA, session revocation, and reauthentication;
